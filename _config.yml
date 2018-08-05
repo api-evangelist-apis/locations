@@ -2,7 +2,7 @@
 # Settings
 #---------------------
 title: Location API
-description: This is a location API, providing many of the common building blocks of location. Providing the essential location ingredients needed through a varietiy of applications, without having to reivent the wheel each times it is needed.
+description: This is a location API, providing many of the common building blocks of location. Providing the essential location ingredients needed through a varietiy of applications, without having to reivent the wheel each times it is needed. This API is still being working on, and not quite ready for prime time, but if you have any questions, visit the road map and support sections below the documentation.
 url: http://location.apievangelist.com
 tag: Location, Cities, Regions, Countries
 logo: https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png
@@ -13,8 +13,8 @@ author:
 markdown: kramdown
 permalink: /:categories/:title/
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", ".DS_Store"]
-paginate: 25
-paginate_path: "/blog/page:num"
+paginate: 1000
+paginate_path: "/updates/page:num"
 
 #---------------------
 # YAML Collections
