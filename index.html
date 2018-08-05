@@ -14,11 +14,21 @@ title: Location API
 </section>
 <!-- End Introduction -->
 
-<div class="alert alert-block">
-  <button type="button" class="close" data-dismiss="alert">&times;</button>
-  <h4>Warning!</h4>
-  Best check yo self, you're not...
-</div>
+<!--Begin Show Development Status-->
+{% if site.status == 'Development' %}
+  <div class="alert alert-block">
+    <center><h4>This Site Is Currently Under Development</h4></center>
+  </div>
+{% endif %}
+<!--End Show Development Status-->
+
+<!--Begin Show Production Status-->
+{% if site.status == 'Production' %}
+  <div class="alert alert-success">
+    <center><h4>This Site Is Ready For Production Use</h4></center>
+  </div>
+{% endif %}
+<!--End Show Production Status-->
 
 <script type="text/javascript">
   //$appid = getUrlVar('app_id');
