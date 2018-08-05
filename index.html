@@ -149,7 +149,7 @@ title: Location API
           {% assign tagArray = taglist | split: "," %}
           {% for grouptag in tagArray %}
 
-            <h2>{{ grouptag }}</h2>
+            <br /><h2>{{ grouptag }}</h2><br />
 
             {% assign api_title = openapi.info.title %}
             {% assign api_description = openapi.info.description %}
