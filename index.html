@@ -378,7 +378,7 @@ title: Location API
           <!--Begin Show Entries--->
           {% for entry in entries %}
 
-            {{ entry }}<br />
+            {{ entry.title }} - {{ entry.date }} - {{ entry.description }}<br />
 
           {% endfor %}
           <!--End Show Entries--->
