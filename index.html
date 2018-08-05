@@ -138,8 +138,8 @@ title: Location API
                           <table cellpadding"3" cellspacing="2" style="width: 75%;">
                               <tr>
                                 <td align="right" width="25%">x-api-key:</td>
-                                <td><input type="text" name='x-api-key' id='x-api-key' value="" class="form-control" width="250"></td>
-                                  <td style="padding:5px;"><i>Your private key needed to access this API.</i></td>
+                                <td style="padding:5px;" width="35%"><input type="text" name='x-api-key' id='x-api-key' value="" class="form-control" width="250"></td>
+                                <td style="padding:5px;"><i>Your private key needed to access this API.</i></td>
                               </tr>
                           </table>
                         </center>
@@ -153,7 +153,7 @@ title: Location API
                           {% for parameter in parameters %}
                             {% if parameter.in == 'path' %}
                               <tr>
-                                <td align="right" width="18%" style="padding:5px;">{{ parameter.name }}:</td>
+                                <td align="right" width="25%" style="padding:5px;">{{ parameter.name }}:</td>
                                 <td style="padding:5px;" width="35%"><input type="text" name='{{ parameter.name | downcase }}' value="{{ parameter.default }}" class="form-control" style="width: 100%;"></td>
                                 <td style="padding:5px;"><i>{{ parameter.description }}</i></td>
                               </tr>
@@ -171,8 +171,8 @@ title: Location API
                           {% for parameter in parameters %}
                             {% if parameter.in == 'query' %}
                               <tr>
-                                <td align="right" width="18%" style="padding:5px;">{{ parameter.name }}:</td>
-                                <td style="padding:5px;" width="25%"><input type="text" name='{{ parameter.name | downcase }}' value="{{ parameter.default }}" class="form-control" style="width: 100%;"></td>
+                                <td align="right" width="25%" style="padding:5px;">{{ parameter.name }}:</td>
+                                <td style="padding:5px;" width="35%"><input type="text" name='{{ parameter.name | downcase }}' value="{{ parameter.default }}" class="form-control" style="width: 100%;"></td>
                                 <td style="padding:5px;"><i>{{ parameter.description }}</i></td>
                               </tr>
                             {% endif %}
