@@ -12,7 +12,7 @@ info:
     url: http://opendatacommons.org/licenses/pddl/
   version: v1.2
 host: example.com
-basePath: /
+basePath: 
 schemes:
 - http
 produces:

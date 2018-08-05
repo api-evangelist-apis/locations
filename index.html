@@ -120,12 +120,14 @@ title: Location API
 
                   {% assign slug = path[0] | replace: '/','' %}
 
-                  <div style="background: #E8E8E8; width: 100%;">
+                  <div style="background: #E8E8E8; width: 100%; margin-top: 5px; margin-bottom: 5px;">
                     <div class="p-3 mb-2 bg-gradient-light text-dark">
 
                       <h3>{{ summary }}</h3>
 
                       <p align="center"><strong>URL:</strong> {{ api_url }}{{ path[0] }}</p>
+
+                      <br />
 
                       <form id="{{ slug }}-key" style="width: 100%;">
                         <center>
