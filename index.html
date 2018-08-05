@@ -150,7 +150,7 @@ title: Location API
             {% assign tagArray = taglist | split: "," %}
             {% for grouptag in tagArray %}
 
-              <tr><td style="border: 1px solid #000;"><h2>{{ grouptag }}</h2></td></tr>
+              <tr><td style="border: 1px solid #000;">{{ grouptag }}</td></tr>
 
               {% assign api_title = openapi.info.title %}
               {% assign api_description = openapi.info.description %}
@@ -179,17 +179,17 @@ title: Location API
                     {% assign slug = path[0] | replace: '/','' %}
                     <tr>
                       <td align="left" style="border: 1px solid #000;">
-                        <h3>{{ summary }}</h3>
+                        {{ summary }}
                       </td>
                     </tr>
-                    <td>
-                      <td align="center"> style="border: 1px solid #000;"
+                    <tr>
+                      <td align="center" style="border: 1px solid #000;">
 
                         <p align="center"><strong>URL:</strong> {{ api_url }}{{ path[0] }}</p>
 
                       </td>
                     </tr>
-                    <td>
+                    <tr>
                       <td align="left" style="border: 1px solid #000;">
 
                         <form id="{{ slug }}-key" style="width: 100%;">
@@ -206,7 +206,7 @@ title: Location API
 
                       </td>
                     </tr>
-                    <td>
+                    <tr>
                       <td align="left" style="border: 1px solid #000;">
 
                         <form id="{{ slug }}-path" style="width: 100%;">
@@ -227,7 +227,7 @@ title: Location API
 
                       </td>
                     </tr>
-                    <td>
+                    <tr>
                       <td align="left" style="border: 1px solid #000;">
 
                         <form id="{{ slug }}-param" style="width: 100%;">
@@ -248,7 +248,7 @@ title: Location API
 
                       </td>
                     </tr>
-                    <td>
+                    <tr>
                       <td align="center" style="border: 1px solid #000;">
 
                         <table cellpadding"3" style="margin-top: 10px; margin-bottom: 10px;">
