@@ -128,7 +128,8 @@ title: Location API
 
         <div class="row">
 
-          <table width="100%" border="1">
+          <center>
+          <table width="75%" border="1">
             {% assign taglist = '' %}
             {% for path in openapi.paths %}
 
@@ -150,7 +151,7 @@ title: Location API
             {% assign tagArray = taglist | split: "," %}
             {% for grouptag in tagArray %}
 
-              <tr><td style="border: 1px solid #FFF; font-size: 18px; font-weight: bold; padding: 5px;">{{ grouptag }}</td></tr>
+              <tr><td style="border: 1px solid #FFF; font-size: 20px; font-weight: bold; padding: 15px;">{{ grouptag }}</td></tr>
 
               {% assign api_title = openapi.info.title %}
               {% assign api_description = openapi.info.description %}
@@ -264,6 +265,7 @@ title: Location API
             {% endfor %}
 
           </table>
+        </center>
 
         </div>
     </div>
