@@ -127,43 +127,51 @@ title: Location API
 
                       <p align="center"><strong>URL:</strong> {{ api_url }}{{ path[0] }}</p>
 
-                      <center>
-                        <hr />
-                        <table cellpadding"3" cellspacing="2">
-                            <tr>
-                              <td align="right" width="25%">x-api-key:</td>
-                              <td><input type="text" name='x-api-key' id='x-api-key' value="" class="form-control" width="250"></td>
-                            </tr>
-                        </table>
-                        <hr />
-                      </center>
+                      <form id="{{ slug }}-key" style="width: 100%;">
+                        <center>
+                          <table cellpadding"3" cellspacing="2">
+                              <tr>
+                                <td align="right" width="25%">x-api-key:</td>
+                                <td><input type="text" name='x-api-key' id='x-api-key' value="" class="form-control" width="250"></td>
+                              </tr>
+                          </table>
+                        </center>
+                      </form>
+
+                      <br />
 
                       <form id="{{ slug }}-path" style="width: 100%;">
-                        <table cellpadding"3">
-                        {% for parameter in parameters %}
-                          {% if parameter.in == 'path' %}
-                            <tr>
-                              <td align="right" width="18%" style="padding:5px;">{{ parameter.name }}:</td>
-                              <td style="padding:5px;" width="35%"><input type="text" name='{{ parameter.name | downcase }}' value="{{ parameter.default }}" class="form-control" style="width: 100%;"></td>
-                              <td style="padding:5px;"><i>{{ parameter.description }}</i></td>
-                            </tr>
-                          {% endif %}
-                        {% endfor %}
-                        </table>
+                        <center>
+                          <table cellpadding"3" cellspacing="2">
+                          {% for parameter in parameters %}
+                            {% if parameter.in == 'path' %}
+                              <tr>
+                                <td align="right" width="18%" style="padding:5px;">{{ parameter.name }}:</td>
+                                <td style="padding:5px;" width="35%"><input type="text" name='{{ parameter.name | downcase }}' value="{{ parameter.default }}" class="form-control" style="width: 100%;"></td>
+                                <td style="padding:5px;"><i>{{ parameter.description }}</i></td>
+                              </tr>
+                            {% endif %}
+                          {% endfor %}
+                          </table>
+                        </center>
                       </form>
+
                       <br />
+
                       <form id="{{ slug }}-param" style="width: 100%;">
-                        <table cellpadding"3">
-                        {% for parameter in parameters %}
-                          {% if parameter.in == 'query' %}
-                            <tr>
-                              <td align="right" width="18%" style="padding:5px;">{{ parameter.name }}:</td>
-                              <td style="padding:5px;" width="25%"><input type="text" name='{{ parameter.name | downcase }}' value="{{ parameter.default }}" class="form-control" style="width: 100%;"></td>
-                              <td style="padding:5px;"><i>{{ parameter.description }}</i></td>
-                            </tr>
-                          {% endif %}
-                        {% endfor %}
-                        </table>
+                        <center>
+                          <table cellpadding"3" cellspacing="2">
+                          {% for parameter in parameters %}
+                            {% if parameter.in == 'query' %}
+                              <tr>
+                                <td align="right" width="18%" style="padding:5px;">{{ parameter.name }}:</td>
+                                <td style="padding:5px;" width="25%"><input type="text" name='{{ parameter.name | downcase }}' value="{{ parameter.default }}" class="form-control" style="width: 100%;"></td>
+                                <td style="padding:5px;"><i>{{ parameter.description }}</i></td>
+                              </tr>
+                            {% endif %}
+                          {% endfor %}
+                          </table>
+                        </center>
                       </form>
 
                       <center>
