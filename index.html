@@ -355,6 +355,34 @@ title: Location API
           <h3>{{ item.name }}</h3>
           <p>{{ item.description }}</p>
 
+          {% assign url = '' %}
+          {% assign entries = '' %}
+          {% for fields in item.fields %}
+
+            {% for field in fields %}
+
+              <!-- Set url -->
+              {% if field[0] == 'url' %}
+                {% assign url = field[1] %}
+              {% endif %}
+
+              <!-- Set entries -->
+              {% if field[0] == 'entries' %}
+                {% assign entries = field[1] %}
+              {% endif %}
+
+            {% endfor %}
+
+          {% endfor %}
+
+          <!--Begin Show Entries--->
+          {% for entry in entries %}
+
+            {{ entry }}<br />
+
+          {% endfor %}
+          <!--End Show Entries--->
+
         {% endif %}
         <!-- End Show only public road map -->
 
