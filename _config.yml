@@ -1193,7 +1193,7 @@ stops:
         status: None
         fields:
           - url: https://github.com/api-evangelist-apis/locations/issues
-          - image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-git.png
+          - image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-github.png
 
       - name: Twitter
         description: Feel free to Tweet at us to get your questions answered, if you don't mind making your question public.
