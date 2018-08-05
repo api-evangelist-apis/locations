@@ -173,11 +173,13 @@ title: Location API
               {% for definition in openapi.definitions %}
                 {% assign definition_name = definition[0] %}
                 {% assign fields = definition[1] %}
-                <p><strong>{{ definition_name }}</strong></p>
+                {% assign field_title = fields.title %}
+                {% assign field_description = fields.description %}
+                <p><strong>{{ field_title }} - {{ field_description }}</strong></p>
                 <ul style='padding-left: 50px;'>
                   {% for property in fields.properties %}
                     {% assign property_name = property[0] %}
-                    <li><strong>{{ property_name }}</strong> (<em>{{ property[1]["type"] }}</em>) - {{ property[1]["description"] }}</li>
+                    <li><strong>{{ property_name }}</strong>{% if property[1]["type"] != '' %} (<em>{{ property[1]["type"] }}</em>){% endif %}{% if property[1]["description"] != '' %} - {{ property[1]["description"] }}{% endif %}</li>
                   {% endfor %}
                 </ul>
               {% endfor %}
