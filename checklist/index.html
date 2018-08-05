@@ -19,7 +19,7 @@ title: API Checklist
     <ul>
       {% for field in item.fields %}
         {% for this_field in field %}
-          <li>this_field: {{ this_field }}</li>
+          <li>this_field: {{ this_field }} = {{ this_field[1] }}</li>
         {% endfor %}
       {% endfor %}
     </ul>
