@@ -21,8 +21,8 @@ title: API Checklist
       {% for field in item.fields %}
         {% for this_field in field %}
           <tr>
-            <td width="25%;" align="right">{{ this_field[1] }}</td>
-            <td align="left">{{ this_field[0] }}</td>
+            <td width="25%;" align="right"><strong>{{ this_field[0] }}</strong></td>
+            <td align="left">{{ this_field[1] }}</td>
         {% endfor %}
       {% endfor %}
     </table>
