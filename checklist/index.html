@@ -17,9 +17,9 @@ title: API Checklist
     <p><strong>Fields:</strong></p>
     <ul>
       {% for field in item.fields %}
-        {% assign this_field = field %}
-        <li>this_field: {{ this_field }}</li>
-
+        {% for this_field in field %}
+          <li>this_field: {{ this_field }}</li>
+        {% endfor %}
       {% endfor %}
     </ul>
 
