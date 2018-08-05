@@ -1,0 +1,15 @@
+---
+layout: default
+title: API Checklist
+---
+<h1>API Checklist</h1>
+
+{% for stop in site.stops %}
+
+  {% for item in stop.items %}
+
+    {{ item.name }}<br />
+
+  {% endfor %}
+
+{% endfor %}

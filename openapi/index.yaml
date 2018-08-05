@@ -1,0 +1,604 @@
+swagger: '2.0'
+info:
+  title: "Location API"
+  description: "This is a location API, providing countries, cities, and regions around the world."
+  termsOfService: "https://example.com/tos/"
+  contact:
+    name: API Evangelist
+    url: https://apievangelist.com
+    email: info@apievangelist.com
+  license:
+    name: Open Data Commons Public Domain
+    url: http://opendatacommons.org/licenses/pddl/
+  version: v1.2
+host: example.com
+basePath: /
+schemes:
+- http
+produces:
+- application/json
+paths:
+  /cities/:
+    get:
+      summary: Get Cities
+      description: Get all cities.
+      operationId: getCities
+      parameters:
+        - in: query
+          required: true
+          type: string
+          name: query
+          description: 'The query string'
+      security:
+        - api-key: []
+      responses:
+        '200':
+          description: Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/cities"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/errorResponse"
+      tags:
+      - Cities
+    post:
+      summary: Add City
+      description: Add a city.
+      operationId: addCity
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/city'
+      security:
+        - api-key: []
+      responses:
+        '200':
+          description: Success Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/cities"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/errorResponse"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/errorResponse"
+      tags:
+      - Cities
+  /cities/{city_id}/:
+    get:
+      summary: Get City
+      description: Get a single city.
+      operationId: getCity
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: city_id
+          description: 'The unique id.'
+      security:
+        - api-key: []
+      responses:
+        '200':
+          description: Area Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/city"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/errorResponse"
+      tags:
+      - Cities
+    put:
+      summary: Update City
+      description: Update a city.
+      operationId: updateCity
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: city_id
+          description: 'The unique id.'
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/city'
+      security:
+        - api-key: []
+      responses:
+        '200':
+          description: Success Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/city"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/errorResponse"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/errorResponse"
+      tags:
+      - Cities
+    delete:
+      summary: Delete City
+      description: Delete a city.
+      operationId: deleteCity
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: city_id
+          description: 'The unique id.'
+      security:
+        - api-key: []
+      responses:
+        '200':
+          description: Success Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/city"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/errorResponse"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/errorResponse"
+      tags:
+      - Cities
+  /regions/:
+    get:
+      summary: Get Regions
+      description: Get all regions.
+      operationId: getRegions
+      parameters:
+        - in: query
+          required: true
+          type: string
+          name: query
+          description: 'The query string'
+      security:
+        - api-key: []
+      responses:
+        '200':
+          description: Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/regions"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/errorResponse"
+      tags:
+      - Regions
+    post:
+      summary: Add City
+      description: Add a city.
+      operationId: addRegion
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/region'
+      security:
+        - api-key: []
+      responses:
+        '200':
+          description: Success Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/region"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/errorResponse"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/errorResponse"
+      tags:
+      - Regions
+  /regions/{region_id}/:
+    get:
+      summary: Get Region
+      description: Get a single region.
+      operationId: getRegion
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: region_id
+          description: 'The unique id.'
+      security:
+        - api-key: []
+      responses:
+        '200':
+          description: Area Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/region"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/errorResponse"
+      tags:
+      - Regions
+    put:
+      summary: Update Region
+      description: Update a region.
+      operationId: updateRegion
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: region_id
+          description: 'The unique id.'
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/region'
+      security:
+        - api-key: []
+      responses:
+        '200':
+          description: Success Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/region"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/errorResponse"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/errorResponse"
+      tags:
+      - Regions
+    delete:
+      summary: Delete Region
+      description: Delete a region.
+      operationId: deleteRegion
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: region_id
+          description: 'The unique id.'
+      security:
+        - api-key: []
+      responses:
+        '200':
+          description: Success Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/region"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/errorResponse"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/errorResponse"
+      tags:
+      - Regions
+  /countries/:
+    get:
+      summary: Get Countries
+      description: Get all countries.
+      operationId: getCountries
+      parameters:
+        - in: query
+          required: true
+          type: string
+          name: query
+          description: 'The query string'
+      security:
+        - api-key: []
+      responses:
+        '200':
+          description: Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/countries"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/errorResponse"
+      tags:
+      - Countries
+    post:
+      summary: Add Country
+      description: Add a couuntry.
+      operationId: addCountry
+      parameters:
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/country'
+      security:
+        - api-key: []
+      responses:
+        '200':
+          description: Success Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/country"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/errorResponse"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/errorResponse"
+      tags:
+      - Countries
+  /countries/{country_id}/:
+    get:
+      summary: Get Country
+      description: Get a single country.
+      operationId: getCountry
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: country_id
+          description: 'The unique id.'
+      security:
+        - api-key: []
+      responses:
+        '200':
+          description: Area Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/country"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/errorResponse"
+      tags:
+      - Countries
+    put:
+      summary: Update Country
+      description: Update a country.
+      operationId: updateCountry
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: country_id
+          description: 'The unique id.'
+        - in: body
+          name: body
+          schema:
+            $ref: '#/definitions/country'
+      security:
+        - api-key: []
+      responses:
+        '200':
+          description: Success Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/country"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/errorResponse"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/errorResponse"
+      tags:
+      - Countries
+    delete:
+      summary: Delete Country
+      description: Delete a country.
+      operationId: deleteCountry
+      parameters:
+        - in: path
+          required: true
+          type: string
+          name: country_id
+          description: 'The unique id.'
+      security:
+        - api-key: []
+      responses:
+        '200':
+          description: Success Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/country"
+        '403':
+          description: No Access Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/errorResponse"
+        '500':
+          description: Error Response
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/errorResponse"
+      tags:
+      - Countries
+securityDefinitions:
+  api-key:
+    type: apiKey
+    in: header
+    name: x-api-key
+definitions:
+  cities:
+    title: cities
+    description: All cities.
+    type: object
+    properties:
+      city:
+        type: "array"
+        items:
+          $ref: "#/definitions/city"
+  city:
+    title: City
+    description: A city.
+    type: object
+    properties:
+      id:
+        type: integer
+        maxLength: 11
+      region_id:
+        type: integer
+        maxLength: 11
+      country_id:
+        type: integer
+        maxLength: 5
+      latitude:
+        type: number
+      longitude:
+        type: number
+      name:
+        type: string
+        maxLength: 255
+    required:
+    - id
+    - region_id
+    - country_id
+    - latitude
+    - longitude
+    - name
+  countries:
+    title: Countries
+    description: All countries.
+    type: object
+    properties:
+      city:
+        type: "array"
+        items:
+          $ref: "#/definitions/country"
+  country:
+    title: Country
+    description: A country.
+    type: object
+    properties:
+      id:
+        type: integer
+        maxLength: 5
+      name:
+        type: string
+        maxLength: 255
+      code:
+        type: string
+        maxLength: 10
+    required:
+    - id
+    - name
+    - code
+  regions:
+    title: regions
+    description: All regions.
+    type: object
+    properties:
+      city:
+        type: "array"
+        items:
+          $ref: "#/definitions/region"
+  region:
+    title: region
+    description: A region.
+    type: object
+    properties:
+      id:
+        type: integer
+        maxLength: 11
+      name:
+        type: string
+        maxLength: 255
+      code:
+        type: string
+        maxLength: 10
+      country_id:
+        type: integer
+        maxLength: 5
+    required:
+    - id
+    - name
+    - code
+    - country_id
+  errorResponse:
+    description: 'Describes an HTTP error returned'
+    properties:
+      code:
+        description: 'Repeat the HTTP status code'
+        type: integer
+      message:
+        description: 'A plain language message explaining the error'
+        type: integer

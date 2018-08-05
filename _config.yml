@@ -1,0 +1,1568 @@
+#---------------------
+# Settings
+#---------------------
+title: Service
+url: http://service.example.com
+tag: Service
+logo: https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png
+version: 1.1.1
+author:
+  name: Kin Lane
+  email: info@apievangelist.com
+markdown: kramdown
+permalink: /:categories/:title/
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", ".DS_Store"]
+paginate: 25
+paginate_path: "/blog/page:num"
+
+#---------------------
+# YAML Collections
+#---------------------
+collections:
+  design:
+    output: true
+    permalink: /collection/:path/
+
+#-------------------------------
+# Current stage of this service
+#-------------------------------
+stage:
+
+#---------------
+# Status Values
+#---------------
+status_values:
+  - None
+  - Not Used
+  - In Proress
+  - Active
+
+#---------------------
+# API Lifecycle Stops
+#---------------------
+stops:
+
+  #-------------
+  # Definitions
+  #-------------
+  - name: Definition
+    header: The definitions for this service.
+    footer:
+    instructions: Define the problem and solution in a human and machine readable way.
+    status: None
+    items:
+
+      - name: Organization
+        description: The Github organization for this service.
+        instruction: Define the organization for this service.
+        status: None
+        fields:
+          - github_organization: organization-name
+
+      - name: Repository
+        description:
+        instruction: Establish a Github repository.
+        status: None
+        fields:
+          - github_repositry: repo-name
+
+      - name: README
+        description:
+        instruction: Craft a README for the repository.
+        status: None
+        fields:
+          - readme_path: /README.md
+
+      - name: Service Name
+        description: A simple title for this service.
+        instruction: Provide title for the service.
+        status: None
+        fields:
+          - service_name: Service Name
+
+      - name: Service Description
+        description: A simple, descriptive paragraph for this service.
+        instruction: Provide concise description for the service.
+        status: None
+        fields:
+          - service_description: This is the description of this service.
+
+      - name: Service Goals
+        description: Providing some basic goals for this service.
+        instruction: Establish goals that will guide this service.
+        status: None
+        fields:
+          - service_goals: This is the goals for this service.
+
+      - name: Schema
+        description: JSON schema for the data behind service.
+        instruction: Organize loose, and JSON schema for the service.
+        status: None
+        fields:
+          - schema:
+            - title: The title of the schema
+            - path: /path/of/the/schema
+
+      - name: OpenAPI
+        description: An OpenAPI definition for the surface area of the API.
+        instruction: Establish an OpenAPI for the service.
+        status: None
+        fields:
+          - openapi: /path/to/full/openapi.yaml
+
+      - name: Assertions
+        description: Human and machine readable assertions of what service does.
+        instruction: Craft a set of assertions for the service.
+        status: None
+        fields:
+          - assertions:
+            - title: The title of the assertion
+            - path: /path/of/the/assertion
+
+      - name: Team
+        description: A list of team members for the service.
+        instruction: Define the team behind the service.
+        status: None
+        fields:
+          - team:
+            - name: Kin Lane
+              role: API Evangelist
+              email: info@apievangelist.com
+              twitter: kinlane
+              github: kinlane
+
+  #--------
+  # Design
+  #--------
+  - name: Design
+    header: The API design strategy for use as part of this service.
+    footer: Setting a consistent design strategy for all services.
+    instructions: Establish a base set of design practices for the service.
+    status: None
+    items:
+
+      - name: Versioning
+        description: Managing the version for the various layers of this service.
+        instruction: Determine how the code, schema, and the API be versioned.
+        status: None
+        fields:
+          - versioning:
+              type: semantic
+              format: major.minor.patch
+              server: 1.0.0
+              api: 1.0.0
+              sdk: 1.0.0
+
+      - name: Base Path
+        description: The part of the path that goes after the host, and before each path, and is constant across all endpoints for this service.
+        instruction: Set the base path for the service.
+        status: None
+
+      - name: Path(s)
+        description: The paths that are used to define each individual API resource.
+        instruction: Define a set of resource paths for the service.
+        status: None
+
+      - name: Verb(s)
+        description: The HTTP verbs used for this service, including GET, POST, PUT, and DELETE.
+        instruction: Define which HTTP, and other verbs will be used for the service.
+        status: None
+
+      - name: Parameters
+        description: The query parameters that are used by this service, as described by the OpenAPI.
+        instruction: Define a list of query parameters in use to work with service.
+        status: None
+
+      - name: Headers
+        description: The headers that are used by this service, as described by the OpenAPI.
+        instruction: Define the HTTP Headers that will be used to work with the service.
+        status: None
+
+      - name: Response(s)
+        description: The responses that are used by this service, as described by the OpenAPI.
+        instruction: Provide a resulting message and associated schema definition for the service.
+        status: None
+
+      - name: Media Types
+        description: The media types that are used by this service, as described by the OpenAPI.
+        instruction: Define whether service will return CSV, JSON, and / or XML responses.
+        status: None
+
+      - name: Status Codes
+        description: The HTTP status codes that are used by this service, as described by the OpenAPI.
+        instruction: Define the available HTTP status code for each responses.
+        status: None
+
+      - name: Pagination
+        description: The pagination used by this service, as described by the OpenAPI.
+        instruction: Define how pagination will be handled for requests and responses.
+        status: None
+
+      - name: Sorting
+        description: The sorting used by this service, as described by the OpenAPI.
+        instruction: Define how sorting will be handled for requests and responses.
+        status: None
+
+  #----------
+  # Database
+  #----------
+  - name: Database
+    header: The definitions for this service.
+    footer:
+    instructions: Establish the base for how data will be managed behind the service.
+    status: None
+    items:
+
+      - name: Platform
+        description: The database platform used to drive this service.
+        instruction: Define which platform is in use to manage the database.
+        status: None
+        fields:
+          - platform: Amazon RDS (Aurora)
+
+      - name: Schema
+        description: Making sure there is a database version of the schema.
+        instruction: Establish the schema used for database based upon definition provided.
+        status: None
+        fields:
+          - schema: /path/tos/schema.sql
+
+      - name: Location
+        description: Where the database for this service is located.
+        instruction: Define where the database is located that supports services.
+        status: None
+        fields:
+          - location: instance.id.region.rds.amazonaws.com
+
+      - name: Access
+        description: How the database is connected with by the service.
+        instruction: Quantify how database access is provided behind the service.
+        status: None
+        fields:
+          - access: ODBC
+
+      - name: Logs
+        description: Understanding how logging occurs for the database.
+        instruction: Define where the database logs are located that support services.
+        status: None
+        fields:
+          - logs: /rds
+
+      - name: Backup
+        description: Ensuring that the database has a backup strategy.
+        instruction: Define the database backup process and location for service.
+        status: None
+        fields:
+          - backup: /rds
+
+      - name: Encryption
+        description: Ensuring the encryption is part of the database operations.
+        instruction: Define the encryption layer for the service database.
+        status: None
+        fields:
+          - encryption: enabled
+
+  #---------
+  # Storage
+  #---------
+  - name: Storage
+    header: The definitions for this service.
+    footer:
+    instructions: Establish how all objects will be stored for the service.
+    status: None
+    items:
+
+      - name: Platform
+        description: The platform that is used for storage behind this service.
+        instruction: Define which platform is used to store objects.
+        status: None
+        fields:
+          - platform: Amazon S3
+
+      - name: Location
+        description: Where the storage is located that is used for this service.
+        instruction: Define where objects are stored behind the service.
+        status: None
+        fields:
+          - location: us-east
+
+      - name: Logs
+        description: Information about the logging for storage behind service.
+        instruction: Define where the storage logs are located that support services.
+        status: None
+        fields:
+          - logs: /cloudwatch
+
+      - name: Access
+        description: Details on how storage is accessed as part of this service.
+        instruction: Quantify how objects access is provided behind the service.
+        status: None
+        fields:
+          - access: API
+
+      - name: Backup
+        description: Ensuring there is a backup strategy for storage behind service.
+        instruction: Define the backup process for objects behind the service.
+        status: None
+        fields:
+          - backup: Dropbox
+
+      - name: Encryption
+        description: Ensuring encryption is considered for storage.
+        instruction: Define the encryption layer for stored objects.
+        status: None
+        fields:
+          - encryption: enabled
+
+  #-----
+  # DNS
+  #-----
+  - name: DNS
+    header: The definitions for this service.
+    footer:
+    instructions: Establish the DNS layer for this service.
+    status: None
+    items:
+
+      - name: Platform
+        description: Which platform is used to provide DNS for service.
+        instruction: Define which platform is used to operate DNS.
+        status: None
+        fields:
+          - platform: CloudFlare
+
+      - name: Prototype
+        description: The host used for the prototype API.
+        instruction: Provide host for prototype of service.
+        status: None
+        fields:
+          - host: prototype.api.example.com
+
+      - name: Mock
+        description: The host used for the mock API.
+        instruction: Provide host for mock of service.
+        status: None
+        fields:
+          - host: mock.api.example.com
+
+      - name: Development
+        description: The host used for the development API.
+        instruction: Provide host for development version of service.
+        status: None
+        fields:
+          - host: dev.api.example.com
+
+      - name: Production
+        description: The host used for the production API.
+        instruction: Provide host for production version of service.
+        status: None
+        fields:
+          - host: api.example.com
+
+      - name: Portal
+        description: The host used for the developer portal.
+        instruction: Provide host for the portal for this service.
+        status: None
+        fields:
+          - host: developer.example.com
+
+      - name: Encryption
+        description: Ensuring encryption is used as part of API transport.
+        instruction: Define the encryption layer for service in transport.
+        status: None
+        fields:
+          - enabled: true
+
+  #----------------
+  # Virtualization
+  #----------------
+  - name: Virtualization
+    header: The definitions for this service.
+    footer:
+    instructions: Provide a mock representation of this service.
+    status: None
+    items:
+
+      - name: Paths
+        description: Considering offering mock API paths for use by integrators.
+        instruction: Providing virtualized paths for the API driving service.
+        status: None
+
+      - name: Data
+        description: Considering offering synethic data for use by integrators.
+        instruction: Providing synthesized data behind each API response for service.
+        status: None
+
+  #------------
+  # Deployment
+  #------------
+  - name: Deployment
+    header: The definitions for this service.
+    footer:
+    instructions: Define the deployment scaffolding for this service.
+    status: None
+    items:
+
+      - name: Platform
+        description: Which platform is used to deploy this service.
+        instruction: Define the platform used to deploy this service.
+        status: None
+        fields:
+          - platform: AWS API Gateway
+
+      - name: Framework
+        description: Which programming framework is used to deploy this service.
+        instruction: Define the code framework used to deploy service.
+        status: None
+        fields:
+          - framework: none
+
+      - name: Gateway
+        description: Which gateway is used to deploy this service.
+        instruction: Define the gateway used to deploy service.
+        status: None
+        fields:
+          - framework: none
+
+      - name: Function
+        description: Which function is used to deploy this service.
+        instruction: Define the function(s) used to deploy service.
+        status: None
+        fields:
+          - function: aws_lambda_function_name
+
+      - name: Containers
+        description: Which container is used to deploy this service.
+        instruction: Define the container used to deploy service.
+        status: None
+        fields:
+          - container: none
+
+      - name: Pipeline
+        description: Information regarding the pipeline in use for service.
+        instruction: Define the pipeline in place to build and deploys service.
+        status: None
+        fields:
+          - pipeline: none
+
+      - name: Location
+        description: Information about where this service is deployed.
+        instruction: Define where the service is deployed to.
+        status: None
+        fields:
+          - region: us-east
+
+  #---------------
+  # Orchestration
+  #---------------
+  - name: Orchestration
+    header: The definitions for this service.
+    footer:
+    instructions: Define how the service will be orchestrated.
+    status: None
+    items:
+
+      - name: Build
+        description: Information regarding the build of this service.
+        instruction: Define the build process for this service.
+        status: None
+        fields:
+          - build: manual
+
+      - name: Hooks
+        description: Information regarding pre or post commit hooks for this service.
+        instruction: Detail the pre and post commit hooks in use for this service.
+        status: None
+        fields:
+          - hooks:
+            - name: Name of Hook
+              invoked: git commit
+              description: The description of the hook.
+              commands: /path/file_name
+
+      - name: Jobs
+        description: Information regarding the jobs used as part of this service.
+        instruction: Define the jobs being executed as part of this service operations.
+        status: None
+        fields:
+          - jobs:
+            - name: Name of Job
+              description: Description of job.
+              openapi: /path/to/openapi/definition/for/job/
+              function: lambda_script_used_for_this_job
+
+      - name: Events
+        description: Information about events used for managing jobs for this service.
+        instruction: Define the events that are in play to help operate this service.
+        status: None
+        fields:
+          - jobs:
+            - name: Name of Event
+              description: Description of event.
+
+      - name: Schedule
+        description: Information about the schedule sin use to manage this service.
+        instruction: Details of the schedules used to orchestrate this service.
+        status: None
+        fields:
+          - jobs:
+            - name: Name of Schedule
+              description: Description of schedule.
+              command: command
+
+  #--------------
+  # Dependencies
+  #--------------
+  - name: Dependencies
+    header: The definitions for this service.
+    footer:
+    instructions: Providing details of the dependencies that exist for this service.
+    status: None
+    items:
+
+      - name: Service
+        description: Information about services this service depends on.
+        instruction: Details of other services this service depends upon.
+        status: None
+        fields:
+          - name: Name of Service
+          - description: The description of service.
+          - url: http://example.com/service-information/
+
+      - name: Software
+        description: Information about software this service depends on.
+        instruction: Details of other software this service depends upon.
+        status: None
+        fields:
+          - name: Name of Software
+          - description: The description of software.
+          - url: http://example.com/software-information/
+
+      - name: People
+        description: Information about people this service depends on.
+        instruction: Details of other people this service depends upon.
+        status: None
+        fields:
+          - name: Name of Person
+          - description: The description of person / relationship.
+          - email: info@example.com
+          - github_user: user
+
+      - name: Organization
+        description: Information about organization this service depends on.
+        instruction: Details of other organizations this service depends upon.
+        status: None
+        fields:
+          - name: Name of Organization
+          - description: The description of organization / relationship.
+          - email: info@example.com
+          - url: http://example.com
+
+  #--------------
+  # Authentication
+  #--------------
+  - name: Authentication
+    header: The definitions for this service.
+    footer:
+    instructions: Details regarding authentication in use for this service.
+    status: None
+    items:
+
+      - name: Type
+        description: Information how you authenticate with this service.
+        instruction: Define whether this service uses Basic Auth, API Keys, JWT, or OAuth for authentication.
+        status: None
+        fields:
+          - type: basic/api-key/jwt/oauth
+
+      - name: Overview
+        description: An overview for the authentication of this service.
+        instruction: Provide a location of the page that delivers an overview of this services authentication.
+        status: None
+        fields:
+          - url: http://example.com/authentication
+
+  #------------
+  # Management
+  #------------
+  - name: Management
+    header: The definitions for this service.
+    footer:
+    instructions: Define the management layer for this service's API.
+    status: None
+    items:
+
+      - name: Platform
+        description: Details on which API management platform is used for this service.
+        instruction: Defining the platform used for the API management layer.
+        status: None
+        fields:
+          - platform: AWS API Gateway
+
+      - name: Administration
+        description: Where you find the administrative access for API management.
+        instruction: Provide a location for administrating the management layer.
+        status: None
+        fields:
+          - url: https://console.aws.amazon.com/apigateway/home?region=us-east-1
+
+      - name: Signup
+        description: Where you can sign up for access to this service.
+        instruction: Provide a location for users to signup for access to this service.
+        status: None
+        fields:
+          - url: https://example.com/signup/
+
+      - name: Login
+        description: Where you can login for access to this service.
+        instruction: Provide a location for users to login to access to this service.
+        status: None
+        fields:
+          - url: https://example.com/login/
+
+      - name: Account
+        description: Where you can access accouint information when using service.
+        instruction: Provide a location for users to access a dashboard for this service.
+        status: None
+        fields:
+          - url: https://example.com/account/
+
+      - name: Applications
+        description: Details about the applications approved to use this service.
+        instruction: Provide the location of applications that are approved to use service.
+        status: None
+        fields:
+          - url: https://example.com/applications/
+
+  #---------
+  # Logging
+  #---------
+  - name: Logging
+    header: The definitions for this service.
+    footer:
+    instructions: Define the logging layer for supporting this service.
+    status: None
+    items:
+
+      - name: Database
+        description: Information about database logs.
+        instruction: Define the logging for the database layer.
+        status: None
+        fields:
+          - location: /rds
+
+      - name: API
+        description: Information about API logs.
+        instruction: Define the logging for the API access layer.
+        status: None
+        fields:
+          - location: /cloudwatch
+
+      - name: DNS
+        description: Information about DNS logs.
+        instruction: Define the logging for the DNS layer.
+        status: None
+        fields:
+          - location: /cloudflare
+
+      - name: Shipping
+        description: Information about shipping logs centrally.
+        instruction: Define how longs are shipped or centralized for auditing.
+        status: None
+        fields:
+          - enabled: false
+          - location: none
+
+  #--------------
+  # Monetization
+  #--------------
+  - name: Monetization
+    header: The definitions for this service.
+    footer:
+    instructions: Define the costs associated with the delivery of this service.
+    status: None
+    items:
+
+      - name: Acquisition
+        description: Understanding what it costs to acquire the resources behind this service.
+        instruction: Provide costs associated with acquisition of resources behind service.
+        status: None
+        fields:
+          - initial_hours: 1
+          - initial_cost: $100.00
+          - monthly_hours: 1
+          - monthly_cost: $100.00
+
+      - name: Development
+        description: Understanding what it cost to develop this service.
+        instruction: Provide costs associated with the development of this service.
+        status: None
+        fields:
+          - initial_hours: 1
+          - initial_cost: $100.00
+          - monthly_hours: 1
+          - monthly_cost: $100.00
+
+      - name: Operation
+        description: Understanding what it costs to operate this service.
+        instruction: Provide costs associated with the operation of this service.
+        status: None
+        fields:
+          - initial_hours: 1
+          - initial_cost: $100.00
+          - monthly_hours: 1
+          - monthly_cost: $100.00
+
+      - name: Value
+        description: Articulating what value is provided by this service.
+        instruction: Provide a description of the value delivered by this service.
+        status: None
+        fields:
+          - description: Delivers X value for consumers by providing them Y.
+
+  #-------
+  # Plans
+  #-------
+  - name: Plans
+    header: The definitions for this service.
+    footer:
+    instructions: Define the operational plan for the business of this service.
+    status: None
+    items:
+      - name: Tiers
+        description: The tiers of access for this service.
+        instruction: Define the tiers of access in place to support this service.
+        status: None
+        fields:
+          - plans:
+            - name: Starter
+              description: The default API access plan, where every new account begins, allowing the consumer to kick the tires, and see what the API is all about.
+              status: None
+              entries:
+                - label: API calls
+                  description: to the search API
+                  metric: calls
+                  limit: 25
+                  timeframe: day
+                  geo: US
+                  one: 1
+                  two:
+                  unit: free
+              elements:
+                - name: Free
+                - name: Self Service Support
+            - name: Verified
+              description: Once you have added a credit card as part of the account billing, you become a verified API consumer, and have a higher rate limit for usage.
+              status: None
+              entries:
+                - label: API calls
+                  description: to the search API
+                  metric: calls
+                  limit: Pay As You Go
+                  timeframe: day
+                  geo: US
+                  one: 1
+                  two:
+                  unit: .0025
+              elements:
+                - name: Support
+                - name: Sales
+                - name: Security
+                - name: SLA
+
+  #--------
+  # Portal
+  #--------
+  - name: Portal
+    header: The definitions for this service.
+    footer:
+    instructions: Define the public or private portal in use to present this service.
+    status: None
+    items:
+
+      - name: Hosting
+        description: Information about the hosting service used for this portal.
+        instruction: Provide details on where this service portal is hosted.
+        status: None
+        fields:
+          - host: Github Pages
+
+      - name: Template
+        description: Information regarding the UI template used for this portal.
+        instruction: Define which graphical UI and brand template is in use for this portal.
+        status: None
+        fields:
+          - template: html5up
+
+      - name: Analytics
+        description: Information about the analytics in use for tracking on this portal.
+        instruction: Define which analytics package is used to measure traffic for portal.
+        status: None
+        fields:
+          - analytics: Google Analtyics
+
+  #---------------
+  # Documentation
+  #---------------
+  - name: Documentation
+    header: The definitions for this service.
+    footer:
+    instructions: Provide documentation for this service within portal.
+    status: None
+    items:
+
+      - name: Paths
+        description: The API paths for use as part of this service.
+        instruction: Publish an interactive list of API paths available for service.
+        status: None
+        fields:
+          - enabled: true
+
+      - name: Examples
+        description: Examples of using the API paths for this service.
+        instruction: Provide as many examples of API requests in a variety of languages.
+        status: None
+        fields:
+          - enabled: true
+
+      - name: Definitions
+        description: The API defined for use as part of this service.
+        instruction: Publish a list of schema definitions in use by this service.
+        status: None
+        fields:
+          - enabled: true
+
+      - name: Errors
+        description: Details about the errors encountered using this service.
+        instruction: Provide a list of available errors users will encounter for this service.
+        status: None
+        fields:
+          - enabled: true
+
+  #-----------------
+  # Getting Started
+  #-----------------
+  - name: Getting Started
+    header: The definitions for this service.
+    footer:
+    instructions: Provide a getting started page for this service within portal.
+    status: None
+    items:
+
+      - name: Signup
+        description: Where you can signup for this service.
+        instruction: Provide a link to where users can signup for this service.
+        status: None
+        fields:
+          url: http://example.com/signup/
+
+      - name: Authentication
+        description: Where you can get details about authenticating with this service.
+        instruction: Provide a link to the authentication overview for this service.
+        status: None
+        fields:
+          - url: http://example.com/authentication/
+
+      - name: Documentation
+        description: Where you can find documentation for this service.
+        instruction: Provide a link to the documentation for this service.
+        status: None
+        fields:
+          - url: http://example.com/documentation/
+
+      - name: SDKs
+        description: Where you can find SDKs for this service.
+        instruction: Provide a link to where users can find SDKs and code libraries for this service.
+        status: None
+        fields:
+          - url: http://example.com/sdks/
+
+      - name: FAQ
+        description: Where you can get your common questions answered around this service.
+        instruction: Provide a link to to the frequently asked questions for this service.
+        status: None
+        fields:
+          - url: http://example.com/faq/
+
+      - name: Support
+        description: Where you can get support for using this service.
+        instruction: Provide a link to where users can get support for this service.
+        status: None
+        fields:
+          - url: http://example.com/support/
+
+  #------
+  # SDKs
+  #------
+  - name: SDKs
+    header: The definitions for this service.
+    footer:
+    instructions: Providing code samples, libraries, or complete software development kits (SDKs).
+    status: None
+    items:
+
+      - name: PHP
+        description: The PHP SDK.
+        instruction: Provide a PHP SDK.
+        status: None
+        fields:
+          - logo: http://example.com/php.png
+          - url: http://example.com/php/
+
+      - name: Python
+        description: The Python SDK.
+        instruction: Provide a Python SDK.
+        status: None
+        fields:
+          - logo: http://example.com/python.png
+          - url: http://example.com/python/
+
+      - name: Ruby
+        description: The Ruby SDK.
+        instruction: Provide a Ruby SDK.
+        status: None
+        fields:
+          - logo: http://example.com/ruby.png
+          - url: http://example.com/ruby/
+
+      - name: Go
+        description: The Go SDK.
+        instruction: Provide a Go SDK.
+        status: None
+        fields:
+          - logo: http://example.com/go.png
+          - url: http://example.com/go/
+
+      - name: Java
+        description: The Java SDK.
+        instruction: Provide a Java SDK.
+        status: None
+        fields:
+          - logo: http://example.com/java.png
+          - url: http://example.com/java/
+
+      - name: C#
+        description: The C# SDK.
+        instruction: Provide a C# SDK.
+        status: None
+        fields:
+          - logo: http://example.com/csharp.png
+          - url: http://example.com/csharp/
+
+      - name: Node.js
+        description: The Node.js SDK.
+        instruction: Provide a Node.js SDK.
+        status: None
+        fields:
+          - logo: http://example.com/node.png
+          - url: http://example.com/node/
+
+      - name: JavaScript
+        description: The JavaScript SDK.
+        instruction: Provide a JavaScript SDK.
+        status: None
+        fields:
+          - logo: http://example.com/javascript.png
+          - url: http://example.com/javascript/
+
+  #------
+  # FAQs
+  #------
+  - name: FAQs
+    header: The definitions for this service.
+    footer:
+    instructions: Publish a list of the frequently asked questions (FAQ) for this service.
+    status: None
+    items:
+
+      - name: Categories
+        description: The categories of FAQ questions.
+        instruction: Break all questions down by logical categories.
+        status: None
+        fields:
+          - categories:
+              - Category One
+              - Category Two
+              - Category Three
+              - Category Four
+
+      - name: Questions
+        description: The questions asked about this service.
+        instruction: Publish a list of questions with answers within each category.
+        status: None
+        fields:
+          - questions:
+            - question: Question One
+              answer: This is the answer to the question.
+              category: Category One
+            - question: Question Two
+              answer: This is the answer to the question.
+              category: Category Two
+            - question: Question Three
+              answer: This is the answer to the question.
+              category: Category Three
+            - question: Question Four
+              answer: This is the answer to the question.
+              category: Category Four
+
+      - name: Ask Question
+        description: Asking a question about this service.
+        instruction: Provide a form for users to ask a new question.
+        status: None
+        fields:
+          - title: Ask a Question
+          - description: This is the description of asking question.
+          - url: http://example.com/ask/
+
+  #----------
+  # Road Map
+  #----------
+  - name: Road Map
+    header: The definitions for this service.
+    footer:
+    instructions: Provide a road map for the future of this service.
+    status: None
+    items:
+
+      - name: Private
+        description: Where you can access the private road map for this service.
+        instruction: Publish a private, internal version of entries for the road map.
+        status: None
+        fields:
+          - url: http://example.com/private-road-map/
+
+      - name: Public
+        description: Where you can access the public road map for this service.
+        instruction: Publish a publicly available version of entries for the road map.
+        status: None
+        fields:
+          - url: http://example.com/private-road-map/
+          - entries:
+            - title: Roadmap Item
+              date: 1/1/2019
+              description: This is a description for the item.
+            - title: Roadmap Item
+              date: 1/1/2019
+              description: This is a description for the item.
+            - title: Roadmap Item
+              date: 1/1/2019
+              description: This is a description for the item.
+            - title: Roadmap Item
+              date: 1/1/2019
+              description: This is a description for the item.
+
+      - name: Suggest
+        description: Where you can suggest an addition to the road map.
+        instruction: Provide a mechanism for users to make suggestions for the road map.
+        status: None
+        fields:
+          - title: Suggest Road Map Item
+          - description: This is the description of suggesting a road map.
+          - url: http://example.com/suggest/
+
+  #--------
+  # Issues
+  #--------
+  - name: Issues
+    header: The definitions for this service.
+    footer:
+    instructions: Provide a list of currently known issues for this service.
+    status: None
+    items:
+
+      - name: Entries
+        description: The outstanding issues for this service.
+        instruction: Publish a list of all known issues currently outstanding.
+        status: None
+        fields:
+          - url: http://example.com/issues/
+          - entries:
+            - title: Issue Item
+              date: 1/1/2019
+              description: This is a description for the item.
+            - title: Issue Item
+              date: 1/1/2019
+              description: This is a description for the item.
+
+      - name: Report
+        description: Reporting an issue for this service.
+        instruction: Provide a mechanism for users to report issues.
+        status: None
+        fields:
+          - title: Suggest Road Map Item
+          - description: This is the description of suggesting a road map.
+          - url: http://example.com/suggest/
+
+  #------------
+  # Change Log
+  #------------
+  - name: Change Log
+    header: The definitions for this service.
+    footer:
+    instructions: Providing a historical list of what has changed for this service.
+    status: None
+    items:
+
+      - name: Outline
+        description: The change log for this service.
+        instruction: Publish a list of all road map and issue entries that have been satisfied for this service.
+        status: None
+        fields:
+          - url: http://example.com/change-log/
+          - entries:
+            - title: Change Log Item
+              date: 1/1/2019
+              description: This is a description for the item.
+            - title: Change Log Item
+              date: 1/1/2019
+              description: This is a description for the item.
+            - title: Change Log Item
+              date: 1/1/2019
+              description: This is a description for the item.
+            - title: Change Log Item
+              date: 1/1/2019
+              description: This is a description for the item.
+
+  #---------------
+  # Communication
+  #---------------
+  - name: Communication
+    header: The definitions for this service.
+    footer:
+    instructions: Establish a communication strategy for this service.
+    status: None
+    items:
+
+      - name: Blog
+        description: The blog for this service.
+        instruction: Provide a simple blog and update mechanism for this service.
+        status: None
+        fields:
+          - url: http://example.com/blog/
+          - atom: http://example.com/atom/
+
+      - name: Twitter
+        description: The Twitter account for this service.
+        instruction: Provide the Twitter handle that is used as part of this service.
+        status: None
+        fields:
+          - handle: http://twitter.com/handle/
+
+      - name: Github
+        description: The Github account for this service.
+        instruction: Provide the Github account or organization behind this service.
+        status: None
+        fields:
+          - handle: http://github.com/handle/
+
+      - name: Internal
+        description: Internal communication channel for this service.
+        instruction: Provide a location where internal communication is available.
+        status: None
+        fields:
+          - url: http://example.com/private-comm/
+
+      - name: External
+        description: External communication channels for this service.
+        instruction: Provide a location where public communication is available.
+        status: None
+        fields:
+          - url: http://example.com/communication/
+
+  #----------
+  # Support
+  #----------
+  - name: Support
+    header: The definitions for this service.
+    footer:
+    instructions: Establish the support apparatus in place for this service.
+    status: None
+    items:
+      - name: Email
+        description: The email account for supporting this service.
+        instruction: Define the email account used to support this service.
+        status: None
+        fields:
+          - email: info@example.com
+
+      - name: Issues
+        description: Where to submit an issue to get support for this service.
+        instruction: Provide a URL to the repository issues to support this service.
+        status: None
+        fields:
+          - url: http://github.com/issues/
+
+      - name: Tickets
+        description: Where to submit a ticket to get support for this service.
+        instruction: Provide a URL to the ticketing system used to support this service.
+        status: None
+        fields:
+          - url: http://example.com/tickets/
+
+  #-----------
+  # Licensing
+  #-----------
+  - name: Licensing
+    header: The definitions for this service.
+    footer:
+    instructions: Provide a set of licensing in place for this service.
+    status: None
+    items:
+
+      - name: Server
+        description: The licensing for the server code behind this service.
+        instruction: Define how all backend server code is licensed for this service.
+        status: None
+        fields:
+          - name: Licence Name
+          - url: http://example.com/license/
+
+      - name: Data
+        description: Licensing for the data used as part of this service.
+        instruction: Define how all data and schema is licensed for this service.
+        status: None
+        fields:
+          - name: Licence Name
+          - url: http://example.com/license/
+
+      - name: API
+        description: Licensing for the API interface for this service.
+        instruction: Define how the API definition is licensed for this service.
+        status: None
+        fields:
+          - name: Licence Name
+          - url: http://example.com/license/
+
+      - name: SDK
+        description: Licensing for the SDKs provided for this service.
+        instruction: Define how all client code is licensed for this service.
+        status: None
+        fields:
+          - name: Licence Name
+          - url: http://example.com/license/
+
+  #-------
+  # Legal
+  #-------
+  - name: Legal
+    header: The definitions for this service.
+    footer:
+    instructions: Provide a set of legal documents guiding the service.
+    status: None
+    items:
+
+      - name: Terms of Service
+        description: The terms of service (TOS) for this service.
+        instruction: Provide a terms of service for this service to operate within.
+        status: None
+        fields:
+          - url: http://example.com/tos/
+
+      - name: Privacy Policy
+        description: The privacy policy for this service.
+        instruction: Provide a privacy policy for this service to operate within.
+        status: None
+        fields:
+          - url: http://example.com/privacy/
+
+      - name: Service Level Agreement
+        description: The service level agreement (SLA) for this service.
+        instruction: Provide a service level agreement (SLA) for this service to operate within.
+        status: None
+        fields:
+          - url: http://example.com/sla/
+
+  #------------
+  # Monitoring
+  #------------
+  - name: Monitoring
+    header: The definitions for this service.
+    footer:
+    instructions: Defining the uptime monitoring for this service.
+    status: None
+    items:
+
+      - name: Monitors
+        description: The monitors for this service.
+        instruction: Establish the monitors for this service.
+        status: None
+        fields:
+          - name: Monitor Name
+          - description: The description of the monitor.
+          - url: http://example.com/sla/
+
+      - name: Status
+        description: The status of this service.
+        instruction: Provide real time details of monitor activity.
+        status: None
+        fields:
+          - entries:
+            - title: Monitor Status
+              date: 1/1/2019
+              description: This is a description for the item.
+            - title: Monitor Status
+              date: 1/1/2019
+              description: This is a description for the item.
+            - title: Monitor Status
+              date: 1/1/2019
+              description: This is a description for the item.
+            - title: Monitor Status
+              date: 1/1/2019
+              description: This is a description for the item.
+
+  #---------
+  # Testing
+  #---------
+  - name: Testing
+    header: The definitions for this service.
+    footer:
+    instructions: Defining the testing for this service.
+    status: None
+    items:
+
+      - name: Assertions
+        description: The assertions for this service.
+        instruction: Provide details of the assertions being tested for.
+        status: None
+        fields:
+          - assertions:
+            - title: Assertion Title
+              description: This is a description for the assertion.
+              url: http://example.com/assertion/
+            - title: Assertion Title
+              description: This is a description for the assertion.
+              url: http://example.com/assertion/
+            - title: Assertion Title
+              description: This is a description for the assertion.
+              url: http://example.com/assertion/
+            - title: Assertion Title
+              description: This is a description for the assertion.
+              url: http://example.com/assertion/
+
+      - name: Results
+        description: The results of assertions tested against this service.
+        instruction: Provide real time details of testing activity.
+        status: None
+        fields:
+          - entries:
+            - title: Test Status
+              date: 1/1/2019
+              description: This is a description for the item.
+            - title: Test Status
+              date: 1/1/2019
+              description: This is a description for the item.
+            - title: Test Status
+              date: 1/1/2019
+              description: This is a description for the item.
+            - title: Test Status
+              date: 1/1/2019
+              description: This is a description for the item.
+
+  #-------------
+  # Performance
+  #-------------
+  - name: Performance
+    header: The definitions for this service.
+    footer:
+    instructions: Defining the performance monitoring for this service.
+    status: None
+    items:
+
+      - name: Tests
+        description: The performance tests for this service.
+        instruction: Provide details of the performance testing in place for this service.
+        status: None
+        fields:
+          - assertions:
+            - title: Performance Test Title
+              description: This is a description for the test.
+              url: http://example.com/assertion/
+            - title: Performance Test Title
+              description: This is a description for the test.
+              url: http://example.com/assertion/
+            - title: Performance Test Title
+              description: This is a description for the test.
+              url: http://example.com/assertion/
+            - title: Performance Test Title
+              description: This is a description for the test.
+              url: http://example.com/assertion/
+
+      - name: Results
+        description: The results of performance test for this service.
+        instruction: Provide real time details of performance testing activity.
+        status: None
+        fields:
+          - entries:
+            - title: Test Status
+              date: 1/1/2019
+              description: This is a description for the item.
+            - title: Test Status
+              date: 1/1/2019
+              description: This is a description for the item.
+            - title: Test Status
+              date: 1/1/2019
+              description: This is a description for the item.
+            - title: Test Status
+              date: 1/1/2019
+              description: This is a description for the item.
+
+  #----------
+  # Security
+  #----------
+  - name: Security
+    header: The definitions for this service.
+    footer:
+    instructions: Defining the security practices in place for this service.
+    status: None
+    items:
+
+      - name: Overview
+        description: The overview of security practices for this service.
+        instruction: Provide the URL of the security practices overview page.
+        status: None
+        fields:
+          - url: http://example.com/security/
+
+      - name: Policies
+        description: The policies in use for this service.
+        instruction: Define the security, IAM, and other policies are in place for this service.
+        status: None
+        fields:
+          - assertions:
+            - title: Policy Title
+              description: This is a description for the policy.
+              url: http://example.com/policy/
+
+      - name: Tests
+        description: The security tests in use for this service.
+        instruction: Define the security tests that are conducted for this service.
+        status: None
+        fields:
+          - tests:
+            - title: Security Test Title
+              description: This is a description for the test.
+              url: http://example.com/security/
+            - title: Security Test Title
+              description: This is a description for the test.
+              url: http://example.com/security/
+
+      - name: Results
+        description: The results of security for this service.
+        instruction: Provide real time details of security testing activity.
+        status: None
+        fields:
+          - entries:
+            - title: Test Status
+              date: 1/1/2019
+              description: This is a description for the item.
+            - title: Test Status
+              date: 1/1/2019
+              description: This is a description for the item.
+
+  #-----------
+  # Discovery
+  #-----------
+  - name: Discovery
+    header: The definitions for this service.
+    footer:
+    instructions: Defining the discovery aspects for this service.
+    status: None
+    items:
+
+      - name: API Discovery
+        description: The API discovery document for this service.
+        instruction: Publish an API Discovery (APIs.json) index for the project.
+        status: None
+        fields:
+          - url: http://example.com/api-discovery.json
+
+      - name: OpenAPI
+        description: The complete OpenAPI for this service.
+        instruction: Provide URL for all OpenAPI definitions and index in API discovery index.
+        status: None
+        fields:
+          - url: http://example.com/openapi.json
+
+      - name: Postman Collection
+        description: The Postman Collection for this service.
+        instruction: Provide URL for all Postman Collections and index in API discovery index.
+        status: None
+        fields:
+          - url: http://example.com/postman.json
+
+  #----------
+  # Analysis
+  #----------
+  - name: Analysis
+    header: The definitions for this service.
+    footer:
+    instructions: Define the analysis in play for this service.
+    status: None
+    items:
+
+      - name: Traffic
+        description: The traffic information for this service.
+        instruction: Document traffic to the service portal.
+        status: None
+        fields:
+          - url: http://example.com/traffic/
+
+      - name: Usage
+        description: The usage information for this service.
+        instruction: Document usage of APIs for the service.
+        status: None
+        fields:
+          - url: http://example.com/usage/
+
+      - name: Activity
+        description: The activity information for this service.
+        instruction: Document other activity around the service.
+        status: None
+        fields:
+          - url: http://example.com/activity/
+
+      - name: SLA
+        description: The service level agreement for this service.
+        instruction: Document whether the SLA was met for this service.
+        status: None
+        fields:
+          - url: http://example.com/sla/
+
+  #----------
+  # Stages
+  #----------
+  - name: Stages
+    header: The definitions for this service.
+    footer:
+    instructions: Define the stages that are applied to this lifecycle outline.
+    items:
+
+      - name: Prototype
+        description: When a prototype of this service is being developed.
+
+      - name: Development
+        description: When a production instance of service is being developed.
+
+      - name: Production
+        description: When a production instance of service is being operated.
+
+  #----------
+  # Maintenance
+  #----------
+  - name: Maintenance
+    header: The definitions for this service.
+    footer:
+    instructions: Define the maintenance cycles applied to this lifecycle outline.
+    items:
+
+      - name: Weekly
+        description: Provide a version of this outline that should be considered weekly.
+
+      - name: Monthly
+        description: Provide a version of this outline that should be considered monthly.
+
+      - name: Releases
+        description: Provide a version of this outline that should be considered for each release.
+
+      - name: Governance
+        description: Provide an outline of how this outline is measured, reported, and evolved.

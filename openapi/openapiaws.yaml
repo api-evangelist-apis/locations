@@ -1,0 +1,700 @@
+---
+swagger: "2.0"
+info:
+  version: "v1.2"
+  title: "Location API"
+host: "ez9sk3ogw4.execute-api.us-east-1.amazonaws.com"
+basePath: "/production"
+schemes:
+- "https"
+paths:
+  /cities:
+    get:
+      operationId: "getCities"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "query"
+        in: "query"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ArrayOfcities"
+        500:
+          description: "500 response"
+          schema:
+            $ref: "#/definitions/ArrayOferrorResponse"
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        uri: "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:879370021840:function:api_evangelist_locations_cities_get/invocations"
+        responses:
+          default:
+            statusCode: "200"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        contentHandling: "CONVERT_TO_TEXT"
+        type: "aws"
+    post:
+      operationId: "addCity"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "city"
+        required: true
+        schema:
+          $ref: "#/definitions/city"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ArrayOfcities"
+        500:
+          description: "500 response"
+          schema:
+            $ref: "#/definitions/ArrayOferrorResponse"
+        403:
+          description: "403 response"
+          schema:
+            $ref: "#/definitions/ArrayOferrorResponse"
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        uri: "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:879370021840:function:api_evangelist_locations_cities_post/invocations"
+        responses:
+          default:
+            statusCode: "200"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        contentHandling: "CONVERT_TO_TEXT"
+        type: "aws"
+  /cities/{city_id}:
+    get:
+      operationId: "getCity"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "city_id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ArrayOfcity"
+        500:
+          description: "500 response"
+          schema:
+            $ref: "#/definitions/ArrayOferrorResponse"
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        uri: "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:879370021840:function:api_evangelist_locations_cities_id_get/invocations"
+        responses:
+          default:
+            statusCode: "200"
+        requestTemplates:
+          application/json: "{\n    \"city_id\" : $input.params('city_id')\n}"
+        passthroughBehavior: "when_no_templates"
+        httpMethod: "POST"
+        contentHandling: "CONVERT_TO_TEXT"
+        type: "aws"
+    put:
+      operationId: "updateCity"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "city_id"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "city"
+        required: true
+        schema:
+          $ref: "#/definitions/city"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ArrayOfcity"
+        500:
+          description: "500 response"
+          schema:
+            $ref: "#/definitions/ArrayOferrorResponse"
+        403:
+          description: "403 response"
+          schema:
+            $ref: "#/definitions/ArrayOferrorResponse"
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        uri: "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:879370021840:function:api_evangelist_locations_cities_id_put/invocations"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.path.city_id: "method.request.path.city_id"
+        requestTemplates:
+          application/json: "{\n\"city_id\" : $input.params('city_id'),\n\"region_id\"\
+            \ : $input.json('region_id'),\n\"country_id\" : $input.json('country_id'),\n\
+            \"latitude\" : $input.json('latitude'),\n\"longitude\" : $input.json('longitude'),\n\
+            \"name\" : $input.json('name')\n}"
+        passthroughBehavior: "when_no_templates"
+        httpMethod: "POST"
+        contentHandling: "CONVERT_TO_TEXT"
+        type: "aws"
+    delete:
+      operationId: "deleteCity"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "city_id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ArrayOfcity"
+        500:
+          description: "500 response"
+          schema:
+            $ref: "#/definitions/ArrayOferrorResponse"
+        403:
+          description: "403 response"
+          schema:
+            $ref: "#/definitions/ArrayOferrorResponse"
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        uri: "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:879370021840:function:api_evangelist_locations_cities_id_delete/invocations"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.path.city_id: "method.request.path.city_id"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        contentHandling: "CONVERT_TO_TEXT"
+        type: "aws"
+  /countries:
+    get:
+      operationId: "getCountries"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "query"
+        in: "query"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ArrayOfcountries"
+        500:
+          description: "500 response"
+          schema:
+            $ref: "#/definitions/ArrayOferrorResponse"
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        uri: "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:879370021840:function:api_evangelist_locations_countries_get/invocations"
+        responses:
+          default:
+            statusCode: "200"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        contentHandling: "CONVERT_TO_TEXT"
+        type: "aws"
+    post:
+      operationId: "addCountry"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "country"
+        required: true
+        schema:
+          $ref: "#/definitions/country"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ArrayOfcountry"
+        500:
+          description: "500 response"
+          schema:
+            $ref: "#/definitions/ArrayOferrorResponse"
+        403:
+          description: "403 response"
+          schema:
+            $ref: "#/definitions/ArrayOferrorResponse"
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        uri: "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:879370021840:function:api_evangelist_locations_countries_post/invocations"
+        responses:
+          default:
+            statusCode: "200"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        contentHandling: "CONVERT_TO_TEXT"
+        type: "aws"
+  /countries/{country_id}:
+    get:
+      operationId: "getCountry"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "country_id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ArrayOfcountry"
+        500:
+          description: "500 response"
+          schema:
+            $ref: "#/definitions/ArrayOferrorResponse"
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        uri: "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:879370021840:function:api_evangelist_locations_countries_id_get/invocations"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.path.country_id: "method.request.path.country_id"
+        requestTemplates:
+          application/json: "{\n    \"country_id\" : $input.params('country_id')\n\
+            }"
+        passthroughBehavior: "when_no_templates"
+        httpMethod: "POST"
+        contentHandling: "CONVERT_TO_TEXT"
+        type: "aws"
+    put:
+      operationId: "updateCountry"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "country_id"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "country"
+        required: true
+        schema:
+          $ref: "#/definitions/country"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ArrayOfcountry"
+        500:
+          description: "500 response"
+          schema:
+            $ref: "#/definitions/ArrayOferrorResponse"
+        403:
+          description: "403 response"
+          schema:
+            $ref: "#/definitions/ArrayOferrorResponse"
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        uri: "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:879370021840:function:api_evangelist_locations_countries_id_put/invocations"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.path.country_id: "method.request.path.country_id"
+        requestTemplates:
+          application/json: "{\n    \"country_id\" : $input.params('country_id'),\n\
+            \    \"name\" : $input.json('name'),\n    \"code\" : $input.json('code')\n\
+            }"
+        passthroughBehavior: "when_no_templates"
+        httpMethod: "POST"
+        contentHandling: "CONVERT_TO_TEXT"
+        type: "aws"
+    delete:
+      operationId: "deleteCountry"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "country_id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ArrayOfcountry"
+        500:
+          description: "500 response"
+          schema:
+            $ref: "#/definitions/ArrayOferrorResponse"
+        403:
+          description: "403 response"
+          schema:
+            $ref: "#/definitions/ArrayOferrorResponse"
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        uri: "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:879370021840:function:api_evangelist_locations_countries_id_delete/invocations"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.path.country_id: "method.request.path.country_id"
+        requestTemplates:
+          application/json: "{\n    \"country_id\" : $input.params('country_id')\n\
+            }"
+        passthroughBehavior: "when_no_templates"
+        httpMethod: "POST"
+        contentHandling: "CONVERT_TO_TEXT"
+        type: "aws"
+  /regions:
+    get:
+      operationId: "getRegions"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "query"
+        in: "query"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ArrayOfregions"
+        500:
+          description: "500 response"
+          schema:
+            $ref: "#/definitions/ArrayOferrorResponse"
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        uri: "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:879370021840:function:api_evangelist_locations_regions_get/invocations"
+        responses:
+          default:
+            statusCode: "200"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        contentHandling: "CONVERT_TO_TEXT"
+        type: "aws"
+    post:
+      operationId: "addRegion"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "region"
+        required: true
+        schema:
+          $ref: "#/definitions/region"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ArrayOfregion"
+        500:
+          description: "500 response"
+          schema:
+            $ref: "#/definitions/ArrayOferrorResponse"
+        403:
+          description: "403 response"
+          schema:
+            $ref: "#/definitions/ArrayOferrorResponse"
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        uri: "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:879370021840:function:api_evangelist_locations_regions_post/invocations"
+        responses:
+          default:
+            statusCode: "200"
+        passthroughBehavior: "when_no_match"
+        httpMethod: "POST"
+        contentHandling: "CONVERT_TO_TEXT"
+        type: "aws"
+  /regions/{region_id}:
+    get:
+      operationId: "getRegion"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "region_id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ArrayOfregion"
+        500:
+          description: "500 response"
+          schema:
+            $ref: "#/definitions/ArrayOferrorResponse"
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        uri: "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:879370021840:function:api_evangelist_locations_regions_id_get/invocations"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.path.region_id: "method.request.path.region_id"
+        requestTemplates:
+          application/json: "{\n\"region_id\" : $input.params('region_id')\n}"
+        passthroughBehavior: "when_no_templates"
+        httpMethod: "POST"
+        contentHandling: "CONVERT_TO_TEXT"
+        type: "aws"
+    put:
+      operationId: "updateRegion"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "region_id"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "region"
+        required: true
+        schema:
+          $ref: "#/definitions/region"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ArrayOfregion"
+        500:
+          description: "500 response"
+          schema:
+            $ref: "#/definitions/ArrayOferrorResponse"
+        403:
+          description: "403 response"
+          schema:
+            $ref: "#/definitions/ArrayOferrorResponse"
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        uri: "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:879370021840:function:api_evangelist_locations_regions_id_put/invocations"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.path.region_id: "method.request.path.region_id"
+        requestTemplates:
+          application/json: "{\n\"region_id\" : $input.params('region_id'),\n\"name\"\
+            \ : $input.json('name'),\n\"code\" : $input.json('code'),\n\"country_id\"\
+            \ : $input.json('country_id')\n}"
+        passthroughBehavior: "when_no_templates"
+        httpMethod: "POST"
+        contentHandling: "CONVERT_TO_TEXT"
+        type: "aws"
+    delete:
+      operationId: "deleteRegion"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "region_id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/ArrayOfregion"
+        500:
+          description: "500 response"
+          schema:
+            $ref: "#/definitions/ArrayOferrorResponse"
+        403:
+          description: "403 response"
+          schema:
+            $ref: "#/definitions/ArrayOferrorResponse"
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        uri: "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:879370021840:function:api_evangelist_locations_regions_id_delete/invocations"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.path.region_id: "method.request.path.region_id"
+        requestTemplates:
+          application/json: "{\n\"region_id\" : $input.params('region_id')\n}"
+        passthroughBehavior: "when_no_templates"
+        httpMethod: "POST"
+        contentHandling: "CONVERT_TO_TEXT"
+        type: "aws"
+securityDefinitions:
+  api_key:
+    type: "apiKey"
+    name: "x-api-key"
+    in: "header"
+definitions:
+  ArrayOfregion:
+    type: "array"
+    items:
+      $ref: "#/definitions/region"
+  ArrayOferrorResponse:
+    type: "array"
+    items:
+      $ref: "#/definitions/errorResponse"
+  country:
+    type: "object"
+    required:
+    - "code"
+    - "id"
+    - "name"
+    properties:
+      id:
+        type: "integer"
+      name:
+        type: "string"
+        maxLength: 255
+      code:
+        type: "string"
+        maxLength: 10
+    title: "Country"
+    description: "A country."
+  regions:
+    type: "object"
+    properties:
+      city:
+        type: "array"
+        items:
+          $ref: "#/definitions/region"
+    title: "regions"
+    description: "All regions."
+  cities:
+    type: "object"
+    properties:
+      city:
+        type: "array"
+        items:
+          $ref: "#/definitions/city"
+    title: "cities"
+    description: "All cities."
+  ArrayOfcity:
+    type: "array"
+    items:
+      $ref: "#/definitions/city"
+  city:
+    type: "object"
+    required:
+    - "country_id"
+    - "id"
+    - "latitude"
+    - "longitude"
+    - "name"
+    - "region_id"
+    properties:
+      id:
+        type: "integer"
+      region_id:
+        type: "integer"
+      country_id:
+        type: "integer"
+      latitude:
+        type: "number"
+      longitude:
+        type: "number"
+      name:
+        type: "string"
+        maxLength: 255
+    title: "City"
+    description: "A city."
+  countries:
+    type: "object"
+    properties:
+      city:
+        type: "array"
+        items:
+          $ref: "#/definitions/country"
+    title: "Countries"
+    description: "All countries."
+  errorResponse:
+    properties:
+      code:
+        type: "integer"
+        description: "Repeat the HTTP status code"
+      message:
+        type: "integer"
+        description: "A plain language message explaining the error"
+    description: "Describes an HTTP error returned"
+  ArrayOfcountries:
+    type: "array"
+    items:
+      $ref: "#/definitions/countries"
+  ArrayOfcities:
+    type: "array"
+    items:
+      $ref: "#/definitions/cities"
+  ArrayOfcountry:
+    type: "array"
+    items:
+      $ref: "#/definitions/country"
+  ArrayOfregions:
+    type: "array"
+    items:
+      $ref: "#/definitions/regions"
+  region:
+    type: "object"
+    required:
+    - "code"
+    - "country_id"
+    - "id"
+    - "name"
+    properties:
+      id:
+        type: "integer"
+      name:
+        type: "string"
+        maxLength: 255
+      code:
+        type: "string"
+        maxLength: 10
+      country_id:
+        type: "integer"
+    title: "region"
+    description: "A region."
