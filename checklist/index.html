@@ -21,13 +21,13 @@ title: API Checklist
       {% for field in item.fields %}
         {% for this_field in field %}
           <tr>
-            <td width="10%;" align="right"><strong>{{ this_field[0] }}</strong></td>
+            <td width="10%;" align="right"><strong>{{ this_field[0] }}</strong>: </td>
             <td align="left">
               <table style="padding-left: 15px; width: 100%;" border="1">
               {% if this_field[1].first %}
                 {% for this_field_field in this_field[1] %}
                 <tr>
-                  <td width="10%;" align="right"><strong>{{ this_field_field[0] }}</strong></td>
+                  <td width="10%;" align="right"><strong>{{ this_field_field[0] }}</strong>: </td>
                   <td align="left">
                     <input type="text" style="width: 50%" name="{{ this_field_fieldthis_field_field[0] }}" value="{{ this_field_field[1] }}">
                   </td>
