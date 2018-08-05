@@ -333,7 +333,6 @@ title: Location API
 <!--Documentation-->
 
 <!-- Road Map -->
-{% assign apiroadmap = index[0] %}
 <section>
 
   {% for stop in site.stops %}
@@ -372,7 +371,6 @@ title: Location API
 </section>
 
 <!-- Support -->
-{% assign apiroadmap = index[0] %}
 <section>
 
   {% for stop in site.stops %}
@@ -387,21 +385,45 @@ title: Location API
       <p>{{ stop.description }}</p>
 
       <!-- Begin Items for This Stop -->
+      <table>
       {% for item in stop.items %}
 
-          <h3>{{ item.name }}</h3>
-          <p>{{ item.description }}</p>
-
+          {% assign email = '' %}
+          {% assign url = '' %}
+          {% assign image = '' %}
           {% for fields in item.fields %}
-          1
+
             {% for field in fields %}
-            {{ field[0] }} == {{ field[1] }}<br >2
+
+              <!-- Set email -->
+              {% if field[0] == 'Email' %}
+                {% assign email = field[1] %}
+              {% endif %}
+
+              <!-- Set url -->
+              {% if field[0] == 'URL' %}
+                {% assign url = field[1] %}
+              {% endif %}
+
+              <!-- Set image -->
+              {% if field[0] == 'image' %}
+                {% assign image = field[1] %}
+              {% endif %}
+
             {% endfor %}
           {% endfor %}
 
-      {% endfor %}
-      <!-- End Items for This Stop -->
+          <tr>
+            <td style="width: 33%;" align="center">
+              <h3>{{ item.name }}</h3>
+              <img src="{{ image }}" width="75%" align="center">
+              <p>{{ item.description }}</p>
+            </td>
+          </tr>
 
+      {% endfor %}
+      </table>
+      <!-- End Items for This Stop -->
 
     {% endif %}
     <!-- End Show This One Stop -->
