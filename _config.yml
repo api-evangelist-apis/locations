@@ -1180,25 +1180,28 @@ stops:
     status: None
     items:
       - name: Email
-        description: The email account for supporting this service.
-        instruction: Define the email account used to support this service.
+        description: Feel free to email us when you have any issues, and we'll work to get back to you as soon as we can.
+        instruction: Using email to support this API.
         status: None
         fields:
-          - email: info@example.com
+          - email: info@apievangelist.com
+          - image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-email.png
 
       - name: Issues
-        description: Where to submit an issue to get support for this service.
-        instruction: Provide a URL to the repository issues to support this service.
+        description: You can submit issues to the Github repository for this service to get support regarding most of your issues.
+        instruction: Using Github issues to support this API.
         status: None
         fields:
-          - url: http://github.com/issues/
+          - url: https://github.com/api-evangelist-apis/locations/issues
+          - image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-git.png
 
-      - name: Tickets
-        description: Where to submit a ticket to get support for this service.
-        instruction: Provide a URL to the ticketing system used to support this service.
+      - name: Twitter
+        description: Feel free to Tweet at us to get your questions answered, if you don't mind making your question public.
+        instruction: Use Twitter to support this API.
         status: None
         fields:
-          - url: http://example.com/tickets/
+          - url: https://twitter.com/apievangelist
+          - image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-twitter-icon.png
 
   #-----------
   # Licensing
