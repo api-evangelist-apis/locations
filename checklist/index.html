@@ -5,6 +5,7 @@ title: API Checklist
 <h1>API Checklist</h1>
 
 {% for stop in site.stops %}
+
   <h2>{{ stop.name }}</h2>
   <p>{{ stop.instruction }}</p>
   {% for item in stop.items %}
@@ -24,6 +25,7 @@ title: API Checklist
     </ul>
 
   </blockquote>
+  <hr />
 
   {% endfor %}
 
