@@ -5,10 +5,21 @@ title: API Checklist
 <h1>API Checklist</h1>
 
 {% for stop in site.stops %}
-
+  <h2>{{ stop.name }}</h2>
+  <p>{{ stop.instructions }}</p>
   {% for item in stop.items %}
 
-    {{ item.name }}<br />
+    <h3>{{ item.name }}</h3>
+    <p>{{ item.instructions }}</p>
+
+    <p><strong>Fields:</strong></p>
+    <ul>
+      {% for field in item.fields %}
+
+        <li>{{ field[0] }}</li>
+
+      {% endfor %}
+    </ul>
 
   {% endfor %}
 
