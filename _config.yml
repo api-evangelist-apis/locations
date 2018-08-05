@@ -2,6 +2,7 @@
 # Settings
 #---------------------
 title: Location API
+description: This is a location API, providing many of the common building blocks of location. Providing the essential location ingredients needed through a varietiy of applications, without having to reivent the wheel each times it is needed.
 url: http://location.apievangelist.com
 tag: Location, Cities, Regions, Countries
 logo: https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png
@@ -1018,7 +1019,7 @@ stops:
   # Road Map
   #----------
   - name: Road Map
-    header: The definitions for this service.
+    header: The road map for this API, sharing what the plans are for the future.
     footer:
     instruction: Provide a road map for the future of this service.
     status: None
@@ -1032,7 +1033,7 @@ stops:
           - url: http://example.com/private-road-map/
 
       - name: Public
-        description: Where you can access the public road map for this service.
+        description: This is the public version of our road map, sharing what we are doing for the foreseeable future.
         instruction: Publish a publicly available version of entries for the road map.
         status: None
         fields:
