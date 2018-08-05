@@ -129,7 +129,7 @@ title: Location API
         <div class="row">
 
           <center>
-          <table width="90%" border="1">
+          <table width="100%" border="0">
             {% assign taglist = '' %}
             {% for path in openapi.paths %}
 
@@ -179,13 +179,13 @@ title: Location API
 
                     {% assign slug = path[0] | replace: '/','' %}
                     <tr>
-                      <td width="25%"></td>
+                      <td width="15%"></td>
                       <td align="left" style="border: 1px solid #FFF; font-size: 16px; font-weight: bold; padding: 5px 5px 5px 10px; background-color: #A9A9A9; font-color:#FFF;">
                         {{ summary }}
                       </td>
                     </tr>
                     <tr>
-                      <td width="25%"></td>
+                      <td width="15%"></td>
                       <td align="center" style="border: 1px solid #FFF; font-size: 14px; font-weight: bold; padding: 10px 10px 10px 10px;">
 
                         <strong>URL:</strong> {{ api_url }}{{ path[0] }}
@@ -193,7 +193,7 @@ title: Location API
                       </td>
                     </tr>
                     <tr>
-                      <td width="25%"></td>
+                      <td width="15%"></td>
                       <td align="center" style="border: 1px solid #FFF;">
 
                         <form id="{{ slug }}-key" style="width: 100%; padding: 0px; margin: 0px;">
@@ -209,7 +209,7 @@ title: Location API
                       </td>
                     </tr>
                     <tr>
-                      <td width="25%"></td>
+                      <td width="15%"></td>
                       <td align="center" style="border: 1px solid #FFF;">
 
                         <form id="{{ slug }}-path" style="width: 100%; padding: 0px; margin: 0px;">
@@ -230,7 +230,7 @@ title: Location API
                       </td>
                     </tr>
                     <tr>
-                      <td width="25%"></td>
+                      <td width="15%"></td>
                       <td align="center" style="border: 1px solid #FFF;">
 
                         <form id="{{ slug }}-param" style="width: 100%; padding: 0px; margin: 0px;">
@@ -250,7 +250,7 @@ title: Location API
                       </td>
                     </tr>
                     <tr>
-                      <td width="25%"></td>
+                      <td width="15%"></td>
                       <td align="center" style="border: 1px solid #FFF;">
 
                         <table cellpadding"3" style="margin-top: 10px; margin-bottom: 25px;">
