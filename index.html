@@ -91,20 +91,18 @@ title: Location API
 <!-- Signup / Signin -->
 
 <!--Auth-->
-{% assign index = site.data.authentication.index %}
-{% assign apiauthentication = index[0] %}
 <section>
 
 
-  <h3>{{ apiauthentication.title }}</h3>
-  <p><img style="padding-top: 15px;" src="/{{ site.github_repo }}/assets/images/authentication.png" width="250" align="right" /></p>
-  <p>{{ apiauthentication.header }}</p>
+  <h3>Authentication</h3>
+  <p><img style="padding-top: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-authentication.png" width="250" align="right" /></p>
+  <p>This API uses an API key stored as a header for authentication, which is required to be present with each API call made to the platform.</p>
     <ul>
       {% for keys in apiauthentication.keys %}
-  			<li style="padding: 10px;">&rarr;&nbsp;<strong>{{ keys.name }}</strong> <span id="{{ keys.slug }}"></span> - {{ keys.description}}</li>
+  			<li style="padding: 10px;">&rarr;&nbsp;<strong>x-api-key</strong> <span id="x-api-key"></span> - Your unique API keys issued to you as part of your account.</li>
       {% endfor %}
     </ul>
-  <p>{{ apiauthentication.footer }}</p>
+  <p>Authentication is not automated at this point, and requires manual adding to the system before you can access the resources available here.</p>
 
 </section>
 <!--Auth-->
