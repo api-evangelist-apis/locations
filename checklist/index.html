@@ -17,13 +17,15 @@ title: API Checklist
     <p>{{ item.instruction }}</p>
 
     <p><strong>Fields:</strong></p>
-    <ul>
+    <table style="padding-left: 15px;">
       {% for field in item.fields %}
         {% for this_field in field %}
-          <li>this_field: {{ this_field[1] }} = {{ this_field[2] }}</li>
+          <tr>
+            <td width="25%;" align="right">{{ this_field[1] }}</td>
+            <td align="left">{{ this_field[2] }}</td>
         {% endfor %}
       {% endfor %}
-    </ul>
+    </table>
 
   </blockquote>
 
