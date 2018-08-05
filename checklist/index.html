@@ -6,11 +6,11 @@ title: API Checklist
 
 {% for stop in site.stops %}
   <h2>{{ stop.name }}</h2>
-  <p>{{ stop.instructions }}</p>
+  <p>{{ stop.instruction }}</p>
   {% for item in stop.items %}
 
     <h3>{{ item.name }}</h3>
-    <p>{{ item.instructions }}</p>
+    <p>{{ item.instruction }}</p>
 
     <p><strong>Fields:</strong></p>
     <ul>
