@@ -392,7 +392,7 @@ title: Location API
           <h3>{{ item.name }}</h3>
           <p>{{ item.description }}</p>
 
-          {% for field in item.fields %}
+          {% for field in item.fields[0] %}
             {{ field[0] }} == {{ field[1] }}<br >
           {% endfor %}
 
