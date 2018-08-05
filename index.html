@@ -376,11 +376,11 @@ title: Location API
           {% endfor %}
 
           <!--Begin Show Entries--->
-          {% for entry in entries %}
-
-            {{ entry.title }} - {{ entry.date }} - {{ entry.description }}<br />
-
-          {% endfor %}
+          <ul>
+            {% for entry in entries %}
+              <li><strong>{{ entry.title }}</strong> <em>({{ entry.date }})</em> - {{ entry.description }}</li>
+            {% endfor %}
+          </ul>
           <!--End Show Entries--->
 
         {% endif %}
@@ -414,7 +414,7 @@ title: Location API
 
       <!-- Begin Items for This Stop -->
       <center>
-      <table width="75%" align="center">
+      <table width="100%" align="center">
         <tr>
           {% for item in stop.items %}
 
