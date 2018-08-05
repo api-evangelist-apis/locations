@@ -9,6 +9,8 @@ title: API Checklist
   <p>{{ stop.instruction }}</p>
   {% for item in stop.items %}
 
+  <blockquote>
+
     <h3>{{ item.name }}</h3>
     <p>{{ item.instruction }}</p>
 
@@ -20,6 +22,8 @@ title: API Checklist
 
       {% endfor %}
     </ul>
+
+  </blockquote>  
 
   {% endfor %}
 
