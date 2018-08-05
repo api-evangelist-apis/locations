@@ -29,16 +29,14 @@ title: API Checklist
                 <tr>
                   <td width="25%;" align="right"><strong>{{ this_field_field[0] }}</strong></td>
                   <td align="left">
-                    {% if this_field_field[1].first %}
-                     {{ this_field_field[1] }}
-                    {% endif %}
+                    <input type="text" style="width: 50%" name="{{ this_field_fieldthis_field_field[0] }}" value="{{ this_field_field[1] }}">
                   </td>
                 </tr>
                 {% endfor %}
               {% else %}
-               {{ this_field[1] }}
+               <input type="text" style="width: 50%" name="{{ this_field[0] }}" value="{{ this_field[1] }}">
               {% endif %}
-              </table>           
+              </table>
             </td>
           </tr>
         {% endfor %}
