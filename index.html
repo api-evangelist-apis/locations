@@ -94,27 +94,18 @@ title: Location API
 {% assign index = site.data.authentication.index %}
 {% assign apiauthentication = index[0] %}
 <section>
-    <div class="container wrapper-lg light-bg">
-        <div class="row">
-            <div class="col-lg-7">
 
-                <h3>{{ apiauthentication.title }}</h3>
-                <p>{{ apiauthentication.header }}</p>
-                  <ul>
-                    {% for keys in apiauthentication.keys %}
-                			<li style="padding: 10px;">&rarr;&nbsp;<strong>{{ keys.name }}</strong> <span id="{{ keys.slug }}"></span> - {{ keys.description}}</li>
-                    {% endfor %}
-                  </ul>
-                <p>{{ apiauthentication.footer }}</p>
 
-            </div>
-            <div class="col-lg-5">
+  <h3>{{ apiauthentication.title }}</h3>
+  <p><img style="padding-top: 15px;" src="/{{ site.github_repo }}/assets/images/authentication.png" width="250" align="right" /></p>
+  <p>{{ apiauthentication.header }}</p>
+    <ul>
+      {% for keys in apiauthentication.keys %}
+  			<li style="padding: 10px;">&rarr;&nbsp;<strong>{{ keys.name }}</strong> <span id="{{ keys.slug }}"></span> - {{ keys.description}}</li>
+      {% endfor %}
+    </ul>
+  <p>{{ apiauthentication.footer }}</p>
 
-              <center><img style="padding-top: 15px;" src="/{{ site.github_repo }}/assets/images/authentication.png" width="250" align="center" /></center>
-
-            </td>
-        </div>
-    </div>
 </section>
 <!--Auth-->
 
