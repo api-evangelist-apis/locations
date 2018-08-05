@@ -62,33 +62,27 @@ title: Location API
   </header>
 
   <p>We do not require you to signup for yet another account, rather just let you create your account and login using one of your existing social media accounts.</p>
-
   <table width="100%" border="0">
     <tr>
       <td width="25%" align="center">
         <a href="#"><img src="https://s3.amazonaws.com/kinlane-productions/templates/auth-icons/github-icon.png" width="50" /></a></a>
         <h4>Github</h4>
-        <p>Login with your Github social coding platform account.</p>
       </td>
       <td width="25%" align="center">
         <p><a href="#"><img src="https://s3.amazonaws.com/kinlane-productions/templates/auth-icons/twitter-icon.png" width="50" /></a></p>
         <h4>Twitter</h4>
-        <p>Login / Sign Up with your Twitter social networking account.</p>
       </td>
       <td width="25%" align="center">
         <p><a href="#"><img src="https://s3.amazonaws.com/kinlane-productions/templates/auth-icons/google-icon.png" width="50" /></a></p>
         <h4>Google</h4>
-        <p>Login / Sign Up with your Google platform users account.</p>
       </td>
       <td width="25%" align="center">
         <p><a href="#"><img src="https://s3.amazonaws.com/kinlane-productions/templates/auth-icons/linkedin-icon.png" width="50" /></a></p>
         <h4>LinkedIn</h4>
-        <p>Login / Sign Up with your LinkedIn business social networking account.</p>
       </td>
     </tr>
   </table>
-
-  <p>Login is not currently hooked up for this API, please submit a support request to get access currently, and inquire as to the status of this API.</p>
+  <p>Login is not currently turned on for this API, please submit a support request to get access currently, and inquire as to the status of this API.</p>
 
 </section>
 <!-- Signup / Signin -->
@@ -96,8 +90,12 @@ title: Location API
 <!--Auth-->
 <section>
 
+  <header>
+    <a name="Authentication"></a>
+    <h2>Authentication</h2>
+  </header>
+
   <p><img style="padding-top: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-authentication.png" width="10%" align="right" /></p>
-  <h3>Authentication</h3>
   <p>This API uses an API key stored as a header for authentication, which is required to be present with each API call made to the platform.</p>
   <p style="padding-left: 15px;">&rarr;&nbsp;<strong>x-api-key</strong> <span id="x-api-key"></span> - Your unique API keys issued to you as part of your account.</p>
   <p>Authentication is not automated at this point, and requires manual adding to the system before you can access the resources available here.</p>
@@ -106,379 +104,357 @@ title: Location API
 <!--Auth-->
 
 <!--Documentation-->
-{% assign index = site.data.apis %}
-{% assign apijson = index[0] %}
 {% assign definitions = apijson.definitions %}
 {% assign openapi = site.data.openapi %}
 
 <section>
 
-    <div class="container">
+  <header>
+    <a name="Documentation"></a>
+    <h2>Documentation</h2>
+  </header>
 
-        <div class="row">
-            <div class="col-md-12">
-                <h2>API Documentation</h2>
-                <p class="large">Once you have an API key you can use the documentation below to make live calls to the API, exploring what is possible with the Alpha News Stream API.</p>
-            </div>
-        </div>
+    <center>
+    <table width="100%" border="0">
+      {% assign taglist = '' %}
+      {% for path in openapi.paths %}
 
-        <div class="row">
+        {% assign this_path = path[0] %}
+        {% assign method_json = path[1] %}
 
-          <center>
-          <table width="100%" border="0">
-            {% assign taglist = '' %}
-            {% for path in openapi.paths %}
+        {% for method in method_json %}
+          {% assign tagarray = method[1].tags %}
+          {% assign tag = tagarray[0] %}
+          {% if taglist contains tag %}
+          {% else %}
+            {% assign taglist = taglist | append:',' %}
+            {% assign taglist = taglist | append:tag %}
+          {% endif %}
+        {% endfor %}
 
-              {% assign this_path = path[0] %}
-              {% assign method_json = path[1] %}
+      {% endfor %}
 
-              {% for method in method_json %}
-                {% assign tagarray = method[1].tags %}
-                {% assign tag = tagarray[0] %}
-                {% if taglist contains tag %}
-                {% else %}
-                  {% assign taglist = taglist | append:',' %}
-                  {% assign taglist = taglist | append:tag %}
-                {% endif %}
-              {% endfor %}
+      {% assign tagArray = taglist | split: "," %}
+      {% for grouptag in tagArray %}
 
-            {% endfor %}
+        <tr><td colspan="2" style="border: 1px solid #FFF; font-size: 20px; font-weight: bold; padding: 15px;">{{ grouptag }}</td></tr>
 
-            {% assign tagArray = taglist | split: "," %}
-            {% for grouptag in tagArray %}
+        {% assign api_title = openapi.info.title %}
+        {% assign api_description = openapi.info.description %}
 
-              <tr><td colspan="2" style="border: 1px solid #FFF; font-size: 20px; font-weight: bold; padding: 15px;">{{ grouptag }}</td></tr>
+        {% assign api_host = openapi.host %}
+        {% assign api_base = openapi.basePath %}
 
-              {% assign api_title = openapi.info.title %}
-              {% assign api_description = openapi.info.description %}
+        {% assign api_url = api_host | prepend:'https://' %}
+        {% assign api_url = api_url | append:api_base %}
 
-              {% assign api_host = openapi.host %}
-              {% assign api_base = openapi.basePath %}
+        {% for path in openapi.paths %}
 
-              {% assign api_url = api_host | prepend:'https://' %}
-              {% assign api_url = api_url | append:api_base %}
+          {% assign this_path = path[0] %}
+          {% assign method_json = path[1] %}
 
-              {% for path in openapi.paths %}
+          {% for method in method_json %}
 
-                {% assign this_path = path[0] %}
-                {% assign method_json = path[1] %}
+            {% assign parameters = method[1].parameters %}
+            {% assign tagarray = method[1].tags %}
+            {% assign tag = tagarray[0] %}
+            {% assign verb = method[0] | upcase %}
+            {% assign summary = method[1].summary %}
 
-                {% for method in method_json %}
+            {% if tag == grouptag %}
 
-                  {% assign parameters = method[1].parameters %}
-                  {% assign tagarray = method[1].tags %}
-                  {% assign tag = tagarray[0] %}
-                  {% assign verb = method[0] | upcase %}
-                  {% assign summary = method[1].summary %}
+              {% assign slug = path[0] | replace: '/','' %}
+              <tr>
+                <td width="15%"></td>
+                <td align="left" style="border: 1px solid #FFF; font-size: 16px; font-weight: bold; padding: 5px 5px 5px 10px; background-color: #A9A9A9; font-color:#FFF;">
+                  {{ summary }}
+                </td>
+              </tr>
+              <tr>
+                <td width="15%"></td>
+                <td align="center" style="border: 1px solid #FFF; font-size: 14px; font-weight: bold; padding: 10px 10px 10px 10px;">
 
-                  {% if tag == grouptag %}
+                  <strong>URL:</strong> {{ api_url }}{{ path[0] }}
 
-                    {% assign slug = path[0] | replace: '/','' %}
-                    <tr>
-                      <td width="15%"></td>
-                      <td align="left" style="border: 1px solid #FFF; font-size: 16px; font-weight: bold; padding: 5px 5px 5px 10px; background-color: #A9A9A9; font-color:#FFF;">
-                        {{ summary }}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td width="15%"></td>
-                      <td align="center" style="border: 1px solid #FFF; font-size: 14px; font-weight: bold; padding: 10px 10px 10px 10px;">
+                </td>
+              </tr>
+              <tr>
+                <td width="15%"></td>
+                <td align="center" style="border: 1px solid #FFF;">
 
-                        <strong>URL:</strong> {{ api_url }}{{ path[0] }}
+                  <form id="{{ slug }}-key" style="width: 100%; padding: 0px; margin: 0px;">
+                      <table cellpadding"3" cellspacing="2" style="width: 75%;" border="1">
+                          <tr>
+                            <td align="right" width="25%">x-api-key:</td>
+                            <td style="padding:5px;" width="35%"><input type="text" name='x-api-key' id='x-api-key' value="" class="form-control" width="250"></td>
+                            <td style="padding:5px;"><i>Your private key needed to access this API.</i></td>
+                          </tr>
+                      </table>
+                  </form>
 
-                      </td>
-                    </tr>
-                    <tr>
-                      <td width="15%"></td>
-                      <td align="center" style="border: 1px solid #FFF;">
+                </td>
+              </tr>
+              <tr>
+                <td width="15%"></td>
+                <td align="center" style="border: 1px solid #FFF;">
 
-                        <form id="{{ slug }}-key" style="width: 100%; padding: 0px; margin: 0px;">
-                            <table cellpadding"3" cellspacing="2" style="width: 75%;" border="1">
-                                <tr>
-                                  <td align="right" width="25%">x-api-key:</td>
-                                  <td style="padding:5px;" width="35%"><input type="text" name='x-api-key' id='x-api-key' value="" class="form-control" width="250"></td>
-                                  <td style="padding:5px;"><i>Your private key needed to access this API.</i></td>
-                                </tr>
-                            </table>
-                        </form>
+                  <form id="{{ slug }}-path" style="width: 100%; padding: 0px; margin: 0px;">
+                      <table cellpadding"3" cellspacing="2" style="width: 75%;" border="1">
+                      {% for parameter in parameters %}
+                        {% if parameter.in == 'path' %}
+                          <tr>
+                            <td align="right" width="25%" style="padding:5px;">{{ parameter.name }}:</td>
+                            <td style="padding:5px;" width="35%"><input type="text" name='{{ parameter.name | downcase }}' value="{{ parameter.default }}" class="form-control" style="width: 100%;"></td>
+                            <td style="padding:5px;"><i>{{ parameter.description }}</i></td>
+                          </tr>
+                        {% endif %}
+                      {% endfor %}
+                      </table>
+                    </center>
+                  </form>
 
-                      </td>
-                    </tr>
-                    <tr>
-                      <td width="15%"></td>
-                      <td align="center" style="border: 1px solid #FFF;">
+                </td>
+              </tr>
+              <tr>
+                <td width="15%"></td>
+                <td align="center" style="border: 1px solid #FFF;">
 
-                        <form id="{{ slug }}-path" style="width: 100%; padding: 0px; margin: 0px;">
-                            <table cellpadding"3" cellspacing="2" style="width: 75%;" border="1">
-                            {% for parameter in parameters %}
-                              {% if parameter.in == 'path' %}
-                                <tr>
-                                  <td align="right" width="25%" style="padding:5px;">{{ parameter.name }}:</td>
-                                  <td style="padding:5px;" width="35%"><input type="text" name='{{ parameter.name | downcase }}' value="{{ parameter.default }}" class="form-control" style="width: 100%;"></td>
-                                  <td style="padding:5px;"><i>{{ parameter.description }}</i></td>
-                                </tr>
-                              {% endif %}
-                            {% endfor %}
-                            </table>
-                          </center>
-                        </form>
+                  <form id="{{ slug }}-param" style="width: 100%; padding: 0px; margin: 0px;">
+                      <table cellpadding"3" cellspacing="2" style="width: 75%;" border="1">
+                      {% for parameter in parameters %}
+                        {% if parameter.in == 'query' %}
+                          <tr>
+                            <td align="right" width="25%" style="padding:5px;">{{ parameter.name }}:</td>
+                            <td style="padding:5px;" width="35%"><input type="text" name='{{ parameter.name | downcase }}' value="{{ parameter.default }}" class="form-control" style="width: 100%;"></td>
+                            <td style="padding:5px;"><i>{{ parameter.description }}</i></td>
+                          </tr>
+                        {% endif %}
+                      {% endfor %}
+                      </table>
+                  </form>
 
-                      </td>
-                    </tr>
-                    <tr>
-                      <td width="15%"></td>
-                      <td align="center" style="border: 1px solid #FFF;">
+                </td>
+              </tr>
+              <tr>
+                <td width="15%"></td>
+                <td align="center" style="border: 1px solid #FFF;">
 
-                        <form id="{{ slug }}-param" style="width: 100%; padding: 0px; margin: 0px;">
-                            <table cellpadding"3" cellspacing="2" style="width: 75%;" border="1">
-                            {% for parameter in parameters %}
-                              {% if parameter.in == 'query' %}
-                                <tr>
-                                  <td align="right" width="25%" style="padding:5px;">{{ parameter.name }}:</td>
-                                  <td style="padding:5px;" width="35%"><input type="text" name='{{ parameter.name | downcase }}' value="{{ parameter.default }}" class="form-control" style="width: 100%;"></td>
-                                  <td style="padding:5px;"><i>{{ parameter.description }}</i></td>
-                                </tr>
-                              {% endif %}
-                            {% endfor %}
-                            </table>
-                        </form>
+                  <table cellpadding"3" style="margin-top: 10px; margin-bottom: 25px;">
+                      <tr>
+                        <td align="center"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" onclick="getRequest('{{ slug }}','{{ path[0] }}','{{ api_url }}');">Make API Request</button></td>
+                      </tr>
+                  </table>
 
-                      </td>
-                    </tr>
-                    <tr>
-                      <td width="15%"></td>
-                      <td align="center" style="border: 1px solid #FFF;">
+                </td>
+              </tr>
 
-                        <table cellpadding"3" style="margin-top: 10px; margin-bottom: 25px;">
-                            <tr>
-                              <td align="center"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" onclick="getRequest('{{ slug }}','{{ path[0] }}','{{ api_url }}');">Make API Request</button></td>
-                            </tr>
-                        </table>
+            {% endif %}
 
-                      </td>
-                    </tr>
+          {% endfor %}
 
-                  {% endif %}
+        {% endfor %}
 
-                {% endfor %}
+      {% endfor %}
 
-              {% endfor %}
+    </table>
+  </center>
 
-            {% endfor %}
-
-          </table>
-        </center>
-
-        </div>
-    </div>
 </section>
 
 <section id="schema">
 
-    <div class="container">
+  <header>
+    <a name="Schema"></a>
+    <h2>Schema</h2>
+  </header>
 
-        <div class="row">
-            <div class="col-md-12">
-                <h2>API Schema</h2>
-                <p class="large">These are the fields you will get back with each call to the Alpha News Stream API, providing the schema you can use to integrate into your applications.</p>
-            </div>
+  {% for definition in openapi.definitions %}
+    {% assign definition_name = definition[0] %}
+    {% assign fields = definition[1] %}
+    {% assign field_title = fields.title %}
+    {% assign field_description = fields.description %}
+    <p><strong>{{ field_title }} - {{ field_description }}</strong></p>
+    <ul style='padding-left: 50px;'>
+      {% for property in fields.properties %}
+        {% assign property_name = property[0] %}
+        <li><strong>{{ property_name }}</strong>{% if property[1]["type"] != '' %} (<em>{{ property[1]["type"] }}</em>){% endif %}{% if property[1]["description"] != '' %} - {{ property[1]["description"] }}{% endif %}</li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
+
+
+  <script type="text/javascript">
+
+    if(Cookies.get('app_key'))
+      {
+      document.getElementById('x-api-key').value = Cookies.get('app_key');
+      }
+
+     function getRequest($slug,$path,$url)
+      {
+
+      $api_url = $url + $path;
+
+      document.getElementById('loading').style.display = '';
+
+      $appkey = document.getElementById('x-api-key').value;
+
+      var path_elements = document.getElementById($slug+'-path').elements;
+      for(var i = 0, element; element = path_elements[i++];)
+        {
+          if(element.type === "text")
+            {
+            if(element.value!='')
+              {
+              $replace_string = '{' + element.name + '}';
+              $api_url = $api_url.replace($replace_string,element.value);
+              }
+            }
+          }
+
+      var param_elements = document.getElementById($slug+'-param').elements;
+      $anyparams = 0;
+      $query_string = '';
+      for(var i = 0, element; element = param_elements[i++];)
+        {
+          if(element.type === "text")
+            {
+            if(element.value!='')
+              {
+              if($query_string=='')
+                {
+                $query_string = element.name + '=' + element.value;
+                }
+              else
+                {
+                $query_string = $query_string + '&' + element.name + '=' + element.value;
+                }
+              $anyparams = 1;
+              }
+            }
+          }
+
+      if($anyparams == 1){ $api_url = $api_url + '?' + $query_string; }
+
+      var $headers = {'x-api-key': $appkey};
+      console.log("header: " + $headers);
+
+      var response = $.ajax({
+         url: $api_url,
+         method: "get",
+         headers: $headers,
+         success:function(response){
+
+            document.getElementById('loading').style.display = 'none';
+
+            $viewer = JSON.stringify(response, null, 2);
+
+            document.getElementById('response').value = $viewer;
+            document.getElementById('response').style.width = "100%";
+            document.getElementById('response').style.height = "450px";
+
+          },
+          error: function(XMLHttpRequest, textStatus, errorThrown) {
+
+              document.getElementById('loading').style.display = 'none';
+
+              $message = "Status: " + textStatus + "\nError: " + errorThrown;
+
+              document.getElementById('response').value = $message;
+              document.getElementById('response').style.width = "100%";
+              document.getElementById('response').style.height = "50px";
+          }
+        });
+
+      }
+  </script>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" width="75%">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLabel">Request</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-
-        <div class="row">
-            <div class="tabs documentation tab-container">
-
-              {% for definition in openapi.definitions %}
-                {% assign definition_name = definition[0] %}
-                {% assign fields = definition[1] %}
-                {% assign field_title = fields.title %}
-                {% assign field_description = fields.description %}
-                <p><strong>{{ field_title }} - {{ field_description }}</strong></p>
-                <ul style='padding-left: 50px;'>
-                  {% for property in fields.properties %}
-                    {% assign property_name = property[0] %}
-                    <li><strong>{{ property_name }}</strong>{% if property[1]["type"] != '' %} (<em>{{ property[1]["type"] }}</em>){% endif %}{% if property[1]["description"] != '' %} - {{ property[1]["description"] }}{% endif %}</li>
-                  {% endfor %}
-                </ul>
-              {% endfor %}
-
-
-              <script type="text/javascript">
-
-                if(Cookies.get('app_key'))
-                  {
-                  document.getElementById('x-api-key').value = Cookies.get('app_key');
-                  }
-
-                 function getRequest($slug,$path,$url)
-                  {
-
-                  $api_url = $url + $path;
-
-                  document.getElementById('loading').style.display = '';
-
-                  $appkey = document.getElementById('x-api-key').value;
-
-                  var path_elements = document.getElementById($slug+'-path').elements;
-                  for(var i = 0, element; element = path_elements[i++];)
-                    {
-                      if(element.type === "text")
-                        {
-                        if(element.value!='')
-                          {
-                          $replace_string = '{' + element.name + '}';
-                          $api_url = $api_url.replace($replace_string,element.value);
-                          }
-                        }
-                      }
-
-                  var param_elements = document.getElementById($slug+'-param').elements;
-                  $anyparams = 0;
-                  $query_string = '';
-                  for(var i = 0, element; element = param_elements[i++];)
-                    {
-                      if(element.type === "text")
-                        {
-                        if(element.value!='')
-                          {
-                          if($query_string=='')
-                            {
-                            $query_string = element.name + '=' + element.value;
-                            }
-                          else
-                            {
-                            $query_string = $query_string + '&' + element.name + '=' + element.value;
-                            }
-                          $anyparams = 1;
-                          }
-                        }
-                      }
-
-                  if($anyparams == 1){ $api_url = $api_url + '?' + $query_string; }
-
-                  var $headers = {'x-api-key': $appkey};
-                  console.log("header: " + $headers);
-
-                  var response = $.ajax({
-                     url: $api_url,
-                     method: "get",
-                     headers: $headers,
-                     success:function(response){
-
-                        document.getElementById('loading').style.display = 'none';
-
-                        $viewer = JSON.stringify(response, null, 2);
-
-                        document.getElementById('response').value = $viewer;
-                        document.getElementById('response').style.width = "100%";
-                        document.getElementById('response').style.height = "450px";
-
-                      },
-                      error: function(XMLHttpRequest, textStatus, errorThrown) {
-
-                          document.getElementById('loading').style.display = 'none';
-
-                          $message = "Status: " + textStatus + "\nError: " + errorThrown;
-
-                          document.getElementById('response').value = $message;
-                          document.getElementById('response').style.width = "100%";
-                          document.getElementById('response').style.height = "50px";
-                      }
-                    });
-
-                  }
-              </script>
-
-
-              <!-- Modal -->
-              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" width="75%">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h3 class="modal-title" id="exampleModalLabel">Request</h3>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      <img src="http://miami.open.211.adopta.agency/images/loading.gif" id="loading" />
-                      <textarea id="response" style="overflow: auto; height: 5px; width: 100%; border: 0px solid #FFF;"></textarea>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <br />
-            </div>
+        <div class="modal-body">
+          <img src="http://miami.open.211.adopta.agency/images/loading.gif" id="loading" />
+          <textarea id="response" style="overflow: auto; height: 5px; width: 100%; border: 0px solid #FFF;"></textarea>
         </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
     </div>
+  </div>
+
 </section>
 <!--Documentation-->
 
 <!-- Road Map -->
 <section>
 
-  {% for stop in site.stops %}
+{% for stop in site.stops %}
 
-    <!-- Begin Show This One Stop -->
-    {% if stop.name == 'Road Map' %}
+  <!-- Begin Show This One Stop -->
+  {% if stop.name == 'Road Map' %}
 
-      <header>
-    		<a name="{{ stop.name }}"></a>
-    		<h2>{{ stop.name }}</h2>
-    	</header>
-      <p>{{ stop.description }}</p>
+    <header>
+  		<a name="{{ stop.name }}"></a>
+  		<h2>{{ stop.name }}</h2>
+  	</header>
+    <p>{{ stop.description }}</p>
 
-      <!-- Begin Items for This Stop -->
-      {% for item in stop.items %}
+    <!-- Begin Items for This Stop -->
+    {% for item in stop.items %}
 
-        <!-- Begin Show only public road map -->
-        {% if item.name == 'Public' %}
+      <!-- Begin Show only public road map -->
+      {% if item.name == 'Public' %}
 
-          <h3>{{ item.name }}</h3>
-          <p>{{ item.description }}</p>
+        <h3>{{ item.name }}</h3>
+        <p>{{ item.description }}</p>
 
-          {% assign url = '' %}
-          {% assign entries = '' %}
-          {% for fields in item.fields %}
+        {% assign url = '' %}
+        {% assign entries = '' %}
+        {% for fields in item.fields %}
 
-            {% for field in fields %}
+          {% for field in fields %}
 
-              <!-- Set url -->
-              {% if field[0] == 'url' %}
-                {% assign url = field[1] %}
-              {% endif %}
+            <!-- Set url -->
+            {% if field[0] == 'url' %}
+              {% assign url = field[1] %}
+            {% endif %}
 
-              <!-- Set entries -->
-              {% if field[0] == 'entries' %}
-                {% assign entries = field[1] %}
-              {% endif %}
-
-            {% endfor %}
+            <!-- Set entries -->
+            {% if field[0] == 'entries' %}
+              {% assign entries = field[1] %}
+            {% endif %}
 
           {% endfor %}
 
-          <!--Begin Show Entries--->
-          <ul>
-            {% for entry in entries %}
-              <li><strong>{{ entry.title }}</strong> <em>({{ entry.date }})</em> - {{ entry.description }}</li>
-            {% endfor %}
-          </ul>
-          <!--End Show Entries--->
+        {% endfor %}
 
-        {% endif %}
-        <!-- End Show only public road map -->
+        <!--Begin Show Entries--->
+        <ul>
+          {% for entry in entries %}
+            <li><strong>{{ entry.title }}</strong> <em>({{ entry.date }})</em> - {{ entry.description }}</li>
+          {% endfor %}
+        </ul>
+        <!--End Show Entries--->
 
-      {% endfor %}
-      <!-- End Items for This Stop -->
+      {% endif %}
+      <!-- End Show only public road map -->
+
+    {% endfor %}
+    <!-- End Items for This Stop -->
 
 
-    {% endif %}
-    <!-- End Show This One Stop -->
+  {% endif %}
+  <!-- End Show This One Stop -->
 
-  {% endfor %}
+{% endfor %}
 
 
 </section>
@@ -486,64 +462,63 @@ title: Location API
 <!-- Support -->
 <section>
 
-  {% for stop in site.stops %}
+{% for stop in site.stops %}
 
-    <!-- Begin Show This One Stop -->
-    {% if stop.name == 'Support' %}
+  <!-- Begin Show This One Stop -->
+  {% if stop.name == 'Support' %}
 
-      <header>
-    		<a name="{{ stop.name }}"></a>
-    		<h2>{{ stop.name }}</h2>
-    	</header>
-      <p>{{ stop.description }}</p>
+    <header>
+  		<a name="{{ stop.name }}"></a>
+  		<h2>{{ stop.name }}</h2>
+  	</header>
+    <p>{{ stop.description }}</p>
 
-      <!-- Begin Items for This Stop -->
-      <center>
-      <table width="100%" align="center">
-        <tr>
-          {% for item in stop.items %}
+    <!-- Begin Items for This Stop -->
+    <center>
+    <table width="100%" align="center">
+      <tr>
+        {% for item in stop.items %}
 
-              {% assign email = '' %}
-              {% assign url = '' %}
-              {% assign image = '' %}
-              {% for fields in item.fields %}
+            {% assign email = '' %}
+            {% assign url = '' %}
+            {% assign image = '' %}
+            {% for fields in item.fields %}
 
-                {% for field in fields %}
+              {% for field in fields %}
 
-                  <!-- Set email -->
-                  {% if field[0] == 'Email' %}
-                    {% assign email = field[1] %}
-                  {% endif %}
+                <!-- Set email -->
+                {% if field[0] == 'Email' %}
+                  {% assign email = field[1] %}
+                {% endif %}
 
-                  <!-- Set url -->
-                  {% if field[0] == 'URL' %}
-                    {% assign url = field[1] %}
-                  {% endif %}
+                <!-- Set url -->
+                {% if field[0] == 'URL' %}
+                  {% assign url = field[1] %}
+                {% endif %}
 
-                  <!-- Set image -->
-                  {% if field[0] == 'image' %}
-                    {% assign image = field[1] %}
-                  {% endif %}
+                <!-- Set image -->
+                {% if field[0] == 'image' %}
+                  {% assign image = field[1] %}
+                {% endif %}
 
-                {% endfor %}
               {% endfor %}
+            {% endfor %}
 
-              <td style="width: 33%;" align="center">
-                <h3>{{ item.name }}</h3>
-                <img src="{{ image }}" width="75%" align="center">
-                <p>{{ item.description }}</p>
-              </td>
+            <td style="width: 33%;" align="center">
+              <h3>{{ item.name }}</h3>
+              <img src="{{ image }}" width="75%" align="center">
+              <p>{{ item.description }}</p>
+            </td>
 
-          {% endfor %}
-        </tr>
-      </table>
-      </center>
-      <!-- End Items for This Stop -->
+        {% endfor %}
+      </tr>
+    </table>
+    </center>
+    <!-- End Items for This Stop -->
 
-    {% endif %}
-    <!-- End Show This One Stop -->
+  {% endif %}
+  <!-- End Show This One Stop -->
 
-  {% endfor %}
-
+{% endfor %}
 
 </section>
