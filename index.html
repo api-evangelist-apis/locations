@@ -131,10 +131,11 @@ title: Location API
 
                       <form id="{{ slug }}-key" style="width: 100%;">
                         <center>
-                          <table cellpadding"3" cellspacing="2">
+                          <table cellpadding"3" cellspacing="2" style="width: 75%;">
                               <tr>
                                 <td align="right" width="25%">x-api-key:</td>
                                 <td><input type="text" name='x-api-key' id='x-api-key' value="" class="form-control" width="250"></td>
+                                  <td style="padding:5px;"><i>Your private key needed to access this API.</i></td>
                               </tr>
                           </table>
                         </center>
@@ -144,7 +145,7 @@ title: Location API
 
                       <form id="{{ slug }}-path" style="width: 100%;">
                         <center>
-                          <table cellpadding"3" cellspacing="2">
+                          <table cellpadding"3" cellspacing="2" style="width: 75%;">
                           {% for parameter in parameters %}
                             {% if parameter.in == 'path' %}
                               <tr>
@@ -162,7 +163,7 @@ title: Location API
 
                       <form id="{{ slug }}-param" style="width: 100%;">
                         <center>
-                          <table cellpadding"3" cellspacing="2">
+                          <table cellpadding"3" cellspacing="2" style="width: 75%;">
                           {% for parameter in parameters %}
                             {% if parameter.in == 'query' %}
                               <tr>
