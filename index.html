@@ -150,7 +150,7 @@ title: Location API
             {% assign tagArray = taglist | split: "," %}
             {% for grouptag in tagArray %}
 
-              <tr><td style="border: 1px solid #000; font-size: 18px; font-weight: bold;">{{ grouptag }}</td></tr>
+              <tr><td style="border: 1px solid #000; font-size: 18px; font-weight: bold; padding: 5px;">{{ grouptag }}</td></tr>
 
               {% assign api_title = openapi.info.title %}
               {% assign api_description = openapi.info.description %}
@@ -190,10 +190,9 @@ title: Location API
                       </td>
                     </tr>
                     <tr>
-                      <td align="left" style="border: 1px solid #000;">
+                      <td align="center" style="border: 1px solid #000;">
 
-                        <form id="{{ slug }}-key" style="width: 100%;">
-                          <center>
+                        <form id="{{ slug }}-key" style="width: 100%; padding: 0px;">
                             <table cellpadding"3" cellspacing="2" style="width: 75%;" border="1">
                                 <tr>
                                   <td align="right" width="25%">x-api-key:</td>
@@ -201,16 +200,14 @@ title: Location API
                                   <td style="padding:5px;"><i>Your private key needed to access this API.</i></td>
                                 </tr>
                             </table>
-                          </center>
                         </form>
 
                       </td>
                     </tr>
                     <tr>
-                      <td align="left" style="border: 1px solid #000;">
+                      <td align="center" style="border: 1px solid #000;">
 
-                        <form id="{{ slug }}-path" style="width: 100%;">
-                          <center>
+                        <form id="{{ slug }}-path" style="width: 100%; padding: 0px;">
                             <table cellpadding"3" cellspacing="2" style="width: 75%;" border="1">
                             {% for parameter in parameters %}
                               {% if parameter.in == 'path' %}
@@ -228,10 +225,9 @@ title: Location API
                       </td>
                     </tr>
                     <tr>
-                      <td align="left" style="border: 1px solid #000;">
+                      <td align="center" style="border: 1px solid #000;">
 
-                        <form id="{{ slug }}-param" style="width: 100%;">
-                          <center>
+                        <form id="{{ slug }}-param" style="width: 100%; padding: 0px;">
                             <table cellpadding"3" cellspacing="2" style="width: 75%;" border="1">
                             {% for parameter in parameters %}
                               {% if parameter.in == 'query' %}
@@ -243,7 +239,6 @@ title: Location API
                               {% endif %}
                             {% endfor %}
                             </table>
-                          </center>
                         </form>
 
                       </td>
