@@ -14,6 +14,8 @@ title: Location API
 </section>
 <!-- End Introduction -->
 
+<br><br>
+
 <!--Begin Show Development Status-->
 {% if site.stage == 'Development' %}
   <div class="alert alert-block">
@@ -29,6 +31,8 @@ title: Location API
   </div>
 {% endif %}
 <!--End Show Production Status-->
+
+<br><br>
 
 <script type="text/javascript">
   //$appid = getUrlVar('app_id');
@@ -413,7 +417,7 @@ title: Location API
 
       <!-- Begin Show only public road map -->
       {% if item.name == 'Public' %}
-
+        <br>
         <h3>{{ item.name }}</h3>
         <p>{{ item.description }}</p>
 
@@ -507,7 +511,7 @@ title: Location API
 
             <td style="width: 33%;" align="center">
               <h3>{{ item.name }}</h3>
-              <img src="{{ image }}" width="50%" align="center">
+              <img src="{{ image }}" width="35%" align="center">
               <p>{{ item.description }}</p>
             </td>
 
