@@ -12,7 +12,7 @@ info:
     url: http://opendatacommons.org/licenses/pddl/
   version: v1.2
 host: example.com
-basePath: 
+basePath:
 schemes:
 - http
 produces:
@@ -505,6 +505,7 @@ definitions:
     properties:
       city:
         type: "array"
+        description: All of the cities being returned.
         items:
           $ref: "#/definitions/city"
   city:
@@ -513,19 +514,25 @@ definitions:
     type: object
     properties:
       id:
+        description: The unique id for the city.
         type: integer
         maxLength: 11
       region_id:
+        description: The unique id for the region.
         type: integer
         maxLength: 11
       country_id:
+        description: The unique id for the country.
         type: integer
         maxLength: 5
       latitude:
+        description: The latitude of the city.
         type: number
       longitude:
+        description: The longitude of the city.
         type: number
       name:
+        description: The name of the city.
         type: string
         maxLength: 255
     required:
@@ -542,6 +549,7 @@ definitions:
     properties:
       city:
         type: "array"
+        description: All of the countries returned.
         items:
           $ref: "#/definitions/country"
   country:
@@ -550,12 +558,15 @@ definitions:
     type: object
     properties:
       id:
+        description: The uniqud id for the country.
         type: integer
         maxLength: 5
       name:
+        description: The name of the country.
         type: string
         maxLength: 255
       code:
+        description: The country code for this country.
         type: string
         maxLength: 10
     required:
@@ -569,6 +580,7 @@ definitions:
     properties:
       city:
         type: "array"
+        description: All of the regions being returned.
         items:
           $ref: "#/definitions/region"
   region:
@@ -577,15 +589,19 @@ definitions:
     type: object
     properties:
       id:
+        description: The unique id for the region.
         type: integer
         maxLength: 11
       name:
+        description: The name of the region.
         type: string
         maxLength: 255
       code:
+        description: The code for the region.
         type: string
         maxLength: 10
       country_id:
+        description: The unique country id for the region.
         type: integer
         maxLength: 5
     required:
