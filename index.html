@@ -80,7 +80,7 @@ title: Location API
 	</div>
 </section>
 
-<!-- Blog Feature -->
+<!-- Updates -->
 <a name="Updates"></a>
 <section id="banner">
 	<div class="content" style="height: 400px; overflow: auto;">
@@ -151,10 +151,10 @@ title: Location API
 <!--Documentation-->
 {% assign definitions = apijson.definitions %}
 {% assign openapi = site.data.openapi %}
+<a name="Documentation"></a>
 <section>
 
   <header>
-    <a name="Documentation"></a>
     <h2>Documentation</h2>
   </header>
 
@@ -305,10 +305,10 @@ title: Location API
 
 </section>
 <br><br>
-<section id="schema">
+<a name="Schema"></a>
+<section id="Schema">
 
   <header>
-    <a name="Schema"></a>
     <h2>Schema</h2>
   </header>
 
@@ -436,8 +436,11 @@ title: Location API
 
 </section>
 <!--Documentation-->
+
 <br><br>
+
 <!-- Road Map -->
+<a name="Road Map"></a>
 <section>
 
 {% for stop in site.stops %}
@@ -446,7 +449,6 @@ title: Location API
   {% if stop.name == 'Road Map' %}
 
     <header>
-  		<a name="{{ stop.name }}"></a>
   		<h2>{{ stop.name }}</h2>
   	</header>
     <p>{{ stop.description }}</p>
@@ -502,8 +504,11 @@ title: Location API
 
 
 </section>
+
 <br><br>
+
 <!-- Support -->
+<a name="Support"></a>
 <section>
 
 {% for stop in site.stops %}
@@ -512,7 +517,6 @@ title: Location API
   {% if stop.name == 'Support' %}
 
     <header>
-  		<a name="{{ stop.name }}"></a>
   		<h2>{{ stop.name }}</h2>
   	</header>
     <p>{{ stop.description }}</p>
