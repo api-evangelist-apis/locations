@@ -1039,19 +1039,16 @@ stops:
         fields:
           - url: http://example.com/private-road-map/
           - entries:
+            - title: Finish Going Through Checklist
+              date: 08/06/2018
+              description: inish going through the checklist for this service, and turn on or off each section, making as complete as possible.
+            - title: Query and Sorting
+              date: 08/06/2018
+              description: Apply basic keyword query searching and sorting to each of the endpoints.
             - title: Roadmap Item
-              date: 1/1/2019
-              description: This is a description for the item.
-            - title: Roadmap Item
-              date: 1/1/2019
-              description: This is a description for the item.
-            - title: Roadmap Item
-              date: 1/1/2019
-              description: This is a description for the item.
-            - title: Roadmap Item
-              date: 1/1/2019
-              description: This is a description for the item.
-
+              date: 08/06/2018
+              description: Finish the authentication for it, and allow for the setting up of a plan, applications, and keys.
+              
       - name: Suggest
         description: Where you can suggest an addition to the road map.
         instruction: Provide a mechanism for users to make suggestions for the road map.
