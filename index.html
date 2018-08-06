@@ -81,27 +81,26 @@ title: Location API
 </section>
 
 <!-- Blog Feature -->
-<a name="BlogFeature"></a>
+<a name="Updates"></a>
 <section id="banner">
-  {% for post in site.posts limit:250 %}
 	<div class="content" style="height: 400px; overflow: auto;">
 		<header>
-			<h2>Latest From Blog on API Design: {{ post.title }}</h2>
-			<p><em>{{ post.date | date_to_string }}</em></p>
+			<h2>Updates</h2>
+			<p>These are the stories that have been published as updates for this API, providing a narrative regarding the history of this API.</p>
 		</header>
-		{{ post.content }}
-		<ul class="actions" style="text-align: center;">
-			<li><a href="/blog/" class="button big">Read The Blog</a></li>
-		</ul>
+    {% for post in site.posts limit:250 %}
+      <h4>{{ post.title }}</h4>
+      <p><em>{{ post.date | date_to_string }}</em></p>
+  		{{ post.content }}
+    {% endfor %}
 	</div>
-  {% endfor %}
 </section>
 
 <!--SignUp SignIn--->
+<a name="Sign Up / Login"></a>
 <section>
 
   <header>
-    <a name="Introduction"></a>
     <h2>Sign Up / Login</h2>
   </header>
 
