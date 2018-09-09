@@ -1,7 +1,7 @@
 #---------------------
 # Settings
 #---------------------
-title: Location API
+title: API Evangelist Location API
 description: This is a location API, providing many of the common building blocks of location. Providing the essential location ingredients needed through a varietiy of applications, without having to reivent the wheel each times it is needed. This API is still being working on, and not quite ready for prime time, but if you have any questions, visit the road map and support sections below the documentation.
 url: http://location.apievangelist.com
 tag: Location, Cities, Regions, Countries
@@ -85,14 +85,14 @@ stops:
         instruction: Provide title for the service.
         status: Active
         fields:
-          - service_name: Public Company API
+          - service_name: API Evangelist Location API
 
       - name: Service Description
         description: A simple, descriptive paragraph for this service.
         instruction: Provide concise description for the service.
         status: Active
         fields:
-          - service_description: This is an API for accessing publicly traded companies that have been issued a CIK by the Securities and Exchange Commission (SEC). This is not an official API of the SEC, but a custom implementation using data provided by the SEC, and enriched with data from other sources.
+          - service_description: This is a location API, providing many of the common building blocks of location. Providing the essential location ingredients needed through a varietiy of applications, without having to reivent the wheel each times it is needed. This API is still being working on, and not quite ready for prime time, but if you have any questions, visit the road map and support sections below the documentation
 
       - name: Service Goals
         description: Providing some basic goals for this service.
