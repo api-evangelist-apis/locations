@@ -20,14 +20,20 @@ paginate_path: "/updates/page:num"
 # YAML Collections
 #---------------------
 collections:
-  design:
-    output: true
+  collection:
+    output: false
     permalink: /collection/:path/
+
+defaults:
+  - scope:
+      type: collection
+    values:
+      layout: collection
 
 #-------------------------------
 # Current stage of this service
 #-------------------------------
-stage: Development
+stage: development
 
 #---------------
 # Status Values
@@ -35,7 +41,7 @@ stage: Development
 status_values:
   - None
   - Not Used
-  - In Progess
+  - In Progress
   - Active
 
 #---------------------
@@ -49,7 +55,7 @@ stops:
   - name: Definition
     header: The definitions for this service.
     footer:
-    instruction: Define the problem and solution in a human and machine readable way.
+    instructions: Define the problem and solution in a human and machine readable way.
     status: None
     items:
 
@@ -65,7 +71,7 @@ stops:
         instruction: Establish a Github repository.
         status: None
         fields:
-          - github_repositry: repo-name
+          - github_repository: repo-name
 
       - name: README
         description:
@@ -77,16 +83,16 @@ stops:
       - name: Service Name
         description: A simple title for this service.
         instruction: Provide title for the service.
-        status: None
+        status: Active
         fields:
-          - service_name: Service Name
+          - service_name: Public Company API
 
       - name: Service Description
         description: A simple, descriptive paragraph for this service.
         instruction: Provide concise description for the service.
-        status: None
+        status: Active
         fields:
-          - service_description: This is the description of this service.
+          - service_description: This is an API for accessing publicly traded companies that have been issued a CIK by the Securities and Exchange Commission (SEC). This is not an official API of the SEC, but a custom implementation using data provided by the SEC, and enriched with data from other sources.
 
       - name: Service Goals
         description: Providing some basic goals for this service.
@@ -100,9 +106,8 @@ stops:
         instruction: Organize loose, and JSON schema for the service.
         status: None
         fields:
-          - schema:
-            - title: The title of the schema
-            - path: /path/of/the/schema
+          - title: The title of the schema
+          - path: /path/of/the/schema
 
       - name: OpenAPI
         description: An OpenAPI definition for the surface area of the API.
@@ -118,7 +123,7 @@ stops:
         fields:
           - assertions:
             - title: The title of the assertion
-            - path: /path/of/the/assertion
+              path: /path/of/the/assertion
 
       - name: Team
         description: A list of team members for the service.
@@ -138,8 +143,8 @@ stops:
   - name: Design
     header: The API design strategy for use as part of this service.
     footer: Setting a consistent design strategy for all services.
-    instruction: Establish a base set of design practices for the service.
-    status: None
+    instructions: Establish a base set of design practices for the service.
+    status: Active
     items:
 
       - name: Versioning
@@ -157,52 +162,80 @@ stops:
       - name: Base Path
         description: The part of the path that goes after the host, and before each path, and is constant across all endpoints for this service.
         instruction: Set the base path for the service.
-        status: None
+        status: Active
+        fields:
+          - url: /v1
 
       - name: Path(s)
         description: The paths that are used to define each individual API resource.
         instruction: Define a set of resource paths for the service.
-        status: None
+        status: Active
+        fields:
+          - number_of_paths: 5
 
       - name: Verb(s)
         description: The HTTP verbs used for this service, including GET, POST, PUT, and DELETE.
         instruction: Define which HTTP, and other verbs will be used for the service.
-        status: None
+        status: Active
+        fields:
+          - get: 2
+          - post: 1
+          - put: 1
+          - delete: 1
 
       - name: Parameters
         description: The query parameters that are used by this service, as described by the OpenAPI.
         instruction: Define a list of query parameters in use to work with service.
-        status: None
+        status: Active
+        fields:
+          - number_of_parameters: 3
 
       - name: Headers
         description: The headers that are used by this service, as described by the OpenAPI.
         instruction: Define the HTTP Headers that will be used to work with the service.
-        status: None
+        status: Active
+        fields:
+          - number_of_headers: 0
 
       - name: Response(s)
         description: The responses that are used by this service, as described by the OpenAPI.
         instruction: Provide a resulting message and associated schema definition for the service.
-        status: None
+        status: Active
+        fields:
+          - number_of_headers: 5
 
       - name: Media Types
         description: The media types that are used by this service, as described by the OpenAPI.
         instruction: Define whether service will return CSV, JSON, and / or XML responses.
-        status: None
+        status: Active
+        fields:
+          - json: 5
+          - xml: 0
+          - html: 0
 
       - name: Status Codes
         description: The HTTP status codes that are used by this service, as described by the OpenAPI.
         instruction: Define the available HTTP status code for each responses.
-        status: None
+        status: Active
+        fields:
+          - 200: 5
+          - 300: 0
+          - 400: 0
+          - 500: 5
 
       - name: Pagination
         description: The pagination used by this service, as described by the OpenAPI.
         instruction: Define how pagination will be handled for requests and responses.
-        status: None
+        status: Active
+        fields:
+          - used: 1
 
       - name: Sorting
         description: The sorting used by this service, as described by the OpenAPI.
         instruction: Define how sorting will be handled for requests and responses.
-        status: None
+        status: Active
+        fields:
+          - used: 1
 
   #----------
   # Database
@@ -210,56 +243,56 @@ stops:
   - name: Database
     header: The definitions for this service.
     footer:
-    instruction: Establish the base for how data will be managed behind the service.
-    status: None
+    instructions: Establish the base for how data will be managed behind the service.
+    status: Active
     items:
 
       - name: Platform
         description: The database platform used to drive this service.
         instruction: Define which platform is in use to manage the database.
-        status: None
+        status: Active
         fields:
           - platform: Amazon RDS (Aurora)
 
       - name: Schema
         description: Making sure there is a database version of the schema.
         instruction: Establish the schema used for database based upon definition provided.
-        status: None
+        status: Active
         fields:
-          - schema: /path/tos/schema.sql
+          - schema: /sql/schema.sql
 
       - name: Location
         description: Where the database for this service is located.
         instruction: Define where the database is located that supports services.
-        status: None
+        status: Active
         fields:
-          - location: instance.id.region.rds.amazonaws.com
+          - location: laneworks-large
 
       - name: Access
         description: How the database is connected with by the service.
         instruction: Quantify how database access is provided behind the service.
-        status: None
+        status: Active
         fields:
           - access: ODBC
 
       - name: Logs
         description: Understanding how logging occurs for the database.
         instruction: Define where the database logs are located that support services.
-        status: None
+        status: Active
         fields:
           - logs: /rds
 
       - name: Backup
         description: Ensuring that the database has a backup strategy.
         instruction: Define the database backup process and location for service.
-        status: None
+        status: Active
         fields:
           - backup: /rds
 
       - name: Encryption
         description: Ensuring the encryption is part of the database operations.
         instruction: Define the encryption layer for the service database.
-        status: None
+        status: Active
         fields:
           - encryption: enabled
 
@@ -269,7 +302,7 @@ stops:
   - name: Storage
     header: The definitions for this service.
     footer:
-    instruction: Establish how all objects will be stored for the service.
+    instructions: Establish how all objects will be stored for the service.
     status: None
     items:
 
@@ -285,7 +318,8 @@ stops:
         instruction: Define where objects are stored behind the service.
         status: None
         fields:
-          - location: us-east
+          - region: us-east
+          - location: /api-evangelist-api-bucket/
 
       - name: Logs
         description: Information about the logging for storage behind service.
@@ -321,7 +355,7 @@ stops:
   - name: DNS
     header: The definitions for this service.
     footer:
-    instruction: Establish the DNS layer for this service.
+    instructions: Establish the DNS layer for this service.
     status: None
     items:
 
@@ -380,8 +414,8 @@ stops:
   - name: Virtualization
     header: The definitions for this service.
     footer:
-    instruction: Provide a mock representation of this service.
-    status: None
+    instructions: Provide a mock representation of this service.
+    status: Not Used
     items:
 
       - name: Paths
@@ -400,7 +434,7 @@ stops:
   - name: Deployment
     header: The definitions for this service.
     footer:
-    instruction: Define the deployment scaffolding for this service.
+    instructions: Define the deployment scaffolding for this service.
     status: None
     items:
 
@@ -459,7 +493,7 @@ stops:
   - name: Orchestration
     header: The definitions for this service.
     footer:
-    instruction: Define how the service will be orchestrated.
+    instructions: Define how the service will be orchestrated.
     status: None
     items:
 
@@ -517,7 +551,7 @@ stops:
   - name: Dependencies
     header: The definitions for this service.
     footer:
-    instruction: Providing details of the dependencies that exist for this service.
+    instructions: Providing details of the dependencies that exist for this service.
     status: None
     items:
 
@@ -565,7 +599,7 @@ stops:
   - name: Authentication
     header: The definitions for this service.
     footer:
-    instruction: Details regarding authentication in use for this service.
+    instructions: Details regarding authentication in use for this service.
     status: None
     items:
 
@@ -579,9 +613,22 @@ stops:
       - name: Overview
         description: An overview for the authentication of this service.
         instruction: Provide a location of the page that delivers an overview of this services authentication.
-        status: None
+        status: Active
         fields:
-          - url: http://example.com/authentication
+          - title: Authentication For The APIs
+          - header: This is the authentication for this API, providing you with the information you need to securely make API calls.
+          - footer: We try to keep API authentication as simple as possible, while also ensuring the data we provide is securely accessed.
+          - url: http://public.companies.apievangelist.com#authentication
+
+      - name: SignupLogin
+        description: An overview for the authentication of this service.
+        instruction: Provide a location of the page that delivers an overview of this services authentication.
+        status: Active
+        fields:
+          - title: Signing Up / Logging In For The API
+          - header: I don't make you sign up for yet another account, we just use your OAuth from your GitHub, Twitter, or LinkedIn.
+          - footer: I'm not interested in your data, and do not pull any other data from your accounts beyond the scaope requested.
+          - url: http://public.companies.apievangelist.com#sign-up-login
 
   #------------
   # Management
@@ -589,7 +636,7 @@ stops:
   - name: Management
     header: The definitions for this service.
     footer:
-    instruction: Define the management layer for this service's API.
+    instructions: Define the management layer for this service's API.
     status: None
     items:
 
@@ -641,7 +688,7 @@ stops:
   - name: Logging
     header: The definitions for this service.
     footer:
-    instruction: Define the logging layer for supporting this service.
+    instructions: Define the logging layer for supporting this service.
     status: None
     items:
 
@@ -680,7 +727,7 @@ stops:
   - name: Monetization
     header: The definitions for this service.
     footer:
-    instruction: Define the costs associated with the delivery of this service.
+    instructions: Define the costs associated with the delivery of this service.
     status: None
     items:
 
@@ -727,7 +774,7 @@ stops:
   - name: Plans
     header: The definitions for this service.
     footer:
-    instruction: Define the operational plan for the business of this service.
+    instructions: Define the operational plan for the business of this service.
     status: None
     items:
       - name: Tiers
@@ -777,7 +824,7 @@ stops:
   - name: Portal
     header: The definitions for this service.
     footer:
-    instruction: Define the public or private portal in use to present this service.
+    instructions: Define the public or private portal in use to present this service.
     status: None
     items:
 
@@ -808,7 +855,7 @@ stops:
   - name: Documentation
     header: The definitions for this service.
     footer:
-    instruction: Provide documentation for this service within portal.
+    instructions: Provide documentation for this service within portal.
     status: None
     items:
 
@@ -818,6 +865,25 @@ stops:
         status: None
         fields:
           - enabled: true
+          - url: http://example.com/#documentation
+
+      - name: Overview
+        description: The descriptive header and footer paragraphs for the documentation.
+        instruction: Provide some content to introduce and close up the documentation.
+        status: Active
+        fields:
+          - title: 'API Documentation'
+          - header: 'This is the interactive API documentation for this API, and when you are authenticated, will allow you to make API calls, and see the responses for each API path.'
+          - footer: 'This documentation is generated from the OpenAPI definition for this API, which you can use to publish, syndicate, and integrate with this API documentation elsewhere.'
+
+      - name: Schema
+        description: The descriptive header and footer paragraphs for the documentation schema.
+        instruction: Provide some content to introduce and close up the documentation schema.
+        status: Active
+        fields:
+          - title: 'API Schema'
+          - header: This is the schema definition for this API, describing the schema for requests and responses.
+          - footer: This documentation is driven by JSON schema, which is available as part of the OpenAPI.
 
       - name: Examples
         description: Examples of using the API paths for this service.
@@ -825,6 +891,7 @@ stops:
         status: None
         fields:
           - enabled: true
+          - url: http://example.com/#examples
 
       - name: Definitions
         description: The API defined for use as part of this service.
@@ -832,6 +899,8 @@ stops:
         status: None
         fields:
           - enabled: true
+          - openapi: http://example.com/openapi/
+          - postman: http://example.com/postman/
 
       - name: Errors
         description: Details about the errors encountered using this service.
@@ -846,7 +915,7 @@ stops:
   - name: Getting Started
     header: The definitions for this service.
     footer:
-    instruction: Provide a getting started page for this service within portal.
+    instructions: Provide a getting started page for this service within portal.
     status: None
     items:
 
@@ -898,7 +967,7 @@ stops:
   - name: SDKs
     header: The definitions for this service.
     footer:
-    instruction: Providing code samples, libraries, or complete software development kits (SDKs).
+    instructions: Providing code samples, libraries, or complete software development kits (SDKs).
     status: None
     items:
 
@@ -972,7 +1041,7 @@ stops:
   - name: FAQs
     header: The definitions for this service.
     footer:
-    instruction: Publish a list of the frequently asked questions (FAQ) for this service.
+    instructions: Publish a list of the frequently asked questions (FAQ) for this service.
     status: None
     items:
 
@@ -1019,9 +1088,9 @@ stops:
   # Road Map
   #----------
   - name: Road Map
-    header: The road map for this API, sharing what the plans are for the future.
+    header: The definitions for this service.
     footer:
-    instruction: Provide a road map for the future of this service.
+    instructions: Provide a road map for the future of this service.
     status: None
     items:
 
@@ -1033,22 +1102,25 @@ stops:
           - url: http://example.com/private-road-map/
 
       - name: Public
-        description: This is the public version of our road map, sharing what we are doing for the foreseeable future.
+        description: Where you can access the public road map for this service.
         instruction: Publish a publicly available version of entries for the road map.
         status: None
         fields:
           - url: http://example.com/private-road-map/
           - entries:
-            - title: Finish Going Through Checklist
-              date: 08/06/2018
-              description: inish going through the checklist for this service, and turn on or off each section, making as complete as possible.
-            - title: Query and Sorting
-              date: 08/06/2018
-              description: Apply basic keyword query searching and sorting to each of the endpoints.
             - title: Roadmap Item
-              date: 08/06/2018
-              description: Finish the authentication for it, and allow for the setting up of a plan, applications, and keys.
-              
+              date: 1/1/2019
+              description: This is a description for the item.
+            - title: Roadmap Item
+              date: 1/1/2019
+              description: This is a description for the item.
+            - title: Roadmap Item
+              date: 1/1/2019
+              description: This is a description for the item.
+            - title: Roadmap Item
+              date: 1/1/2019
+              description: This is a description for the item.
+
       - name: Suggest
         description: Where you can suggest an addition to the road map.
         instruction: Provide a mechanism for users to make suggestions for the road map.
@@ -1064,7 +1136,7 @@ stops:
   - name: Issues
     header: The definitions for this service.
     footer:
-    instruction: Provide a list of currently known issues for this service.
+    instructions: Provide a list of currently known issues for this service.
     status: None
     items:
 
@@ -1097,7 +1169,7 @@ stops:
   - name: Change Log
     header: The definitions for this service.
     footer:
-    instruction: Providing a historical list of what has changed for this service.
+    instructions: Providing a historical list of what has changed for this service.
     status: None
     items:
 
@@ -1127,7 +1199,7 @@ stops:
   - name: Communication
     header: The definitions for this service.
     footer:
-    instruction: Establish a communication strategy for this service.
+    instructions: Establish a communication strategy for this service.
     status: None
     items:
 
@@ -1173,32 +1245,29 @@ stops:
   - name: Support
     header: The definitions for this service.
     footer:
-    instruction: Establish the support apparatus in place for this service.
+    instructions: Establish the support apparatus in place for this service.
     status: None
     items:
       - name: Email
-        description: Feel free to email us when you have any issues, and we'll work to get back to you as soon as we can.
-        instruction: Using email to support this API.
+        description: The email account for supporting this service.
+        instruction: Define the email account used to support this service.
         status: None
         fields:
-          - email: info@apievangelist.com
-          - image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-email.png
+          - email: info@example.com
 
       - name: Issues
-        description: You can submit issues to the Github repository for this service to get support regarding most of your issues.
-        instruction: Using Github issues to support this API.
+        description: Where to submit an issue to get support for this service.
+        instruction: Provide a URL to the repository issues to support this service.
         status: None
         fields:
-          - url: https://github.com/api-evangelist-apis/locations/issues
-          - image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-github.png
+          - url: http://github.com/issues/
 
-      - name: Twitter
-        description: Feel free to Tweet at us to get your questions answered, if you don't mind making your question public.
-        instruction: Use Twitter to support this API.
+      - name: Tickets
+        description: Where to submit a ticket to get support for this service.
+        instruction: Provide a URL to the ticketing system used to support this service.
         status: None
         fields:
-          - url: https://twitter.com/apievangelist
-          - image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-twitter-icon.png
+          - url: http://example.com/tickets/
 
   #-----------
   # Licensing
@@ -1206,7 +1275,7 @@ stops:
   - name: Licensing
     header: The definitions for this service.
     footer:
-    instruction: Provide a set of licensing in place for this service.
+    instructions: Provide a set of licensing in place for this service.
     status: None
     items:
 
@@ -1248,7 +1317,7 @@ stops:
   - name: Legal
     header: The definitions for this service.
     footer:
-    instruction: Provide a set of legal documents guiding the service.
+    instructions: Provide a set of legal documents guiding the service.
     status: None
     items:
 
@@ -1279,7 +1348,7 @@ stops:
   - name: Monitoring
     header: The definitions for this service.
     footer:
-    instruction: Defining the uptime monitoring for this service.
+    instructions: Defining the uptime monitoring for this service.
     status: None
     items:
 
@@ -1317,7 +1386,7 @@ stops:
   - name: Testing
     header: The definitions for this service.
     footer:
-    instruction: Defining the testing for this service.
+    instructions: Defining the testing for this service.
     status: None
     items:
 
@@ -1365,7 +1434,7 @@ stops:
   - name: Performance
     header: The definitions for this service.
     footer:
-    instruction: Defining the performance monitoring for this service.
+    instructions: Defining the performance monitoring for this service.
     status: None
     items:
 
@@ -1413,7 +1482,7 @@ stops:
   - name: Security
     header: The definitions for this service.
     footer:
-    instruction: Defining the security practices in place for this service.
+    instructions: Defining the security practices in place for this service.
     status: None
     items:
 
@@ -1466,7 +1535,7 @@ stops:
   - name: Discovery
     header: The definitions for this service.
     footer:
-    instruction: Defining the discovery aspects for this service.
+    instructions: Defining the discovery aspects for this service.
     status: None
     items:
 
@@ -1497,7 +1566,7 @@ stops:
   - name: Analysis
     header: The definitions for this service.
     footer:
-    instruction: Define the analysis in play for this service.
+    instructions: Define the analysis in play for this service.
     status: None
     items:
 
@@ -1535,7 +1604,7 @@ stops:
   - name: Stages
     header: The definitions for this service.
     footer:
-    instruction: Define the stages that are applied to this lifecycle outline.
+    instructions: Define the stages that are applied to this lifecycle outline.
     items:
 
       - name: Prototype
@@ -1553,7 +1622,7 @@ stops:
   - name: Maintenance
     header: The definitions for this service.
     footer:
-    instruction: Define the maintenance cycles applied to this lifecycle outline.
+    instructions: Define the maintenance cycles applied to this lifecycle outline.
     items:
 
       - name: Weekly
