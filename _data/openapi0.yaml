@@ -11,8 +11,8 @@ info:
     name: Open Data Commons Public Domain
     url: http://opendatacommons.org/licenses/pddl/
   version: v1.2
-host: example.com
-basePath: /
+host: czldgwehf7.execute-api.us-east-1.amazonaws.com
+basePath: /v1
 schemes:
 - http
 produces:

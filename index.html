@@ -1,165 +1,174 @@
 ---
 layout: default
-title: Location API
+title: Location APIs
 ---
-<!-- Begin Introduction -->
-<section>
 
-      <header>
-    		<a name="Introduction"></a>
-    		<h2>{{ site.title }}</h2>
-    	</header>
-      <p>{{ site.description }}</p>
+<!--Definitions-->
+{% assign service_name = "" %}
+{% assign service_description = "" %}
 
-</section>
-<!-- End Introduction -->
+<!--Documentation-->
+{% assign documentation_overview_title = "" %}
+{% assign documentation_overview_header = ""  %}
+{% assign documentation_overview_footer = ""  %}
 
-<br><br>
+{% for stop in site.stops %}
 
-<!--Begin Show Development Status-->
-{% if site.stage == 'Development' %}
-  <div class="alert alert-block">
-    <center><h4>This Site Is Currently Under Development</h4></center>
-  </div>
-{% endif %}
-<!--End Show Development Status-->
+  <!--Begin Definition-->
+  {% if stop.name == 'Definition' %}
 
-<!--Begin Show Production Status-->
-{% if site.stage == 'Production' %}
-  <div class="alert alert-success">
-    <center><h4>This Site Is Ready For Production Use</h4></center>
-  </div>
-{% endif %}
-<!--End Show Production Status-->
+    {% for item in stop.items %}
 
-<br><br>
-
-<script type="text/javascript">
-  //$appid = getUrlVar('app_id');
-  //console.log($appid);
-  //Cookies.set('app_id', $appid);
-  $appkey = getUrlVar('app_key');
-  console.log($appkey);
-  Cookies.set('app_key', $appkey);
-  if($appkey != '')
-    {
-    $('#auth-keys').html('');
-    //$appid_link = '<li><strong>x-appid</strong> - ' + $appid + '</li>';
-    //console.log($appid_link)
-    $appkey_link = '<li><strong>x-appkey</strong> - ' + $appkey + '</li>';
-    //console.log($appkey_link)
-    $auth_html = '<ul>' + $appkey_link + '</ul>';
-    //console.log($auth_html);
-    $('#auth-keys').html($auth_html);
-    //$('#auth-header').html('Authentication (AUTHENTICATED)');
-
-    //document.getElementById("dev-menu").style.display = '';
-    }
-</script>
-
-<!-- Partners -->
-<a name="Partners"></a>
-<section>
-	<header>
-		<h2>API Evangelist Partners</h2>
-		<p>These are my partners who invest in API Evangelist each month, helping underwrite my research, and making sure I'm able to keep monitoring the API space as I do.</p>
-	</header>
-	<div class="features">
-		{% assign partners = site.data.partners.index | sort: 'view_sort' %}
-    {% for partner in partners %}
-      {% if partner.type == 'Sponsor' %}
-			<article>
-				<p><a href="{{ partner.url }}" target="_blank"><img src="{{ partner.image }}" width="75%" style="padding: 15px;" align="center" /></a></p>
-				<div class="content">
-					<h3><a href="{{ partner.url }}" target="_blank">{{ partner.name }}</a></h3>
-					<p>{{ partner.description }}</p>
-				</div>
-			</article>
+      {% if item.name == 'Service Name' %}
+        {% assign service_name = item.fields | map: 'service_name' %}
       {% endif %}
-    {% endfor %}
-	</div>
-</section>
 
-<!-- Updates -->
-<a name="Updates"></a>
-<section id="banner">
-	<div class="content" style="height: 400px; overflow: auto;">
-		<header>
-			<h2>Updates</h2>
-			<p>These are the stories that have been published as updates for this API, providing a narrative regarding the history of this API.</p>
-		</header>
-    {% for post in site.posts limit:250 %}
-      <h4>{{ post.title }}</h4>
-      <p><em>{{ post.date | date_to_string }}</em></p>
-  		{{ post.content }}
+      {% if item.name == 'Service Description' %}
+        {% assign service_description = item.fields | map: 'service_description' %}
+      {% endif %}
+
     {% endfor %}
+
+  {% endif %}
+  <!--End Definition-->
+
+  <!--Begin Documentation-->
+  {% if stop.name == 'Documentation' %}
+    {% for item in stop.items %}
+
+      {% if item.name == 'Overview' %}
+
+        {% assign documentation_overview_title = item.fields | map: 'title' %}
+        {% assign documentation_overview_header = item.fields | map: 'header' %}
+        {% assign documentation_overview_footer = item.fields | map: 'footer' %}
+
+      {% endif %}
+
+      {% if item.name == 'Schema' %}
+
+        {% assign documentation_schema_title = item.fields | map: 'title' %}
+        {% assign documentation_schema_header = item.fields | map: 'header' %}
+        {% assign documentation_schema_footer = item.fields | map: 'footer' %}
+
+      {% endif %}
+
+    {% endfor %}
+
+  {% endif %}
+  <!--End Documentation-->
+
+  <!--Begin Authentication-->
+  {% if stop.name == 'Authentication' %}
+    {% for item in stop.items %}
+
+      {% if item.name == 'Overview' %}
+
+        {% assign authentication_overview_title = item.fields | map: 'title' %}
+        {% assign authentication_overview_header = item.fields | map: 'header' %}
+        {% assign authentication_overview_footer = item.fields | map: 'footer' %}
+
+      {% endif %}
+
+      {% if item.name == 'SignupLogin' %}
+
+        {% assign authentication_signuplogin_title = item.fields | map: 'title' %}
+        {% assign authentication_signuplogin_header = item.fields | map: 'header' %}
+        {% assign authentication_signuplogin_footer = item.fields | map: 'footer' %}
+
+      {% endif %}
+
+    {% endfor %}
+
+  {% endif %}
+  <!--End Documentation-->
+
+{% endfor %}
+
+<!-- overview -->
+<section id="overview">
+	<div class="content">
+		<header>
+			<h3>{{ service_name }}</h3>
+		</header>
+		<p>{{ service_description }}</p>
 	</div>
 </section>
 
 <!--SignUp SignIn--->
-<a name="Sign Up / Login"></a>
-<section>
+<section id="sign-up-login">
+  <div class="content">
+		<header>
+			<h3>{{ authentication_signuplogin_title }}</h3>
+		</header>
 
-  <header>
-    <h2>Sign Up / Login</h2>
-  </header>
+    <p class="large">{{ authentication_signuplogin_header }}</p>
 
-  <p>We do not require you to signup for yet another account, rather just let you create your account and login using one of your existing social media accounts.</p>
-  <table width="100%" border="0" style="margin-top: 6px;margin-bottom: 6px;">
-    <tr>
-      <td width="25%" align="center">
-        <a href="#"><img src="https://s3.amazonaws.com/kinlane-productions/templates/auth-icons/github-icon.png" width="50" /></a></a>
-        <h4>Github</h4>
-      </td>
-      <td width="25%" align="center">
-        <p><a href="#"><img src="https://s3.amazonaws.com/kinlane-productions/templates/auth-icons/twitter-icon.png" width="50" /></a></p>
-        <h4>Twitter</h4>
-      </td>
-      <td width="25%" align="center">
-        <p><a href="#"><img src="https://s3.amazonaws.com/kinlane-productions/templates/auth-icons/google-icon.png" width="50" /></a></p>
-        <h4>Google</h4>
-      </td>
-      <td width="25%" align="center">
-        <p><a href="#"><img src="https://s3.amazonaws.com/kinlane-productions/templates/auth-icons/linkedin-icon.png" width="50" /></a></p>
-        <h4>LinkedIn</h4>
-      </td>
-    </tr>
-  </table>
-  <p>Login is not currently turned on for this API, please submit a support request to get access currently, and inquire as to the status of this API.</p>
+    <div class="container">
+      <div class="row">
+        <div class="col-4">
+          <center>
+            <a href="http://oauth.apievangelist.com/github/?action=login"><img src="/assets/images/github-icon.png" width="50" /></a>
+            <h4>Github</h4>
+            <p>Login with your Github social coding platform account.</p>
+          </center>
+        </div>
+        <div class="col-4">
+          <center>
+            <a href="http://oauth.apievangelist.com/twitter/?action=login"><img src="/assets/images/twitter-icon.png" width="50" /></a>
+            <h4>Twitter</h4>
+            <p>Login / Sign Up with your Twitter social networking account.</p>
+          </center>
+        </div>
+        <div class="col-4">
+          <center>
+            <a href="http://oauth.apievangelist.com/linkedin/?action=login"><img src="/assets/images/linkedin-icon.png" width="50" /></a>
+            <h4>LinkedIn</h4>
+            <p>Login / Sign Up with your LinkedIn business social networking account.</p>
+          </center>
+        </div>
+    </div>
+
+    <p>{{ authentication_signuplogin_footer }}</p>
 
 </section>
 <!-- Signup / Signin -->
-<br><br>
+
 <!--Auth-->
-<section>
+<a name="authentication"></a>
+<section id="authentication">
+  <div class="content">
+		<header>
+			<h3>{{ authentication_overview_title }}</h3>
+		</header>
 
-  <header>
-    <a name="Authentication"></a>
-    <h2>Authentication</h2>
-  </header>
-
-  <!--<p><img style="padding: 5px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-authentication.png" width="10%" align="right" /></p>-->
-  <p>This API uses an API key stored as a header for authentication, which is required to be present with each API call made to the platform.</p>
-  <p style="padding-left: 15px;">&rarr;&nbsp;<strong>x-api-key</strong> <span id="x-api-key"></span> - Your unique API keys issued to you as part of your account.</p>
-  <p>Authentication is not automated at this point, and requires manual adding to the system before you can access the resources available here.</p>
-
+    <div class="container">
+      <div class="row">
+        <div class="col-9">
+          <p>{{ authentication_overview_header }}</p>
+          <ul id="auth-keys">
+            <li id="auth-appkey" style="padding-left: 25px;"><strong>&rarr; x-api-key</strong> - Your API key.</li>
+          </ul>
+          <p>{{ authentication_overview_footer }}</p>
+        </div>
+        <div class="col-lg-3">
+          <center><img src="https://alpha-news-stream.github.io/portal2/assets/images/authentication.png" width="175" align="center" style="margin-bottom: 25px;" /></center>
+        </td>
+      </div>
+    </div>
 </section>
 <!--Auth-->
 
-<br><br>
-
 <!--Documentation-->
-{% assign definitions = apijson.definitions %}
+<a name="documentation"></a>
 {% assign openapi = site.data.openapi %}
-<a name="Documentation"></a>
-<section>
 
-  <header>
-    <h2>Documentation</h2>
-  </header>
+<section id="documentation">
+  <div class="content">
+		<header>
+			<h3>{{ documentation_overview_title }}</h3>
+		</header>
+		<p>{{ documentation_overview_header }}</p>
 
-  <center>
-  <table width="100%" border="0">
     {% assign taglist = '' %}
     {% for path in openapi.paths %}
 
@@ -180,12 +189,6 @@ title: Location API
 
     {% assign tagArray = taglist | split: "," %}
     {% for grouptag in tagArray %}
-
-      <tr>
-        <td colspan="2" style="border: 1px solid #FFF; font-size: 22px; font-weight: bold; padding: 15px;">
-          {{ grouptag }}
-        </td>
-      </tr>
 
       {% assign api_title = openapi.info.title %}
       {% assign api_description = openapi.info.description %}
@@ -208,89 +211,74 @@ title: Location API
           {% assign tag = tagarray[0] %}
           {% assign verb = method[0] | upcase %}
           {% assign summary = method[1].summary %}
+          {% assign description = method[1].description %}
 
           {% if tag == grouptag %}
 
             {% assign slug = path[0] | replace: '/','' %}
-            <tr>
-              <td width="5%"></td>
-              <td align="left" style="border: 1px solid #FFF; font-size: 16px; font-weight: bold; padding: 5px 5px 5px 10px;">
-                <div class="alert alert-dark" role="alert">{{ summary }}</div>
-              </td>
-            </tr>
-            <tr>
-              <td width="5%"></td>
-              <td align="center" style="border: 1px solid #FFF; font-size: 14px; font-weight: bold; padding: 10px 10px 10px 10px;">
 
-                {{ verb }} {{ api_url }}{{ path[0] }}
+            <div class="alert alert-dark" role="alert" style="border-color:#CCC; background-color:#000; color:#FFF;">{{ summary }} - {{ description }}</div>
 
-              </td>
-            </tr>
-            <tr>
-              <td width="5%"></td>
-              <td align="center" style="border: 1px solid #FFF;">
+            <div class="container">
+              <div class="row">
+                <div class="col-10">
 
-                <form id="{{ slug }}-key" style="width: 100%; padding: 0px; margin: 0px;">
-                    <table cellpadding"3" cellspacing="2" style="width: 75%;" border="1">
-                        <tr>
-                          <td align="right" width="25%">x-api-key:</td>
-                          <td style="padding:5px;" width="35%"><input type="text" name='x-api-key' id='x-api-key' value="" class="form-control" width="250"></td>
-                          <td style="padding:5px;"><i>Your private key needed to access this API.</i></td>
-                        </tr>
-                    </table>
-                </form>
+                  <p><strong>URL:</strong> <a href="{{ api_url }}{{ path[0] }}" target="_blank">{{ api_url }}{{ path[0] }}</a></p>
 
-              </td>
-            </tr>
-            <tr>
-              <td width="5%"></td>
-              <td align="center" style="border: 1px solid #FFF;">
+                  <strong>Authentication:</strong>
+                  <table cellpadding"3" width="100%">
+                      <tr>
+                        <td align="right" style="padding:5px; width: 15%;"><strong>x-api-key:</strong></td>
+                        <td style="padding:5px;" width="35%"><input type="text" name='x-api-key' id='x-api-key' value="" class="form-control" width="450"></td>
+                        <td style="padding:5px;"></td>
+                      </tr>
+                  </table>
 
-                <form id="{{ slug }}-path" style="width: 100%; padding: 0px; margin: 0px;">
-                    <table cellpadding"3" cellspacing="2" style="width: 75%;" border="1">
+                  <form id="{{ slug }}-path" style="width: 100%;">
+                    {% assign any_path_parameters = 0 %}
+                    {% for parameter in parameters %}{% if parameter.in == 'path' %}{% assign any_path_parameters = 1 %}{% endif %}{% endfor %}
+                    {% if any_path_parameters == 1 %}
+                      <strong>Path Parameters:</strong>
+                    {% endif %}
+                    <table cellpadding"3" width="100%">
                     {% for parameter in parameters %}
                       {% if parameter.in == 'path' %}
                         <tr>
-                          <td align="right" width="25%" style="padding:5px;">{{ parameter.name }}:</td>
+                          <td align="right" style="padding:5px; width: 15%;"><strong>{{ parameter.name }}:</strong></td>
                           <td style="padding:5px;" width="35%"><input type="text" name='{{ parameter.name | downcase }}' value="{{ parameter.default }}" class="form-control" style="width: 100%;"></td>
                           <td style="padding:5px;"><i>{{ parameter.description }}</i></td>
                         </tr>
                       {% endif %}
                     {% endfor %}
                     </table>
-                  </center>
-                </form>
+                  </form>
 
-              </td>
-            </tr>
-            <tr>
-              <td width="5%"></td>
-              <td align="center" style="border: 1px solid #FFF;">
-
-                <form id="{{ slug }}-param" style="width: 100%; padding: 0px; margin: 0px;">
-                    <table cellpadding"3" cellspacing="2" style="width: 75%;" border="1">
+                  <form id="{{ slug }}-param" style="width: 100%;">
+                    {% assign any_path_parameters = 0 %}
+                    {% for parameter in parameters %}{% if parameter.in == 'query' %}{% assign any_path_parameters = 1 %}{% endif %}{% endfor %}
+                    {% if any_path_parameters == 1 %}
+                      <strong>Query Parameters:</strong>
+                    {% endif %}
+                    <table cellpadding"3" width="100%">
                     {% for parameter in parameters %}
                       {% if parameter.in == 'query' %}
                         <tr>
-                          <td align="right" width="25%" style="padding:5px;">{{ parameter.name }}:</td>
-                          <td style="padding:5px;" width="35%"><input type="text" name='{{ parameter.name | downcase }}' value="{{ parameter.default }}" class="form-control" style="width: 100%;"></td>
+                          <td align="right" style="padding:5px; width: 15%;"><strong>{{ parameter.name }}:</strong></td>
+                          <td style="padding:5px;" width="25%"><input type="text" name='{{ parameter.name | downcase }}' value="{{ parameter.default }}" class="form-control" style="width: 100%;"></td>
                           <td style="padding:5px;"><i>{{ parameter.description }}</i></td>
                         </tr>
                       {% endif %}
                     {% endfor %}
                     </table>
-                </form>
+                  </form>
 
-              </td>
-            </tr>
-            <tr>
-              <td width="3%"></td>
-              <td align="center" style="border: 1px solid #FFF; padding-bottom: 25px;">
 
-                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#responseModal" onclick="getRequest('{{ slug }}','{{ path[0] }}','{{ api_url }}');">Make Live Request</button>
-
-              </td>
-            </tr>
+                </div>
+                <div class="col-1 align-middle">
+                  <button type="button" class="btn btn-success align-middle" data-toggle="modal" data-target="#exampleModal" onclick="getRequest('{{ slug }}','{{ path[0] }}','{{ api_url }}');">GO</button>
+                </div>
+              </div>
+            </div>
 
           {% endif %}
 
@@ -300,273 +288,184 @@ title: Location API
 
     {% endfor %}
 
-  </table>
-  </center>
+    <p>{{ documentation_overview_footer }}</p>
 
-</section>
-<br><br>
-<a name="Schema"></a>
-<section id="Schema">
-
-  <header>
-    <h2>Schema</h2>
-  </header>
-
-  {% for definition in openapi.definitions %}
-    {% assign definition_name = definition[0] %}
-    {% assign fields = definition[1] %}
-    {% assign field_title = fields.title %}
-    {% assign field_description = fields.description %}
-    <p><strong>{{ field_title }} - {{ field_description }}</strong></p>
-    <ul style='padding-left: 50px;'>
-      {% for property in fields.properties %}
-        {% assign property_name = property[0] %}
-        <li><strong>{{ property_name }}</strong>{% if property[1]["type"] != '' %} (<em>{{ property[1]["type"] }}</em>){% endif %}{% if property[1]["description"] != '' %} - {{ property[1]["description"] }}{% endif %}</li>
-      {% endfor %}
-    </ul>
-  {% endfor %}
-
-
-  <script type="text/javascript">
-
-    if(Cookies.get('app_key'))
-      {
-      document.getElementById('x-api-key').value = Cookies.get('app_key');
-      }
-
-     function getRequest($slug,$path,$url)
-      {
-
-      $api_url = $url + $path;
-
-      document.getElementById('loading').style.display = '';
-
-      $appkey = document.getElementById('x-api-key').value;
-
-      var path_elements = document.getElementById($slug+'-path').elements;
-      for(var i = 0, element; element = path_elements[i++];)
-        {
-          if(element.type === "text")
-            {
-            if(element.value!='')
-              {
-              $replace_string = '{' + element.name + '}';
-              $api_url = $api_url.replace($replace_string,element.value);
-              }
-            }
-          }
-
-      var param_elements = document.getElementById($slug+'-param').elements;
-      $anyparams = 0;
-      $query_string = '';
-      for(var i = 0, element; element = param_elements[i++];)
-        {
-          if(element.type === "text")
-            {
-            if(element.value!='')
-              {
-              if($query_string=='')
-                {
-                $query_string = element.name + '=' + element.value;
-                }
-              else
-                {
-                $query_string = $query_string + '&' + element.name + '=' + element.value;
-                }
-              $anyparams = 1;
-              }
-            }
-          }
-
-      if($anyparams == 1){ $api_url = $api_url + '?' + $query_string; }
-
-      var $headers = {'x-api-key': $appkey};
-      console.log("header: " + $headers);
-
-      var response = $.ajax({
-         url: $api_url,
-         method: "get",
-         headers: $headers,
-         success:function(response){
-
-            document.getElementById('loading').style.display = 'none';
-
-            $viewer = JSON.stringify(response, null, 2);
-
-            document.getElementById('response').value = $viewer;
-            document.getElementById('response').style.width = "100%";
-            document.getElementById('response').style.height = "450px";
-
-          },
-          error: function(XMLHttpRequest, textStatus, errorThrown) {
-
-              document.getElementById('loading').style.display = 'none';
-
-              $message = "Status: " + textStatus + "\nError: " + errorThrown;
-
-              document.getElementById('response').value = $message;
-              document.getElementById('response').style.width = "100%";
-              document.getElementById('response').style.height = "50px";
-          }
-        });
-
-      }
-  </script>
-
-  <!-- Modal -->
-  <div class="modal fade" id="responseModal" tabindex="-1" role="dialog" aria-labelledby="responseModalLabel" aria-hidden="true" width="75%">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 class="modal-title" id="responseModalLabel">Request</h3>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <img src="http://miami.open.211.adopta.agency/images/loading.gif" id="loading" />
-          <textarea id="response" style="overflow: auto; height: 5px; width: 100%; border: 0px solid #FFF;"></textarea>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
-      </div>
     </div>
-  </div>
+</section>
 
+<a name="schema"></a>
+<section id="schema">
+  <div class="content">
+		<header>
+			<h3>{{ documentation_schema_title }}</h3>
+		</header>
+		<p>{{ documentation_schema_header }}</p>
+
+    <div class="row">
+        <div class="tabs documentation tab-container">
+
+          {% for definition in openapi.definitions %}
+            {% assign definition_name = definition[0] %}
+            {% assign fields = definition[1] %}
+            <p><strong>{{ definition_name }}</strong></p>
+            <ul style='padding-left: 50px;'>
+              {% for property in fields.properties %}
+                {% assign property_name = property[0] %}
+                <li><strong>{{ property_name }}</strong> (<em>{{ property[1]["type"] }}</em>) - {{ property[1]["description"] }}</li>
+              {% endfor %}
+            </ul>
+          {% endfor %}
+
+
+          <script type="text/javascript">
+
+            $appid = getUrlVar('app_id');
+            //console.log($appid);
+            Cookies.set('app_id', $appid);
+            $appkey = getUrlVar('app_key');
+            //console.log($appkey);
+            Cookies.set('app_key', $appkey);
+            if($appkey != '')
+              {
+              $('#auth-keys').html('');
+              //$appid_link = '<li><strong>x-appid</strong> - ' + $appid + '</li>';
+              //console.log($appid_link)
+              $appkey_link = '<li><strong>x-appkey</strong> - ' + $appkey + '</li>';
+              //console.log($appkey_link)
+              $auth_html = '<ul>' + $appkey_link + '</ul>';
+              //console.log($auth_html);
+              $('#auth-keys').html($auth_html);
+              $('#auth-header').html('Authentication (AUTHENTICATED)');
+
+              //document.getElementById("x-api-key").style.display = '';
+              }
+
+            app_key = Cookies.get('app_key');
+
+            if(app_key != '')
+              {
+              document.getElementById('x-api-key').value = app_key;
+
+              var elements = document.body.getElementsByTagName('input');
+
+              for (var i = 0; i < elements.length; i++)
+                {
+                //elements[i].innerHTML = "foo";
+                if(elements[i].name=='x-api-key')
+                  {
+                  elements[i].value = app_key;
+                  }
+                //console.log("name: " + elements[i].name);
+                }
+
+              }
+
+             function getRequest($slug,$path,$url)
+              {
+
+              $api_url = $url + $path;
+
+              document.getElementById('loading').style.display = '';
+
+              $appkey = document.getElementById('x-api-key').value;
+
+              var path_elements = document.getElementById($slug+'-path').elements;
+              for(var i = 0, element; element = path_elements[i++];)
+                {
+                  if(element.type === "text")
+                    {
+                    if(element.value!='')
+                      {
+                      $replace_string = '{' + element.name + '}';
+                      $api_url = $api_url.replace($replace_string,element.value);
+                      }
+                    }
+                  }
+
+              var param_elements = document.getElementById($slug+'-param').elements;
+              $anyparams = 0;
+              $query_string = '';
+              for(var i = 0, element; element = param_elements[i++];)
+                {
+                  if(element.type === "text")
+                    {
+                    if(element.value!='')
+                      {
+                      if($query_string=='')
+                        {
+                        $query_string = element.name + '=' + element.value;
+                        }
+                      else
+                        {
+                        $query_string = $query_string + '&' + element.name + '=' + element.value;
+                        }
+                      $anyparams = 1;
+                      }
+                    }
+                  }
+
+              if($anyparams == 1){ $api_url = $api_url + '?' + $query_string; }
+
+              var $headers = {'x-api-key': $appkey};
+              //console.log("header: " + $headers);
+
+              var response = $.ajax({
+                 url: $api_url,
+                 method: "get",
+                 headers: $headers,
+                 success:function(response){
+
+                    document.getElementById('loading').style.display = 'none';
+
+                    $viewer = JSON.stringify(response, null, 2);
+
+                    document.getElementById('response').value = $viewer;
+                    document.getElementById('response').style.width = "100%";
+                    document.getElementById('response').style.height = "450px";
+
+                  },
+                  error: function(XMLHttpRequest, textStatus, errorThrown) {
+
+                      document.getElementById('loading').style.display = 'none';
+
+                      $message = "Status: " + textStatus + "\nError: " + errorThrown;
+
+                      document.getElementById('response').value = $message;
+                      document.getElementById('response').style.width = "100%";
+                      document.getElementById('response').style.height = "50px";
+                  }
+                });
+
+              }
+          </script>
+
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" width="75%">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title" id="exampleModalLabel">Request</h3>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <img src="/assets/images/loading.gif" id="loading" />
+                  <textarea id="response" style="overflow: auto; height: 5px; width: 100%; border: 0px solid #FFF;"></textarea>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <br />
+        </div>
+
+        <p class="large">{{ documentation_schema_footer }}</p>
+
+    </div>
 </section>
 <!--Documentation-->
-
-<br><br>
-
-<!-- Road Map -->
-<a name="Road Map"></a>
-<section>
-
-{% for stop in site.stops %}
-
-  <!-- Begin Show This One Stop -->
-  {% if stop.name == 'Road Map' %}
-
-    <header>
-  		<h2>{{ stop.name }}</h2>
-  	</header>
-    <p>{{ stop.description }}</p>
-
-    <!-- Begin Items for This Stop -->
-    {% for item in stop.items %}
-
-      <!-- Begin Show only public road map -->
-      {% if item.name == 'Public' %}
-        <br>
-        <h3>{{ item.name }}</h3>
-        <p>{{ item.description }}</p>
-
-        {% assign url = '' %}
-        {% assign entries = '' %}
-        {% for fields in item.fields %}
-
-          {% for field in fields %}
-
-            <!-- Set url -->
-            {% if field[0] == 'url' %}
-              {% assign url = field[1] %}
-            {% endif %}
-
-            <!-- Set entries -->
-            {% if field[0] == 'entries' %}
-              {% assign entries = field[1] %}
-            {% endif %}
-
-          {% endfor %}
-
-        {% endfor %}
-
-        <!--Begin Show Entries--->
-        <ul>
-          {% for entry in entries %}
-            <li><strong>{{ entry.title }}</strong> <em>({{ entry.date }})</em> - {{ entry.description }}</li>
-          {% endfor %}
-        </ul>
-        <!--End Show Entries--->
-
-      {% endif %}
-      <!-- End Show only public road map -->
-
-    {% endfor %}
-    <!-- End Items for This Stop -->
-
-
-  {% endif %}
-  <!-- End Show This One Stop -->
-
-{% endfor %}
-
-
-</section>
-
-<br><br>
-
-<!-- Support -->
-<a name="Support"></a>
-<section>
-
-{% for stop in site.stops %}
-
-  <!-- Begin Show This One Stop -->
-  {% if stop.name == 'Support' %}
-
-    <header>
-  		<h2>{{ stop.name }}</h2>
-  	</header>
-    <p>{{ stop.description }}</p>
-
-    <!-- Begin Items for This Stop -->
-    <center>
-    <table width="100%" align="center">
-      <tr>
-        {% for item in stop.items %}
-
-            {% assign email = '' %}
-            {% assign url = '' %}
-            {% assign image = '' %}
-            {% for fields in item.fields %}
-
-              {% for field in fields %}
-
-                <!-- Set email -->
-                {% if field[0] == 'Email' %}
-                  {% assign email = field[1] %}
-                {% endif %}
-
-                <!-- Set url -->
-                {% if field[0] == 'URL' %}
-                  {% assign url = field[1] %}
-                {% endif %}
-
-                <!-- Set image -->
-                {% if field[0] == 'image' %}
-                  {% assign image = field[1] %}
-                {% endif %}
-
-              {% endfor %}
-            {% endfor %}
-
-            <td style="width: 33%;" align="center">
-              <h3>{{ item.name }}</h3>
-              <img src="{{ image }}" width="35%" align="center">
-              <p>{{ item.description }}</p>
-            </td>
-
-        {% endfor %}
-      </tr>
-    </table>
-    </center>
-    <!-- End Items for This Stop -->
-
-  {% endif %}
-  <!-- End Show This One Stop -->
-
-{% endfor %}
-
-</section>
