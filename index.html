@@ -757,43 +757,32 @@ title: Location APIs
 			<h3>{{ communication_title }}</h3>
 		</header>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-9">
-          <p>{{ communication_header }}</p>
+    <p>{{ communication_header }}</p>
 
-          <center>
-          <table width="90%" align="center">
-            <tr>
-            {% for channel in communication_channels %}
+    <center>
+    <table width="90%" align="center">
+      <tr>
+      {% for channel in communication_channels %}
 
-              {% assign title = channel | map: 'title' %}
-              {% assign description = channel | map: 'description' %}
-              {% assign image = channel | map: 'image' %}
-              {% assign url = channel | map: 'url' %}
-              {% assign communication_status = channel | map: 'status' %}
-              {% assign status = communication_status[0] %}
+        {% assign title = channel | map: 'title' %}
+        {% assign description = channel | map: 'description' %}
+        {% assign image = channel | map: 'image' %}
+        {% assign url = channel | map: 'url' %}
+        {% assign communication_status = channel | map: 'status' %}
+        {% assign status = communication_status[0] %}
 
-              {% if status == "Active" %}
-                <td align="center">
-                  <a href="{{ url }}"><img src="{{ image }}" width="75" align="center" /></a>
-                  <p align="center"><a href="{{ url }}"><strong>{{ title }}</strong></a></p>
-                </td>
-              {% endif %}
-            {% endfor %}
-            </tr>
-          </table>
-          </center>
+        {% if status == "Active" %}
+          <td align="center">
+            <a href="{{ url }}"><img src="{{ image }}" width="75" align="center" /></a>
+            <p align="center"><a href="{{ url }}"><strong>{{ title }}</strong></a></p>
+          </td>
+        {% endif %}
+      {% endfor %}
+      </tr>
+    </table>
+    </center>
 
-          <p>{{ communication_footer }}</p>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-3">
-      <center><img src="{{ communication_image }}" width="175" align="center" style="margin-bottom: 25px;" /></center>
-    </div>
+    <p>{{ communication_footer }}</p>
 
   </div>
 </section>
