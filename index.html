@@ -617,8 +617,9 @@ title: Location APIs
           <p><strong>Entries:</strong></p>
           <ol>
             {% for entries in public_road_map_entries %}
-              now: {{ entries }}<br />
-              <li><strong>{{ entries.title }}</strong> (<i>{{ entries.date }}</i>)- {{ entries.description }}</li>
+              {% for entry in entries %}
+              <li><strong>{{ entry.title }}</strong> (<i>{{ entry.date }}</i>)- {{ entry.description }}</li>
+              {% endfor %}
             {% endfor %}
           </ol>
           <p>{{ road_map_footer }}</p>
