@@ -125,9 +125,11 @@ title: SEC Companies
                     <td style="width: 15%; text-align: right;"><strong>{{ field_label }}:</strong></td>
                     <td>
                       {% if field_details.first %}
-                        {% for detail in field_details %}
-                          detail: {{ detail }}<br />
-                          {{ detail[0] }} == {{ detail[1] }}
+                        {% for details in field_details %}
+                          {% for detail in details %}
+                            detail: {{ detail }}<br />
+                            {{ detail[0] }} == {{ detail[1] }}
+                          {% endfor %}
                         {% endfor %}
                       {% else %}
                         {% assign field_details_length = field_details | size %}
