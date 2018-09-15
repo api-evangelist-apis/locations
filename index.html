@@ -727,7 +727,7 @@ title: Location APIs
             {% for questions in faq_questions %}
               {% for entry in questions %}
 
-                2: {{ question }}<br />
+                2: {{ entry }}<br />
 
                 {% assign this_question = entry | map: 'question' %}
                 {% assign this_answer = entry | map: 'answer' %}
