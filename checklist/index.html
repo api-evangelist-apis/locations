@@ -129,7 +129,7 @@ title: SEC Companies
                           {{ detail[0] }} == {{ detail[1] }}
                         {% endfor %}
                       {% else %}
-                        {% assign field_details_length = field_details | length %}
+                        {% assign field_details_length = field_details | size %}
                           {% if field_details_length > 35 %}
                             <textarea name="{{ field_name }}" style="width: 75%; height: 100px;">{{ field_details }}</textarea>
                           {% else %}

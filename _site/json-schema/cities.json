@@ -1,0 +1,42 @@
+{
+    "$id": "https://apievangelist.com/cities.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "title": "cities",
+        "description": "All cities.",
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "integer",
+                "maxLength": 11
+            },
+            "region_id": {
+                "type": "integer",
+                "maxLength": 11
+            },
+            "country_id": {
+                "type": "integer",
+                "maxLength": 5
+            },
+            "latitude": {
+                "type": "number"
+            },
+            "longitude": {
+                "type": "number"
+            },
+            "name": {
+                "type": "string",
+                "maxLength": 255
+            }
+        },
+        "required": [
+            "id",
+            "region_id",
+            "country_id",
+            "latitude",
+            "longitude",
+            "name"
+        ]
+    }
+}
