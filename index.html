@@ -133,14 +133,23 @@ title: Location APIs
 		<header>
 			<h3>{{ getting_started_title }}</h3>
 		</header>
-    <p>{{ getting_started_header }}</p>
-    <ul>
-      {% for entries in getting_started_entries %}
-        {% assign url = entries.fields | map: 'url' %}
-        <li><a href="{{ url }}"><strong>{{ entries.name }}</strong></a></li>
-      {% endfor %}
-    </ul>
-    <p>{{ getting_started_footer }}</p>
+    <div class="container">
+      <div class="row">
+        <div class="col-9">
+          <p>{{ getting_started_header }}</p>
+          <ul>
+            {% for entries in getting_started_entries %}
+              {% assign url = entries.fields | map: 'url' %}
+              <li><a href="{{ url }}"><strong>{{ entries.name }}</strong></a></li>
+            {% endfor %}
+          </ul>
+          <p>{{ getting_started_footer }}</p>
+        </div>
+        <div class="col-lg-3">
+          <center><img src="/assets/images/getting-started.png" width="175" align="center" style="margin-bottom: 25px;" /></center>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 <!-- End Getting Started -->
@@ -204,7 +213,7 @@ title: Location APIs
         </div>
         <div class="col-lg-3">
           <center><img src="/assets/images/authentication.png" width="175" align="center" style="margin-bottom: 25px;" /></center>
-        </td>
+        </div>
       </div>
     </div>
 </section>
