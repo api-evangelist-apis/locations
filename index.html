@@ -79,7 +79,7 @@ title: Location APIs
 
       {% endif %}
 
-      {% if item.name == 'SignupLogin' %}
+      {% if item.name == 'Signup / Login' %}
 
         {% assign authentication_signuplogin_title = item.fields | map: 'title' %}
         {% assign authentication_signuplogin_header = item.fields | map: 'header' %}
@@ -137,12 +137,12 @@ title: Location APIs
       <div class="row">
         <div class="col-9">
           <p>{{ getting_started_header }}</p>
-          <ul>
+          <ol>
             {% for entries in getting_started_entries %}
               {% assign url = entries.fields | map: 'url' %}
               <li><a href="{{ url }}"><strong>{{ entries.name }}</strong></a></li>
             {% endfor %}
-          </ul>
+          </ol>
           <p>{{ getting_started_footer }}</p>
         </div>
         <div class="col-lg-3">
@@ -335,7 +335,7 @@ title: Location APIs
 
 
                 </div>
-                <div class="col-1 align-middle">
+                <div class="col-1 align-middle" style="padding-top: 15px;">
                   <a href="getRequest('{{ slug }}','{{ path[0] }}','{{ api_url }}'); return false;"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-arrow-left-round.png" style="width: 50px; align:center; vertical-align: middle;" /></a>
                   <!--<button type="button" class="btn btn-success align-middle" data-toggle="modal" data-target="#exampleModal" onclick="getRequest('{{ slug }}','{{ path[0] }}','{{ api_url }}');">GO</button>-->
                 </div>
@@ -562,7 +562,7 @@ title: Location APIs
       {% for channel in support_channels %}
         {% assign url = channel.fields | map: 'url' %}
         {% if channel.status == 'Active' %}
-          <td align="center"><a href="{{ url }}"><img src="{{ channel.image }}" width="75" align="center" /></a><p align="center"><a href="{{ channel.url }}"><strong>{{ channel.name }}</strong></a></p></td>
+          <td align="center"><a href="{{ url }}"><img src="{{ channel.image }}" width="75" align="center" /></a><p align="center"><a href="{{ channel.url }}"><strong>{{ channel.title }}</strong></a></p></td>
         {% endif %}
       {% endfor %}
       </tr>

@@ -975,6 +975,7 @@ stops:
   # Getting Started
   #-----------------
   - name: Getting Started
+    title: Getting Started
     header: These are the steps you need to take when getting started using this service.
     footer: If you have any questions, feel free to reach out, and I'll do my best to help.
     description: Providing basic getting started information for dvelopers to use when on-boarding.
@@ -983,6 +984,7 @@ stops:
     items:
 
       - name: Signup
+      #
         description: Where you can signup for this service.
         instruction: Provide a link to where users can signup for this service.
         status: None
@@ -1320,6 +1322,7 @@ stops:
     status: Active
     items:
       - name: Email
+        title: Email
         description: The email account for supporting this service.
         instruction: Define the email account used to support this service.
         image: http://locations.apievangelist.com/assets/images/email.png
@@ -1328,6 +1331,7 @@ stops:
           - email: mailto%3A info@apievangelist.com
 
       - name: GitHub Issues
+        title: GitHub Issues
         description: Where to submit an issue to get support for this service.
         instruction: Provide a URL to the repository issues to support this service.
         image: http://locations.apievangelist.com/assets/images/github.png
@@ -1336,6 +1340,7 @@ stops:
           - url: https://github.com/api-evangelist-apis/locations/issues
 
       - name: Twitter
+        title: Twitter
         description: Where to get support publicly using a supported Twitter account
         instruction: Provide the URL to the Twitter account supporting the API.
         image: http://locations.apievangelist.com/assets/images/twitter.png
@@ -1344,6 +1349,7 @@ stops:
           - url: https://twitter.com/apievangelist/
 
       - name: Ticket
+        title: Ticket
         description: Where to submit a ticket to get support for this service.
         instruction: Provide a URL to the ticketing system used to support this service.
         image: http://locations.apievangelist.com/assets/images/twitter.png
