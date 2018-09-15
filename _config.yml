@@ -938,6 +938,9 @@ stops:
           - url: http://locations.apievangelist.com/#documentation
 
       - name: Schema
+        title: Schema
+        header: These are the schema definitions in use for this service, providing a human, and machine readable listing of the schema used as part of requests and responses for this service.
+        footer: This should provide you with what you need to understand the structure of how you make requests to some of the APIs, and what you can expect with each of the API responses.
         description: The descriptive header and footer paragraphs for the documentation schema.
         instruction: Provide some content to introduce and close up the documentation schema.
         status: Active
