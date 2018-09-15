@@ -728,16 +728,14 @@ title: Location APIs
           {% for entry in faq_questions %}
 
               {% assign this_question = entry | map: 'question' %}
+              {% assign this_question = this_question[0] %}
               {% assign this_answer = entry | map: 'answer' %}
+              {% assign this_answer = this_answer[0] %}
               {% assign this_category = entry | map: 'category' | replace: 'Category One',1  %}
               {% assign this_category = this_category[0] %}
 
-              {{ this_category }} == {{ category }}<br />
-
               {% if this_category == category %}
-                <li>) {{ question }}</li>
-              {% else %}
-                <li>2) {{ question }}</li>
+                <li><strong>{{ question }}</strong> - {{ this_answer }}</li>
               {% endif %}
 
           {% endfor %}
