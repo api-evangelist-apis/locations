@@ -727,15 +727,22 @@ title: Location APIs
             {% for questions in faq_questions %}
               {% for entry in questions %}
 
+                2: {{ entry }}<br />
+
                 {% assign this_question = entry | map: 'question' %}
                 {% assign this_answer = entry | map: 'answer' %}
                 {% assign this_category = entry | map: 'category' %}
 
                 {{ this_category }} == {{ category }}<br />
-
-                {% unless this_category != category %}
-                  <li>{{ question }}</li>
-                {% endunless %}
+                {% if this_category == category %}
+                  <tr>
+                    <td>{{ question }}</td>
+                  </tr>
+                {% else %}
+                  <tr>
+                    <td>{{ question }}</td>
+                  </tr>
+                {% endif %}
 
               {% endfor %}
             {% endfor %}
@@ -754,7 +761,7 @@ title: Location APIs
 <section id="sign-up-login">
   <div class="content">
 		<header>
-			<h3>{{ communication_title }} - 1</h3>
+			<h3>{{ communication_title }}</h3>
 		</header>
 
     <div class="container">
@@ -771,10 +778,12 @@ title: Location APIs
               {% assign image = channel | map: 'image' %}
               {% assign url = channel | map: 'url' %}
               {% assign communication_status = channel | map: 'status' %}
-              status: -{{ communication_status }}-<br />
-              {% unless communication_status != 'Active' %}
-                in: {{ title }}<br />
-              {% endunless %}
+              status: {{ communication_status }}<br />
+              {% if communication_status == "None" %}
+                11<br />
+              {% else %}
+                22<br />
+              {% endif %}
             {% endfor %}
             </tr>
           </table>
