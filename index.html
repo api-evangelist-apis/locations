@@ -120,6 +120,7 @@ title: Location APIs
       {% assign road_map_title = stop.name %}
       {% assign road_map_header = stop.header %}
       {% assign road_map_footer = stop.footer %}
+      {% assign road_map_status = stop.status %}
 
       {% for item in stop.items %}
 
@@ -614,14 +615,16 @@ title: Location APIs
       <div class="row">
         <div class="col-9">
           <p>{{ road_map_header }}</p>
-          <p><strong>Entries:</strong></p>
-          <ol>
-            {% for entries in public_road_map_entries %}
-              {% for entry in entries %}
-                <li><strong>{{ entry.title }}</strong> (<i>{{ entry.date }}</i>)- {{ entry.description }}</li>
+          {% if road_map_status == 'Active' %}
+            <p><strong>Entries:</strong></p>
+            <ul>
+              {% for entries in public_road_map_entries %}
+                {% for entry in entries %}
+                  <li><strong>{{ entry.title }}</strong> (<i>{{ entry.date }}</i>)- {{ entry.description }}</li>
+                {% endfor %}
               {% endfor %}
-            {% endfor %}
-          </ol>
+            </ul>
+          {% endif %}
           <p>{{ road_map_footer }}</p>
         </div>
         <div class="col-lg-3">
