@@ -90,7 +90,7 @@ title: SEC Companies
 		<header>
 			<h3>{{ service_name }} Checklist</h3>
 		</header>
-		<p>This is the checklist.</p>
+		<p>This is the checklist for guiding this API through the lifecycle, helping this API deliver its resources in alignment with other APIs in operation across this platform.</p>
 	</div>
 </section>
 
@@ -125,9 +125,16 @@ title: SEC Companies
                     <td style="width: 15%; text-align: right;"><strong>{{ field_label }}:</strong></td>
                     <td>
                       {% if field_details.first %}
-                        ARRAY!!! - {{ field_details }}
+                        {% for detail in field_details %}
+                          {{ detail[0] }} == {{ detail[1] }}
+                        {% endfor %}
                       {% else %}
-                        <input type="text" name="{{ field_name }}" value="{{ field_details }}" style="width: 75%" />
+                        {% assign field_details_length = field_details | length %}
+                          {% if field_details_length > 35 %}
+                            <textarea name="{{ field_name }}" style="width: 75%; height: 100px;">{{ field_details }}</textarea>
+                          {% else %}
+                            <input type="text" name="{{ field_name }}" value="{{ field_details }}" style="width: 75%" />
+                          {% endif %}
                       {% endif %}
                     </td>
                   {% endfor %}

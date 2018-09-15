@@ -6,29 +6,6 @@ description: This is a location API, providing many of the common building block
 url: http://location.apievangelist.com
 tag: Location, Cities, Regions, Countries
 logo: https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png
-version: 1.1.1
-author:
-  name: Kin Lane
-  email: info@apievangelist.com
-markdown: kramdown
-permalink: /:categories/:title/
-exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", ".DS_Store"]
-paginate: 1000
-paginate_path: "/updates/page:num"
-
-#---------------------
-# YAML Collections
-#---------------------
-collections:
-  collection:
-    output: false
-    permalink: /collection/:path/
-
-defaults:
-  - scope:
-      type: collection
-    values:
-      layout: collection
 
 #-------------------------------
 # Current stage of this service
@@ -1636,3 +1613,12 @@ stops:
 
       - name: Governance
         description: Provide an outline of how this outline is measured, reported, and evolved.
+
+#------------------
+# General Settings
+#------------------
+markdown: kramdown
+permalink: /:categories/:title/
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", ".DS_Store"]
+paginate: 1000
+paginate_path: "/updates/page:num"
