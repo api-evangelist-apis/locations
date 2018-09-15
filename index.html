@@ -773,11 +773,11 @@ title: Location APIs
               {% assign image = channel | map: 'image' %}
               {% assign url = channel | map: 'url' %}
               {% assign communication_status = channel | map: 'status' %}
+              {% assign status = communication_status[0] %}
 
-              status: {{ communication_status[0] }}<br />
-              status: {{ communication_status[1] }}<br />
+              status NOW: {{ status }}<br />
 
-              {% if communication_status == "Active" %}
+              {% if status == "Active" %}
                 <tr><td>1) {{ title }}</td></tr>
               {% else %}
                 <tr><td>2) {{ title }}</td></tr>
