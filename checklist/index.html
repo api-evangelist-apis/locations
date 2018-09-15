@@ -126,6 +126,7 @@ title: SEC Companies
                     <td>
                       {% if field_details.first %}
                         {% for detail in field_details %}
+                          detail: {{ detail }}<br />
                           {{ detail[0] }} == {{ detail[1] }}
                         {% endfor %}
                       {% else %}
