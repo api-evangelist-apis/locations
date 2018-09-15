@@ -770,16 +770,16 @@ title: Location APIs
           <table width="90%" align="center">
             <tr>
             {% for channel in communication_channels %}
-              here: {{ channel }}<br />
               {% assign title = channel | map: 'title' %}
               title: {{ title }}<br />
               {% assign description = channel | map: 'description' %}
               {% assign image = channel | map: 'image' %}
               {% assign url = channel | map: 'url' %}
-              {% assign status = channel | map: 'status' %}
-              status: {{ status }}<br />
-              {% if status == 'Active' %}
+              {% assign communication_status = channel | map: 'status' %}
+              status: {{ communication_status }}<br />
+              {% if communication_status == 'Active' %}
                 11<br />
+
               {% endif %}
             {% endfor %}
             </tr>
