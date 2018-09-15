@@ -732,6 +732,7 @@ title: Location APIs
               {% assign this_question = question | map: 'question' %}
               {% assign this_answer = question | map: 'answer' %}
               {% assign this_category = question | map: 'category' %}
+
               {% if this_category == category %}
                 <tr>
                   <td>{{ question }}</td>
