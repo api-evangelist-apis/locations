@@ -130,11 +130,13 @@ title: SEC Companies
                           {% for detail in details %}
                             {% assign field_details_length = detail[1] | size %}
                             <td style="width: 15%; text-align: right;"><strong>{{ detail[0] }}:</strong></td>
-                            {% if field_details_length > 35 %}
-                              <textarea name="{{ detail[0] }}" style="width: 75%; height: 100px;">{{ detail[1] }}</textarea>
-                            {% else %}
-                              <input type="text" name="{{ detail[0] }}" value="{{ detail[1] }}" style="width: 75%" />
-                            {% endif %}
+                            <td>
+                              {% if field_details_length > 35 %}
+                                <textarea name="{{ detail[0] }}" style="width: 75%; height: 100px;">{{ detail[1] }}</textarea>
+                              {% else %}
+                                <input type="text" name="{{ detail[0] }}" value="{{ detail[1] }}" style="width: 75%" />
+                              {% endif %}
+                            </td>
                           {% endfor %}
                           </table>
                         {% endfor %}
