@@ -716,7 +716,7 @@ title: Location APIs
 <section id="sign-up-login">
   <div class="content">
 		<header>
-			<h3>{{ faq_title }}-2</h3>
+			<h3>{{ faq_title }}</h3>
 		</header>
     <p>{{ faq_header }}</p>
     <center>
@@ -725,24 +725,22 @@ title: Location APIs
 
       {% for categories in faq_categories %}
         {% for category in categories %}
-          {% for cat in category.categories %}
-            <tr>
-              <td>{{ cat }}-2</td>
-            </tr>
-            {% for questions in faq_questions %}
-              {% for question in questions %}
+          <tr>
+            <td>{{ category }}-2</td>
+          </tr>
+          {% for questions in faq_questions %}
+            {% for question in questions %}
 
-                {% assign this_question = question | map: 'question' %}
-                {% assign this_answer = question | map: 'answer' %}
-                {% assign this_category = question | map: 'category' %}
+              {% assign this_question = question | map: 'question' %}
+              {% assign this_answer = question | map: 'answer' %}
+              {% assign this_category = question | map: 'category' %}
 
-                {% if this_category == cat %}
-                  <tr>
-                    <td>{{ question }}</td>
-                  </tr>
-                {% endif %}
+              {% if this_category == cat %}
+                <tr>
+                  <td>{{ question }}</td>
+                </tr>
+              {% endif %}
 
-              {% endfor %}
             {% endfor %}
           {% endfor %}
         {% endfor %}
