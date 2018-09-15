@@ -30,8 +30,10 @@ stops:
   # Definitions
   #-------------
   - name: Definition
-    header: The definitions for this service.
-    footer:
+    title: Definitions
+    description: All of the definitions that go into defining this service, from the original schema, the OpenAPI definitions, the Postman Collections, and the assertions that contribute to the testing of the service to ensure it is doing what is expected of it.
+    header: All of the definitions available for this service, providing a single way to find everything that drives the project.
+    footer: Providing a machine readable core for the entire lifecycle of this service, allowing documentation to be used elsewhere.
     instructions: Define the problem and solution in a human and machine readable way.
     status: Active
     items:
