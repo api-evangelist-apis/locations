@@ -141,6 +141,15 @@ title: Location APIs
 
         {% endif %}
 
+        {% if item.name == 'Suggest' %}
+
+          {% assign road_map_suggestion_status = item.status %}
+          {% assign road_map_suggestion_title = item.fields | map: 'title' %}
+          {% assign road_map_suggestion_description = item.fields | map: 'description' %}
+          {% assign road_map_suggestion_url = item.fields | map: 'url' %}
+
+        {% endif %}
+
       {% endfor %}
 
   {% endif %}
@@ -625,6 +634,12 @@ title: Location APIs
               {% endfor %}
             </ul>
           {% endif %}
+
+          {% if road_map_suggestion_status == 'Active' %}
+            <p><strong>{{ road_map_suggestion_title }}</strong></p>
+            <p><a href="{{ road_map_suggestion_url }}">{{ road_map_suggestion_description }}</a></p>
+          {% endif %}
+
           <p>{{ road_map_footer }}</p>
         </div>
         <div class="col-lg-3">

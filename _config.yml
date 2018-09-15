@@ -1197,13 +1197,14 @@ stops:
               description: This is a description for the item.
 
       - name: Suggest
-        description: Where you can suggest an addition to the road map.
+        title: Suggestions For The Road Map
+        description: Consumers are welcome to suggest an addition to the road map.
         instruction: Provide a mechanism for users to make suggestions for the road map.
-        status: None
+        status: Active
         fields:
           - title: Suggest Road Map Item
-          - description: This is the description of suggesting a road map.
-          - url: http://example.com/suggest/
+          - description: You are welcome to suggest something for the road map via the GitHub issues for the service.
+          - url: https://github.com/api-evangelist-apis/locations/issues
 
   #--------
   # Issues
