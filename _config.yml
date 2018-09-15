@@ -1161,8 +1161,8 @@ stops:
   - name: Road Map
     title: Road Map
     description: Providing API consumers with as much information as possible about what changes are being planned for a service. Helping include consumers in the conversation about what is being planned whenever possible.
-    header: This is what we plan on doing in the near future when it comes to evolving this service.
-    footer: We try to share as much information as possible about what changes will be occurring.
+    header: This is what we plan on doing in the near future when it comes to evolving this service, documenting the features we are planning to add to this service in future iterations.
+    footer: We try to share as much information as possible about what changes will be occurring, helping you plan for your integration--make sure and share your thoughts about what you'd like to see.
     instructions: Provide a road map for the future of this service.
     image: http://locations.apievangelist.com/assets/images/road-map.png
     status: Active
@@ -1213,8 +1213,8 @@ stops:
   - name: Issues
     title: Issues
     description: Being transparent around the issues that are currently outstanding regarding a platform. Potentially saving resources having to respond to further emails, tickets, and issues being reported.
-    header: Providing information on any open issues exist for a service.
-    footer: Making sure there is transparency with consumers around issues.
+    header: These are the current issues that are outstanding for this service at the moment--letting you know that we are working hard to fix.
+    footer: We provide visibility into these issues because we want to be as transparent as possible with what is happening with the service.
     instructions: Provide a list of currently known issues for this service.
     image: http://locations.apievangelist.com/assets/images/issues.png
     status: Active
@@ -1249,8 +1249,8 @@ stops:
   - name: Change Log
     title: Change Log
     description: Provide consumers with a detail history of what has changed in the past with a service. Rolling over road map items, and  issues when they have been accomplished or satisfied into a detailed change log.
-    header: Providing information on the history of changes to this service.
-    footer: Documenting everything that has occurred to a service over time.
+    header: This is a detailed list of everything that has changed with this platform, providing you with the history of what has happened over time with this service.
+    footer: Showing our track record when it comes to changes being made to this platform, showing the work we've done to deliver on our road map, and satisfy all the open issue.
     instructions: Providing a historical list of what has changed for this service.
     image: http://locations.apievangelist.com/assets/images/change-log.png
     status: Active
