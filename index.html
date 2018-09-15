@@ -726,10 +726,17 @@ title: Location APIs
           <tr>
             <td>{{ category }}</td>
           </tr>
-          {% for question in faq_questions %}
-            <tr>
-              <td>{{ question }}</td>
-            </tr>
+          {% for questions in faq_questions %}
+            {% for question in questions %}
+              {% assign this_question = question | map: 'question' %}
+              {% assign this_answer = question | map: 'answer' %}
+              {% assign this_category = question | map: 'category' %}
+              {% if this_category == category %}
+                <tr>
+                  <td>{{ question }}</td>
+                </tr>
+              {% endif %}
+            {% endfor %}
           {% endfor %}
         {% endfor %}
       {% endfor %}
