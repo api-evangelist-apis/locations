@@ -1221,7 +1221,7 @@ stops:
         description: The blog for this service.
         instruction: Provide a simple blog and update mechanism for this service.
         image: http://locations.apievangelist.com/assets/images/blog.png
-        status: None
+        status: Active
         fields:
           - url: http://example.com/blog/
           - atom: http://example.com/atom/
@@ -1231,7 +1231,7 @@ stops:
         description: The Twitter account for this service.
         instruction: Provide the Twitter handle that is used as part of this service.
         image: http://locations.apievangelist.com/assets/images/twitter.png
-        status: None
+        status: Active
         fields:
           - handle: http://twitter.com/handle/
 
@@ -1240,7 +1240,7 @@ stops:
         description: The Github account for this service.
         instruction: Provide the Github account or organization behind this service.
         image: http://locations.apievangelist.com/assets/images/github.png
-        status: None
+        status: Active
         fields:
           - handle: http://github.com/handle/
 
@@ -1260,7 +1260,7 @@ stops:
         image: http://locations.apievangelist.com/assets/images/external.png
         status: None
         fields:
-          - url: http://example.com/communication/          
+          - url: http://example.com/communication/
 
   #----------
   # Road Map
