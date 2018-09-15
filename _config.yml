@@ -1215,6 +1215,7 @@ stops:
     header: Providing information on any open issues exist for a service.
     footer: Making sure there is transparency with consumers around issues.
     instructions: Provide a list of currently known issues for this service.
+    image: http://locations.apievangelist.com/assets/images/issues.png
     status: Active
     items:
 
@@ -1250,6 +1251,7 @@ stops:
     header: Providing information on the history of changes to this service.
     footer: Documenting everything that has occurred to a service over time.
     instructions: Providing a historical list of what has changed for this service.
+    image: http://locations.apievangelist.com/assets/images/change-log.png
     status: Active
     items:
 
@@ -1281,6 +1283,7 @@ stops:
     header: The definitions for this service.
     footer:
     instructions: Establish a communication strategy for this service.
+    image: http://locations.apievangelist.com/assets/images/road-map.png
     status: None
     items:
 

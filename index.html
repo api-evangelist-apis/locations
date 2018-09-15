@@ -120,6 +120,7 @@ title: Location APIs
       {% assign road_map_title = stop.name %}
       {% assign road_map_header = stop.header %}
       {% assign road_map_footer = stop.footer %}
+      {% assign road_map_image = stop.image %}
       {% assign road_map_status = stop.status %}
 
       {% for item in stop.items %}
@@ -156,11 +157,12 @@ title: Location APIs
   <!--End Road Map-->
 
   <!--Begin Issues-->
-  {% if stop.name == 'Road Map' %}
+  {% if stop.name == 'Issues' %}
 
       {% assign issues_title = stop.name %}
       {% assign issues_header = stop.header %}
       {% assign issues_footer = stop.footer %}
+      {% assign issues_image = stop.image %}
       {% assign issues_status = stop.status %}
 
       {% for item in stop.items %}
@@ -676,7 +678,7 @@ title: Location APIs
           <p>{{ road_map_footer }}</p>
         </div>
         <div class="col-lg-3">
-          <center><img src="/assets/images/road-map.png" width="175" align="center" style="margin-bottom: 25px;" /></center>
+          <center><img src="{{ road_map_image }}" width="175" align="center" style="margin-bottom: 25px;" /></center>
         </div>
       </div>
     </div>
@@ -685,8 +687,8 @@ title: Location APIs
 <!-- End Road Map -->
 
 <!-- Begin Issues -->
-<a name="road-map"></a>
-<section id="road-map">
+<a name="issues"></a>
+<section id="issues">
   <div class="content">
 		<header>
 			<h3>{{ issues_title }}</h3>
@@ -695,6 +697,7 @@ title: Location APIs
       <div class="row">
         <div class="col-9">
           <p>{{ issues_header }}</p>
+
           {% if issues_status == 'Active' %}
             <p><strong>Entries:</strong></p>
             <ul>
@@ -714,7 +717,7 @@ title: Location APIs
           <p>{{ issues_footer }}</p>
         </div>
         <div class="col-lg-3">
-          <center><img src="/assets/images/road-map.png" width="175" align="center" style="margin-bottom: 25px;" /></center>
+          <center><img src="{{ issues_image }}" width="175" align="center" style="margin-bottom: 25px;" /></center>
         </div>
       </div>
     </div>
