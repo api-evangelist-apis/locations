@@ -705,7 +705,9 @@ title: Location APIs
           <table width="90%" align="center">
             <tr>
             {% for channels in communication_channels %}
+              HERE1: {{ channels }}<br />
               {% for channel in channels %}
+                HERE2: {{ channel }}<br />
                 {% assign url = channel.fields | map: 'url' %}
                 {% if channel.status == 'Active' %}
                   <td align="center"><a href="{{ url }}"><img src="{{ channel.image }}" width="75" align="center" /></a><p align="center"><a href="{{ channel.url }}"><strong>{{ channel.title }}</strong></a></p></td>
