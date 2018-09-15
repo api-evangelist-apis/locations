@@ -1204,7 +1204,7 @@ stops:
         status: Active
         fields:
           - title: Suggest Road Map Item
-          - description: You are welcome to suggest something for the road map via the GitHub issues for the service.
+          - description: Make Suggestion
           - url: https://github.com/api-evangelist-apis/locations/issues
 
   #--------
@@ -1240,7 +1240,7 @@ stops:
         status: Active
         fields:
           - title: Report An Issue
-          - description: You are welcome to submit an issue via GitHub issue, or other support channel.
+          - description: Report
           - url: https://github.com/api-evangelist-apis/locations/issues
 
   #------------

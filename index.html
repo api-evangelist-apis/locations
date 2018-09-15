@@ -692,8 +692,7 @@ title: Location APIs
           {% endif %}
 
           {% if road_map_suggestion_status == 'Active' %}
-            <p><strong>{{ road_map_suggestion_title }}</strong></p>
-            <p><a href="{{ road_map_suggestion_url }}">{{ road_map_suggestion_description }}</a></p>
+            <p><strong>{{ road_map_suggestion_title }}: </strong> <a href="{{ road_map_suggestion_url }}">{{ road_map_suggestion_description }}</a></p>
           {% endif %}
 
           <p>{{ road_map_footer }}</p>
@@ -731,8 +730,7 @@ title: Location APIs
           {% endif %}
 
           {% if issues_report_status == 'Active' %}
-            <p><strong>{{ issues_report_title }}</strong></p>
-            <p><a href="{{ issues_report_url }}">{{ issues_report_description }}</a></p>
+            <p><strong>{{ issues_report_title }}:</strong> <a href="{{ issues_report_url }}">{{ issues_report_description }}</a></p>
           {% endif %}
 
           <p>{{ issues_footer }}</p>
