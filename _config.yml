@@ -1255,10 +1255,11 @@ stops:
     status: Active
     items:
 
-      - name: Outline
-        description: The change log for this service.
+      - name: Entries
+        title: Entries
+        description: Providing a list of what has changed with this platform along with each road map item being accomplished, and issue being resolved.
         instruction: Publish a list of all road map and issue entries that have been satisfied for this service.
-        status: None
+        status: Active
         fields:
           - url: http://example.com/change-log/
           - entries:
