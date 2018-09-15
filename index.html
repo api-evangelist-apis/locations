@@ -140,7 +140,7 @@ title: Location APIs
           <ol>
             {% for entries in getting_started_entries %}
               {% assign url = entries.fields | map: 'url' %}
-              <li><a href="{{ url }}"><strong>{{ entries.name }}</strong></a></li>
+              <li><a href="{{ url }}"><strong>{{ entries.name }}</strong></a> - {{ entries.description }}</li>
             {% endfor %}
           </ol>
           <p>{{ getting_started_footer }}</p>

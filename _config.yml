@@ -984,7 +984,7 @@ stops:
     items:
 
       - name: Signup
-      #
+        title: Signup
         description: Where you can signup for this service.
         instruction: Provide a link to where users can signup for this service.
         status: None
@@ -992,6 +992,7 @@ stops:
           url: http://locations.apievangelist.com/#sign-up
 
       - name: Authentication
+        title: Authentication
         description: Where you can get details about authenticating with this service.
         instruction: Provide a link to the authentication overview for this service.
         status: None
@@ -999,6 +1000,7 @@ stops:
           - url: http://locations.apievangelist.com/#authentication
 
       - name: Documentation
+        title: Documentation
         description: Where you can find documentation for this service.
         instruction: Provide a link to the documentation for this service.
         status: None
@@ -1006,13 +1008,15 @@ stops:
           - url: http://locations.apievangelist.com/#documentation
 
       - name: SDKs
-        description: Where you can find SDKs for this service.
+        title: SDKs
+        description: Where you can find SDKs in multiple programming languages for this service.
         instruction: Provide a link to where users can find SDKs and code libraries for this service.
         status: None
         fields:
           - url: http://locations.apievangelist.com/#sdks
 
       - name: FAQ
+        title: FAQ
         description: Where you can get your common questions answered around this service.
         instruction: Provide a link to to the frequently asked questions for this service.
         status: None
@@ -1020,6 +1024,7 @@ stops:
           - url: http://locations.apievangelist.com/#faq
 
       - name: Support
+        title: Support
         description: Where you can get support for using this service.
         instruction: Provide a link to where users can get support for this service.
         status: None
