@@ -103,6 +103,28 @@ title: Location APIs
   {% endif %}
   <!--End Documentation-->
 
+  <!--Begin FAQs-->
+  {% if stop.name == 'FAQs' %}
+
+      {% assign faq_title = stop.name %}
+      {% assign faq_header = stop.header %}
+      {% assign faq_footer = stop.footer %}
+
+      {% for item in stop.items %}
+
+        {% if item.name == 'Categories' %}
+          {% assign faq_categories = item.fields %}
+        {% endif %}
+
+        {% if item.name == 'Questions' %}
+          {% assign faq_questions = item.fields %}
+        {% endif %}
+
+      {% endfor %}
+
+  {% endif %}
+  <!--End FAQs-->
+
   <!--Begin Communication-->
   {% if stop.name == 'Communication' %}
 
@@ -688,6 +710,44 @@ title: Location APIs
   </div>
 </section>
 <!-- End Support -->
+
+
+<!-- Begin FAQ -->
+<section id="sign-up-login">
+  <div class="content">
+		<header>
+			<h3>{{ faq_title }}</h3>
+		</header>
+    <p>{{ faq_header }}</p>
+    <center>
+    <table width="90%" align="center">
+      {% for categories in faq_categories %}
+        <tr>
+          <td>{{ categories }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+    </center>
+    <p>{{ faq_footer }}</p>
+  </div>
+</section>
+<!-- End FAQ -->
+
+{% assign faq_title = stop.name %}
+{% assign faq_header = stop.header %}
+{% assign faq_footer = stop.footer %}
+
+{% for item in stop.items %}
+
+  {% if item.name == 'Categories' %}
+    {% assign faq_categories = item.fields %}
+  {% endif %}
+
+  {% if item.name == 'Questions' %}
+    {% assign faq_questions = item.fields %}
+  {% endif %}
+
+{% endfor %}
 
 <!-- Begin Communications -->
 <a name="communications"></a>
