@@ -734,11 +734,11 @@ title: Location APIs
                 {{ this_category }} == {{ category }}<br />
                 {% if this_category == category %}
                   <tr>
-                    <td>{{ question }}</td>
+                    <td>1) {{ question }}</td>
                   </tr>
                 {% else %}
                   <tr>
-                    <td>{{ question }}</td>
+                    <td>2) {{ question }}</td>
                   </tr>
                 {% endif %}
 
@@ -771,16 +771,15 @@ title: Location APIs
             <tr>
             {% for channel in communication_channels %}
               {% assign title = channel | map: 'title' %}
-              title: {{ title }}<br />
               {% assign description = channel | map: 'description' %}
               {% assign image = channel | map: 'image' %}
               {% assign url = channel | map: 'url' %}
               {% assign communication_status = channel | map: 'status' %}
               status: {{ communication_status }}<br />
               {% if communication_status == "None" %}
-                11<br />
+                1) {{ title }}<br />
               {% else %}
-                22<br />
+                2) {{ title }}<br />
               {% endif %}
             {% endfor %}
             </tr>
