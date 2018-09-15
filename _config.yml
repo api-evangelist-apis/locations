@@ -1105,56 +1105,6 @@ stops:
           - logo: http://example.com/javascript.png
           - url: http://example.com/javascript/
 
-  #------
-  # FAQs
-  #------
-  - name: FAQs
-    title: Frequently Asked Questions (FAQ)
-    header: The definitions for this service.
-    footer:
-    instructions: Publish a list of the frequently asked questions (FAQ) for this service.
-    status: None
-    items:
-
-      - name: Categories
-        description: The categories of FAQ questions.
-        instruction: Break all questions down by logical categories.
-        status: None
-        fields:
-          - categories:
-              - Category One
-              - Category Two
-              - Category Three
-              - Category Four
-
-      - name: Questions
-        description: The questions asked about this service.
-        instruction: Publish a list of questions with answers within each category.
-        status: None
-        fields:
-          - questions:
-            - question: Question One
-              answer: This is the answer to the question.
-              category: Category One
-            - question: Question Two
-              answer: This is the answer to the question.
-              category: Category Two
-            - question: Question Three
-              answer: This is the answer to the question.
-              category: Category Three
-            - question: Question Four
-              answer: This is the answer to the question.
-              category: Category Four
-
-      - name: Ask Question
-        description: Asking a question about this service.
-        instruction: Provide a form for users to ask a new question.
-        status: None
-        fields:
-          - title: Ask a Question
-          - description: This is the description of asking question.
-          - url: http://example.com/ask/
-
   #----------
   # Road Map
   #----------
@@ -1369,6 +1319,57 @@ stops:
         status: None
         fields:
           - url: http://example.com/tickets/
+
+  #------
+  # FAQs
+  #------
+  - name: FAQs
+    title: Frequently Asked Questions (FAQ)
+    header: The definitions for this service.
+    footer:
+    instructions: Publish a list of the frequently asked questions (FAQ) for this service.
+    status: None
+    items:
+
+      - name: Categories
+        description: The categories of FAQ questions.
+        instruction: Break all questions down by logical categories.
+        status: None
+        fields:
+          - categories:
+              - Category One
+              - Category Two
+              - Category Three
+              - Category Four
+
+      - name: Questions
+        description: The questions asked about this service.
+        instruction: Publish a list of questions with answers within each category.
+        status: None
+        fields:
+          - questions:
+            - question: Question One
+              answer: This is the answer to the question.
+              category: Category One
+            - question: Question Two
+              answer: This is the answer to the question.
+              category: Category Two
+            - question: Question Three
+              answer: This is the answer to the question.
+              category: Category Three
+            - question: Question Four
+              answer: This is the answer to the question.
+              category: Category Four
+
+      - name: Ask Question
+        description: Asking a question about this service.
+        instruction: Provide a form for users to ask a new question.
+        status: None
+        fields:
+          - title: Ask a Question
+          - description: This is the description of asking question.
+          - url: http://example.com/ask/
+
 
   #-----------
   # Licensing
