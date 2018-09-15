@@ -114,6 +114,37 @@ title: Location APIs
   {% endif %}
   <!--End Documentation-->
 
+  <!--Begin Road Map-->
+  {% if stop.name == 'Road Map' %}
+
+      {% assign road_map_title = stop.name %}
+      {% assign road_map_header = stop.header %}
+      {% assign road_map_footer = stop.footer %}
+
+      {% for item in stop.items %}
+
+        {% if item.name == 'Private' %}
+
+          {% assign private_road_map_title = item.title %}
+          {% assign private_road_map_description = item.description' %}
+          {% assign private_road_map_url = item.fields | map: 'url' %}
+
+        {% endif %}
+
+        {% if item.name == 'Public' %}
+
+          {% assign public_road_map_title = item.title %}
+          {% assign public_road_map_description = item.description %}
+          {% assign public_road_map_url = item.fields | map: 'url' %}
+          {% assign public_road_map_entries = item.fields | map: 'entries' %}
+
+        {% endif %}
+
+      {% endfor %}
+
+  {% endif %}
+  <!--End Road Map-->
+
 {% endfor %}
 
 <!-- overview -->
@@ -571,3 +602,32 @@ title: Location APIs
     <p>{{ support_footer }}</p>
   </div>
 </section>
+
+<!-- Begin Road Map -->
+<a name="getting-started"></a>
+<section id="getting-started">
+  <div class="content">
+		<header>
+			<h3>{{ road_map_title }}</h3>
+		</header>
+    <div class="container">
+      <div class="row">
+        <div class="col-9">
+          <p>{{ road_map_header }}</p>
+          <p><strong>Entries:</strong></p>
+          <ol>
+            {% for entries in public_road_map_entries %}
+              {% assign url = entries.fields | map: 'url' %}
+              <li><strong>{{ entries.title }}</strong> (<i>{{ entries.date }}</i>)- {{ entries.description }}</li>
+            {% endfor %}
+          </ol>
+          <p>{{ road_map_footer }}</p>
+        </div>
+        <div class="col-lg-3">
+          <center><img src="/assets/images/road-map.png" width="175" align="center" style="margin-bottom: 25px;" /></center>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Road Map -->

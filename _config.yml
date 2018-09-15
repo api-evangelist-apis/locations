@@ -1168,6 +1168,7 @@ stops:
     items:
 
       - name: Private
+        title: Private Road Map
         description: Where you can access the private road map for this service.
         instruction: Publish a private, internal version of entries for the road map.
         status: None
@@ -1175,6 +1176,7 @@ stops:
           - url: http://example.com/private-road-map/
 
       - name: Public
+        title: Road Map
         description: Where you can access the public road map for this service.
         instruction: Publish a publicly available version of entries for the road map.
         status: Active
