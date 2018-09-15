@@ -1181,7 +1181,7 @@ stops:
         instruction: Publish a publicly available version of entries for the road map.
         status: Active
         fields:
-          - url: http://example.com/private-road-map/
+          - url: http://locations.apievangelist.com/#road-map
           - entries:
             - title: Roadmap Item
               date: 1/1/2019
@@ -1223,7 +1223,7 @@ stops:
         instruction: Publish a list of all known issues currently outstanding.
         status: Active
         fields:
-          - url: http://example.com/issues/
+          - url: http://locations.apievangelist.com/#issues
           - entries:
             - title: Issue Item
               date: 1/1/2019
@@ -1235,11 +1235,11 @@ stops:
       - name: Report
         description: Reporting an issue for this service.
         instruction: Provide a mechanism for users to report issues.
-        status: None
+        status: Active
         fields:
-          - title: Suggest Road Map Item
-          - description: This is the description of suggesting a road map.
-          - url: http://example.com/suggest/
+          - title: Report An Issue
+          - description: You are welcome to submit an issue via GitHub issue, or other support channel.
+          - url: https://github.com/api-evangelist-apis/locations/issues
 
   #------------
   # Change Log

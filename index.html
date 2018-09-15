@@ -155,6 +155,39 @@ title: Location APIs
   {% endif %}
   <!--End Road Map-->
 
+  <!--Begin Issues-->
+  {% if stop.name == 'Road Map' %}
+
+      {% assign issues_title = stop.name %}
+      {% assign issues_header = stop.header %}
+      {% assign issues_footer = stop.footer %}
+      {% assign issues_status = stop.status %}
+
+      {% for item in stop.items %}
+
+        {% if item.name == 'Entries' %}
+
+          {% assign issues_title = item.title %}
+          {% assign issues_description = item.description %}
+          {% assign issues_url = item.fields | map: 'url' %}
+          {% assign issues_entries = item.fields | map: 'entries' %}
+
+        {% endif %}
+
+        {% if item.name == 'Report' %}
+
+          {% assign issues_report_status = item.status %}
+          {% assign issues_report_title = item.fields | map: 'title' %}
+          {% assign issues_report_description = item.fields | map: 'description' %}
+          {% assign issues_report_url = item.fields | map: 'url' %}
+
+        {% endif %}
+
+      {% endfor %}
+
+  {% endif %}
+  <!--End Issues-->
+
 {% endfor %}
 
 <!-- overview -->
@@ -650,3 +683,41 @@ title: Location APIs
   </div>
 </section>
 <!-- End Road Map -->
+
+<!-- Begin Issues -->
+<a name="road-map"></a>
+<section id="road-map">
+  <div class="content">
+		<header>
+			<h3>{{ issues_title }}</h3>
+		</header>
+    <div class="container">
+      <div class="row">
+        <div class="col-9">
+          <p>{{ issues_header }}</p>
+          {% if issues_status == 'Active' %}
+            <p><strong>Entries:</strong></p>
+            <ul>
+              {% for entries in public_issues_entries %}
+                {% for entry in entries %}
+                  <li><strong>{{ entry.title }}</strong> (<i>{{ entry.date }}</i>)- {{ entry.description }}</li>
+                {% endfor %}
+              {% endfor %}
+            </ul>
+          {% endif %}
+
+          {% if issues_report_status == 'Active' %}
+            <p><strong>{{ issues_report_title }}</strong></p>
+            <p><a href="{{ issues_report_url }}">{{ issues_report_description }}</a></p>
+          {% endif %}
+
+          <p>{{ issues_footer }}</p>
+        </div>
+        <div class="col-lg-3">
+          <center><img src="/assets/images/road-map.png" width="175" align="center" style="margin-bottom: 25px;" /></center>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Issues -->
