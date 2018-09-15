@@ -1108,6 +1108,160 @@ stops:
           - logo: http://example.com/javascript.png
           - url: http://example.com/javascript/
 
+  #---------------
+  # Communication
+  #---------------
+  - name: Communication
+    title: Staying In Tune
+    header: Here are the commmunication channels provided to you, helping you stay in tune with what is changing with this service, and the overall platform behind it.
+    footer: These channels should provide you with a regular hearbeat of the changes being made, and what is being planned as part of this platform's operations.
+    instructions: Establish a communication strategy for this service.
+    image: http://locations.apievangelist.com/assets/images/communication.png
+    status: Active
+    items:
+
+      - name: Blog
+        title: Blog
+        description: The blog for this service.
+        instruction: Provide a simple blog and update mechanism for this service.
+        image: http://locations.apievangelist.com/assets/images/blog.png
+        status: None
+        fields:
+          - url: http://example.com/blog/
+          - atom: http://example.com/atom/
+
+      - name: Twitter
+        title: Twitter
+        description: The Twitter account for this service.
+        instruction: Provide the Twitter handle that is used as part of this service.
+        image: http://locations.apievangelist.com/assets/images/twitter.png
+        status: None
+        fields:
+          - handle: http://twitter.com/handle/
+
+      - name: Github
+        title: Github
+        description: The Github account for this service.
+        instruction: Provide the Github account or organization behind this service.
+        image: http://locations.apievangelist.com/assets/images/github.png
+        status: None
+        fields:
+          - handle: http://github.com/handle/
+
+      - name: Internal
+        title: Internal
+        description: Internal communication channel for this service.
+        instruction: Provide a location where internal communication is available.
+        image: http://locations.apievangelist.com/assets/images/internal.png
+        status: None
+        fields:
+          - url: http://example.com/private-comm/
+
+      - name: External
+        title: External
+        description: External communication channels for this service.
+        instruction: Provide a location where public communication is available.
+        image: http://locations.apievangelist.com/assets/images/external.png
+        status: None
+        fields:
+          - url: http://example.com/communication/
+
+  #----------
+  # Support
+  #----------
+  - name: Support
+    header: We provide three ways in which you can receive support for this API, and have your questions answered as you are working to integrate it into your web or mobile application.
+    footer: If your question is of the private nature please email us, for all other inquires please submit as GitHub issue if possible, so that others can learn from your question to.
+    instructions: Establish the support apparatus in place for this service.
+    status: Active
+    items:
+
+      - name: Email
+        title: Email
+        description: The email account for supporting this service.
+        instruction: Define the email account used to support this service.
+        image: http://locations.apievangelist.com/assets/images/email.png
+        status: Active
+        fields:
+          - email: mailto%3A info@apievangelist.com
+
+      - name: GitHub Issues
+        title: GitHub Issues
+        description: Where to submit an issue to get support for this service.
+        instruction: Provide a URL to the repository issues to support this service.
+        image: http://locations.apievangelist.com/assets/images/github.png
+        status: Active
+        fields:
+          - url: https://github.com/api-evangelist-apis/locations/issues
+
+      - name: Twitter
+        title: Twitter
+        description: Where to get support publicly using a supported Twitter account
+        instruction: Provide the URL to the Twitter account supporting the API.
+        image: http://locations.apievangelist.com/assets/images/twitter.png
+        status: Active
+        fields:
+          - url: https://twitter.com/apievangelist/
+
+      - name: Ticket
+        title: Ticket
+        description: Where to submit a ticket to get support for this service.
+        instruction: Provide a URL to the ticketing system used to support this service.
+        image: http://locations.apievangelist.com/assets/images/twitter.png
+        status: None
+        fields:
+          - url: http://example.com/tickets/
+
+  #------
+  # FAQs
+  #------
+  - name: FAQs
+    title: Frequently Asked Questions (FAQ)
+    header: The definitions for this service.
+    footer:
+    instructions: Publish a list of the frequently asked questions (FAQ) for this service.
+    status: None
+    items:
+
+      - name: Categories
+        description: The categories of FAQ questions.
+        instruction: Break all questions down by logical categories.
+        status: None
+        fields:
+          - categories:
+              - Category One
+              - Category Two
+              - Category Three
+              - Category Four
+
+      - name: Questions
+        description: The questions asked about this service.
+        instruction: Publish a list of questions with answers within each category.
+        status: None
+        fields:
+          - questions:
+            - question: Question One
+              answer: This is the answer to the question.
+              category: Category One
+            - question: Question Two
+              answer: This is the answer to the question.
+              category: Category Two
+            - question: Question Three
+              answer: This is the answer to the question.
+              category: Category Three
+            - question: Question Four
+              answer: This is the answer to the question.
+              category: Category Four
+
+      - name: Ask Question
+        description: Asking a question about this service.
+        instruction: Provide a form for users to ask a new question.
+        status: None
+        fields:
+          - title: Ask a Question
+          - description: This is the description of asking question.
+          - url: http://example.com/ask/
+
   #----------
   # Road Map
   #----------
@@ -1229,150 +1383,6 @@ stops:
             - title: Change Log Item
               date: 1/1/2019
               description: This is a description for the item.
-
-  #---------------
-  # Communication
-  #---------------
-  - name: Communication
-    title: Staying In Tune
-    header: The definitions for this service.
-    footer:
-    instructions: Establish a communication strategy for this service.
-    image: http://locations.apievangelist.com/assets/images/road-map.png
-    status: None
-    items:
-
-      - name: Blog
-        description: The blog for this service.
-        instruction: Provide a simple blog and update mechanism for this service.
-        status: None
-        fields:
-          - url: http://example.com/blog/
-          - atom: http://example.com/atom/
-
-      - name: Twitter
-        description: The Twitter account for this service.
-        instruction: Provide the Twitter handle that is used as part of this service.
-        status: None
-        fields:
-          - handle: http://twitter.com/handle/
-
-      - name: Github
-        description: The Github account for this service.
-        instruction: Provide the Github account or organization behind this service.
-        status: None
-        fields:
-          - handle: http://github.com/handle/
-
-      - name: Internal
-        description: Internal communication channel for this service.
-        instruction: Provide a location where internal communication is available.
-        status: None
-        fields:
-          - url: http://example.com/private-comm/
-
-      - name: External
-        description: External communication channels for this service.
-        instruction: Provide a location where public communication is available.
-        status: None
-        fields:
-          - url: http://example.com/communication/
-
-  #----------
-  # Support
-  #----------
-  - name: Support
-    header: We provide three ways in which you can receive support for this API, and have your questions answered as you are working to integrate it into your web or mobile application.
-    footer: If your question is of the private nature please email us, for all other inquires please submit as GitHub issue if possible, so that others can learn from your question to.
-    instructions: Establish the support apparatus in place for this service.
-    status: Active
-    items:
-      - name: Email
-        title: Email
-        description: The email account for supporting this service.
-        instruction: Define the email account used to support this service.
-        image: http://locations.apievangelist.com/assets/images/email.png
-        status: Active
-        fields:
-          - email: mailto%3A info@apievangelist.com
-
-      - name: GitHub Issues
-        title: GitHub Issues
-        description: Where to submit an issue to get support for this service.
-        instruction: Provide a URL to the repository issues to support this service.
-        image: http://locations.apievangelist.com/assets/images/github.png
-        status: Active
-        fields:
-          - url: https://github.com/api-evangelist-apis/locations/issues
-
-      - name: Twitter
-        title: Twitter
-        description: Where to get support publicly using a supported Twitter account
-        instruction: Provide the URL to the Twitter account supporting the API.
-        image: http://locations.apievangelist.com/assets/images/twitter.png
-        status: Active
-        fields:
-          - url: https://twitter.com/apievangelist/
-
-      - name: Ticket
-        title: Ticket
-        description: Where to submit a ticket to get support for this service.
-        instruction: Provide a URL to the ticketing system used to support this service.
-        image: http://locations.apievangelist.com/assets/images/twitter.png
-        status: None
-        fields:
-          - url: http://example.com/tickets/
-
-  #------
-  # FAQs
-  #------
-  - name: FAQs
-    title: Frequently Asked Questions (FAQ)
-    header: The definitions for this service.
-    footer:
-    instructions: Publish a list of the frequently asked questions (FAQ) for this service.
-    status: None
-    items:
-
-      - name: Categories
-        description: The categories of FAQ questions.
-        instruction: Break all questions down by logical categories.
-        status: None
-        fields:
-          - categories:
-              - Category One
-              - Category Two
-              - Category Three
-              - Category Four
-
-      - name: Questions
-        description: The questions asked about this service.
-        instruction: Publish a list of questions with answers within each category.
-        status: None
-        fields:
-          - questions:
-            - question: Question One
-              answer: This is the answer to the question.
-              category: Category One
-            - question: Question Two
-              answer: This is the answer to the question.
-              category: Category Two
-            - question: Question Three
-              answer: This is the answer to the question.
-              category: Category Three
-            - question: Question Four
-              answer: This is the answer to the question.
-              category: Category Four
-
-      - name: Ask Question
-        description: Asking a question about this service.
-        instruction: Provide a form for users to ask a new question.
-        status: None
-        fields:
-          - title: Ask a Question
-          - description: This is the description of asking question.
-          - url: http://example.com/ask/
-
 
   #-----------
   # Licensing

@@ -103,6 +103,17 @@ title: Location APIs
   {% endif %}
   <!--End Documentation-->
 
+  <!--Begin Communication-->
+  {% if stop.name == 'Communication' %}
+
+      {% assign communication_title = stop.name %}
+      {% assign communication_header = stop.header %}
+      {% assign communication_footer = stop.footer %}
+      {% assign communication_channels = stop.items %}
+
+  {% endif %}
+  <!--End Communication-->
+
   <!--Begin Authentication-->
   {% if stop.name == 'Getting Started' %}
 
@@ -629,24 +640,32 @@ title: Location APIs
 </section>
 <!--Documentation-->
 
-<!-- Definitions -->
-<h3>{{ documentation_definition_title }}</h3>
-<p>{{ documentation_definition_header }}</p>
-<center>
-<table width="90%" align="center">
-  <tr>
-  {% if documentation_definition_openapi != '' %}
-    <td align="center"><a href="{{ documentation_definition_openapi }}"><img src="/assets/images/openapi.png" width="75" align="center" /></a><p align="center"><a href="{{ site.openapi_url }}"><strong>OpenAPI</strong></a></p></td>
-  {% endif %}
-  {% if documentation_definition_postman != '' %}
-    <td align="center"><a href="{{ documentation_definition_postman }}"><img src="/assets/images/postman.png" width="75" align="center" /></a><p align="center"><a href="{{ site.postman_collection_url }}"><strong>Postman</strong></a></p></td>
-  {% endif %}
-  </tr>
-</table>
-</center>
-<p>{{ documentation_definition_footer }}</p>
+<!-- Begin Definitions -->
+<a name="definitions"></a>
+<section id="definitions">
+  <div class="content">
+		<header>
+			<h3>{{ documentation_definition_title }}</h3>
+		</header>
+    <p>{{ documentation_definition_header }}</p>
+    <center>
+    <table width="90%" align="center">
+      <tr>
+      {% if documentation_definition_openapi != '' %}
+        <td align="center"><a href="{{ documentation_definition_openapi }}"><img src="/assets/images/openapi.png" width="75" align="center" /></a><p align="center"><a href="{{ site.openapi_url }}"><strong>OpenAPI</strong></a></p></td>
+      {% endif %}
+      {% if documentation_definition_postman != '' %}
+        <td align="center"><a href="{{ documentation_definition_postman }}"><img src="/assets/images/postman.png" width="75" align="center" /></a><p align="center"><a href="{{ site.postman_collection_url }}"><strong>Postman</strong></a></p></td>
+      {% endif %}
+      </tr>
+    </table>
+    </center>
+    <p>{{ documentation_definition_footer }}</p>
+  </div>
+</section>
+<!-- End Definitions -->
 
-<!-- Support -->
+<!-- Begin Support -->
 <section id="sign-up-login">
   <div class="content">
 		<header>
@@ -668,6 +687,44 @@ title: Location APIs
     <p>{{ support_footer }}</p>
   </div>
 </section>
+<!-- End Support -->
+
+<!-- Begin Communications -->
+<a name="communications"></a>
+<section id="sign-up-login">
+  <div class="content">
+		<header>
+			<h3>{{ communication_title }}</h3>
+		</header>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-9">
+          <p>{{ communication_header }}</p>
+          <center>
+          <table width="90%" align="center">
+            <tr>
+            {% for channel in communication_channels %}
+              {% assign url = channel.fields | map: 'url' %}
+              {% if channel.status == 'Active' %}
+                <td align="center"><a href="{{ url }}"><img src="{{ channel.image }}" width="75" align="center" /></a><p align="center"><a href="{{ channel.url }}"><strong>{{ channel.title }}</strong></a></p></td>
+              {% endif %}
+            {% endfor %}
+            </tr>
+          </table>
+          </center>
+          <p>{{ communication_footer }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3">
+      <center><img src="{{ road_map_image }}" width="175" align="center" style="margin-bottom: 25px;" /></center>
+    </div>
+
+  </div>
+</section>
+<!-- End Communications -->
 
 <!-- Begin Road Map -->
 <a name="road-map"></a>
