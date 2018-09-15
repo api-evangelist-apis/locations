@@ -10,8 +10,7 @@ title: Location API - Presentation
 
     {% for stop in site.stops %}
       <p align="center"><strong>{{ stop.name }}</strong></p>
-      <p align="center">{{ item.header }}</p>
-      <p align="center">{{ item.footer }}</p>
+      <p align="center">{{ item.description }}</p>
       <hr />
       {% for item in stop.items %}
         <p align="center"><strong>{{ stop.name }} > {{ item.name }}</strong></p>
