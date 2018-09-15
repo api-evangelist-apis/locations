@@ -2,7 +2,7 @@
 # Settings
 #---------------------
 title: API Evangelist Location API
-description: This is a location API, providing many of the common building blocks of location. Providing the essential location ingredients needed through a varietiy of applications, without having to reivent the wheel each times it is needed. This API is still being working on, and not quite ready for prime time, but if you have any questions, visit the road map and support sections below the documentation.
+description: This is a location API, providing many of the common building blocks of location. Providing the essential location ingredients needed through a variety of applications, without having to reinvent the wheel each times it is needed. This API is still being working on, and not quite ready for prime time, but if you have any questions, visit the road map and support sections below the documentation.
 url: http://location.apievangelist.com
 tag: Location, Cities, Regions, Countries
 logo: https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png
@@ -478,7 +478,7 @@ stops:
         tools:
           - name: AWS API Gateway
             description: Amazon's API gateway solution for deploying and managing APIs.
-            url: https://nodejs.org/en/
+            url: https://aws.amazon.com/api-gateway/
 
       - name: Pipeline
         description: Information regarding the pipeline in use for service.
@@ -665,39 +665,48 @@ stops:
   # Management
   #------------
   - name: Management
-    header: The definitions for this service.
-    footer:
+    header: The management of this service, managing all access to APIs.
+    footer: Leveraging a proven solution for securing all resources provided.
     instructions: Define the management layer for this service's API.
-    status: None
+    status: Active
     items:
 
       - name: Platform
         description: Details on which API management platform is used for this service.
         instruction: Defining the platform used for the API management layer.
-        status: None
+        status: Active
         fields:
           - platform: AWS API Gateway
+        tools:
+          - name: AWS API Gateway
+            description: Amazon's API gateway solution for deploying and managing APIs.
+            url: https://aws.amazon.com/api-gateway/
+            status: Active
+          - name: Kong
+            description: An open source API management solution, with enterprise options.
+            url: https://konghq.com/
+            status: None
 
       - name: Administration
         description: Where you find the administrative access for API management.
         instruction: Provide a location for administrating the management layer.
-        status: None
+        status: Active
         fields:
           - url: https://console.aws.amazon.com/apigateway/home?region=us-east-1
 
       - name: Signup
         description: Where you can sign up for access to this service.
         instruction: Provide a location for users to signup for access to this service.
-        status: None
+        status: Active
         fields:
-          - url: https://example.com/signup/
+          - url: http://locations.apievangelist.com/
 
       - name: Login
         description: Where you can login for access to this service.
         instruction: Provide a location for users to login to access to this service.
-        status: None
+        status: Active
         fields:
-          - url: https://example.com/login/
+          - url: http://locations.apievangelist.com/
 
       - name: Account
         description: Where you can access accouint information when using service.
@@ -707,8 +716,8 @@ stops:
           - url: https://example.com/account/
 
       - name: Applications
-        description: Details about the applications approved to use this service.
-        instruction: Provide the location of applications that are approved to use service.
+        description: Details about the developer's applications approved to use this service.
+        instruction: Provide a location for the applications that are approved to use service.
         status: None
         fields:
           - url: https://example.com/applications/
@@ -720,52 +729,52 @@ stops:
     header: The definitions for this service.
     footer:
     instructions: Define the logging layer for supporting this service.
-    status: None
+    status: Active
     items:
 
       - name: Database
         description: Information about database logs.
         instruction: Define the logging for the database layer.
-        status: None
+        status: Active
         fields:
           - location: /rds
 
       - name: API
         description: Information about API logs.
         instruction: Define the logging for the API access layer.
-        status: None
+        status: Active
         fields:
           - location: /cloudwatch
 
       - name: DNS
         description: Information about DNS logs.
         instruction: Define the logging for the DNS layer.
-        status: None
+        status: Active
         fields:
           - location: /cloudflare
 
       - name: Shipping
-        description: Information about shipping logs centrally.
-        instruction: Define how longs are shipped or centralized for auditing.
-        status: None
+        description: Information about shipping logs centrally to service's storage.
+        instruction: Define how logs are shipped or centralized for auditing.
+        status: Active
         fields:
-          - enabled: false
-          - location: none
+          - enabled: true
+          - location: /api-evangelist-api-bucket/locations/logs/
 
   #--------------
   # Monetization
   #--------------
   - name: Monetization
-    header: The definitions for this service.
-    footer:
+    header: Define the monetization history, and the details leading to a plan.
+    footer: Tracking on everything that goes into delivering this service.
     instructions: Define the costs associated with the delivery of this service.
-    status: None
+    status: Active
     items:
 
       - name: Acquisition
         description: Understanding what it costs to acquire the resources behind this service.
         instruction: Provide costs associated with acquisition of resources behind service.
-        status: None
+        status: Active
         fields:
           - initial_hours: 1
           - initial_cost: $100.00
@@ -775,27 +784,27 @@ stops:
       - name: Development
         description: Understanding what it cost to develop this service.
         instruction: Provide costs associated with the development of this service.
-        status: None
+        status: Active
         fields:
-          - initial_hours: 1
-          - initial_cost: $100.00
-          - monthly_hours: 1
-          - monthly_cost: $100.00
+          - initial_hours: 6
+          - initial_cost: $600.00
+          - monthly_hours: 0
+          - monthly_cost: 0
 
       - name: Operation
         description: Understanding what it costs to operate this service.
         instruction: Provide costs associated with the operation of this service.
-        status: None
+        status: Active
         fields:
-          - initial_hours: 1
-          - initial_cost: $100.00
-          - monthly_hours: 1
-          - monthly_cost: $100.00
+          - initial_hours: 2
+          - initial_cost: $200.00
+          - monthly_hours: 2
+          - monthly_cost: $200.00
 
       - name: Value
         description: Articulating what value is provided by this service.
         instruction: Provide a description of the value delivered by this service.
-        status: None
+        status: Active
         fields:
           - description: Delivers X value for consumers by providing them Y.
 
@@ -803,10 +812,10 @@ stops:
   # Plans
   #-------
   - name: Plans
-    header: The definitions for this service.
-    footer:
+    header: The plans in place for managing access to this service, and delivers on the overall investment.
+    footer: Making sure that all services are managed as part of a large plan to capture value being generated.
     instructions: Define the operational plan for the business of this service.
-    status: None
+    status: Active
     items:
       - name: Tiers
         description: The tiers of access for this service.
@@ -853,50 +862,61 @@ stops:
   # Portal
   #--------
   - name: Portal
-    header: The definitions for this service.
-    footer:
+    header: The portal landing page for this service, providing a single location to access the service.
+    footer: Providing a single known location discovery and return when information about service is needed.
     instructions: Define the public or private portal in use to present this service.
-    status: None
+    status: Active
     items:
 
       - name: Hosting
         description: Information about the hosting service used for this portal.
         instruction: Provide details on where this service portal is hosted.
-        status: None
+        status: Active
         fields:
           - host: Github Pages
+        tools:
+          - name: Github Pages
+            description: Hosted as a static Jekyll site as part of the GitHub repository for the service.
+            url: https://pages.github.com/
 
       - name: Template
         description: Information regarding the UI template used for this portal.
         instruction: Define which graphical UI and brand template is in use for this portal.
-        status: None
+        status: Active
         fields:
-          - template: html5up
+          template: HTML5 Up
+        tools:
+          - name: HTML5 Up
+            description: A HTML, CSS, and JavaScript Jekyll template.
+            url: https://html5up.net/
 
       - name: Analytics
         description: Information about the analytics in use for tracking on this portal.
         instruction: Define which analytics package is used to measure traffic for portal.
         status: None
         fields:
-          - analytics: Google Analtyics
+          - analytics:
+              - Google Analytics
+              - Github Analytics
+        tools:
+          - name: Google Analytics
+            description: Using embedded Google Analytics for managing traffic.
+            url: https://analytics.google.com/analytics/web/
+            status: Active
+          - name: Github Analytics
+            description: Using embedded Google Analytics for managing traffic.
+            url: https://blog.github.com/2014-01-07-introducing-github-traffic-analytics/
+            status: Active
 
   #---------------
   # Documentation
   #---------------
   - name: Documentation
-    header: The definitions for this service.
-    footer:
+    header: The interactive documentation for the API and schema definitions in use.
+    footer: Providing a machine and human readable solution for learning about API.
     instructions: Provide documentation for this service within portal.
-    status: None
+    status: Active
     items:
-
-      - name: Paths
-        description: The API paths for use as part of this service.
-        instruction: Publish an interactive list of API paths available for service.
-        status: None
-        fields:
-          - enabled: true
-          - url: http://example.com/#documentation
 
       - name: Overview
         description: The descriptive header and footer paragraphs for the documentation.
@@ -907,14 +927,21 @@ stops:
           - header: 'This is the interactive API documentation for this API, and when you are authenticated, will allow you to make API calls, and see the responses for each API path.'
           - footer: 'This documentation is generated from the OpenAPI definition for this API, which you can use to publish, syndicate, and integrate with this API documentation elsewhere.'
 
+      - name: Paths
+        description: Documentng the API paths that are available for this service.
+        instruction: Publish an interactive list of API paths available for service.
+        status: Active
+        fields:
+          - status: active
+          - url: http://locations.apievangelist.com/#documentation
+
       - name: Schema
         description: The descriptive header and footer paragraphs for the documentation schema.
         instruction: Provide some content to introduce and close up the documentation schema.
         status: Active
         fields:
-          - title: 'API Schema'
-          - header: This is the schema definition for this API, describing the schema for requests and responses.
-          - footer: This documentation is driven by JSON schema, which is available as part of the OpenAPI.
+          - status: Active
+          - url: http://locations.apievangelist.com/#schema
 
       - name: Examples
         description: Examples of using the API paths for this service.
@@ -925,9 +952,9 @@ stops:
           - url: http://example.com/#examples
 
       - name: Definitions
-        description: The API defined for use as part of this service.
+        description: The machine reaable API definitions for use as part of this service.
         instruction: Publish a list of schema definitions in use by this service.
-        status: None
+        status: Active
         fields:
           - enabled: true
           - openapi: http://example.com/openapi/
@@ -944,10 +971,11 @@ stops:
   # Getting Started
   #-----------------
   - name: Getting Started
-    header: The definitions for this service.
-    footer:
+    header: These are the steps you need to take when getting started using this service.
+    footer: If you have any questions, feel free to reach out, and I'll do my best to help.
+    description: Providing basic getting started information for dvelopers to use when on-boarding.
     instructions: Provide a getting started page for this service within portal.
-    status: None
+    status: Active
     items:
 
       - name: Signup
@@ -955,7 +983,7 @@ stops:
         instruction: Provide a link to where users can signup for this service.
         status: None
         fields:
-          url: http://example.com/signup/
+          url: http://location.apievangelist.com
 
       - name: Authentication
         description: Where you can get details about authenticating with this service.
