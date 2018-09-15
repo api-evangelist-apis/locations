@@ -117,7 +117,7 @@ title: Location APIs
         {% endif %}
 
         {% if item.name == 'Questions' %}
-          {% assign faq_questions = item.fields %}
+          {% assign faq_questions = item.fields | map: 'questions' %}
         {% endif %}
 
       {% endfor %}
@@ -721,8 +721,6 @@ title: Location APIs
     <p>{{ faq_header }}</p>
     <center>
     <table width="90%" align="center" border="1">
-        {{ faq_categories }}<br />
-
       {% for categories in faq_categories %}
         {% for category in categories %}
           <tr>
