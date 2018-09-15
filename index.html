@@ -731,13 +731,9 @@ title: Location APIs
 
               {{ this_category }} == {{ category }}<br />
               {% if this_category == category %}
-                <tr>
-                  <td>1) {{ question }}</td>
-                </tr>
+                <li>) {{ question }}</li>
               {% else %}
-                <tr>
-                  <td>2) {{ question }}</td>
-                </tr>
+                <li>2) {{ question }}</li>
               {% endif %}
 
           {% endfor %}
@@ -745,6 +741,7 @@ title: Location APIs
       {% endfor %}
     {% endfor %}
     <p>{{ faq_footer }}</p>
+
   </div>
 </section>
 <!-- End FAQ -->
@@ -753,6 +750,7 @@ title: Location APIs
 <a name="communications"></a>
 <section id="sign-up-login">
   <div class="content">
+
 		<header>
 			<h3>{{ communication_title }}</h3>
 		</header>
@@ -761,6 +759,7 @@ title: Location APIs
       <div class="row">
         <div class="col-9">
           <p>{{ communication_header }}</p>
+
           <center>
           <table width="90%" align="center">
             <tr>
@@ -772,15 +771,17 @@ title: Location APIs
               {% assign communication_status = channel | map: 'status' %}
               status: {{ communication_status }}<br />
               {% if communication_status == "None" %}
-                1) {{ title }}<br />
+                <tr><td>1) {{ title }}</td></tr>
               {% else %}
-                2) {{ title }}<br />
+                <tr><td>2) {{ title }}</td></tr>
               {% endif %}
             {% endfor %}
             </tr>
           </table>
           </center>
+
           <p>{{ communication_footer }}</p>
+
         </div>
       </div>
     </div>
