@@ -702,14 +702,15 @@ title: Location APIs
         <div class="col-9">
           <p>{{ communication_header }}</p>
           <center>
-          HERE: {{ communication_channels }}<br />
           <table width="90%" align="center">
             <tr>
-            {% for channel in communication_channels %}
-              {% assign url = channel.fields | map: 'url' %}
-              {% if channel.status == 'Active' %}
-                <td align="center"><a href="{{ url }}"><img src="{{ channel.image }}" width="75" align="center" /></a><p align="center"><a href="{{ channel.url }}"><strong>{{ channel.title }}</strong></a></p></td>
-              {% endif %}
+            {% for channels in communication_channels %}
+              {% for channel in channels %}
+                {% assign url = channel.fields | map: 'url' %}
+                {% if channel.status == 'Active' %}
+                  <td align="center"><a href="{{ url }}"><img src="{{ channel.image }}" width="75" align="center" /></a><p align="center"><a href="{{ channel.url }}"><strong>{{ channel.title }}</strong></a></p></td>
+                {% endif %}
+              {% endfor %}
             {% endfor %}
             </tr>
           </table>
