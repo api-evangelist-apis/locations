@@ -1171,10 +1171,10 @@ stops:
         status: None
         fields:
           - categories:
-              - Category One
-              - Category Two
-              - Category Three
-              - Category Four
+            - Category One
+            - Category Two
+            - Category Three
+            - Category Four
 
       - name: Questions
         description: The questions asked about this service.
