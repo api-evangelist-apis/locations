@@ -734,7 +734,7 @@ title: Location APIs
                 {% assign this_category = entry | map: 'category' %}
 
                 {{ this_category }} == {{ category }}<br />
-                {% if this_category == cat %}
+                {% if this_category == category %}
                   <tr>
                     <td>{{ question }}</td>
                   </tr>
