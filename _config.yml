@@ -1187,11 +1187,23 @@ stops:
               category: Category One
             - question: Question Two
               answer: This is the answer to the question.
+              category: Category One
+            - question: Question One
+              answer: This is the answer to the question.
+              category: Category Two
+            - question: Question Two
+              answer: This is the answer to the question.
+              category: Category Two
+            - question: Question One
+              answer: This is the answer to the question.
               category: Category Two
             - question: Question Three
               answer: This is the answer to the question.
               category: Category Three
-            - question: Question Four
+            - question: Question One
+              answer: This is the answer to the question.
+              category: Category Four
+            - question: Question Two
               answer: This is the answer to the question.
               category: Category Four
 
