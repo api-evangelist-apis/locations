@@ -559,7 +559,10 @@ title: Location APIs
     <table width="90%" align="center">
       <tr>
       {% for channel in support_channels %}
-        <td align="center"><a href="{{ channel.url }}"><img src="{{ channel.image }}" width="75" align="center" /></a><p align="center"><a href="{{ channel.url }}"><strong>{{ channel.details }}</strong></a></p></td>
+        {% assign url = channel.fields | map: 'url' %}
+        {% if channel.status == 'Active' %}
+          <td align="center"><a href="{{ url }}"><img src="{{ channel.image }}" width="75" align="center" /></a><p align="center"><a href="{{ channel.url }}"><strong>{{ channel.name }}</strong></a></p></td>
+        {% endif %}
       {% endfor %}
       </tr>
     </table>

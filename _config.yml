@@ -1322,20 +1322,31 @@ stops:
       - name: Email
         description: The email account for supporting this service.
         instruction: Define the email account used to support this service.
-        status: None
+        image: http://locations.apievangelist.com/assets/images/email.png
+        status: Active
         fields:
-          - email: info@example.com
+          - email: mailto%3A info@apievangelist.com
 
       - name: GitHub Issues
         description: Where to submit an issue to get support for this service.
         instruction: Provide a URL to the repository issues to support this service.
-        status: None
+        image: http://locations.apievangelist.com/assets/images/github.png
+        status: Active
         fields:
-          - url: http://github.com/issues/
+          - url: https://github.com/api-evangelist-apis/locations/issues
 
       - name: Twitter
+        description: Where to get support publicly using a supported Twitter account
+        instruction: Provide the URL to the Twitter account supporting the API.
+        image: http://locations.apievangelist.com/assets/images/twitter.png
+        status: Active
+        fields:
+          - url: https://twitter.com/apievangelist/
+
+      - name: Ticket
         description: Where to submit a ticket to get support for this service.
         instruction: Provide a URL to the ticketing system used to support this service.
+        image: http://locations.apievangelist.com/assets/images/twitter.png
         status: None
         fields:
           - url: http://example.com/tickets/
