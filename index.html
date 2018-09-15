@@ -723,22 +723,24 @@ title: Location APIs
     <table width="90%" align="center" border="1">
       {% for categories in faq_categories %}
         {% for category in categories %}
-          <tr>
-            <td>{{ category }}-2</td>
-          </tr>
-          {% for questions in faq_questions %}
-            {% for question in questions %}
+          {% for cat in category %}
+            <tr>
+              <td>{{ cat }}-2</td>
+            </tr>
+            {% for questions in faq_questions %}
+              {% for question in questions %}
 
-              {% assign this_question = question | map: 'question' %}
-              {% assign this_answer = question | map: 'answer' %}
-              {% assign this_category = question | map: 'category' %}
+                {% assign this_question = question | map: 'question' %}
+                {% assign this_answer = question | map: 'answer' %}
+                {% assign this_category = question | map: 'category' %}
 
-              {% if this_category == category %}
-                <tr>
-                  <td>{{ question }}</td>
-                </tr>
-              {% endif %}
+                {% if this_category == cat %}
+                  <tr>
+                    <td>{{ question }}</td>
+                  </tr>
+                {% endif %}
 
+              {% endfor %}
             {% endfor %}
           {% endfor %}
         {% endfor %}
