@@ -985,42 +985,42 @@ stops:
         instruction: Provide a link to where users can signup for this service.
         status: None
         fields:
-          url: http://location.apievangelist.com
+          url: http://locations.apievangelist.com/#sign-up
 
       - name: Authentication
         description: Where you can get details about authenticating with this service.
         instruction: Provide a link to the authentication overview for this service.
         status: None
         fields:
-          - url: http://example.com/authentication/
+          - url: http://locations.apievangelist.com/#authentication
 
       - name: Documentation
         description: Where you can find documentation for this service.
         instruction: Provide a link to the documentation for this service.
         status: None
         fields:
-          - url: http://example.com/documentation/
+          - url: http://locations.apievangelist.com/#documentation
 
       - name: SDKs
         description: Where you can find SDKs for this service.
         instruction: Provide a link to where users can find SDKs and code libraries for this service.
         status: None
         fields:
-          - url: http://example.com/sdks/
+          - url: http://locations.apievangelist.com/#sdks
 
       - name: FAQ
         description: Where you can get your common questions answered around this service.
         instruction: Provide a link to to the frequently asked questions for this service.
         status: None
         fields:
-          - url: http://example.com/faq/
+          - url: http://locations.apievangelist.com/#faq
 
       - name: Support
         description: Where you can get support for using this service.
         instruction: Provide a link to where users can get support for this service.
         status: None
         fields:
-          - url: http://example.com/support/
+          - url: http://locations.apievangelist.com/#support
 
   #------
   # SDKs
@@ -1100,6 +1100,7 @@ stops:
   # FAQs
   #------
   - name: FAQs
+    title: Frequently Asked Questions (FAQ)
     header: The definitions for this service.
     footer:
     instructions: Publish a list of the frequently asked questions (FAQ) for this service.
