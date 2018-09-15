@@ -118,6 +118,7 @@ title: Location APIs
 
         {% if item.name == 'Questions' %}
           {% assign faq_questions = item.fields | map: 'questions' %}
+          faq_questions: {{ faq_questions }}<br />
         {% endif %}
 
       {% endfor %}
@@ -725,11 +726,13 @@ title: Location APIs
         <p><strong>{{ category }}</strong></p>
         <ul>
           {% for entry in faq_questions %}
+
               {% assign this_question = entry | map: 'question' %}
               {% assign this_answer = entry | map: 'answer' %}
               {% assign this_category = entry | map: 'category' %}
 
               {{ this_category }} == {{ category }}<br />
+
               {% if this_category == category %}
                 <li>) {{ question }}</li>
               {% else %}
