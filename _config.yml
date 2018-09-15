@@ -37,23 +37,23 @@ stops:
     items:
 
       - name: Organization
-        description: The Github organization for this service.
+        description: The source control organization for this service.
         instruction: Define the organization for this service.
         status: None
         fields:
           - github_organization: organization-name
 
       - name: Repository
-        description:
+        description: The source control repository for this service.
         instruction: Establish a Github repository.
         status: None
         fields:
           - github_repository: repo-name
 
       - name: README
-        description:
+        description: The README for this services repository
         instruction: Craft a README for the repository.
-        status: None
+        status: Active
         fields:
           - readme_path: /README.md
 

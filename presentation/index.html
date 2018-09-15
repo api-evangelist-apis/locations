@@ -1,0 +1,25 @@
+---
+layout: default
+title: SEC Companies
+---
+
+{% assign openapi = site.data.openapi %}
+
+<section id="documentation">
+  <div class="content">
+
+    {% for stop in site.stops %}
+      <p align="center"><strong>{{ stop.name }}</strong></p>
+      <p align="center">{{ item.header }}</p>
+      <p align="center">{{ item.footer }}</p>
+      <hr />
+      {% for item in stop.items %}
+        <p align="center"><strong>{{ item.name }}</strong></p>
+        <p align="center">{{ item.description }}</p>
+        <hr />
+      {% endfor %}
+    {% endfor %}
+    </table>
+
+  </div>
+</section>
