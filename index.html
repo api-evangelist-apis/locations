@@ -137,6 +137,7 @@ title: Location APIs
           {% assign public_road_map_description = item.description %}
           {% assign public_road_map_url = item.fields | map: 'url' %}
           {% assign public_road_map_entries = item.fields | map: 'entries' %}
+          HERE: {{ public_road_map_entries }}<br />
 
         {% endif %}
 
@@ -617,7 +618,6 @@ title: Location APIs
           <p><strong>Entries:</strong></p>
           <ol>
             {% for entries in public_road_map_entries %}
-              {% assign url = entries.fields | map: 'url' %}
               <li><strong>{{ entries.title }}</strong> (<i>{{ entries.date }}</i>)- {{ entries.description }}</li>
             {% endfor %}
           </ol>
