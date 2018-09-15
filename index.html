@@ -722,13 +722,15 @@ title: Location APIs
     <center>
     <table width="90%" align="center">
       {% for categories in faq_categories %}
-        <tr>
-          <td>{{ categories }}</td>
-        </tr>
-        {% for question in faq_questions %}
+        {% for category in categories %}
           <tr>
-            <td>{{ question }}</td>
+            <td>{{ category }}</td>
           </tr>
+          {% for question in faq_questions %}
+            <tr>
+              <td>{{ question }}</td>
+            </tr>
+          {% endfor %}
         {% endfor %}
       {% endfor %}
     </table>
