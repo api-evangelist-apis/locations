@@ -52,6 +52,16 @@ title: Location APIs
 
       {% endif %}
 
+      {% if item.name == 'Definitions' %}
+
+        {% assign documentation_definition_title = item.name %}
+        {% assign documentation_definition_header = item.header %}
+        {% assign documentation_definition_footer = item.footer %}
+        {% assign documentation_definition_openapi = item.fields | map: 'openapi' %}
+        {% assign documentation_definition_postman = item.fields | map: 'postman' %}
+
+      {% endif %}
+
     {% endfor %}
 
   {% endif %}
@@ -469,3 +479,20 @@ title: Location APIs
     </div>
 </section>
 <!--Documentation-->
+
+<!-- Definitions -->
+<h3>{{ documentation_definition_title }}</h3>
+<p>{{ documentation_definition_header }}</p>
+<center>
+<table width="90%" align="center">
+  <tr>
+  {% if documentation_definition_openapi != '' %}
+    <td align="center"><a href="{{ documentation_definition_openapi }}"><img src="{{ site.url }}/assets/images/openapi.png" width="75" align="center" /></a><p align="center"><a href="{{ site.openapi_url }}"><strong>OpenAPI</strong></a></p></td>
+  {% endif %}
+  {% if documentation_definition_postman != '' %}
+    <td align="center"><a href="{{ documentation_definition_postman }}"><img src="{{ site.url }}/assets/images/postman.png" width="75" align="center" /></a><p align="center"><a href="{{ site.postman_collection_url }}"><strong>Postman</strong></a></p></td>
+  {% endif %}
+  </tr>
+</table>
+</center>
+<p>{{ documentation_definition_footer }}</p>
