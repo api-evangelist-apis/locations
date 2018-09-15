@@ -130,11 +130,11 @@ stops:
         status: None
         fields:
           - versioning:
-              type: semantic
-              format: major.minor.patch
-              server: 1.0.0
-              api: 1.0.0
-              sdk: 1.0.0
+            type: semantic
+            format: major.minor.patch
+            server: 1.0.0
+            api: 1.0.0
+            sdk: 1.0.0
 
       - name: Base Path
         description: The part of the path that goes after the host, and before each path, and is constant across all endpoints for this service.
