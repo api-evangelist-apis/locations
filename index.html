@@ -776,12 +776,11 @@ title: Location APIs
               {% assign communication_status = channel | map: 'status' %}
               {% assign status = communication_status[0] %}
 
-              status NOW: {{ status }}<br />
-
               {% if status == "Active" %}
-                <tr><td>1) {{ title }}</td></tr>
-              {% else %}
-                <tr><td>2) {{ title }}</td></tr>
+                <td align="center">
+                  <a href="{{ url }}"><img src="{{ image }}" width="75" align="center" /></a>
+                  <p align="center"><a href="{{ url }}"><strong>{{ title }}</strong></a></p>
+                </td>
               {% endif %}
             {% endfor %}
             </tr>
