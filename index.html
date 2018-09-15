@@ -190,6 +190,31 @@ title: Location APIs
   {% endif %}
   <!--End Issues-->
 
+  <!--Begin Change Log-->
+  {% if stop.name == 'Change Log' %}
+
+      {% assign change_log_title = stop.name %}
+      {% assign change_log_header = stop.header %}
+      {% assign change_log_footer = stop.footer %}
+      {% assign change_log_image = stop.image %}
+      {% assign change_log_status = stop.status %}
+
+      {% for item in stop.items %}
+
+        {% if item.name == 'Public' %}
+
+          {% assign public_change_log_title = item.title %}
+          {% assign public_change_log_description = item.description %}
+          {% assign public_change_log_url = item.fields | map: 'url' %}
+          {% assign public_change_log_entries = item.fields | map: 'entries' %}
+
+        {% endif %}
+
+      {% endfor %}
+
+  {% endif %}
+  <!--End Road Map-->
+
 {% endfor %}
 
 <!-- overview -->
@@ -724,3 +749,37 @@ title: Location APIs
   </div>
 </section>
 <!-- End Issues -->
+
+
+<!-- Begin Road Map -->
+<a name="change-log"></a>
+<section id="change-log">
+  <div class="content">
+		<header>
+			<h3>{{ change_log_title }}</h3>
+		</header>
+    <div class="container">
+      <div class="row">
+        <div class="col-9">
+          <p>{{ change_log_header }}</p>
+          {% if change_log_status == 'Active' %}
+            <p><strong>Entries:</strong></p>
+            <ul>
+              {% for entries in public_change_log_entries %}
+                {% for entry in entries %}
+                  <li><strong>{{ entry.title }}</strong> (<i>{{ entry.date }}</i>)- {{ entry.description }}</li>
+                {% endfor %}
+              {% endfor %}
+            </ul>
+          {% endif %}
+
+          <p>{{ change_log_footer }}</p>
+        </div>
+        <div class="col-lg-3">
+          <center><img src="{{ change_log_image }}" width="175" align="center" style="margin-bottom: 25px;" /></center>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Change Log -->
