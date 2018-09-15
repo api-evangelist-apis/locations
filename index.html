@@ -775,7 +775,7 @@ title: Location APIs
               {% assign url = channel | map: 'url' %}
               {% assign communication_status = channel | map: 'status' %}
               status: {{ communication_status }}<br />
-              {% if communication_status = "Active" %}
+              {% if communication_status == "Active" %}
                 11<br />
 
               {% endif %}
