@@ -92,6 +92,28 @@ title: Location APIs
   {% endif %}
   <!--End Documentation-->
 
+  <!--Begin Authentication-->
+  {% if stop.name == 'Support' %}
+
+      {% assign support_title = stop.name %}
+      {% assign support_header = stop.header %}
+      {% assign support_footer = stop.footer %}
+      {% assign support_channels = stop.items %}
+
+  {% endif %}
+  <!--End Documentation-->
+
+  <!--Begin Authentication-->
+  {% if stop.name == 'Getting Started' %}
+
+      {% assign getting_started_title = stop.name %}
+      {% assign getting_started_header = stop.header %}
+      {% assign getting_started_footer = stop.footer %}
+      {% assign getting_started_entries = stop.items %}
+
+  {% endif %}
+  <!--End Documentation-->
+
 {% endfor %}
 
 <!-- overview -->
@@ -104,7 +126,27 @@ title: Location APIs
 	</div>
 </section>
 
+<!-- Begin Getting Started -->
+<a name="getting-started"></a>
+<section id="getting-started">
+  <div class="content">
+		<header>
+			<h3>{{ getting_started_title }}</h3>
+		</header>
+    <p>{{ getting_started_header }}</p>
+    <ul>
+      {% for entries in getting_started_entries %}
+        {% assign url = entries.fields | map: 'url' %}
+        <li><a href="{{ url }}"><strong>{{ entries.name }}</strong></a></li>
+      {% endfor %}
+    </ul>
+    <p>{{ getting_started_footer }}</p>
+  </div>
+</section>
+<!-- End Getting Started -->
+
 <!--SignUp SignIn--->
+<a name="sign-up"></a>
 <section id="sign-up-login">
   <div class="content">
 		<header>
@@ -496,3 +538,23 @@ title: Location APIs
 </table>
 </center>
 <p>{{ documentation_definition_footer }}</p>
+
+<!-- Support -->
+<section id="sign-up-login">
+  <div class="content">
+		<header>
+			<h3>{{ support_title }}</h3>
+		</header>
+    <p>{{ support_header }}</p>
+    <center>
+    <table width="90%" align="center">
+      <tr>
+      {% for channel in support_channels %}
+        <td align="center"><a href="{{ channel.url }}"><img src="{{ channel.image }}" width="75" align="center" /></a><p align="center"><a href="{{ channel.url }}"><strong>{{ channel.details }}</strong></a></p></td>
+      {% endfor %}
+      </tr>
+    </table>
+    </center>
+    <p>{{ support_footer }}</p>
+  </div>
+</section>

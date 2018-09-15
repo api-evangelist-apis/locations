@@ -1149,10 +1149,12 @@ stops:
   # Road Map
   #----------
   - name: Road Map
-    header: The definitions for this service.
-    footer:
+    title: Road Map
+    description: Providing API consumers with as much information as possible about what changes are being planned for a service. Helping include consumers in the conversation about what is being planned whenever possible.
+    header: This is what we plan on doing in the near future when it comes to evolving this service.
+    footer: We try to share as much information as possible about what changes will be occurring.
     instructions: Provide a road map for the future of this service.
-    status: None
+    status: Active
     items:
 
       - name: Private
@@ -1165,7 +1167,7 @@ stops:
       - name: Public
         description: Where you can access the public road map for this service.
         instruction: Publish a publicly available version of entries for the road map.
-        status: None
+        status: Active
         fields:
           - url: http://example.com/private-road-map/
           - entries:
@@ -1195,16 +1197,18 @@ stops:
   # Issues
   #--------
   - name: Issues
-    header: The definitions for this service.
-    footer:
+    title: Issues
+    description: Being transparent around the issues that are currently outstanding regarding a platform. Potentially saving resources having to respond to further emails, tickets, and issues being reported.
+    header: Providing information on any open issues exist for a service.
+    footer: Making sure there is transparency with consumers around issues.
     instructions: Provide a list of currently known issues for this service.
-    status: None
+    status: Active
     items:
 
       - name: Entries
-        description: The outstanding issues for this service.
+        description: Listing of all the outstanding issues for this service.
         instruction: Publish a list of all known issues currently outstanding.
-        status: None
+        status: Active
         fields:
           - url: http://example.com/issues/
           - entries:
@@ -1228,10 +1232,12 @@ stops:
   # Change Log
   #------------
   - name: Change Log
-    header: The definitions for this service.
-    footer:
+    title: Change Log
+    description: Provide consumers with a detail history of what has changed in the past with a service. Rolling over road map items, and  issues when they have been accomplished or satisfied into a detailed change log.
+    header: Providing information on the history of changes to this service.
+    footer: Documenting everything that has occurred to a service over time.
     instructions: Providing a historical list of what has changed for this service.
-    status: None
+    status: Active
     items:
 
       - name: Outline
@@ -1258,6 +1264,7 @@ stops:
   # Communication
   #---------------
   - name: Communication
+    title: Staying In Tune
     header: The definitions for this service.
     footer:
     instructions: Establish a communication strategy for this service.
@@ -1304,10 +1311,10 @@ stops:
   # Support
   #----------
   - name: Support
-    header: The definitions for this service.
-    footer:
+    header: We provide three ways in which you can receive support for this API, and have your questions answered as you are working to integrate it into your web or mobile application.
+    footer: If your question is of the private nature please email us, for all other inquires please submit as GitHub issue if possible, so that others can learn from your question to.
     instructions: Establish the support apparatus in place for this service.
-    status: None
+    status: Active
     items:
       - name: Email
         description: The email account for supporting this service.
@@ -1316,14 +1323,14 @@ stops:
         fields:
           - email: info@example.com
 
-      - name: Issues
+      - name: GitHub Issues
         description: Where to submit an issue to get support for this service.
         instruction: Provide a URL to the repository issues to support this service.
         status: None
         fields:
           - url: http://github.com/issues/
 
-      - name: Tickets
+      - name: Twitter
         description: Where to submit a ticket to get support for this service.
         instruction: Provide a URL to the ticketing system used to support this service.
         status: None
