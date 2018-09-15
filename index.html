@@ -199,10 +199,10 @@ title: Location APIs
 
       {% for item in stop.items %}
 
-        {% if item.name == 'Public' %}
+        {% if item.name == 'Entries' %}
 
-          {% assign public_change_log_url = item.fields | map: 'url' %}
-          {% assign public_change_log_entries = item.fields | map: 'entries' %}
+          {% assign change_log_url = item.fields | map: 'url' %}
+          {% assign change_log_entries = item.fields | map: 'entries' %}
 
         {% endif %}
 
@@ -721,7 +721,7 @@ title: Location APIs
           {% if issues_status == 'Active' %}
             <p><strong>Entries:</strong></p>
             <ul>
-              {% for entries in public_issues_entries %}
+              {% for entries in issues_entries %}
                 {% for entry in entries %}
                   <li><strong>{{ entry.title }}</strong> (<i>{{ entry.date }}</i>)- {{ entry.description }}</li>
                 {% endfor %}
@@ -745,7 +745,7 @@ title: Location APIs
 <!-- End Issues -->
 
 
-<!-- Begin Road Map -->
+<!-- Begin Change Log -->
 <a name="change-log"></a>
 <section id="change-log">
   <div class="content">
@@ -760,7 +760,7 @@ title: Location APIs
           {% if change_log_status == 'Active' %}
             <p><strong>Entries:</strong></p>
             <ul>
-              {% for entries in public_change_log_entries %}
+              {% for entries in change_log_entries %}
                 {% for entry in entries %}
                   <li><strong>{{ entry.title }}</strong> (<i>{{ entry.date }}</i>)- {{ entry.description }}</li>
                 {% endfor %}
