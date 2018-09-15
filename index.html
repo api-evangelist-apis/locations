@@ -725,12 +725,13 @@ title: Location APIs
           <p><strong>{{ category }}</strong></p>
           <ul>
             {% for questions in faq_questions %}
-              1: {{ questions }}<br />
-              {% for question in questions %}
+              {% for entry in questions %}
+
                 2: {{ question }}<br />
-                {% assign this_question = question | map: 'question' %}
-                {% assign this_answer = question | map: 'answer' %}
-                {% assign this_category = question | map: 'category' %}
+
+                {% assign this_question = entry | map: 'question' %}
+                {% assign this_answer = entry | map: 'answer' %}
+                {% assign this_category = entry | map: 'category' %}
 
                 {% if this_category == cat %}
                   <tr>
