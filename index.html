@@ -705,16 +705,14 @@ title: Location APIs
           <table width="90%" align="center">
             <tr>
             {% for channels in communication_channels %}
-              {% for channel in channels %}
-                {% assign title = channel.fields | map: 'title' %}
-                {% assign description = channel.fields | map: 'description' %}
-                {% assign image = channel.fields | map: 'image' %}
-                {% assign url = channel.fields | map: 'url' %}
-                {% assign status = channel.fields | map: 'status' %}
-                {% if status == 'Active' %}
-                  <td align="center"><a href="{{ url }}"><img src="{{ image }}" width="75" align="center" /></a><p align="center"><a href="{{ url }}"><strong>{{ title }}</strong></a></p></td>
-                {% endif %}
-              {% endfor %}
+              {% assign title = channel | map: 'title' %}
+              {% assign description = channel | map: 'description' %}
+              {% assign image = channel | map: 'image' %}
+              {% assign url = channel | map: 'url' %}
+              {% assign status = channel | map: 'status' %}
+              {% if status == 'Active' %}
+                <td align="center"><a href="{{ url }}"><img src="{{ image }}" width="75" align="center" /></a><p align="center"><a href="{{ url }}"><strong>{{ title }}</strong></a></p></td>
+              {% endif %}
             {% endfor %}
             </tr>
           </table>
