@@ -773,10 +773,12 @@ title: Location APIs
             {% for channel in communication_channels %}
               here: {{ channel }}<br />
               {% assign title = channel | map: 'title' %}
+              title: {{ title }}<br />
               {% assign description = channel | map: 'description' %}
               {% assign image = channel | map: 'image' %}
               {% assign url = channel | map: 'url' %}
               {% assign status = channel | map: 'status' %}
+              status: {{ status }}<br />
               {% if status == 'Active' %}
                 <td align="center"><a href="{{ url }}"><img src="{{ image }}" width="75" align="center" /></a><p align="center"><a href="{{ url }}"><strong>{{ title }}</strong></a></p></td>
               {% endif %}
