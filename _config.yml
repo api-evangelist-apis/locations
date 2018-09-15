@@ -1164,6 +1164,7 @@ stops:
     header: This is what we plan on doing in the near future when it comes to evolving this service.
     footer: We try to share as much information as possible about what changes will be occurring.
     instructions: Provide a road map for the future of this service.
+    image: http://locations.apievangelist.com/assets/images/road-map.png
     status: Active
     items:
 
