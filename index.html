@@ -113,7 +113,8 @@ title: Location APIs
       {% for item in stop.items %}
 
         {% if item.name == 'Categories' %}
-          {% assign faq_categories = item.fields %}
+          {% assign fields = item.fields %}
+          {% assign faq_categories = fields.categories %}
         {% endif %}
 
         {% if item.name == 'Questions' %}
@@ -722,7 +723,7 @@ title: Location APIs
     <center>
     <table width="90%" align="center" border="1">
         {{ faq_categories }}<br />
-        
+
       {% for categories in faq_categories %}
         {% for category in categories %}
           {% for cat in category.categories %}
