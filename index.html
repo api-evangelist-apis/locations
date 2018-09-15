@@ -169,8 +169,6 @@ title: Location APIs
 
         {% if item.name == 'Entries' %}
 
-          {% assign issues_title = item.title %}
-          {% assign issues_description = item.description %}
           {% assign issues_url = item.fields | map: 'url' %}
           {% assign issues_entries = item.fields | map: 'entries' %}
 
@@ -203,8 +201,6 @@ title: Location APIs
 
         {% if item.name == 'Public' %}
 
-          {% assign public_change_log_title = item.title %}
-          {% assign public_change_log_description = item.description %}
           {% assign public_change_log_url = item.fields | map: 'url' %}
           {% assign public_change_log_entries = item.fields | map: 'entries' %}
 
@@ -762,6 +758,7 @@ title: Location APIs
       <div class="row">
         <div class="col-9">
           <p>{{ change_log_header }}</p>
+          
           {% if change_log_status == 'Active' %}
             <p><strong>Entries:</strong></p>
             <ul>
