@@ -113,9 +113,7 @@ title: Location APIs
       {% for item in stop.items %}
 
         {% if item.name == 'Categories' %}
-          {% assign fields = item.fields %}
-          fields: {{ fields }} <br />
-          {% assign faq_categories = fields.categories %}
+          {% assign faq_categories = item.fields | map: 'categories' %}
         {% endif %}
 
         {% if item.name == 'Questions' %}
