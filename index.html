@@ -726,7 +726,7 @@ title: Location APIs
         <p><strong>{{ category }}</strong></p>
         <ul>
           {% for entry in faq_questions %}
-
+            entry: {{ entry }}<br />
               {% assign this_question = entry | map: 'question' %}
               {% assign this_question = this_question[0] %}
               {% assign this_answer = entry | map: 'answer' %}
@@ -735,6 +735,7 @@ title: Location APIs
               {% assign this_category = this_category[0] %}
               {{ this_category }} == {{ category }}<br />
               {% if this_category == category %}
+
                 <li><strong>{{ question }}</strong> - {{ this_answer }}</li>
               {% endif %}
 
