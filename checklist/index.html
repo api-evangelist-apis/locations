@@ -125,13 +125,13 @@ title: SEC Companies
                     <td style="width: 15%; text-align: right;"><strong>{{ field_label }}:</strong></td>
                     <td>
                       {% if field_details.first %}
-                        </td></tr><td style="width: 5%;"></td>                    
+                      </td></tr><td style="width: 5%;"></td><td>
                         {% for details in field_details %}
                           <table width="100%">
                           {% for detail in details %}
                             {% assign field_details_length = detail[1] | size %}
                             <tr>
-                            <td style="width: 15%; text-align: right;"><strong>{{ detail[0] }}:</strong></td>
+                              <td style="width: 15%; text-align: right;"><strong>{{ detail[0] }}:</strong></td>
                               <td>
                                 {% if field_details_length > 35 %}
                                   <textarea name="{{ detail[0] }}" style="width: 75%; height: 100px;">{{ detail[1] }}</textarea>

@@ -33,22 +33,22 @@ stops:
     header: The definitions for this service.
     footer:
     instructions: Define the problem and solution in a human and machine readable way.
-    status: None
+    status: Active
     items:
 
       - name: Organization
         description: The source control organization for this service.
         instruction: Define the organization for this service.
-        status: None
+        status: Active
         fields:
-          - github_organization: organization-name
+          - github_organization: api-evangelist-apis
 
       - name: Repository
         description: The source control repository for this service.
         instruction: Establish a Github repository.
-        status: None
+        status: Active
         fields:
-          - github_repository: repo-name
+          - github_repository: locations
 
       - name: README
         description: The README for this services repository
@@ -77,21 +77,32 @@ stops:
         status: None
         fields:
           - service_goals: This is the goals for this service.
+            goals:
+              - name: Provide Locations
+                descripton: Provide a set of cities, states, countries, and other location specific data for use across other applications.
 
       - name: Schema
         description: JSON schema for the data behind service.
         instruction: Organize loose, and JSON schema for the service.
         status: None
         fields:
-          - title: The title of the schema
-          - path: /path/of/the/schema
+          - title: Cities
+          - path: /json-schema/cities.json
+          - title: Regions
+          - path: /json-schema/regions.json
+          - title: Countries
+          - path: /json-schema/countries.json
 
       - name: OpenAPI
         description: An OpenAPI definition for the surface area of the API.
         instruction: Establish an OpenAPI for the service.
         status: None
         fields:
-          - openapi: /path/to/full/openapi.yaml
+          - openapi: /_data/openapi.yaml
+        tools:
+          - name: OpenAPI
+            description: The OpenAPI specification for describing the surface area of the API.
+            url: https://github.com/OAI/OpenAPI-Specification
 
       - name: Assertions
         description: Human and machine readable assertions of what service does.
@@ -218,8 +229,8 @@ stops:
   # Database
   #----------
   - name: Database
-    header: The definitions for this service.
-    footer:
+    header: The database behind this service, acting as the data source for these resources.
+    footer: Providing a dedicated database resource for just this single service to use.
     instructions: Establish the base for how data will be managed behind the service.
     status: Active
     items:
@@ -277,38 +288,38 @@ stops:
   # Storage
   #---------
   - name: Storage
-    header: The definitions for this service.
-    footer:
+    header: The storage used for this service, where all objects are stored.
+    footer: Providing a single location this service to manage it's storage.
     instructions: Establish how all objects will be stored for the service.
-    status: None
+    status: Active
     items:
 
       - name: Platform
         description: The platform that is used for storage behind this service.
         instruction: Define which platform is used to store objects.
-        status: None
+        status: Active
         fields:
           - platform: Amazon S3
 
       - name: Location
         description: Where the storage is located that is used for this service.
         instruction: Define where objects are stored behind the service.
-        status: None
+        status: Active
         fields:
           - region: us-east
-          - location: /api-evangelist-api-bucket/
+          - location: /api-evangelist-api-bucket/locations/
 
       - name: Logs
         description: Information about the logging for storage behind service.
         instruction: Define where the storage logs are located that support services.
-        status: None
+        status: Active
         fields:
           - logs: /cloudwatch
 
       - name: Access
         description: Details on how storage is accessed as part of this service.
         instruction: Quantify how objects access is provided behind the service.
-        status: None
+        status: Active
         fields:
           - access: API
 
@@ -322,7 +333,7 @@ stops:
       - name: Encryption
         description: Ensuring encryption is considered for storage.
         instruction: Define the encryption layer for stored objects.
-        status: None
+        status: Active
         fields:
           - encryption: enabled
 
@@ -330,10 +341,10 @@ stops:
   # DNS
   #-----
   - name: DNS
-    header: The definitions for this service.
-    footer:
+    header: The DNS addressing used to route all traffic to this service.
+    footer: Using a single subdomain that can be used to access this resource.
     instructions: Establish the DNS layer for this service.
-    status: None
+    status: Active
     items:
 
       - name: Platform
@@ -342,41 +353,41 @@ stops:
         status: None
         fields:
           - platform: CloudFlare
-
-      - name: Prototype
-        description: The host used for the prototype API.
-        instruction: Provide host for prototype of service.
-        status: None
-        fields:
-          - host: prototype.api.example.com
+        tools:
+          - name: CloudFlare
+            description: A next generation cloud DNS service provider.
+            url: https://www.cloudflare.com/
+          - name: Amazon Route 53
+            description: A next generation cloud DNS service provider.
+            url: https://aws.amazon.com/route53/
 
       - name: Mock
         description: The host used for the mock API.
         instruction: Provide host for mock of service.
         status: None
         fields:
-          - host: mock.api.example.com
+          - host: api.mock.locations.apievangelist.com
 
       - name: Development
         description: The host used for the development API.
         instruction: Provide host for development version of service.
         status: None
         fields:
-          - host: dev.api.example.com
+          - host: api.dev.locations.apievangelist.com
 
       - name: Production
         description: The host used for the production API.
         instruction: Provide host for production version of service.
-        status: None
+        status: Active
         fields:
-          - host: api.example.com
+          - host: api.locations.apievangelist.com
 
       - name: Portal
         description: The host used for the developer portal.
         instruction: Provide host for the portal for this service.
         status: None
         fields:
-          - host: developer.example.com
+          - host: locations.apievangelist.com
 
       - name: Encryption
         description: Ensuring encryption is used as part of API transport.
@@ -415,12 +426,16 @@ stops:
     status: None
     items:
 
-      - name: Platform
-        description: Which platform is used to deploy this service.
-        instruction: Define the platform used to deploy this service.
+      - name: Compute
+        description: The compute that is delivering this service.
+        instruction: Define the compute layer driving this service.
         status: None
         fields:
-          - platform: AWS API Gateway
+          - platform: Amazon EC2
+        tools:
+          - name: Amazon EC2
+            description: The virtual compute instance service from Amazon.
+            url: https://aws.amazon.com/ec2/
 
       - name: Framework
         description: Which programming framework is used to deploy this service.
@@ -428,13 +443,10 @@ stops:
         status: None
         fields:
           - framework: none
-
-      - name: Gateway
-        description: Which gateway is used to deploy this service.
-        instruction: Define the gateway used to deploy service.
-        status: None
-        fields:
-          - framework: none
+        tools:
+          - name: Slim
+            description: A PHP framework for delivering RESTful API frameworks.
+            url: https://www.slimframework.com/
 
       - name: Function
         description: Which function is used to deploy this service.
@@ -442,6 +454,13 @@ stops:
         status: None
         fields:
           - function: aws_lambda_function_name
+        tools:
+          - name: Node.js
+            description: The server side JavaScript Framework.
+            url: https://nodejs.org/en/
+          - name: AWS Node.js SDK
+            description: The Node.js SDK for working with all AWS services.
+            url: https://aws.amazon.com/sdk-for-node-js/
 
       - name: Containers
         description: Which container is used to deploy this service.
@@ -450,6 +469,17 @@ stops:
         fields:
           - container: none
 
+      - name: Gateway
+        description: Which gateway is used to deploy this service.
+        instruction: Define the gateway used to deploy service.
+        status: None
+        fields:
+          - platform: none
+        tools:
+          - name: AWS API Gateway
+            description: Amazon's API gateway solution for deploying and managing APIs.
+            url: https://nodejs.org/en/
+
       - name: Pipeline
         description: Information regarding the pipeline in use for service.
         instruction: Define the pipeline in place to build and deploys service.
@@ -457,9 +487,9 @@ stops:
         fields:
           - pipeline: none
 
-      - name: Location
-        description: Information about where this service is deployed.
-        instruction: Define where the service is deployed to.
+      - name: Region
+        description: Information regarding which region this service is deployed.
+        instruction: Define where which region the service is deployed to.
         status: None
         fields:
           - region: us-east
@@ -550,6 +580,15 @@ stops:
           - description: The description of software.
           - url: http://example.com/software-information/
 
+      - name: Data
+        description: Information about data this service depends on.
+        instruction: Details of other data this service depends upon.
+        status: Active
+        fields:
+          - name: prograhammer/countries-regions-cities
+          - description: MySQL ready-to-use tables with countries, regions/states and cities of the world.
+          - url: https://github.com/prograhammer/countries-regions-cities
+
       - name: People
         description: Information about people this service depends on.
         instruction: Details of other people this service depends upon.
@@ -577,7 +616,7 @@ stops:
     header: The definitions for this service.
     footer:
     instructions: Details regarding authentication in use for this service.
-    status: None
+    status: Active
     items:
 
       - name: Type
@@ -585,7 +624,22 @@ stops:
         instruction: Define whether this service uses Basic Auth, API Keys, JWT, or OAuth for authentication.
         status: None
         fields:
-          - type: basic/api-key/jwt/oauth
+          - name: Basic Authentication
+            description: Basic auth leverages web standards for passing a username and password for authentication.
+            url: https://en.wikipedia.org/wiki/Basic_access_authentication
+            status: None
+          - name: API Key
+            description: Using an API key pass as query string, or as header for authentication.
+            url: https://en.wikipedia.org/wiki/Application_programming_interface_key
+            status: Active
+          - name: JSON Web Tokens
+            description: Industry standard RFC 7519 method for representing claims securely between two parties.
+            url: https://jwt.io/
+            status: None
+          - name: OAuth
+            description: A standard for token-based authentication and authorization, allowing an end user's account information to be used via API access.
+            url: https://oauth.net/
+            status: None
 
       - name: Overview
         description: An overview for the authentication of this service.
@@ -597,7 +651,7 @@ stops:
           - footer: We try to keep API authentication as simple as possible, while also ensuring the data we provide is securely accessed.
           - url: http://public.companies.apievangelist.com#authentication
 
-      - name: SignupLogin
+      - name: Signup / Login
         description: An overview for the authentication of this service.
         instruction: Provide a location of the page that delivers an overview of this services authentication.
         status: Active
