@@ -763,6 +763,7 @@ title: Location APIs
           <table width="90%" align="center">
             <tr>
             {% for channel in communication_channels %}
+              channel: {{ channel }}<br />
               {% assign title = channel | map: 'title' %}
               {% assign description = channel | map: 'description' %}
               {% assign image = channel | map: 'image' %}
