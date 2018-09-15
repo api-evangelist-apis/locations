@@ -705,7 +705,7 @@ title: Location APIs
           <table width="90%" align="center">
             <tr>
             {% for channels in communication_channels %}
-              HERE: {{ channel }}<br />
+              HERE: {{ channels }}<br />
               {% assign title = channel.fields | map: 'title' %}
               {% assign description = channel.fields | map: 'description' %}
               {% assign image = channel.fields | map: 'image' %}
