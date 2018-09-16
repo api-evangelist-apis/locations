@@ -837,13 +837,13 @@ title: Location APIs
               {% assign entry_one = entry.one %}
               {% assign entry_two = entry.two %}
               {% assign entry_unit = entry.unit %}
-               - {{ entry_label }} - {{ entry_description }}<br />
+               &nbsp;- {{ entry_label }} - {{ entry_description }}<br />
             {% endfor %}
 
             <p><strong>Elements:</strong><p>
             {% for element in plan_elements %}
               {% assign element_name = element | map: 'name' %}
-               - {{ element_name }}<br />
+               &nbsp;- {{ element_name }}<br />
             {% endfor %}
 
           </td>
