@@ -816,8 +816,8 @@ stops:
   - name: Plans
     title: Plans
     description: Having one or many plans for accessing this service, ensuring that all consumption occurs through the filter of a plan, and fit into a wider platform management strategy.
-    header: These are the plans for accessing this service, providing different tiers of access depending on your needs, and what is allowed for this service.
-    footer: Currently there are just two plans available, if you have more needs than what is here, use one of the support channels to let us know what it is that you need.
+    header: These are the plans for accessing this service, providing different tiers of access depending on your needs, and what is allowed for this service. Each plan should have the details you need to understand the limitations, as well as other elements provided for the service at this tier.
+    footer: Currently there are just two plans available, if you have more needs than what is here, use one of the support channels to let us know what it is that you need. There are other levels available, but this is the standard public offering for this service at this moment in time.
     instructions: Define the operational plan for the business of this service.
     status: Active
     items:
