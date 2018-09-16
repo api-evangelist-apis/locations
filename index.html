@@ -844,7 +844,7 @@ title: Location APIs
             {% for element in plan_elements %}
               HERE: {{ element }}<br />
               {% assign element_name = entry.name %}
-               - {{ element_name }}<br />
+               - {{ element_name[0] }}<br />
             {% endfor %}
 
           </td>
