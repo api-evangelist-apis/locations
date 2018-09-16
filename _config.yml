@@ -983,6 +983,7 @@ stops:
     footer: If you have any questions, feel free to reach out, and I'll do my best to help.
     description: Providing basic getting started information for dvelopers to use when on-boarding.
     instructions: Provide a getting started page for this service within portal.
+    image: http://locations.apievangelist.com/assets/images/getting-started.png
     status: Active
     items:
 
@@ -1041,6 +1042,7 @@ stops:
     header: These are the code samples, libraries, and SDKs we provide in a variety of programming languages, helping jumpstart your integration with the API.
     footer: If there isn't a language library you need available, make sure and let us know through one of the support channels, so we can consider for the road map.
     instructions: Providing code samples, libraries, or complete software development kits (SDKs).
+    image: http://locations.apievangelist.com/assets/images/code.png
     status: Active
     items:
 
