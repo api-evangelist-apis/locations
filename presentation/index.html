@@ -1,24 +1,27 @@
 ---
-layout: default
+layout: presentation
 title: Location API - Presentation
 ---
 
 {% assign openapi = site.data.openapi %}
 
-<section id="documentation">
-  <div class="content">
+{% for stop in site.stops %}
 
-    {% for stop in site.stops %}
-      <p align="center"><strong>{{ stop.name }}</strong></p>
+  <section>
+
+    <p align="center"><strong>{{ stop.name }}</strong></p>
+    <p align="center">{{ item.description }}</p>
+
+  </section>
+
+  {% for item in stop.items %}
+
+    <section>
+
+      <p align="center"><strong>{{ stop.name }} > {{ item.name }}</strong></p>
       <p align="center">{{ item.description }}</p>
-      <hr />
-      {% for item in stop.items %}
-        <p align="center"><strong>{{ stop.name }} > {{ item.name }}</strong></p>
-        <p align="center">{{ item.description }}</p>
-        <hr />
-      {% endfor %}
-    {% endfor %}
-    </table>
 
-  </div>
-</section>
+    </section>
+
+  {% endfor %}
+{% endfor %}

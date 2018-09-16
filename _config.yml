@@ -44,6 +44,10 @@ stops:
         status: Active
         fields:
           - github_organization: api-evangelist-apis
+        services:
+          - name: GitHub
+            description: The social coding repository management service.
+            url: https://github.com
 
       - name: Repository
         description: The source control repository for this service.
@@ -51,6 +55,10 @@ stops:
         status: Active
         fields:
           - github_repository: locations
+        services:
+          - name: GitHub
+            description: The social coding repository management service.
+            url: https://github.com
 
       - name: README
         description: The README for this services repository
@@ -58,6 +66,10 @@ stops:
         status: Active
         fields:
           - readme_path: /README.md
+        services:
+          - name: GitHub
+            description: The social coding repository management service.
+            url: https://github.com
 
       - name: Service Name
         description: A simple title for this service.
@@ -94,6 +106,10 @@ stops:
           - path: /json-schema/regions.json
           - title: Countries
           - path: /json-schema/countries.json
+        tools:
+          - name: JSON Schema
+            description: JSON Schema is a vocabulary that allows you to annotate and validate JSON documents.
+            url: https://json-schema.org/
 
       - name: OpenAPI
         description: An OpenAPI definition for the surface area of the API.
@@ -172,6 +188,8 @@ stops:
           - post: 1
           - put: 1
           - delete: 1
+        links:
+          - name:
 
       - name: Parameters
         description: The query parameters that are used by this service, as described by the OpenAPI.
@@ -186,13 +204,21 @@ stops:
         status: Active
         fields:
           - number_of_headers: 0
+        links:
+          - title: API Evangelist Journey - Headers
+            url: http://journey.apievangelist.com/journey/design/headers
 
-      - name: Response(s)
-        description: The responses that are used by this service, as described by the OpenAPI.
-        instruction: Provide a resulting message and associated schema definition for the service.
+      - name: Body
+        description: Usage of the body as part of API requests as opposed to parameters, or in parallel to.
+        instruction: Define the details of the body that will be used as part of making request to this service.
         status: Active
         fields:
-          - number_of_headers: 5
+          - number_of_bodies: 2
+
+      - name: Beyond Verbs
+        description: Consistently defining how actions will be designed beyond the usage of the common HTTP verbs.
+        instruction: Define how actions are being defined as part of this service beyond the usage of common HTTP verbs.
+        status: Active
 
       - name: Media Types
         description: The media types that are used by this service, as described by the OpenAPI.
@@ -202,6 +228,10 @@ stops:
           - json: 5
           - xml: 0
           - html: 0
+        tools:
+          - name: IANA Media Types
+            description: Media types that are defined by IANA.
+            url: https://www.iana.org/assignments/media-types/media-types.xhtml
 
       - name: Status Codes
         description: The HTTP status codes that are used by this service, as described by the OpenAPI.
@@ -212,6 +242,17 @@ stops:
           - 300: 0
           - 400: 0
           - 500: 5
+        tools:
+          - name: Wikipedia List of HTTP status codes
+            description: A list of all HTTP status codes for reference.
+            url: https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+
+      - name: Filtering
+        description: Allowing for the filtering of data returned as part of responses.
+        instruction: Define how filtering will be handled for requests and responses.
+        status: Active
+        fields:
+          - used: 1
 
       - name: Pagination
         description: The pagination used by this service, as described by the OpenAPI.
@@ -226,6 +267,18 @@ stops:
         status: Active
         fields:
           - used: 1
+
+      - name: Response(s)
+        description: The responses that are used by this service, as described by the OpenAPI.
+        instruction: Provide a resulting message and associated schema definition for the service.
+        status: Active
+        fields:
+          - number_of_headers: 5
+
+      - name: Errors
+        description: Defining a structure for error handling that leverages HTTP status codes, but goes further with a common schema definition.
+        instruction: Provide a schema definition, and apply error handling as part of the wider HTTP status code usage.
+        status: Active                
 
   #----------
   # Database
