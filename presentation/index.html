@@ -54,7 +54,7 @@ title: Location API - Presentation
             <p style="font-size: 22px;"><strong>Tools:</strong></p>
             <ul>
               {% for tool in item.tools %}
-                <li style="list-style: none;"><a href="{{ tool.url }}" class="none" target="_blank" style="font-size: 18px; padding: 1px; margin:1x;"><strong>{{ tool.name }}</strong></a> - <span style="font-size: 18px;">{{ tool.description }}</span></li>
+                <li style="list-style: none; style="padding: 2px 0px 2px 5px;>&#8594; <a href="{{ tool.url }}" class="none" target="_blank" style="font-size: 18px; padding: 1px; margin:1x;"><strong>{{ tool.name }}</strong></a> - <span style="font-size: 18px;">{{ tool.description }}</span></li>
               {% endfor %}
             </ul>
           {% endif %}
