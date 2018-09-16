@@ -34,7 +34,7 @@ title: Location API - Presentation
       <p align="center"><img src="{{ item.image }}" style="width: 20%; padding: 5px;"></p>
       <p align="center"><strong>{{ stop.name }} &#8594; {{ item.name }}</strong></p>
       <p align="center" style="font-size: 18px;">{{ item.description }}</p>
-
+      <div align="center" style="border: 1px solid #000; text-align: left;">
       {% if item.tools != Empty %}
         <p><strong>Tools:</strong></p>
         <ul>
@@ -43,7 +43,7 @@ title: Location API - Presentation
           {% endfor %}
         </ul>
       {% endif %}
-
+      </div>
     </section>
 
   {% endfor %}
