@@ -831,6 +831,7 @@ stops:
           - plans:
             - name: Starter
               description: The default API access plan, where every new account begins, allowing the consumer to kick the tires, and see what the API is all about.
+              image: http://locations.apievangelist.com/assets/images/starter.png
               status: None
               entries:
                 - label: API Calls
@@ -848,6 +849,7 @@ stops:
 
             - name: Verified
               description: Once you have added a credit card as part of the account billing, you become a verified API consumer, and have a higher rate limit for usage.
+              image: http://locations.apievangelist.com/assets/images/verified.png
               status: None
               entries:
                 - label: API Calls
