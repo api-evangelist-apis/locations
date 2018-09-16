@@ -104,7 +104,7 @@ title: SEC Companies
     <table>
     {% for stop in site.stops %}
       <tr>
-        <td colspan="2"><h3>{{ stop.name }}</h3></td>
+        <td colspan="2" style="border: 1px solid #000;"><h3>{{ stop.name }}</h3></td>
       </tr>
       {% for item in stop.items %}
         <tr>
@@ -112,8 +112,8 @@ title: SEC Companies
           <td style="padding: 10px;"><strong>{{ item.name }}</strong> ({{ item.status }}) - {{ item.instruction }}</td>
         </tr>
           <tr>
-            <td style="width: 50px;"></td>
-            <td style="padding: 3px;">
+            <td style="width: 50px; border: 1px solid #000;"></td>
+            <td style="padding: 3px; border: 1px solid #000;">
               <table width="100%">
                 {% for fields in item.fields %}
                   <tr>
@@ -121,16 +121,16 @@ title: SEC Companies
                     {% assign field_name = field[0] %}
                     {% assign field_label = field_name| replace: '_',' ' | capitalize %}
                     {% assign field_details = field[1] %}
-                    <td style="text-align: right;" colspan="2"><strong>{{ field_label }}:</strong></td>
+                    <td style="text-align: right; border: 1px solid #000;" colspan="2"><strong>{{ field_label }}:</strong></td>
                     <td>
                       {% if field_details.first %}
-                    </td></tr><td style="width: 15%;"></td><td style="width: 15%;"></td><td>
+                    </td></tr><td style="width: 15%; border: 1px solid #000;"></td><td style="width: 15%; border: 1px solid #000;"></td><td>
                         {% for details in field_details %}
                           <table width="100%">
                           {% for detail in details %}
                             {% assign field_details_length = detail[1] | size %}
                             <tr>
-                              <td style="width: 15%; text-align: right;"><strong>{{ detail[0] }}:</strong></td>
+                              <td style="width: 15%; text-align: right;  border: 1px solid #000;"><strong>{{ detail[0] }}:</strong></td>
                               <td>
                                 {% if field_details_length > 35 %}
                                   {{ detail[1] }}
