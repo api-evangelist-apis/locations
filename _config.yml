@@ -134,7 +134,7 @@ stops:
       - name: Assertions
         description: Human and machine readable assertions of what service does.
         instruction: Craft a set of assertions for the service.
-        image: <div style="display: inline; width: 250px; border: 1px solid #000;">
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-assertions.png
         status: None
         fields:
           - assertions:
@@ -441,12 +441,14 @@ stops:
     header: The DNS addressing used to route all traffic to this service.
     footer: Using a single subdomain that can be used to access this resource.
     instructions: Establish the DNS layer for this service.
+    image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-logging-dns.png
     status: Active
     items:
 
       - name: Platform
         description: Which platform is used to provide DNS for service.
         instruction: Define which platform is used to operate DNS.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-platform-layers.png
         status: None
         fields:
           - platform: CloudFlare
@@ -461,6 +463,7 @@ stops:
       - name: Mock
         description: The host used for the mock API.
         instruction: Provide host for mock of service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-mock-interface.png
         status: None
         fields:
           - host: api.mock.locations.apievangelist.com
