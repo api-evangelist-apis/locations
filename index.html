@@ -823,8 +823,8 @@ title: Location APIs
           {% assign plan_entries = plan.entries %}
 
           <td>
-            1) {{ plan_name }} - {{ plan_description }}<br />
             <p><strong>{{ plan_name }}</strong><p>
+            <p>{{ plan_description }}</p>
             <ul>
               {% for entry in plan_entries %}
                 {% assign entry_label = entry.label %}
@@ -835,7 +835,7 @@ title: Location APIs
                 {% assign entry_one = entry.one %}
                 {% assign entry_two = entry.two %}
                 {% assign entry_unit = entry.unit %}
-                2) {{ entry_label }} - {{ entry_description }}<br />
+                <li>{{ entry_label }} - {{ entry_description }}</li>
               {% endfor %}
             </ul>
 
