@@ -814,6 +814,8 @@ stops:
   # Plans
   #-------
   - name: Plans
+    title: Plans
+    description: Having one or many plans for accessing this service, ensuring that all consumption occurs through the filter of a plan, and fit into a wider platform management strategy.
     header: The plans in place for managing access to this service, and delivers on the overall investment.
     footer: Making sure that all services are managed as part of a large plan to capture value being generated.
     instructions: Define the operational plan for the business of this service.
