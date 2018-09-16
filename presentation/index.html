@@ -36,6 +36,12 @@ title: Location API - Presentation
       <p align="center"><strong>{{ stop.name }} &#8594; {{ item.name }}</strong></p>
       <p align="center">{{ item.description }}</p>
 
+      {% if item.tools != Empty %}
+        {% for tool in item.tools %}
+          {{ tool }}<br />
+        {% endfor %}
+      {% endif %}
+
     </section>
 
   {% endfor %}
