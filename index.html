@@ -842,7 +842,7 @@ title: Location APIs
 
             <p><strong>Elements:</strong><p>
             {% for element in plan_elements %}
-              {% assign element_name = entry | map: 'name' %}
+              {% assign element_name = element | map: 'name' %}
                - {{ element_name }}<br />
             {% endfor %}
 
