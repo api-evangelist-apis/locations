@@ -32,6 +32,43 @@ title: Location APIs
   {% endif %}
   <!--End Definition-->
 
+  <!--Begin Authentication-->
+  {% if stop.name == 'Authentication' %}
+    {% for item in stop.items %}
+
+      {% if item.name == 'Overview' %}
+
+        {% assign authentication_overview_title = item.fields | map: 'title' %}
+        {% assign authentication_overview_header = item.fields | map: 'header' %}
+        {% assign authentication_overview_footer = item.fields | map: 'footer' %}
+
+      {% endif %}
+
+      {% if item.name == 'Signup / Login' %}
+
+        {% assign authentication_signuplogin_title = item.fields | map: 'title' %}
+        {% assign authentication_signuplogin_header = item.fields | map: 'header' %}
+        {% assign authentication_signuplogin_footer = item.fields | map: 'footer' %}
+
+      {% endif %}
+
+    {% endfor %}
+
+  {% endif %}
+  <!--End Authentication-->
+
+  <!--Begin Getting Started-->
+  {% if stop.name == 'Getting Started' %}
+
+      {% assign getting_started_title = stop.name %}
+      {% assign getting_started_header = stop.header %}
+      {% assign getting_started_footer = stop.footer %}
+      {% assign getting_started_image = stop.image %}
+      {% assign getting_started_entries = stop.items %}
+
+  {% endif %}
+  <!--End Getting Started-->
+
   <!--Begin Documentation-->
   {% if stop.name == 'Documentation' %}
 
@@ -68,31 +105,6 @@ title: Location APIs
   {% endif %}
   <!--End Documentation-->
 
-  <!--Begin Authentication-->
-  {% if stop.name == 'Authentication' %}
-    {% for item in stop.items %}
-
-      {% if item.name == 'Overview' %}
-
-        {% assign authentication_overview_title = item.fields | map: 'title' %}
-        {% assign authentication_overview_header = item.fields | map: 'header' %}
-        {% assign authentication_overview_footer = item.fields | map: 'footer' %}
-
-      {% endif %}
-
-      {% if item.name == 'Signup / Login' %}
-
-        {% assign authentication_signuplogin_title = item.fields | map: 'title' %}
-        {% assign authentication_signuplogin_header = item.fields | map: 'header' %}
-        {% assign authentication_signuplogin_footer = item.fields | map: 'footer' %}
-
-      {% endif %}
-
-    {% endfor %}
-
-  {% endif %}
-  <!--End Documentation-->
-
   <!--Begin Code-->
   {% if stop.name == 'Code' %}
 
@@ -114,7 +126,7 @@ title: Location APIs
       {% assign licensing_areas = stop.items %}
 
   {% endif %}
-  <!--End Documentation-->
+  <!--End Licensing-->
 
   <!--Begin Authentication-->
   {% if stop.name == 'Support' %}
@@ -159,18 +171,6 @@ title: Location APIs
 
   {% endif %}
   <!--End Communication-->
-
-  <!--Begin Getting Started-->
-  {% if stop.name == 'Getting Started' %}
-
-      {% assign getting_started_title = stop.name %}
-      {% assign getting_started_header = stop.header %}
-      {% assign getting_started_footer = stop.footer %}
-      {% assign getting_started_image = stop.image %}
-      {% assign getting_started_entries = stop.items %}
-
-  {% endif %}
-  <!--End Getting Started-->
 
   <!--Begin Road Map-->
   {% if stop.name == 'Road Map' %}
@@ -268,6 +268,17 @@ title: Location APIs
 
   {% endif %}
   <!--End Road Map-->
+
+  <!--Begin Licensing-->
+  {% if stop.name == 'Legal' %}
+
+      {% assign legal_title = stop.name %}
+      {% assign legal_header = stop.header %}
+      {% assign legal_footer = stop.footer %}
+      {% assign legal_areas = stop.items %}
+
+  {% endif %}
+  <!--End Licensing-->
 
 {% endfor %}
 
