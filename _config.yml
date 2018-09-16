@@ -914,20 +914,12 @@ stops:
   # Documentation
   #---------------
   - name: Documentation
-    header: The interactive documentation for the API and schema definitions in use.
-    footer: Providing a machine and human readable solution for learning about API.
+    title: Documentation
+    header: This is the interactive API documentation for this API, and when you are authenticated, will allow you to make API calls, and see the responses for each API path.
+    footer: This documentation is generated from the OpenAPI definition for this API, which you can use to publish, syndicate, and integrate with this API documentation elsewhere.
     instructions: Provide documentation for this service within portal.
     status: Active
     items:
-
-      - name: Overview
-        description: The descriptive header and footer paragraphs for the documentation.
-        instruction: Provide some content to introduce and close up the documentation.
-        status: Active
-        fields:
-          - title: 'API Documentation'
-          - header: 'This is the interactive API documentation for this API, and when you are authenticated, will allow you to make API calls, and see the responses for each API path.'
-          - footer: 'This documentation is generated from the OpenAPI definition for this API, which you can use to publish, syndicate, and integrate with this API documentation elsewhere.'
 
       - name: Paths
         description: Documentng the API paths that are available for this service.
