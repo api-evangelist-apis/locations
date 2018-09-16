@@ -1457,7 +1457,7 @@ stops:
         image: http://locations.apievangelist.com/assets/images/terms.png
         status: Active
         fields:
-          - url: http://example.com/tos/
+          - url: http://locations.apievangelist.com/terms-of-service/
 
       - name: Privacy Policy
         description: The privacy policy for this service.
@@ -1465,7 +1465,7 @@ stops:
         image: http://locations.apievangelist.com/assets/images/privacy.png
         status: Active
         fields:
-          - url: http://example.com/privacy/
+          - url: http://locations.apievangelist.com/privacy-policy/
 
       - name: Service Level Agreement
         description: The service level agreement (SLA) for this service.
@@ -1473,7 +1473,7 @@ stops:
         image: http://locations.apievangelist.com/assets/images/sla.png
         status: Active
         fields:
-          - url: http://example.com/sla/
+          - url: http://locations.apievangelist.com/service-level-agreement/
 
   #------------
   # Monitoring
