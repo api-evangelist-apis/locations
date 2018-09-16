@@ -1068,50 +1068,6 @@ body {
   visibility: hidden; }
 
 /*********************************************
- * ROLLING LINKS
- *********************************************/
-.reveal .roll {
-}
-
-.reveal .roll:hover {
-}
-
-.reveal .roll span {
-  display: block;
-  position: relative;
-  padding: 0 2px;
-  pointer-events: none;
-  -webkit-transition: all 400ms ease;
-          transition: all 400ms ease;
-  -webkit-transform-origin: 50% 0%;
-      -ms-transform-origin: 50% 0%;
-          transform-origin: 50% 0%;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden; }
-
-.reveal .roll:hover span {
-  background: rgba(0, 0, 0, 0.5);
-  -webkit-transform: translate3d(0px, 0px, -45px) rotateX(90deg);
-          transform: translate3d(0px, 0px, -45px) rotateX(90deg); }
-
-.reveal .roll span:after {
-  content: attr(data-title);
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 0;
-  padding: 0 2px;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  -webkit-transform-origin: 50% 0%;
-      -ms-transform-origin: 50% 0%;
-          transform-origin: 50% 0%;
-  -webkit-transform: translate3d(0px, 110%, 0px) rotateX(-90deg);
-          transform: translate3d(0px, 110%, 0px) rotateX(-90deg); }
-
-/*********************************************
  * SPEAKER NOTES
  *********************************************/
 .reveal aside.notes {
