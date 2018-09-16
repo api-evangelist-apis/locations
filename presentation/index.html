@@ -49,15 +49,15 @@ title: Location API - Presentation
       <p align="center"><strong>{{ stop.name }} &#8594; {{ item.name }}</strong></p>
       <p align="center" style="font-size: 18px;">{{ item.description }}</p>
       <center>
-        <div align="center" style="border: 1px solid #000; text-align: left; width: 40%; margin-top: 10px;">
-        {% if item.tools != Empty %}
-          <p style="font-size: 22px;"><strong>Tools:</strong></p>
-          <ul>
-            {% for tool in item.tools %}
-              <li><a href="{{ tool.url }}" target="_blank" style="font-size: 18px;"><strong>{{ tool.name }}</strong></a> - <span style="font-size: 18px;">{{ tool.description }}</span></li>
-            {% endfor %}
-          </ul>
-        {% endif %}
+        <div align="center" style="border: 0px solid #000; text-align: left; width: 40%; margin-top: 20px;">
+          {% if item.tools != Empty %}
+            <p style="font-size: 22px;"><strong>Tools:</strong></p>
+            <ul>
+              {% for tool in item.tools %}
+                <li style="list-style: none;"><a href="{{ tool.url }}" target="_blank" style="font-size: 18px;"><strong>{{ tool.name }}</strong></a> - <span style="font-size: 18px;">{{ tool.description }}</span></li>
+              {% endfor %}
+            </ul>
+          {% endif %}
         </div>
       </center>
     </section>
