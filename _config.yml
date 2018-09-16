@@ -816,8 +816,8 @@ stops:
   - name: Plans
     title: Plans
     description: Having one or many plans for accessing this service, ensuring that all consumption occurs through the filter of a plan, and fit into a wider platform management strategy.
-    header: The plans in place for managing access to this service, and delivers on the overall investment.
-    footer: Making sure that all services are managed as part of a large plan to capture value being generated.
+    header: These are the plans for accessing this service, providing different tiers of access depending on your needs, and what is allowed for this service.
+    footer: Currently there are just two plans available, if you have more needs than what is here, use one of the support channels to let us know what it is that you need.
     instructions: Define the operational plan for the business of this service.
     status: Active
     items:
@@ -825,14 +825,14 @@ stops:
       - name: Tiers
         description: The tiers of access for this service.
         instruction: Define the tiers of access in place to support this service.
-        status: None
+        status: Active
         fields:
 
           - plans:
             - name: Starter
               description: The default API access plan, where every new account begins, allowing the consumer to kick the tires, and see what the API is all about.
               image: http://locations.apievangelist.com/assets/images/starter.png
-              status: None
+              status: Active
               entries:
                 - label: API Calls
                   description: The number of requests made to the API.
@@ -850,7 +850,7 @@ stops:
             - name: Verified
               description: Once you have added a credit card as part of the account billing, you become a verified API consumer, and have a higher rate limit for usage.
               image: http://locations.apievangelist.com/assets/images/verified.png
-              status: None
+              status: Active
               entries:
                 - label: API Calls
                   description: The number of requests made to the API.
