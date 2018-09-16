@@ -34,21 +34,22 @@ title: Location APIs
 
   <!--Begin Documentation-->
   {% if stop.name == 'Documentation' %}
+
     {% for item in stop.items %}
 
       {% if item.name == 'Overview' %}
 
-        {% assign documentation_overview_title = item.fields | map: 'title' %}
-        {% assign documentation_overview_header = item.fields | map: 'header' %}
-        {% assign documentation_overview_footer = item.fields | map: 'footer' %}
+        {% assign documentation_overview_title = item.title %}
+        {% assign documentation_overview_header = item.header %}
+        {% assign documentation_overview_footer = item.footer %}
 
       {% endif %}
 
       {% if item.name == 'Schema' %}
 
-        {% assign documentation_schema_title = item.fields | map: 'title' %}
-        {% assign documentation_schema_header = item.fields | map: 'header' %}
-        {% assign documentation_schema_footer = item.fields | map: 'footer' %}
+        {% assign documentation_schema_title = item.title %}
+        {% assign documentation_schema_header = item.header %}
+        {% assign documentation_schema_footer = item.footer %}
 
       {% endif %}
 
@@ -502,9 +503,9 @@ title: Location APIs
 <section id="schema">
   <div class="content">
 		<header>
-			<h3>{{ documentation_schema_title }}</h3>
+			<h3>{{ documentation_schema_title }} - 1</h3>
 		</header>
-		<p>{{ documentation_schema_header }}</p>
+		<p>{{ documentation_schema_header }} - 2</p>
 
     <div class="row">
         <div class="tabs documentation tab-container">
