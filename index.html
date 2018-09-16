@@ -1099,7 +1099,7 @@ title: Location APIs
         {% assign document_image = document.image %}
         {% assign document_status = document.status %}
         {% assign document_url = document.fields | map: 'url' %}
-        {% if channel.status == 'Active' %}
+        {% if document_status == 'Active' %}
           <td align="center"><a href="{{ document_url }}"><img src="{{ document_image }}" width="75" align="center" /></a><p align="center"><a href="{{ document_url }}"><strong>{{ document_name }}</strong></a></p></td>
         {% endif %}
       {% endfor %}

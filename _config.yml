@@ -1444,6 +1444,7 @@ stops:
   # Legal
   #-------
   - name: Legal
+    title: The Legal Department
     header: This is the legal department for this service, with all the details you will need to comply with usage of this service.
     footer: If you have any questions about the legal documents provided here, you can contact us through one of the support channels.
     instructions: Provide a set of legal documents guiding the service.
