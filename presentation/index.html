@@ -40,7 +40,7 @@ title: Location API - Presentation
         <p><strong>Tools:</strong></p>
         <ul>
           {% for tool in item.tools %}
-            <li><strong>{{ tool.name }}</strong> - {{ tool.description }}</li>
+            <li><a href="{{ tool.url }}" target="_blank"><strong>{{ tool.name }}</strong></a> - {{ tool.description }}</li>
           {% endfor %}
         </ul>
       {% endif %}
