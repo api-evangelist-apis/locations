@@ -1432,30 +1432,30 @@ stops:
   # Legal
   #-------
   - name: Legal
-    header: The definitions for this service.
-    footer:
+    header: This is the legal department for this service, with all the details you will need to comply with usage of this service.
+    footer: If you have any questions about the legal documents provided here, you can contact us through one of the support channels.
     instructions: Provide a set of legal documents guiding the service.
-    status: None
+    status: Active
     items:
 
       - name: Terms of Service
         description: The terms of service (TOS) for this service.
         instruction: Provide a terms of service for this service to operate within.
-        status: None
+        status: Active
         fields:
           - url: http://example.com/tos/
 
       - name: Privacy Policy
         description: The privacy policy for this service.
         instruction: Provide a privacy policy for this service to operate within.
-        status: None
+        status: Active
         fields:
           - url: http://example.com/privacy/
 
       - name: Service Level Agreement
         description: The service level agreement (SLA) for this service.
         instruction: Provide a service level agreement (SLA) for this service to operate within.
-        status: None
+        status: Active
         fields:
           - url: http://example.com/sla/
 
@@ -1496,6 +1496,7 @@ stops:
             - title: Monitor Status
               date: 1/1/2019
               description: This is a description for the item.
+          - embed: <embed code>
 
   #---------
   # Testing
