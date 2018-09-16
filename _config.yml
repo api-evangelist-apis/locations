@@ -1159,8 +1159,8 @@ stops:
   #------
   - name: FAQs
     title: Frequently Asked Questions (FAQ)
-    header: The definitions for this service.
-    footer:
+    header: These are the frequently asked questions (FAQ) for this service, reflecting the questions most asked by consumers of this service.
+    footer: If you have a question, and you don't find the answer listed here, feel free to use one of the support channels above to get it answered.
     instructions: Publish a list of the frequently asked questions (FAQ) for this service.
     status: None
     items:
