@@ -8,9 +8,9 @@ title: Location API - Presentation
 <section>
   <p align="center"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-lifecycle.png" style="width: 7%; padding: 2px;"></p>
   <p align="center"><strong>Consistent API Lifecycle</strong></p>
-  <table width="75" border="1">
+  <table width="755" border="1">
     <tr>
-      <td width="33%">
+      <td width="33%" style="border: 1px solid #000;">
         <ul style="text-align: left;">
           {% assign number_of_stops = site.stops | size %}
           {% assign cutoff = number_of_stops | divided_by: 3 %}
@@ -20,7 +20,7 @@ title: Location API - Presentation
             <li style=" margin-left: 350px; font-size: 16px; font-weight: bold;">{{ stop.name }}</li>
             {% assign this_stop = this_stop | plus: 1 %}
             {% if this_stop == cutoff %}
-              </td><td><ul style="text-align: left;">
+              </td><td width="33%" style="border: 1px solid #000;"> <ul style="text-align: left;">
               {% assign this_stop = 0 %}
             {% endif %}
           {% endfor %}
@@ -55,7 +55,7 @@ title: Location API - Presentation
             <p style="font-size: 22px;"><strong>Tools:</strong></p>
             <ul>
               {% for tool in item.tools %}
-                <li style="list-style: none;"><a href="{{ tool.url }}" target="_blank" style="font-size: 18px;"><strong>{{ tool.name }}</strong></a> - <span style="font-size: 18px;">{{ tool.description }}</span></li>
+                <li style="list-style: none;"><a href="{{ tool.url }}" target="_blank" style="font-size: 18px; padding: 1px; margin:1x;"><strong>{{ tool.name }}</strong></a> - <span style="font-size: 18px;">{{ tool.description }}</span></li>
               {% endfor %}
             </ul>
           {% endif %}
