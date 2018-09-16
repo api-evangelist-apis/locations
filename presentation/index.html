@@ -34,13 +34,15 @@ title: Location API - Presentation
       <br style="padding: 25px;" />
       <p align="center"><img src="{{ item.image }}" style="width: 20%; padding: 5px;"></p>
       <p align="center"><strong>{{ stop.name }} &#8594; {{ item.name }}</strong></p>
-      <p align="center">{{ item.description }}</p>
+      <p align="center" style="font-size: 18px;">{{ item.description }}</p>
 
       {% if item.tools != Empty %}
         <p><strong>Tools:</strong></p>
-        {% for tool in item.tools %}
-          {{ tool }}<br />
-        {% endfor %}
+        <ul>
+          {% for tool in item.tools %}
+            <li><a href="{{ tool.name }}" target="_blank" style="font-size: 18px;"><strong>{{ tool.name }}</strong><a> - {{ tool.description }}</li>
+          {% endfor %}
+        </ul>
       {% endif %}
 
     </section>
