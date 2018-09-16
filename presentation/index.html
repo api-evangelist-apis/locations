@@ -9,8 +9,12 @@ title: Location API - Presentation
   <p align="center"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-lifecycle.png" style="width: 7%; padding: 2px;"></p>
   <p align="center"><strong>Consistent API Lifecycle</strong></p>
   <ul style="text-align: left;">
+    {% assign number_of_stops = site.stops | size %}
+    {% assign this_stop = 0 %}
     {% for stop in site.stops %}
       <li style=" margin-left: 350px; font-size: 16px; font-weight: bold;">{{ stop.name }}</i>
+      {% assign this_stop = this_stop | plus: 1 %}
+      {{ this_stop }} / {{ number_of_stops }}
     {% endfor %}
   </ul>
 

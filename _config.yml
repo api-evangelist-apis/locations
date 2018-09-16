@@ -66,6 +66,7 @@ stops:
       - name: README
         description: The README for this services repository
         instruction: Craft a README for the repository.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-readme.png
         status: Active
         fields:
           - readme_path: /README.md
@@ -78,12 +79,14 @@ stops:
         description: A simple title for this service.
         instruction: Provide title for the service.
         status: Active
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-service-request.png
         fields:
           - service_name: API Evangelist Location API
 
       - name: Service Description
         description: A simple, descriptive paragraph for this service.
         instruction: Provide concise description for the service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-dependencies-services.png
         status: Active
         fields:
           - service_description: This is a location API, providing many of the common building blocks of location. Providing the essential location ingredients needed through a varietiy of applications, without having to reivent the wheel each times it is needed. This API is still being working on, and not quite ready for prime time, but if you have any questions, visit the road map and support sections below the documentation
@@ -91,7 +94,8 @@ stops:
       - name: Service Goals
         description: Providing some basic goals for this service.
         instruction: Establish goals that will guide this service.
-        status: None
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-gear-life-cycle.png
+        status: Active
         fields:
           - service_goals: This is the goals for this service.
             goals:
@@ -101,7 +105,8 @@ stops:
       - name: Schema
         description: JSON schema for the data behind service.
         instruction: Organize loose, and JSON schema for the service.
-        status: None
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-schema.png
+        status: Active
         fields:
           - title: Cities
           - path: /json-schema/cities.json
@@ -117,6 +122,7 @@ stops:
       - name: OpenAPI
         description: An OpenAPI definition for the surface area of the API.
         instruction: Establish an OpenAPI for the service.
+        image: https://s3.amazonaws.com/kinlane-productions/openapi/openapi-icon.png
         status: None
         fields:
           - openapi: /_data/openapi.yaml
