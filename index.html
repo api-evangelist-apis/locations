@@ -821,23 +821,30 @@ title: Location APIs
           {% assign plan_description = plan.description %}
           {% assign plan_status = plan.status %}
           {% assign plan_entries = plan.entries %}
+          {% assign plan_elements = plan.elements %}
 
           <td>
             <p><strong>{{ plan_name }}</strong><p>
             <p>{{ plan_description }}</p>
-            <ul>
-              {% for entry in plan_entries %}
-                {% assign entry_label = entry.label %}
-                {% assign entry_description = entry.description %}
-                {% assign entry_metric = entry.metric %}
-                {% assign entry_timeframe = entry.timeframe %}
-                {% assign entry_geo = entry.geo %}
-                {% assign entry_one = entry.one %}
-                {% assign entry_two = entry.two %}
-                {% assign entry_unit = entry.unit %}
-                <li>{{ entry_label }} - {{ entry_description }}</li>
-              {% endfor %}
-            </ul>
+
+            <p><strong>Details:</strong><p>
+            {% for entry in plan_entries %}
+              {% assign entry_label = entry.label %}
+              {% assign entry_description = entry.description %}
+              {% assign entry_metric = entry.metric %}
+              {% assign entry_timeframe = entry.timeframe %}
+              {% assign entry_geo = entry.geo %}
+              {% assign entry_one = entry.one %}
+              {% assign entry_two = entry.two %}
+              {% assign entry_unit = entry.unit %}
+               - {{ entry_label }} - {{ entry_description }}<br />
+            {% endfor %}
+
+            <p><strong>Elements:</strong><p>
+            {% for element in plan_elements %}
+              {% assign element_name = entry.name %}
+               - {{ element_name }}<br />
+            {% endfor %}
 
           </td>
 
