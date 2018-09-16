@@ -821,18 +821,20 @@ stops:
     instructions: Define the operational plan for the business of this service.
     status: Active
     items:
+
       - name: Tiers
         description: The tiers of access for this service.
         instruction: Define the tiers of access in place to support this service.
         status: None
         fields:
+
           - plans:
             - name: Starter
               description: The default API access plan, where every new account begins, allowing the consumer to kick the tires, and see what the API is all about.
               status: None
               entries:
-                - label: API calls
-                  description: to the search API
+                - label: API Calls
+                  description: The number of requests made to the API.
                   metric: calls
                   limit: 25
                   timeframe: day
@@ -843,12 +845,13 @@ stops:
               elements:
                 - name: Free
                 - name: Self Service Support
+
             - name: Verified
               description: Once you have added a credit card as part of the account billing, you become a verified API consumer, and have a higher rate limit for usage.
               status: None
               entries:
-                - label: API calls
-                  description: to the search API
+                - label: API Calls
+                  description: The number of requests made to the API.
                   metric: calls
                   limit: Pay As You Go
                   timeframe: day

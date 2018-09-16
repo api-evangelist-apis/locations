@@ -124,6 +124,17 @@ title: Location APIs
   {% endif %}
   <!--End Licensing-->
 
+  <!--Begin Plans-->
+  {% if stop.name == 'Plans' %}
+
+      {% assign plan_title = stop.title %}
+      {% assign plan_header = stop.header %}
+      {% assign plan_footer = stop.footer %}
+      {% assign plan_areas = stop.items %}
+
+  {% endif %}
+  <!--End Plans-->
+
   <!--Begin Authentication-->
   {% if stop.name == 'Support' %}
 
@@ -787,6 +798,38 @@ title: Location APIs
   </div>
 </section>
 <!-- End Licensing -->
+
+<!-- Begin Plans -->
+<section id="sign-up-login">
+  <div class="content">
+		<header>
+			<h3>{{ licensing_title }}</h3>
+		</header>
+    <p>{{ licensing_header }}</p>
+    <center>
+    <table width="90%" align="center">
+      <tr>
+      {% for area in licensing_areas %}
+
+        {% assign licensing_title = area.title %}
+        {% assign licensing_description = area.description %}
+        {% assign licensing_status = area.status %}
+
+        {% assign license_name = area.fields | map: 'name' %}
+        {% assign license_url = area.fields | map: 'url' %}
+        {% assign license_image = area.fields | map: 'image' %}
+
+        {% if licensing_status == 'Active' %}
+          <td align="center"><p align="center"><strong>{{ licensing_title }}</strong></p></strong> <a href="{{ license_url }}"><img src="{{ license_image }}" width="75" align="center" /></a><p align="center"><a href="{{ license_url }}"><strong>{{ license_name }}</strong></a></p></td>
+        {% endif %}
+      {% endfor %}
+      </tr>
+    </table>
+    </center>
+    <p>{{ licensing_footer }}</p>
+  </div>
+</section>
+<!-- End Plans -->
 
 <!-- Begin Support -->
 <section id="sign-up-login">
