@@ -817,8 +817,6 @@ title: Location APIs
       {% for entries in plans %}
         {% for plan in entries %}
 
-          TWO: {{ plan }}<br />
-
           {% assign plan_name = plan.name %}
           {% assign plan_description = plan.description %}
           {% assign plan_status = plan.status %}
@@ -827,7 +825,7 @@ title: Location APIs
           <td>1) {{ plan_name }}</td>
 
           {% for entry in plan_entries %}
-            <td>2) {{ plan_name }}</td>
+            <td>2) {{ entry }}</td>
           {% endfor %}
 
         {% endfor %}
