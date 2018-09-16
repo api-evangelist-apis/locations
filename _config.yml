@@ -134,6 +134,7 @@ stops:
       - name: Assertions
         description: Human and machine readable assertions of what service does.
         instruction: Craft a set of assertions for the service.
+        image: <div style="display: inline; width: 250px; border: 1px solid #000;">
         status: None
         fields:
           - assertions:
@@ -143,6 +144,7 @@ stops:
       - name: Team
         description: A list of team members for the service.
         instruction: Define the team behind the service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-team-working.png
         status: None
         fields:
           - team:
@@ -159,12 +161,14 @@ stops:
     header: The API design strategy for use as part of this service.
     footer: Setting a consistent design strategy for all services.
     instructions: Establish a base set of design practices for the service.
+    image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-design.png
     status: Active
     items:
 
       - name: Versioning
         description: Managing the version for the various layers of this service.
         instruction: Determine how the code, schema, and the API be versioned.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-conversion.png
         status: None
         fields:
           - versioning:
@@ -177,6 +181,7 @@ stops:
       - name: Base Path
         description: The part of the path that goes after the host, and before each path, and is constant across all endpoints for this service.
         instruction: Set the base path for the service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/base-path.png
         status: Active
         fields:
           - url: /v1
@@ -184,6 +189,7 @@ stops:
       - name: Path(s)
         description: The paths that are used to define each individual API resource.
         instruction: Define a set of resource paths for the service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-path-resource.png
         status: Active
         fields:
           - number_of_paths: 5
@@ -191,6 +197,7 @@ stops:
       - name: Verb(s)
         description: The HTTP verbs used for this service, including GET, POST, PUT, and DELETE.
         instruction: Define which HTTP, and other verbs will be used for the service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-verbs.png
         status: Active
         fields:
           - get: 2
