@@ -21,6 +21,7 @@ title: Location API - Presentation
             {% assign this_stop = this_stop | plus: 1 %}
             {% if this_stop == cutoff %}
               </td><td><ul style="text-align: left;">
+              {% assign this_stop = 0 %}
             {% endif %}
           {% endfor %}
         </ul>
