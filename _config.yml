@@ -42,6 +42,7 @@ stops:
       - name: Organization
         description: The source control organization for this service.
         instruction: Define the organization for this service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-organization.jpg
         status: Active
         fields:
           - github_organization: api-evangelist-apis
@@ -54,6 +55,7 @@ stops:
         description: The source control repository for this service.
         instruction: Establish a Github repository.
         status: Active
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-repository.jpg
         fields:
           - github_repository: locations
         services:
