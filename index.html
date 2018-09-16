@@ -826,9 +826,10 @@ title: Location APIs
             1) {{ plan_name }}<br />
 
             {% for entry in plan_entries %}
-              2) {{ entry }}<br />
+              {% assign entry_label = entry.label %}
+              2) {{ entry_label }}<br />
             {% endfor %}
-              
+
           </td>
 
         {% endfor %}
