@@ -55,24 +55,24 @@ title: Location API - Presentation
         <div align="center" style="border: 0px solid #000; text-align: left; width: 40%; margin-top: 20px;">
           <p align="center" style="font-size: 24px;">{{ item.description }}</p>
           {% if item.services != Empty %}
-            <p style="font-size: 22px;"><strong>Services:</strong></p>
-            <ul>
+            <br /><p style="font-size: 22px;"><strong>Services:</strong></p>
+            <ul style="padding: 5px;">
               {% for service in item.services %}
                 <li style="list-style: none; padding: 5px 0px 5px 15px;">&#8594; <a href="{{ service.url }}" class="none" target="_blank" style="font-size: 18px; padding: 1px; margin:1x;"><strong>{{ service.name }}</strong></a> - <span style="font-size: 18px;">{{ service.description }}</span></li>
               {% endfor %}
             </ul>
           {% endif %}
           {% if item.tools != Empty %}
-            <p style="font-size: 22px;"><strong>Tools:</strong></p>
-            <ul>
+            <br /><p style="font-size: 22px;"><strong>Tools:</strong></p>
+            <ul style="padding: 5px;">
               {% for tool in item.tools %}
                 <li style="list-style: none; padding: 5px 0px 5px 15px;">&#8594; <a href="{{ tool.url }}" class="none" target="_blank" style="font-size: 18px; padding: 1px; margin:1x;"><strong>{{ tool.name }}</strong></a> - <span style="font-size: 18px;">{{ tool.description }}</span></li>
               {% endfor %}
             </ul>
           {% endif %}
           {% if item.links != Empty %}
-            <p style="font-size: 22px;"><strong>Links:</strong></p>
-            <ul>
+            <br /><p style="font-size: 22px;"><strong>Links:</strong></p>
+            <ul style="padding: 5px;">
               {% for link in item.links %}
                 <li style="list-style: none; padding: 5px 0px 5px 15px;">&#8594; <a href="{{ tool.url }}" class="none" target="_blank" style="font-size: 18px; padding: 1px; margin:1x;"><strong>{{ tool.title }}</strong></a></li>
               {% endfor %}
