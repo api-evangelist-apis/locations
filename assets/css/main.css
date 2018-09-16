@@ -1071,18 +1071,18 @@ body {
  * ROLLING LINKS
  *********************************************/
 .reveal .roll {
-  display: inline-block;
+/*  display: inline-block;
   line-height: 1.2;
   overflow: hidden;
   vertical-align: top;
   -webkit-perspective: 400px;
           perspective: 400px;
   -webkit-perspective-origin: 50% 50%;
-          perspective-origin: 50% 50%; }
+perspective-origin: 50% 50%;*/ }
 
 .reveal .roll:hover {
-  background: none;
-  text-shadow: none; }
+  /*background: none;
+text-shadow: none; */}
 
 .reveal .roll span {
   display: block;
