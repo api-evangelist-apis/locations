@@ -10,27 +10,22 @@ title: Location API - Presentation
   <p align="center"><strong>API Lifecycle</strong></p>
 
   <center>
-  <table align="center" style="border: 2px solid #000; width: 250px;">
-    <tr>
-      <td width="33%" style="border: 1px solid #000;">
-        <ul style="text-align: left;">
-          {% assign number_of_stops = site.stops | size %}
-          {% assign cutoff = number_of_stops | divided_by: 3 %}
-          {% assign cutoff = cutoff | plus: 1 %}
+  <div style="border: 1px solid #000; display: inline; width: 100px;">
+    <ul style="text-align: left;">
+      {% assign number_of_stops = site.stops | size %}
+      {% assign cutoff = number_of_stops | divided_by: 3 %}
+      {% assign cutoff = cutoff | plus: 1 %}
+      {% assign this_stop = 0 %}
+      {% for stop in site.stops %}
+        <li style=" margin-left: 350px; font-size: 16px; font-weight: bold;">{{ stop.name }}</li>
+        {% assign this_stop = this_stop | plus: 1 %}
+        {% if this_stop == cutoff %}
+          </div><div style="border: 1px solid #000; display: inline; width: 100px;"><ul style="text-align: left;">
           {% assign this_stop = 0 %}
-          {% for stop in site.stops %}
-            <li style=" margin-left: 350px; font-size: 16px; font-weight: bold;">{{ stop.name }}</li>
-            {% assign this_stop = this_stop | plus: 1 %}
-            {% if this_stop == cutoff %}
-              </td><td width="33%" style="border: 1px solid #000;"> <ul style="text-align: left;">
-              {% assign this_stop = 0 %}
-            {% endif %}
-          {% endfor %}
-        </ul>
-      </td>
-    </tr>
-  </table>
-  </center>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
 
 </section>
 
