@@ -1109,7 +1109,7 @@ stops:
         instruction: Define how all backend server code is licensed for this service.
         status: Active
         fields:
-          - name: MIT License
+          - name: MIT
           - url: https://opensource.org/licenses/MIT
           - image: http://locations.apievangelist.com/assets/images/mit-license.png
 
@@ -1118,7 +1118,7 @@ stops:
         instruction: Define how all data and schema is licensed for this service.
         status: Active
         fields:
-          - name: Open Data Commons Open Database License (ODbL)
+          - name: ODbL
           - url: https://opendatacommons.org/licenses/odbl/1-0/
           - image: http://locations.apievangelist.com/assets/images/okfn.png
 
@@ -1127,7 +1127,7 @@ stops:
         instruction: Define how the API definition is licensed for this service.
         status: Active
         fields:
-          - name: Creative Commons CC-BY
+          - name: CC-BY
           - url: https://creativecommons.org/licenses/by/2.0/
           - image: http://locations.apievangelist.com/assets/images/cc-by.png
 
@@ -1136,7 +1136,7 @@ stops:
         instruction: Define how all client code is licensed for this service.
         status: Active
         fields:
-          - name: MIT License
+          - name: MIT
           - url: https://opensource.org/licenses/MIT
           - image: http://locations.apievangelist.com/assets/images/mit-license.png
 
