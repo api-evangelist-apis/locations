@@ -1196,8 +1196,8 @@ stops:
               category: Category Two
             - question: Question One
               answer: This is the answer to the question.
-              category: Category Two
-            - question: Question Three
+              category: Category Three
+            - question: Question Two
               answer: This is the answer to the question.
               category: Category Three
             - question: Question One
