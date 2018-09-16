@@ -10,7 +10,7 @@ title: Location API - Presentation
   <p align="center" style="font-size: 36px;"><strong>API Lifecycle</strong></p>
 
   <center>
-  <div style="display: table; width: 50%; table-layout: fixed; border-spacing: 10px; margin-top: 15px;">
+  <div style="display: table; width: 60%; table-layout: fixed; border-spacing: 10px; margin-top: 15px;">
       <div style="display: table-cell; text-align: left;">
     <ul>
       {% assign number_of_stops = site.stops | size %}
@@ -18,7 +18,7 @@ title: Location API - Presentation
       {% assign cutoff = cutoff | plus: 1 %}
       {% assign this_stop = 0 %}
       {% for stop in site.stops %}
-        <li style="font-size: 22px; font-weight: bold; list-style: none; padding: 5px;">&#8594; {{ stop.name }}</li>
+        <li style="font-size: 24px; font-weight: bold; list-style: none; padding: 10px;">&#8594; {{ stop.name }}</li>
         {% assign this_stop = this_stop | plus: 1 %}
         {% if this_stop == cutoff %}
         </div><div style="display: table-cell; text-align: left;"><ul>
