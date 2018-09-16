@@ -104,7 +104,7 @@ title: Location APIs
   <!--Begin Code-->
   {% if stop.name == 'Code' %}
 
-      {% assign code_title = stop.name %}
+      {% assign code_title = stop.title %}
       {% assign code_header = stop.header %}
       {% assign code_footer = stop.footer %}
       {% assign code_image = stop.image %}
@@ -116,7 +116,7 @@ title: Location APIs
   <!--Begin Licensing-->
   {% if stop.name == 'Licensing' %}
 
-      {% assign licensing_title = stop.name %}
+      {% assign licensing_title = stop.title %}
       {% assign licensing_header = stop.header %}
       {% assign licensing_footer = stop.footer %}
       {% assign licensing_areas = stop.items %}
@@ -768,7 +768,7 @@ title: Location APIs
       <tr>
       {% for area in licensing_areas %}
 
-        {% assign licensing_name = area.name %}
+        {% assign licensing_title = area.title %}
         {% assign licensing_description = area.description %}
         {% assign licensing_status = area.status %}
 
@@ -777,7 +777,7 @@ title: Location APIs
         {% assign license_image = area.fields | map: 'image' %}
 
         {% if licensing_status == 'Active' %}
-          <td align="center"><strong>{{ licensing_name }}:</strong> <a href="{{ license_url }}"><img src="{{ license_image }}" width="75" align="center" /></a><p align="center"><a href="{{ license_url }}"><strong>{{ license_name }}</strong></a></p></td>
+          <td align="center"><p align="center"><strong>{{ licensing_title }}</strong></p></strong> <a href="{{ license_url }}"><img src="{{ license_image }}" width="75" align="center" /></a><p align="center"><a href="{{ license_url }}"><strong>{{ license_name }}</strong></a></p></td>
         {% endif %}
       {% endfor %}
       </tr>

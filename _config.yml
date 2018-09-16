@@ -1098,6 +1098,7 @@ stops:
   # Licensing
   #-----------
   - name: Licensing
+    title: Licensing
     header: This is what you need to know regarding the licensing of resources that are available as part of this service, breaking down the license applied to each component.
     footer: If you have any questions on licensing of code, data, or other aspect of this service, please use one of the support channels to give us more detail on your licensing query.
     instructions: Provide a set of licensing in place for this service.
@@ -1105,6 +1106,7 @@ stops:
     items:
 
       - name: Server
+        title: Server Licensing
         description: The licensing for the server code behind this service.
         instruction: Define how all backend server code is licensed for this service.
         status: Active
@@ -1114,6 +1116,7 @@ stops:
           - image: http://locations.apievangelist.com/assets/images/mit-license.png
 
       - name: Data
+        title: Data Licensing
         description: Licensing for the data used as part of this service.
         instruction: Define how all data and schema is licensed for this service.
         status: Active
@@ -1123,6 +1126,7 @@ stops:
           - image: http://locations.apievangelist.com/assets/images/okfn.png
 
       - name: API
+        title: API Licensing
         description: Licensing for the API interface for this service.
         instruction: Define how the API definition is licensed for this service.
         status: Active
@@ -1132,6 +1136,7 @@ stops:
           - image: http://locations.apievangelist.com/assets/images/cc-by.png
 
       - name: SDKs
+        title: SDK Licensing
         description: Licensing for the SDKs provided for this service.
         instruction: Define how all client code is licensed for this service.
         status: Active
