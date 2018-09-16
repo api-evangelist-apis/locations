@@ -815,17 +815,19 @@ title: Location APIs
       plans: {{ plans }}<br />
     <table width="90%" align="center">
       <tr>
-      {% for plan in plans %}
+      {% for entries in plans %}
+        {% for plan in entries %}
 
-        {% assign plan_name = plan.name %}
-        {% assign plan_description = plan.description %}
-        {% assign plan_status = plan.status %}
-        {% assign plan_entries = plan.entries %}
+          {% assign plan_name = plan.name %}
+          {% assign plan_description = plan.description %}
+          {% assign plan_status = plan.status %}
+          {% assign plan_entries = plan.entries %}
 
-        {% for entry in plan_entries %}
-          <td>{{ entry }}</td>
+          {% for entry in plan_entries %}
+            <td>{{ entry }}</td>
+          {% endfor %}
+
         {% endfor %}
-
       {% endfor %}
       </tr>
     </table>
