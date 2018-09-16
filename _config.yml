@@ -35,6 +35,7 @@ stops:
     header: All of the definitions available for this service, providing a single way to find everything that drives the project.
     footer: Providing a machine readable core for the entire lifecycle of this service, allowing documentation to be used elsewhere.
     instructions: Define the problem and solution in a human and machine readable way.
+    image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-definitions.png
     status: Active
     items:
 
@@ -278,7 +279,7 @@ stops:
       - name: Errors
         description: Defining a structure for error handling that leverages HTTP status codes, but goes further with a common schema definition.
         instruction: Provide a schema definition, and apply error handling as part of the wider HTTP status code usage.
-        status: Active                
+        status: Active
 
   #----------
   # Database
