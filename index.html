@@ -822,11 +822,14 @@ title: Location APIs
           {% assign plan_status = plan.status %}
           {% assign plan_entries = plan.entries %}
 
-          <td>1) {{ plan_name }}</td>
+          <td>
+            1) {{ plan_name }}<br />
 
-          {% for entry in plan_entries %}
-            <td>2) {{ entry }}</td>
-          {% endfor %}
+            {% for entry in plan_entries %}
+              2) {{ entry }}<br />
+            {% endfor %}
+              
+          </td>
 
         {% endfor %}
       {% endfor %}
