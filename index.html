@@ -127,10 +127,15 @@ title: Location APIs
   <!--Begin Plans-->
   {% if stop.name == 'Plans' %}
 
-      {% assign plan_title = stop.title %}
-      {% assign plan_header = stop.header %}
-      {% assign plan_footer = stop.footer %}
-      {% assign plan_areas = stop.items %}
+      {% assign plans_title = stop.title %}
+      {% assign plans_header = stop.header %}
+      {% assign plans_footer = stop.footer %}
+
+      {% for item in stop.items %}
+        {% if item.name == 'Tiers' %}
+          {% assign plans = item.fields | map: 'plans' %}
+        {% endif %}
+      {% endfor %}
 
   {% endif %}
   <!--End Plans-->
@@ -803,30 +808,28 @@ title: Location APIs
 <section id="sign-up-login">
   <div class="content">
 		<header>
-			<h3>{{ licensing_title }}</h3>
+			<h3>{{ plans_title }}</h3>
 		</header>
-    <p>{{ licensing_header }}</p>
+    <p>{{ plans_header }}</p>
     <center>
     <table width="90%" align="center">
       <tr>
-      {% for area in licensing_areas %}
+      {% for plan in plans %}
 
-        {% assign licensing_title = area.title %}
-        {% assign licensing_description = area.description %}
-        {% assign licensing_status = area.status %}
+        {% assign plan_name = plan.name %}
+        {% assign plan_description = plan.description %}
+        {% assign plan_status = plan.status %}
+        {% assign plan_entries = plan.entries %}
 
-        {% assign license_name = area.fields | map: 'name' %}
-        {% assign license_url = area.fields | map: 'url' %}
-        {% assign license_image = area.fields | map: 'image' %}
+        {% for entry in plan_entries %}
+          <td>{{ entry }}</td>
+        {% endfor %}
 
-        {% if licensing_status == 'Active' %}
-          <td align="center"><p align="center"><strong>{{ licensing_title }}</strong></p></strong> <a href="{{ license_url }}"><img src="{{ license_image }}" width="75" align="center" /></a><p align="center"><a href="{{ license_url }}"><strong>{{ license_name }}</strong></a></p></td>
-        {% endif %}
       {% endfor %}
       </tr>
     </table>
     </center>
-    <p>{{ licensing_footer }}</p>
+    <p>{{ plans_footer }}</p>
   </div>
 </section>
 <!-- End Plans -->
