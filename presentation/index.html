@@ -37,6 +37,7 @@ title: Location API - Presentation
       <p align="center">{{ item.description }}</p>
 
       {% if item.tools != Empty %}
+        <p><strong>Tools:</strong></p>
         {% for tool in item.tools %}
           {{ tool }}<br />
         {% endfor %}
