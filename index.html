@@ -812,11 +812,13 @@ title: Location APIs
 		</header>
     <p>{{ plans_header }}</p>
     <center>
-      plans: {{ plans }}<br />
     <table width="90%" align="center">
       <tr>
       {% for entries in plans %}
+        ONE: {{ entries }}<br />
         {% for plan in entries %}
+
+          TWO: {{ plan }}<br />
 
           {% assign plan_name = plan.name %}
           {% assign plan_description = plan.description %}
