@@ -161,6 +161,7 @@ stops:
   # Design
   #--------
   - name: Design
+    title: Design
     header: The API design strategy for use as part of this service.
     footer: Setting a consistent design strategy for all services.
     instructions: Establish a base set of design practices for the service.
@@ -314,6 +315,7 @@ stops:
   # Database
   #----------
   - name: Database
+    title: Database
     header: The database behind this service, acting as the data source for these resources.
     footer: Providing a dedicated database resource for just this single service to use.
     instructions: Establish the base for how data will be managed behind the service.
@@ -381,6 +383,7 @@ stops:
   # Storage
   #---------
   - name: Storage
+    title: Storage
     header: The storage used for this service, where all objects are stored.
     footer: Providing a single location this service to manage it's storage.
     instructions: Establish how all objects will be stored for the service.
@@ -441,6 +444,7 @@ stops:
   # DNS
   #-----
   - name: DNS
+    title: DNS
     header: The DNS addressing used to route all traffic to this service.
     footer: Using a single subdomain that can be used to access this resource.
     instructions: Establish the DNS layer for this service.
@@ -503,6 +507,7 @@ stops:
   # Virtualization
   #----------------
   - name: Virtualization
+    title: Virtualization
     header: The definitions for this service.
     footer:
     instructions: Provide a mock representation of this service.
@@ -601,6 +606,7 @@ stops:
   # Orchestration
   #---------------
   - name: Orchestration
+    title: Orchestration
     header: The definitions for this service.
     footer:
     instructions: Define how the service will be orchestrated.
@@ -659,6 +665,7 @@ stops:
   # Dependencies
   #--------------
   - name: Dependencies
+    title: Dependencies
     header: The definitions for this service.
     footer:
     instructions: Providing details of the dependencies that exist for this service.
@@ -716,6 +723,7 @@ stops:
   # Authentication
   #--------------
   - name: Authentication
+    title: Authentication
     header: The definitions for this service.
     footer:
     instructions: Details regarding authentication in use for this service.
@@ -768,6 +776,7 @@ stops:
   # Management
   #------------
   - name: Management
+    title: Management
     header: The management of this service, managing all access to APIs.
     footer: Leveraging a proven solution for securing all resources provided.
     instructions: Define the management layer for this service's API.
@@ -829,6 +838,7 @@ stops:
   # Logging
   #---------
   - name: Logging
+    title: Logging
     header: The definitions for this service.
     footer:
     instructions: Define the logging layer for supporting this service.
@@ -868,6 +878,7 @@ stops:
   # Monetization
   #--------------
   - name: Monetization
+    title: Monetization
     header: Define the monetization history, and the details leading to a plan.
     footer: Tracking on everything that goes into delivering this service.
     instructions: Define the costs associated with the delivery of this service.
@@ -972,6 +983,7 @@ stops:
   # Portal
   #--------
   - name: Portal
+    title: Portal / Landing Page
     header: The portal landing page for this service, providing a single location to access the service.
     footer: Providing a single known location discovery and return when information about service is needed.
     instructions: Define the public or private portal in use to present this service.
@@ -1139,6 +1151,7 @@ stops:
   # Code
   #------
   - name: Code
+    title: Code / Libraries / SDKs
     header: These are the code samples, libraries, and SDKs we provide in a variety of programming languages, helping jumpstart your integration with the API.
     footer: If there isn't a language library you need available, make sure and let us know through one of the support channels, so we can consider for the road map.
     instructions: Providing code samples, libraries, or complete software development kits (SDKs).
@@ -1257,6 +1270,7 @@ stops:
   # Support
   #----------
   - name: Support
+    title: Support
     header: We provide three ways in which you can receive support for this API, and have your questions answered as you are working to integrate it into your web or mobile application.
     footer: If your question is of the private nature please email us, for all other inquires please submit as GitHub issue if possible, so that others can learn from your question to.
     instructions: Establish the support apparatus in place for this service.
@@ -1580,6 +1594,7 @@ stops:
   # Monitoring
   #------------
   - name: Monitoring
+    title: Monitoring
     header: The definitions for this service.
     footer:
     instructions: Defining the uptime monitoring for this service.
@@ -1619,6 +1634,7 @@ stops:
   # Testing
   #---------
   - name: Testing
+    title: Testing
     header: The definitions for this service.
     footer:
     instructions: Defining the testing for this service.
@@ -1667,6 +1683,7 @@ stops:
   # Performance
   #-------------
   - name: Performance
+    title: Performance
     header: The definitions for this service.
     footer:
     instructions: Defining the performance monitoring for this service.
@@ -1715,6 +1732,7 @@ stops:
   # Security
   #----------
   - name: Security
+    title: Security
     header: The definitions for this service.
     footer:
     instructions: Defining the security practices in place for this service.
@@ -1768,6 +1786,7 @@ stops:
   # Discovery
   #-----------
   - name: Discovery
+    title: Discovery
     header: The definitions for this service.
     footer:
     instructions: Defining the discovery aspects for this service.
@@ -1799,6 +1818,7 @@ stops:
   # Analysis
   #----------
   - name: Analysis
+    title: Analysis
     header: The definitions for this service.
     footer:
     instructions: Define the analysis in play for this service.
@@ -1837,6 +1857,7 @@ stops:
   # Stages
   #----------
   - name: Stages
+    title: Stages
     header: The definitions for this service.
     footer:
     instructions: Define the stages that are applied to this lifecycle outline.
@@ -1855,6 +1876,7 @@ stops:
   # Maintenance
   #----------
   - name: Maintenance
+    title: Maintenance
     header: The definitions for this service.
     footer:
     instructions: Define the maintenance cycles applied to this lifecycle outline.
