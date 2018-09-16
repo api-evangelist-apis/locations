@@ -1037,9 +1037,9 @@ stops:
   #------
   # SDKs
   #------
-  - name: SDKs
-    header: The definitions for this service.
-    footer:
+  - name: Code
+    header: These are the code samples, libraries, and SDKs we provide in a variety of programming languages, helping jumpstart your integration with the API.
+    footer: If there isn't a language library you need available, make sure and let us know through one of the support channels, so we can consider for the road map.
     instructions: Providing code samples, libraries, or complete software development kits (SDKs).
     status: None
     items:

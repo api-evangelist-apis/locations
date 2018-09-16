@@ -92,6 +92,17 @@ title: Location APIs
   {% endif %}
   <!--End Documentation-->
 
+  <!--Begin Code-->
+  {% if stop.name == 'Code' %}
+
+      {% assign code_title = stop.name %}
+      {% assign code_header = stop.header %}
+      {% assign code_footer = stop.footer %}
+      {% assign code_libraries = stop.items %}
+
+  {% endif %}
+  <!--End Code-->
+
   <!--Begin Authentication-->
   {% if stop.name == 'Support' %}
 
@@ -137,7 +148,7 @@ title: Location APIs
   {% endif %}
   <!--End Communication-->
 
-  <!--Begin Authentication-->
+  <!--Begin Getting Started-->
   {% if stop.name == 'Getting Started' %}
 
       {% assign getting_started_title = stop.name %}
@@ -146,7 +157,7 @@ title: Location APIs
       {% assign getting_started_entries = stop.items %}
 
   {% endif %}
-  <!--End Documentation-->
+  <!--End Getting Started-->
 
   <!--Begin Road Map-->
   {% if stop.name == 'Road Map' %}
@@ -688,6 +699,42 @@ title: Location APIs
 </section>
 <!-- End Definitions -->
 
+<!-- Begin Code -->
+<a name="code"></a>
+<section id="code">
+  <div class="content">
+		<header>
+			<h3>{{ code_title }}</h3>
+		</header>
+    <div class="container">
+      <div class="row">
+        <div class="col-9">
+          <p>{{ code_header }}</p>
+          <ol>
+            {% for code in code_libraries %}
+              code: {{ code }}<br />
+              
+              {% assign name = code.name %}
+              {% assign description = code.description %}
+              {% assign status = code.status %}
+              {% assign url = code.fields | map: 'url' %}
+              {% assign logo = code.fields | map: 'logo' %}
+
+              <li><a href="{{ url }}"><strong>{{ name }}</strong></a> - {{ description }}</li>
+
+            {% endfor %}
+          </ol>
+          <p>{{ code_footer }}</p>
+        </div>
+        <div class="col-lg-3">
+          <center><img src="{{ code_image }}" width="175" align="center" style="margin-bottom: 25px;" /></center>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Code -->
+
 <!-- Begin Support -->
 <section id="sign-up-login">
   <div class="content">
@@ -734,7 +781,7 @@ title: Location APIs
               {% assign this_answer = this_answer[0] %}
               {% assign this_category = entry | map: 'category'  %}
               {% assign this_category = this_category[0] %}
-              
+
               {% if this_category == category %}
                 <li><strong>{{ this_question }}</strong> - {{ this_answer }}</li>
               {% endif %}
