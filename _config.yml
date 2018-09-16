@@ -237,11 +237,13 @@ stops:
       - name: Beyond Verbs
         description: Consistently defining how actions will be designed beyond the usage of the common HTTP verbs.
         instruction: Define how actions are being defined as part of this service beyond the usage of common HTTP verbs.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-resource-action.png
         status: Active
 
       - name: Media Types
         description: The media types that are used by this service, as described by the OpenAPI.
         instruction: Define whether service will return CSV, JSON, and / or XML responses.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-media-type.png
         status: Active
         fields:
           - json: 5
@@ -255,6 +257,7 @@ stops:
       - name: Status Codes
         description: The HTTP status codes that are used by this service, as described by the OpenAPI.
         instruction: Define the available HTTP status code for each responses.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-status-codes.png
         status: Active
         fields:
           - 200: 5
@@ -269,6 +272,7 @@ stops:
       - name: Filtering
         description: Allowing for the filtering of data returned as part of responses.
         instruction: Define how filtering will be handled for requests and responses.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-parameters.png
         status: Active
         fields:
           - used: 1
@@ -276,6 +280,7 @@ stops:
       - name: Pagination
         description: The pagination used by this service, as described by the OpenAPI.
         instruction: Define how pagination will be handled for requests and responses.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-pagination.png
         status: Active
         fields:
           - used: 1
@@ -283,6 +288,7 @@ stops:
       - name: Sorting
         description: The sorting used by this service, as described by the OpenAPI.
         instruction: Define how sorting will be handled for requests and responses.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-sorting.png
         status: Active
         fields:
           - used: 1
@@ -290,6 +296,7 @@ stops:
       - name: Response(s)
         description: The responses that are used by this service, as described by the OpenAPI.
         instruction: Provide a resulting message and associated schema definition for the service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-forward.png
         status: Active
         fields:
           - number_of_headers: 5
@@ -297,6 +304,7 @@ stops:
       - name: Errors
         description: Defining a structure for error handling that leverages HTTP status codes, but goes further with a common schema definition.
         instruction: Provide a schema definition, and apply error handling as part of the wider HTTP status code usage.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-error.png
         status: Active
 
   #----------
@@ -306,12 +314,14 @@ stops:
     header: The database behind this service, acting as the data source for these resources.
     footer: Providing a dedicated database resource for just this single service to use.
     instructions: Establish the base for how data will be managed behind the service.
+    image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-database-new.png
     status: Active
     items:
 
       - name: Platform
         description: The database platform used to drive this service.
         instruction: Define which platform is in use to manage the database.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-platform-layers.png
         status: Active
         fields:
           - platform: Amazon RDS (Aurora)
@@ -319,13 +329,15 @@ stops:
       - name: Schema
         description: Making sure there is a database version of the schema.
         instruction: Establish the schema used for database based upon definition provided.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-schema.png
         status: Active
         fields:
           - schema: /sql/schema.sql
 
-      - name: Location
+      - name: Region
         description: Where the database for this service is located.
         instruction: Define where the database is located that supports services.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-region.png
         status: Active
         fields:
           - location: laneworks-large
@@ -333,6 +345,7 @@ stops:
       - name: Access
         description: How the database is connected with by the service.
         instruction: Quantify how database access is provided behind the service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-connector.png
         status: Active
         fields:
           - access: ODBC
@@ -340,6 +353,7 @@ stops:
       - name: Logs
         description: Understanding how logging occurs for the database.
         instruction: Define where the database logs are located that support services.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-logging-2.png
         status: Active
         fields:
           - logs: /rds
@@ -347,6 +361,7 @@ stops:
       - name: Backup
         description: Ensuring that the database has a backup strategy.
         instruction: Define the database backup process and location for service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-backup.png
         status: Active
         fields:
           - backup: /rds
@@ -354,6 +369,7 @@ stops:
       - name: Encryption
         description: Ensuring the encryption is part of the database operations.
         instruction: Define the encryption layer for the service database.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-encryption.png
         status: Active
         fields:
           - encryption: enabled
@@ -365,41 +381,47 @@ stops:
     header: The storage used for this service, where all objects are stored.
     footer: Providing a single location this service to manage it's storage.
     instructions: Establish how all objects will be stored for the service.
+    image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-cloud-storage.png
     status: Active
     items:
 
       - name: Platform
         description: The platform that is used for storage behind this service.
         instruction: Define which platform is used to store objects.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-platform-layers.png
         status: Active
         fields:
           - platform: Amazon S3
 
-      - name: Location
+      - name: Region
         description: Where the storage is located that is used for this service.
         instruction: Define where objects are stored behind the service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-region.png
         status: Active
         fields:
           - region: us-east
           - location: /api-evangelist-api-bucket/locations/
 
-      - name: Logs
-        description: Information about the logging for storage behind service.
-        instruction: Define where the storage logs are located that support services.
-        status: Active
-        fields:
-          - logs: /cloudwatch
-
       - name: Access
         description: Details on how storage is accessed as part of this service.
         instruction: Quantify how objects access is provided behind the service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-connector.png
         status: Active
         fields:
           - access: API
 
+      - name: Logs
+        description: Information about the logging for storage behind service.
+        instruction: Define where the storage logs are located that support services.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-logging-2.png
+        status: Active
+        fields:
+          - logs: /cloudwatch
+
       - name: Backup
         description: Ensuring there is a backup strategy for storage behind service.
         instruction: Define the backup process for objects behind the service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-backup.png
         status: None
         fields:
           - backup: Dropbox
@@ -407,6 +429,7 @@ stops:
       - name: Encryption
         description: Ensuring encryption is considered for storage.
         instruction: Define the encryption layer for stored objects.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-encryption.png
         status: Active
         fields:
           - encryption: enabled
