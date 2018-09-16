@@ -72,15 +72,11 @@ title: Location APIs
   <!--Begin Documentation-->
   {% if stop.name == 'Documentation' %}
 
+  {% assign documentation_overview_title = stop.title %}
+  {% assign documentation_overview_header = stop.header %}
+  {% assign documentation_overview_footer = stop.footer %}
+
     {% for item in stop.items %}
-
-      {% if item.name == 'Overview' %}
-
-        {% assign documentation_overview_title = item.title %}
-        {% assign documentation_overview_header = item.header %}
-        {% assign documentation_overview_footer = item.footer %}
-
-      {% endif %}
 
       {% if item.name == 'Schema' %}
 

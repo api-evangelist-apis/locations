@@ -910,62 +910,6 @@ stops:
             url: https://blog.github.com/2014-01-07-introducing-github-traffic-analytics/
             status: Active
 
-  #---------------
-  # Documentation
-  #---------------
-  - name: Documentation
-    title: Documentation
-    header: This is the interactive API documentation for this API, and when you are authenticated, will allow you to make API calls, and see the responses for each API path.
-    footer: This documentation is generated from the OpenAPI definition for this API, which you can use to publish, syndicate, and integrate with this API documentation elsewhere.
-    instructions: Provide documentation for this service within portal.
-    status: Active
-    items:
-
-      - name: Paths
-        description: Documentng the API paths that are available for this service.
-        instruction: Publish an interactive list of API paths available for service.
-        status: Active
-        fields:
-          - status: active
-          - url: http://locations.apievangelist.com/#documentation
-
-      - name: Schema
-        title: Schema
-        header: These are the schema definitions in use for this service, providing a human, and machine readable listing of the schema used as part of requests and responses for this service.
-        footer: This should provide you with what you need to understand the structure of how you make requests to some of the APIs, and what you can expect with each of the API responses.
-        description: The descriptive header and footer paragraphs for the documentation schema.
-        instruction: Provide some content to introduce and close up the documentation schema.
-        status: Active
-        fields:
-          - status: Active
-          - url: http://locations.apievangelist.com/#schema
-
-      - name: Examples
-        description: Examples of using the API paths for this service.
-        instruction: Provide as many examples of API requests in a variety of languages.
-        status: None
-        fields:
-          - enabled: true
-          - url: http://example.com/#examples
-
-      - name: Definitions
-        header: We provide machine readable definitions for our APIs, allowing you to import into the service or tooling of your choice.
-        footer: Feel free to submit a pull request for these API definitions using GitHub, or submit an issue when you see something incomplete.
-        description: The machine reaable API definitions for use as part of this service.
-        instruction: Publish a list of schema definitions in use by this service.
-        status: Active
-        fields:
-          - enabled: true
-          - openapi: http://example.com/openapi/
-          - postman: http://example.com/postman/
-
-      - name: Errors
-        description: Details about the errors encountered using this service.
-        instruction: Provide a list of available errors users will encounter for this service.
-        status: None
-        fields:
-          - enabled: true
-
   #-----------------
   # Getting Started
   #-----------------
@@ -1026,6 +970,62 @@ stops:
         status: None
         fields:
           - url: http://locations.apievangelist.com/#support
+
+  #---------------
+  # Documentation
+  #---------------
+  - name: Documentation
+    title: Documentation
+    header: This is the interactive API documentation for this API, and when you are authenticated, will allow you to make API calls, and see the responses for each API path.
+    footer: This documentation is generated from the OpenAPI definition for this API, which you can use to publish, syndicate, and integrate with this API documentation elsewhere.
+    instructions: Provide documentation for this service within portal.
+    status: Active
+    items:
+
+      - name: Paths
+        description: Documentng the API paths that are available for this service.
+        instruction: Publish an interactive list of API paths available for service.
+        status: Active
+        fields:
+          - status: active
+          - url: http://locations.apievangelist.com/#documentation
+
+      - name: Schema
+        title: Schema
+        header: These are the schema definitions in use for this service, providing a human, and machine readable listing of the schema used as part of requests and responses for this service.
+        footer: This should provide you with what you need to understand the structure of how you make requests to some of the APIs, and what you can expect with each of the API responses.
+        description: The descriptive header and footer paragraphs for the documentation schema.
+        instruction: Provide some content to introduce and close up the documentation schema.
+        status: Active
+        fields:
+          - status: Active
+          - url: http://locations.apievangelist.com/#schema
+
+      - name: Examples
+        description: Examples of using the API paths for this service.
+        instruction: Provide as many examples of API requests in a variety of languages.
+        status: None
+        fields:
+          - enabled: true
+          - url: http://example.com/#examples
+
+      - name: Definitions
+        header: We provide machine readable definitions for our APIs, allowing you to import into the service or tooling of your choice.
+        footer: Feel free to submit a pull request for these API definitions using GitHub, or submit an issue when you see something incomplete.
+        description: The machine reaable API definitions for use as part of this service.
+        instruction: Publish a list of schema definitions in use by this service.
+        status: Active
+        fields:
+          - enabled: true
+          - openapi: http://example.com/openapi/
+          - postman: http://example.com/postman/
+
+      - name: Errors
+        description: Details about the errors encountered using this service.
+        instruction: Provide a list of available errors users will encounter for this service.
+        status: None
+        fields:
+          - enabled: true
 
   #------
   # Code
