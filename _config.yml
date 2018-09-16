@@ -1453,6 +1453,7 @@ stops:
       - name: Terms of Service
         description: The terms of service (TOS) for this service.
         instruction: Provide a terms of service for this service to operate within.
+        image: http://locations.apievangelist.com/assets/images/terms.png
         status: Active
         fields:
           - url: http://example.com/tos/
@@ -1460,6 +1461,7 @@ stops:
       - name: Privacy Policy
         description: The privacy policy for this service.
         instruction: Provide a privacy policy for this service to operate within.
+        image: http://locations.apievangelist.com/assets/images/privacy.png
         status: Active
         fields:
           - url: http://example.com/privacy/
@@ -1467,6 +1469,7 @@ stops:
       - name: Service Level Agreement
         description: The service level agreement (SLA) for this service.
         instruction: Provide a service level agreement (SLA) for this service to operate within.
+        image: http://locations.apievangelist.com/assets/images/sla.png
         status: Active
         fields:
           - url: http://example.com/sla/
