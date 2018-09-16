@@ -815,7 +815,6 @@ title: Location APIs
     <table width="90%" align="center">
       <tr>
       {% for entries in plans %}
-        ONE: {{ entries }}<br />
         {% for plan in entries %}
 
           TWO: {{ plan }}<br />
@@ -825,8 +824,10 @@ title: Location APIs
           {% assign plan_status = plan.status %}
           {% assign plan_entries = plan.entries %}
 
+          <td>1) {{ plan_name }}</td>
+
           {% for entry in plan_entries %}
-            <td>{{ entry }}</td>
+            <td>2) {{ plan_name }}</td>
           {% endfor %}
 
         {% endfor %}
