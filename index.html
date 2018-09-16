@@ -712,15 +712,16 @@ title: Location APIs
           <p>{{ code_header }}</p>
           <ol>
             {% for code in code_libraries %}
-              code: {{ code }}<br />
-              
+
               {% assign name = code.name %}
               {% assign description = code.description %}
               {% assign status = code.status %}
               {% assign url = code.fields | map: 'url' %}
               {% assign logo = code.fields | map: 'logo' %}
 
-              <li><a href="{{ url }}"><strong>{{ name }}</strong></a> - {{ description }}</li>
+              {% if status == 'Active' %}
+                <li><a href="{{ url }}"><strong>{{ name }}</strong></a> - {{ description }}</li>
+              {% endif %}
 
             {% endfor %}
           </ol>

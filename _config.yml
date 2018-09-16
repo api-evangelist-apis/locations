@@ -1041,71 +1041,63 @@ stops:
     header: These are the code samples, libraries, and SDKs we provide in a variety of programming languages, helping jumpstart your integration with the API.
     footer: If there isn't a language library you need available, make sure and let us know through one of the support channels, so we can consider for the road map.
     instructions: Providing code samples, libraries, or complete software development kits (SDKs).
-    status: None
+    status: Active
     items:
 
       - name: PHP
-        description: The PHP SDK.
+        description: This is the PHP SDK for integrating with this service.
         instruction: Provide a PHP SDK.
-        status: None
+        status: Active
         fields:
-          - logo: http://example.com/php.png
           - url: http://example.com/php/
 
       - name: Python
-        description: The Python SDK.
+        description: This is the Python SDK for integrating with this service.
         instruction: Provide a Python SDK.
-        status: None
+        status: Active
         fields:
-          - logo: http://example.com/python.png
           - url: http://example.com/python/
 
       - name: Ruby
-        description: The Ruby SDK.
+        description: This is the Ruby SDK for integrating with this service.
         instruction: Provide a Ruby SDK.
-        status: None
+        status: Active
         fields:
-          - logo: http://example.com/ruby.png
           - url: http://example.com/ruby/
 
       - name: Go
-        description: The Go SDK.
+        description: This is the Go SDK for integrating with this service.
         instruction: Provide a Go SDK.
-        status: None
+        status: Active
         fields:
-          - logo: http://example.com/go.png
           - url: http://example.com/go/
 
       - name: Java
-        description: The Java SDK.
+        description: This is the Java SDK for integrating with this service.
         instruction: Provide a Java SDK.
-        status: None
+        status: Active
         fields:
-          - logo: http://example.com/java.png
           - url: http://example.com/java/
 
       - name: C#
-        description: The C# SDK.
+        description: This is the C# SDK for integrating with this service.
         instruction: Provide a C# SDK.
-        status: None
+        status: Active
         fields:
-          - logo: http://example.com/csharp.png
           - url: http://example.com/csharp/
 
       - name: Node.js
-        description: The Node.js SDK.
+        description: This is the Node.js SDK for integrating with this service.
         instruction: Provide a Node.js SDK.
-        status: None
+        status: Active
         fields:
-          - logo: http://example.com/node.png
           - url: http://example.com/node/
 
       - name: JavaScript
-        description: The JavaScript SDK.
+        description: This is the JavaScript SDK for integrating with this service.
         instruction: Provide a JavaScript SDK.
-        status: None
+        status: Active
         fields:
-          - logo: http://example.com/javascript.png
           - url: http://example.com/javascript/
 
   #----------
