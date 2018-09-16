@@ -8,15 +8,25 @@ title: Location API - Presentation
 <section>
   <p align="center"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-lifecycle.png" style="width: 7%; padding: 2px;"></p>
   <p align="center"><strong>Consistent API Lifecycle</strong></p>
-  <ul style="text-align: left;">
-    {% assign number_of_stops = site.stops | size %}
-    {% assign this_stop = 0 %}
-    {% for stop in site.stops %}
-      <li style=" margin-left: 350px; font-size: 16px; font-weight: bold;">{{ stop.name }}</i>
-      {% assign this_stop = this_stop | plus: 1 %}
-      {{ this_stop }} / {{ number_of_stops }}
-    {% endfor %}
-  </ul>
+  <table width="75" border="1">
+    <tr>
+      <td width="33%">
+        <ul style="text-align: left;">
+          {% assign number_of_stops = site.stops | size %}
+          {% assign cutoff = number_of_stops | divided_by: 3 %}
+          {% assign this_stop = 0 %}
+          {% for stop in site.stops %}
+            <li style=" margin-left: 350px; font-size: 16px; font-weight: bold;">{{ stop.name }}</li>
+            {% assign this_stop = this_stop | plus: 1 %}
+            {{ this_stop }} / {{ number_of_stops }}
+            {% if this_stop == cutoff %}
+              </td><td><ul style="text-align: left;">
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </td>
+    </tr>
+  </table>
 
 </section>
 
