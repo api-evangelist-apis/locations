@@ -1028,7 +1028,7 @@ stops:
           - url: http://locations.apievangelist.com/#support
 
   #------
-  # SDKs
+  # Code
   #------
   - name: Code
     header: These are the code samples, libraries, and SDKs we provide in a variety of programming languages, helping jumpstart your integration with the API.
@@ -1265,10 +1265,10 @@ stops:
   #----------
   - name: Road Map
     title: Road Map
+    instructions: Provide a road map for the future of this service.
     description: Providing API consumers with as much information as possible about what changes are being planned for a service. Helping include consumers in the conversation about what is being planned whenever possible.
     header: This is what we plan on doing in the near future when it comes to evolving this service, documenting the features we are planning to add to this service in future iterations.
     footer: We try to share as much information as possible about what changes will be occurring, helping you plan for your integration--make sure and share your thoughts about what you'd like to see.
-    instructions: Provide a road map for the future of this service.
     image: http://locations.apievangelist.com/assets/images/road-map.png
     status: Active
     items:
