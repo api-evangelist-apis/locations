@@ -210,6 +210,7 @@ stops:
       - name: Parameters
         description: The query parameters that are used by this service, as described by the OpenAPI.
         instruction: Define a list of query parameters in use to work with service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-parameters.png
         status: Active
         fields:
           - number_of_parameters: 3
@@ -217,6 +218,7 @@ stops:
       - name: Headers
         description: The headers that are used by this service, as described by the OpenAPI.
         instruction: Define the HTTP Headers that will be used to work with the service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-header-content-type.png
         status: Active
         fields:
           - number_of_headers: 0
@@ -227,6 +229,7 @@ stops:
       - name: Body
         description: Usage of the body as part of API requests as opposed to parameters, or in parallel to.
         instruction: Define the details of the body that will be used as part of making request to this service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-body.png
         status: Active
         fields:
           - number_of_bodies: 2
