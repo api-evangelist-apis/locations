@@ -374,7 +374,7 @@ stops:
             url: https://www.moesif.com/blog/technical/api-design/REST-API-Design-Filtering-Sorting-and-Pagination/
 
       - name: Response(s)
-        description: The responses that are used by this service, as described by the OpenAPI.
+        description: The responses that are used by this service, as described by the OpenAPI. Providing details regarding the response, and referencing the schema being returned as part of the response.
         instruction: Provide a resulting message and associated schema definition for the service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-forward.png
         status: Active
@@ -442,6 +442,9 @@ stops:
         status: Active
         fields:
           - schema: /sql/schema.sql
+        links:
+          - title: Schema Folder
+            url: https://github.com/api-evangelist-apis/locations/tree/master/json-schema
 
       - name: Region
         description: Where the database for this service is located, helping articulate if there is replication, or regional specific implementations or considerations for this service.
@@ -550,6 +553,7 @@ stops:
   #-----
   - name: DNS
     title: DNS
+    description: Managing the DNS for a service, ensuring it is part of a wider DNS strategy, and allows for isolation of this service within a specific domain namespace.
     header: The DNS addressing used to route all traffic to this service.
     footer: Using a single subdomain that can be used to access this resource.
     instructions: Establish the DNS layer for this service.
@@ -561,7 +565,7 @@ stops:
         description: Which platform is used to provide DNS for service.
         instruction: Define which platform is used to operate DNS.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-platform-layers.png
-        status: None
+        status: Active
         fields:
           - platform: CloudFlare
         tools:
@@ -574,37 +578,37 @@ stops:
 
       - name: Mock
         description: The host used for the mock API.
-        instruction: Provide host for mock of service.
+        instruction: Provide host for mock of service, being able to access a virtualized instance of an API.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-mock-interface.png
-        status: None
+        status: Active
         fields:
           - host: api.mock.locations.apievangelist.com
 
       - name: Development
-        description: The host used for the development API.
+        description: The host used for the development API, providing access to the version of API currently being developed.
         instruction: Provide host for development version of service.
-        status: None
+        status: Active
         fields:
           - host: api.dev.locations.apievangelist.com
 
       - name: Production
-        description: The host used for the production API.
+        description: The host used for the production API, which is the address that should actually be used in applications.
         instruction: Provide host for production version of service.
         status: Active
         fields:
           - host: api.locations.apievangelist.com
 
       - name: Portal
-        description: The host used for the developer portal.
+        description: The host used for the developer portal, providing a single location that everyone can find what is happening around a service.
         instruction: Provide host for the portal for this service.
-        status: None
+        status: Active
         fields:
           - host: locations.apievangelist.com
 
       - name: Encryption
-        description: Ensuring encryption is used as part of API transport.
+        description: Ensuring encryption is used as part of API transport, and SSL is default for all services.
         instruction: Define the encryption layer for service in transport.
-        status: None
+        status: Active
         fields:
           - enabled: true
 
