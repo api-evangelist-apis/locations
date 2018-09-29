@@ -213,6 +213,7 @@ stops:
   #--------
   - name: Design
     title: Design
+    description: The overall design of your API, the design patterns that are in use as part of the delivery of services. Providing a common set of patterns that can be used across services, beginning with REST, but also leverage hypermedia, GraphQL, and other patterns when it comes to the deliver of services.
     header: The API design strategy for use as part of this service.
     footer: Setting a consistent design strategy for all services.
     instructions: Establish a base set of design practices for the service.
@@ -301,7 +302,7 @@ stops:
         links:
           - title: Use RESTful URLs and actions
             url: https://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api#restful
-          - title: RESTful URLs: Actions Need Not Apply
+          - title: RESTful URLs, Actions Need Not Apply
             url: https://philsturgeon.uk/rest/2014/05/11/restful-urls-actions-need-not-apply/
 
       - name: Media Types
@@ -396,6 +397,22 @@ stops:
         links:
           - title: Best Practices for API Error Handling
             url: https://nordicapis.com/best-practices-api-error-handling/
+
+      - name: Hypermedia
+        description: Emulating the patterns present in the web, and leverage existing hypermedia types to make APIs more resilient, evolvable, and flexible when it comes to client integration.
+        instruction: Leverage existing hypermedia media types as part of the design of the API.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-error.png
+        status: Active
+        tools:
+          - name: JSON API
+            description: JSON API is a specification for how a client should request that resources be fetched or modified, and how a server should respond to those requests.
+            url: http://jsonapi.org/
+          - name: HAL
+            description: HAL is a simple format that gives a consistent and easy way to hyperlink between resources in your API.
+            url: http://stateless.co/hal_specification.html
+        links:
+          - title: API Evangelist Hypermedia Research
+            url: http://hypermedia.apievangelist.com/
 
   #----------
   # Database
