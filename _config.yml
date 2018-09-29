@@ -43,7 +43,7 @@ stops:
     items:
 
       - name: Organization
-        description: The source control organization for this service.
+        description: The over-arching source control organization for this service, providing an umbrella for different development groups and projects.
         instruction: Define the organization for this service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-organization.jpg
         status: Active
@@ -51,11 +51,20 @@ stops:
           - github_organization: api-evangelist-apis
         services:
           - name: GitHub
-            description: The social coding repository management service.
+            description: GitHub Inc. is a web-based hosting service for version control using Git, used for distributed version control and source code management functionality of Git.
             url: https://github.com
+          - name: GitLab
+            description: GitLab is a web-based Git-repository manager with wiki, issue-tracking and CI/CD pipeline features.
+            url: https://about.gitlab.com/
+          - name: Bitbucket
+            description: Bitbucket is a web-based version control repository hosting service for source code and development projects that use either Mercurial or Git revision control systems.
+            url: https://bitbucket.org/
+        links:
+          - title: API Evangelist APIs
+            url: https://github.com/api-evangelist-apis
 
       - name: Repository
-        description: The source control repository for this service.
+        description: The source control repository for this service, providing a self-contained, shareable, forkable way to engage with a service. Allowing for EVERYTHING involved with a service to be accessed in a single location.
         instruction: Establish a Github repository.
         status: Active
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-repository.jpg
@@ -63,11 +72,20 @@ stops:
           - github_repository: locations
         services:
           - name: GitHub
-            description: The social coding repository management service.
+            description: GitHub Inc. is a web-based hosting service for version control using Git, used for distributed version control and source code management functionality of Git.
             url: https://github.com
+          - name: GitLab
+            description: GitLab is a web-based Git-repository manager with wiki, issue-tracking and CI/CD pipeline features.
+            url: https://about.gitlab.com/
+          - name: Bitbucket
+            description: Bitbucket is a web-based version control repository hosting service for source code and development projects that use either Mercurial or Git revision control systems.
+            url: https://bitbucket.org/
+        links:
+          - title: Locations
+            url: https://github.com/api-evangelist-apis/locations
 
       - name: README
-        description: The README for this services repository
+        description: The README for this services repository, providing an overview of the service, complete with all the relevant links to all the moving parts. Any user should be able to land on the README, and easily get up to speed on what a service delivers.
         instruction: Craft a README for the repository.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-readme.png
         status: Active
@@ -75,11 +93,17 @@ stops:
           - readme_path: /README.md
         services:
           - name: GitHub
-            description: The social coding repository management service.
+            description: GitHub Inc. is a web-based hosting service for version control using Git, used for distributed version control and source code management functionality of Git.
             url: https://github.com
+          - name: GitLab
+            description: GitLab is a web-based Git-repository manager with wiki, issue-tracking and CI/CD pipeline features.
+            url: https://about.gitlab.com/
+          - name: Bitbucket
+            description: Bitbucket is a web-based version control repository hosting service for source code and development projects that use either Mercurial or Git revision control systems.
+            url: https://bitbucket.org/
 
       - name: Service Name
-        description: A simple title for this service.
+        description: A simple title for this service, describing what it does in concise terms, providing a simple way for any internal or external part to learn about the value it offers.
         instruction: Provide title for the service.
         status: Active
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-service-request.png
@@ -133,6 +157,18 @@ stops:
           - name: OpenAPI
             description: The OpenAPI specification for describing the surface area of the API.
             url: https://github.com/OAI/OpenAPI-Specification
+
+      - name: Domain
+        description: Considering the domain that this service fits into.
+        instruction: Provide insight into the domain in which this service is operating.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-dependencies-services.png
+        status: Active
+
+      - name: Tags
+        description: Defining what the tagging taxonomy will be for applying across resources, for use in tagging across definitions, documentation, and infrastructure operations.
+        instruction: Provide a list of tags that will be used to organize schema, resources, infrastructure, and other elements of this service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-tag.png
+        status: Active
 
       - name: Assertions
         description: Human and machine readable assertions of what service does.
