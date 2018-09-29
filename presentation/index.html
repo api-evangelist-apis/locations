@@ -33,23 +33,26 @@ title: Location API - Presentation
 {% for stop in site.stops %}
 
   <section>
+
     <br style="padding: 25px;" />
     <p align="center"><img src="{{ stop.image }}" style="width: 12%; padding: 5px;"></p>
     <p align="center" style="font-size: 36px;">{{ stop.title }}</p>
+
     <center>
       <div align="center" style="border: 0px solid #000; text-align: left; width: 40%; margin-top: 20px;">
         <p align="center" style="font-size: 24px;">{{ stop.description }}</p>
+
+        {% if stop.links != Empty %}
+          <br /><p style="font-size: 22px;"><strong>Links:</strong></p>
+          <ul style="padding: 5px;">
+            {% for link in stop.links %}
+              <li style="list-style: none; padding: 5px 0px 5px 15px;">&#8594; <a href="{{ link.url }}" class="none" target="_blank" style="font-size: 18px; padding: 1px; margin:1x;"><strong>{{ link.title }}</strong></a></li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
       </div>
     </center>
-
-    {% if stop.links != Empty %}
-      <br /><p style="font-size: 22px;"><strong>Links:</strong></p>
-      <ul style="padding: 5px;">
-        {% for link in stop.links %}
-          <li style="list-style: none; padding: 5px 0px 5px 15px;">&#8594; <a href="{{ link.url }}" class="none" target="_blank" style="font-size: 18px; padding: 1px; margin:1x;"><strong>{{ link.title }}</strong></a></li>
-        {% endfor %}
-      </ul>
-    {% endif %}
 
   </section>
 
