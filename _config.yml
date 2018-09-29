@@ -924,12 +924,14 @@ stops:
     header: The management of this service, managing all access to APIs.
     footer: Leveraging a proven solution for securing all resources provided.
     instructions: Define the management layer for this service's API.
+    image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-tools.png
     status: Active
     items:
 
       - name: Platform
         description: Details on which API management platform is used for this service.
         instruction: Defining the platform used for the API management layer.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-platform-layers.png
         status: Active
         fields:
           - platform: AWS API Gateway
@@ -946,6 +948,7 @@ stops:
       - name: Administration
         description: Where you find the administrative access for API management.
         instruction: Provide a location for administrating the management layer.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-administrators.png
         status: Active
         fields:
           - url: https://console.aws.amazon.com/apigateway/home?region=us-east-1
@@ -953,6 +956,7 @@ stops:
       - name: Signup
         description: Where you can sign up for access to this service.
         instruction: Provide a location for users to signup for access to this service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-signup.png
         status: Active
         fields:
           - url: http://locations.apievangelist.com/
@@ -960,6 +964,7 @@ stops:
       - name: Login
         description: Where you can login for access to this service.
         instruction: Provide a location for users to login to access to this service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-login.png
         status: Active
         fields:
           - url: http://locations.apievangelist.com/
@@ -967,6 +972,7 @@ stops:
       - name: Account
         description: Where you can access accouint information when using service.
         instruction: Provide a location for users to access a dashboard for this service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-account-settings.png
         status: None
         fields:
           - url: https://example.com/account/
@@ -974,6 +980,7 @@ stops:
       - name: Applications
         description: Details about the developer's applications approved to use this service.
         instruction: Provide a location for the applications that are approved to use service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-app-icon.jpg
         status: None
         fields:
           - url: https://example.com/applications/
@@ -984,7 +991,7 @@ stops:
   - name: Logging
     title: Logging
     header: The definitions for this service.
-    footer:
+    footer: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-logging-2.png
     instructions: Define the logging layer for supporting this service.
     status: Active
     items:
@@ -992,6 +999,7 @@ stops:
       - name: Database
         description: Information about database logs.
         instruction: Define the logging for the database layer.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-database-api.png
         status: Active
         fields:
           - location: /rds
@@ -999,6 +1007,7 @@ stops:
       - name: API
         description: Information about API logs.
         instruction: Define the logging for the API access layer.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/api-commons-icon.png
         status: Active
         fields:
           - location: /cloudwatch
@@ -1006,6 +1015,7 @@ stops:
       - name: DNS
         description: Information about DNS logs.
         instruction: Define the logging for the DNS layer.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-dns.png
         status: Active
         fields:
           - location: /cloudflare
@@ -1013,6 +1023,7 @@ stops:
       - name: Shipping
         description: Information about shipping logs centrally to service's storage.
         instruction: Define how logs are shipped or centralized for auditing.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-shpping
         status: Active
         fields:
           - enabled: true
@@ -1032,6 +1043,7 @@ stops:
       - name: Acquisition
         description: Understanding what it costs to acquire the resources behind this service.
         instruction: Provide costs associated with acquisition of resources behind service.
+        image:
         status: Active
         fields:
           - initial_hours: 1
@@ -1042,6 +1054,7 @@ stops:
       - name: Development
         description: Understanding what it cost to develop this service.
         instruction: Provide costs associated with the development of this service.
+        image:
         status: Active
         fields:
           - initial_hours: 6
@@ -1052,6 +1065,7 @@ stops:
       - name: Operation
         description: Understanding what it costs to operate this service.
         instruction: Provide costs associated with the operation of this service.
+        image:
         status: Active
         fields:
           - initial_hours: 2
@@ -1062,6 +1076,7 @@ stops:
       - name: Value
         description: Articulating what value is provided by this service.
         instruction: Provide a description of the value delivered by this service.
+        image:
         status: Active
         fields:
           - description: Delivers X value for consumers by providing them Y.
@@ -1081,6 +1096,7 @@ stops:
       - name: Tiers
         description: The tiers of access for this service.
         instruction: Define the tiers of access in place to support this service.
+        image:
         status: Active
         fields:
 
@@ -1088,7 +1104,8 @@ stops:
             - name: Starter
               description: The default API access plan, where every new account begins, allowing the consumer to kick the tires, and see what the API is all about.
               image: http://locations.apievangelist.com/assets/images/starter.png
-              status: Active
+              image:
+        status: Active
               entries:
                 - label: API Calls
                   description: The number of requests made to the API.
@@ -1106,7 +1123,8 @@ stops:
             - name: Verified
               description: Once you have added a credit card as part of the account billing, you become a verified API consumer, and have a higher rate limit for usage.
               image: http://locations.apievangelist.com/assets/images/verified.png
-              status: Active
+              image:
+        status: Active
               entries:
                 - label: API Calls
                   description: The number of requests made to the API.
@@ -1137,6 +1155,7 @@ stops:
       - name: Hosting
         description: Information about the hosting service used for this portal.
         instruction: Provide details on where this service portal is hosted.
+        image:
         status: Active
         fields:
           - host: Github Pages
@@ -1148,6 +1167,7 @@ stops:
       - name: Template
         description: Information regarding the UI template used for this portal.
         instruction: Define which graphical UI and brand template is in use for this portal.
+        image:
         status: Active
         fields:
           template: HTML5 Up
@@ -1159,6 +1179,7 @@ stops:
       - name: Analytics
         description: Information about the analytics in use for tracking on this portal.
         instruction: Define which analytics package is used to measure traffic for portal.
+        image:
         status: None
         fields:
           - analytics:
@@ -1168,11 +1189,13 @@ stops:
           - name: Google Analytics
             description: Using embedded Google Analytics for managing traffic.
             url: https://analytics.google.com/analytics/web/
-            status: Active
+            image:
+        status: Active
           - name: Github Analytics
             description: Using embedded Google Analytics for managing traffic.
             url: https://blog.github.com/2014-01-07-introducing-github-traffic-analytics/
-            status: Active
+            image:
+        status: Active
 
   #-----------------
   # Getting Started
@@ -1191,6 +1214,7 @@ stops:
         title: Signup
         description: Where you can signup for this service.
         instruction: Provide a link to where users can signup for this service.
+        image:
         status: None
         fields:
           url: http://locations.apievangelist.com/#sign-up
@@ -1199,6 +1223,7 @@ stops:
         title: Authentication
         description: Where you can get details about authenticating with this service.
         instruction: Provide a link to the authentication overview for this service.
+        image:
         status: None
         fields:
           - url: http://locations.apievangelist.com/#authentication
@@ -1207,6 +1232,7 @@ stops:
         title: Documentation
         description: Where you can find documentation for this service.
         instruction: Provide a link to the documentation for this service.
+        image:
         status: None
         fields:
           - url: http://locations.apievangelist.com/#documentation
@@ -1215,6 +1241,7 @@ stops:
         title: SDKs
         description: Where you can find SDKs in multiple programming languages for this service.
         instruction: Provide a link to where users can find SDKs and code libraries for this service.
+        image:
         status: None
         fields:
           - url: http://locations.apievangelist.com/#sdks
@@ -1223,6 +1250,7 @@ stops:
         title: FAQ
         description: Where you can get your common questions answered around this service.
         instruction: Provide a link to to the frequently asked questions for this service.
+        image:
         status: None
         fields:
           - url: http://locations.apievangelist.com/#faq
@@ -1231,6 +1259,7 @@ stops:
         title: Support
         description: Where you can get support for using this service.
         instruction: Provide a link to where users can get support for this service.
+        image:
         status: None
         fields:
           - url: http://locations.apievangelist.com/#support
@@ -1249,6 +1278,7 @@ stops:
       - name: Paths
         description: Documentng the API paths that are available for this service.
         instruction: Publish an interactive list of API paths available for service.
+        image:
         status: Active
         fields:
           - status: active
@@ -1260,6 +1290,7 @@ stops:
         footer: This should provide you with what you need to understand the structure of how you make requests to some of the APIs, and what you can expect with each of the API responses.
         description: The descriptive header and footer paragraphs for the documentation schema.
         instruction: Provide some content to introduce and close up the documentation schema.
+        image:
         status: Active
         fields:
           - status: Active
@@ -1268,6 +1299,7 @@ stops:
       - name: Examples
         description: Examples of using the API paths for this service.
         instruction: Provide as many examples of API requests in a variety of languages.
+        image:
         status: None
         fields:
           - enabled: true
@@ -1278,6 +1310,7 @@ stops:
         footer: Feel free to submit a pull request for these API definitions using GitHub, or submit an issue when you see something incomplete.
         description: The machine reaable API definitions for use as part of this service.
         instruction: Publish a list of schema definitions in use by this service.
+        image:
         status: Active
         fields:
           - enabled: true
@@ -1287,6 +1320,7 @@ stops:
       - name: Errors
         description: Details about the errors encountered using this service.
         instruction: Provide a list of available errors users will encounter for this service.
+        image:
         status: None
         fields:
           - enabled: true
@@ -1306,6 +1340,7 @@ stops:
       - name: PHP
         description: This is the PHP SDK for integrating with this service.
         instruction: Provide a PHP SDK.
+        image:
         status: Active
         fields:
           - url: http://example.com/php/
@@ -1313,6 +1348,7 @@ stops:
       - name: Python
         description: This is the Python SDK for integrating with this service.
         instruction: Provide a Python SDK.
+        image:
         status: Active
         fields:
           - url: http://example.com/python/
@@ -1320,6 +1356,7 @@ stops:
       - name: Ruby
         description: This is the Ruby SDK for integrating with this service.
         instruction: Provide a Ruby SDK.
+        image:
         status: Active
         fields:
           - url: http://example.com/ruby/
@@ -1327,6 +1364,7 @@ stops:
       - name: Go
         description: This is the Go SDK for integrating with this service.
         instruction: Provide a Go SDK.
+        image:
         status: Active
         fields:
           - url: http://example.com/go/
@@ -1334,6 +1372,7 @@ stops:
       - name: Java
         description: This is the Java SDK for integrating with this service.
         instruction: Provide a Java SDK.
+        image:
         status: Active
         fields:
           - url: http://example.com/java/
@@ -1341,6 +1380,7 @@ stops:
       - name: C#
         description: This is the C# SDK for integrating with this service.
         instruction: Provide a C# SDK.
+        image:
         status: Active
         fields:
           - url: http://example.com/csharp/
@@ -1348,6 +1388,7 @@ stops:
       - name: Node.js
         description: This is the Node.js SDK for integrating with this service.
         instruction: Provide a Node.js SDK.
+        image:
         status: Active
         fields:
           - url: http://example.com/node/
@@ -1355,6 +1396,7 @@ stops:
       - name: JavaScript
         description: This is the JavaScript SDK for integrating with this service.
         instruction: Provide a JavaScript SDK.
+        image:
         status: Active
         fields:
           - url: http://example.com/javascript/
@@ -1374,6 +1416,7 @@ stops:
         title: Server Licensing
         description: The licensing for the server code behind this service.
         instruction: Define how all backend server code is licensed for this service.
+        image:
         status: Active
         fields:
           - name: MIT
@@ -1384,6 +1427,7 @@ stops:
         title: Data Licensing
         description: Licensing for the data used as part of this service.
         instruction: Define how all data and schema is licensed for this service.
+        image:
         status: Active
         fields:
           - name: ODbL
@@ -1394,6 +1438,7 @@ stops:
         title: API Licensing
         description: Licensing for the API interface for this service.
         instruction: Define how the API definition is licensed for this service.
+        image:
         status: Active
         fields:
           - name: CC-BY
@@ -1404,6 +1449,7 @@ stops:
         title: SDK Licensing
         description: Licensing for the SDKs provided for this service.
         instruction: Define how all client code is licensed for this service.
+        image:
         status: Active
         fields:
           - name: MIT
@@ -1426,6 +1472,7 @@ stops:
         description: The email account for supporting this service.
         instruction: Define the email account used to support this service.
         image: http://locations.apievangelist.com/assets/images/email.png
+        image:
         status: Active
         fields:
           - email: mailto%3A info@apievangelist.com
@@ -1435,6 +1482,7 @@ stops:
         description: Where to submit an issue to get support for this service.
         instruction: Provide a URL to the repository issues to support this service.
         image: http://locations.apievangelist.com/assets/images/github.png
+        image:
         status: Active
         fields:
           - url: https://github.com/api-evangelist-apis/locations/issues
@@ -1444,6 +1492,7 @@ stops:
         description: Where to get support publicly using a supported Twitter account
         instruction: Provide the URL to the Twitter account supporting the API.
         image: http://locations.apievangelist.com/assets/images/twitter.png
+        image:
         status: Active
         fields:
           - url: https://twitter.com/apievangelist/
@@ -1453,6 +1502,7 @@ stops:
         description: Where to submit a ticket to get support for this service.
         instruction: Provide a URL to the ticketing system used to support this service.
         image: http://locations.apievangelist.com/assets/images/twitter.png
+        image:
         status: None
         fields:
           - url: http://example.com/tickets/
@@ -1471,6 +1521,7 @@ stops:
       - name: Categories
         description: The categories of FAQ questions.
         instruction: Break all questions down by logical categories.
+        image:
         status: None
         fields:
           - categories:
@@ -1482,6 +1533,7 @@ stops:
       - name: Questions
         description: The questions asked about this service.
         instruction: Publish a list of questions with answers within each category.
+        image:
         status: None
         fields:
           - questions:
@@ -1513,6 +1565,7 @@ stops:
       - name: Ask Question
         description: Asking a question about this service.
         instruction: Provide a form for users to ask a new question.
+        image:
         status: None
         fields:
           - title: Ask a Question
@@ -1536,6 +1589,7 @@ stops:
         description: The blog for this service.
         instruction: Provide a simple blog and update mechanism for this service.
         image: http://locations.apievangelist.com/assets/images/blog.png
+        image:
         status: Active
         fields:
           - url: http://example.com/blog/
@@ -1546,6 +1600,7 @@ stops:
         description: The Twitter account for this service.
         instruction: Provide the Twitter handle that is used as part of this service.
         image: http://locations.apievangelist.com/assets/images/twitter.png
+        image:
         status: Active
         fields:
           - handle: http://twitter.com/handle/
@@ -1555,6 +1610,7 @@ stops:
         description: The Github account for this service.
         instruction: Provide the Github account or organization behind this service.
         image: http://locations.apievangelist.com/assets/images/github.png
+        image:
         status: Active
         fields:
           - handle: http://github.com/handle/
@@ -1564,6 +1620,7 @@ stops:
         description: Internal communication channel for this service.
         instruction: Provide a location where internal communication is available.
         image: http://locations.apievangelist.com/assets/images/internal.png
+        image:
         status: None
         fields:
           - url: http://example.com/private-comm/
@@ -1573,6 +1630,7 @@ stops:
         description: External communication channels for this service.
         instruction: Provide a location where public communication is available.
         image: http://locations.apievangelist.com/assets/images/external.png
+        image:
         status: None
         fields:
           - url: http://example.com/communication/
@@ -1594,6 +1652,7 @@ stops:
         title: Private Road Map
         description: Where you can access the private road map for this service.
         instruction: Publish a private, internal version of entries for the road map.
+        image:
         status: None
         fields:
           - url: http://example.com/private-road-map/
@@ -1602,6 +1661,7 @@ stops:
         title: Road Map
         description: Where you can access the public road map for this service.
         instruction: Publish a publicly available version of entries for the road map.
+        image:
         status: Active
         fields:
           - url: http://locations.apievangelist.com/#road-map
@@ -1623,6 +1683,7 @@ stops:
         title: Suggestions For The Road Map
         description: Consumers are welcome to suggest an addition to the road map.
         instruction: Provide a mechanism for users to make suggestions for the road map.
+        image:
         status: Active
         fields:
           - title: Suggest Road Map Item
@@ -1645,6 +1706,7 @@ stops:
       - name: Entries
         description: Listing of all the outstanding issues for this service.
         instruction: Publish a list of all known issues currently outstanding.
+        image:
         status: Active
         fields:
           - url: http://locations.apievangelist.com/#issues
@@ -1659,6 +1721,7 @@ stops:
       - name: Report
         description: Reporting an issue for this service.
         instruction: Provide a mechanism for users to report issues.
+        image:
         status: Active
         fields:
           - title: Report An Issue
@@ -1682,6 +1745,7 @@ stops:
         title: Entries
         description: Providing a list of what has changed with this platform along with each road map item being accomplished, and issue being resolved.
         instruction: Publish a list of all road map and issue entries that have been satisfied for this service.
+        image:
         status: Active
         fields:
           - url: http://example.com/change-log/
@@ -1714,6 +1778,7 @@ stops:
         description: The terms of service (TOS) for this service.
         instruction: Provide a terms of service for this service to operate within.
         image: http://locations.apievangelist.com/assets/images/terms.png
+        image:
         status: Active
         fields:
           - url: http://locations.apievangelist.com/terms-of-service/
@@ -1722,6 +1787,7 @@ stops:
         description: The privacy policy for this service.
         instruction: Provide a privacy policy for this service to operate within.
         image: http://locations.apievangelist.com/assets/images/privacy.png
+        image:
         status: Active
         fields:
           - url: http://locations.apievangelist.com/privacy-policy/
@@ -1730,6 +1796,7 @@ stops:
         description: The service level agreement (SLA) for this service.
         instruction: Provide a service level agreement (SLA) for this service to operate within.
         image: http://locations.apievangelist.com/assets/images/sla.png
+        image:
         status: Active
         fields:
           - url: http://locations.apievangelist.com/service-level-agreement/
@@ -1748,6 +1815,7 @@ stops:
       - name: Monitors
         description: The monitors for this service.
         instruction: Establish the monitors for this service.
+        image:
         status: None
         fields:
           - name: Monitor Name
@@ -1757,6 +1825,7 @@ stops:
       - name: Status
         description: The status of this service.
         instruction: Provide real time details of monitor activity.
+        image:
         status: None
         fields:
           - entries:
@@ -1788,6 +1857,7 @@ stops:
       - name: Assertions
         description: The assertions for this service.
         instruction: Provide details of the assertions being tested for.
+        image:
         status: None
         fields:
           - assertions:
@@ -1807,6 +1877,7 @@ stops:
       - name: Results
         description: The results of assertions tested against this service.
         instruction: Provide real time details of testing activity.
+        image:
         status: None
         fields:
           - entries:
@@ -1837,6 +1908,7 @@ stops:
       - name: Tests
         description: The performance tests for this service.
         instruction: Provide details of the performance testing in place for this service.
+        image:
         status: None
         fields:
           - assertions:
@@ -1856,6 +1928,7 @@ stops:
       - name: Results
         description: The results of performance test for this service.
         instruction: Provide real time details of performance testing activity.
+        image:
         status: None
         fields:
           - entries:
@@ -1886,6 +1959,7 @@ stops:
       - name: Overview
         description: The overview of security practices for this service.
         instruction: Provide the URL of the security practices overview page.
+        image:
         status: None
         fields:
           - url: http://example.com/security/
@@ -1893,6 +1967,7 @@ stops:
       - name: Policies
         description: The policies in use for this service.
         instruction: Define the security, IAM, and other policies are in place for this service.
+        image:
         status: None
         fields:
           - assertions:
@@ -1903,6 +1978,7 @@ stops:
       - name: Tests
         description: The security tests in use for this service.
         instruction: Define the security tests that are conducted for this service.
+        image:
         status: None
         fields:
           - tests:
@@ -1916,6 +1992,7 @@ stops:
       - name: Results
         description: The results of security for this service.
         instruction: Provide real time details of security testing activity.
+        image:
         status: None
         fields:
           - entries:
@@ -1940,6 +2017,7 @@ stops:
       - name: API Discovery
         description: The API discovery document for this service.
         instruction: Publish an API Discovery (APIs.json) index for the project.
+        image:
         status: None
         fields:
           - url: http://example.com/api-discovery.json
@@ -1947,6 +2025,7 @@ stops:
       - name: OpenAPI
         description: The complete OpenAPI for this service.
         instruction: Provide URL for all OpenAPI definitions and index in API discovery index.
+        image:
         status: None
         fields:
           - url: http://example.com/openapi.json
@@ -1954,6 +2033,7 @@ stops:
       - name: Postman Collection
         description: The Postman Collection for this service.
         instruction: Provide URL for all Postman Collections and index in API discovery index.
+        image:
         status: None
         fields:
           - url: http://example.com/postman.json
@@ -1972,6 +2052,7 @@ stops:
       - name: Traffic
         description: The traffic information for this service.
         instruction: Document traffic to the service portal.
+        image:
         status: None
         fields:
           - url: http://example.com/traffic/
@@ -1979,6 +2060,7 @@ stops:
       - name: Usage
         description: The usage information for this service.
         instruction: Document usage of APIs for the service.
+        image:
         status: None
         fields:
           - url: http://example.com/usage/
@@ -1986,6 +2068,7 @@ stops:
       - name: Activity
         description: The activity information for this service.
         instruction: Document other activity around the service.
+        image:
         status: None
         fields:
           - url: http://example.com/activity/
@@ -1993,6 +2076,7 @@ stops:
       - name: SLA
         description: The service level agreement for this service.
         instruction: Document whether the SLA was met for this service.
+        image:
         status: None
         fields:
           - url: http://example.com/sla/
