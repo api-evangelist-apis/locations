@@ -165,7 +165,7 @@ stops:
             url: https://github.com/OAI/OpenAPI-Specification
 
       - name: Domain
-        description: Considering the domain that this service fits into and exploring the sphere of knowledge and activity around the domain this service is delivering value within.
+        description: Considering the domain that this service fits into and exploring the sphere of knowledge and activity around the domain this service is delivering value within. Quantify the service domain, helping decompose from a larger domain, and helping focus what this service does, helping it do one things well.
         instruction: Provide insight into the domain in which this service is operating.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-dependencies-services.png
         status: Active
@@ -177,7 +177,7 @@ stops:
           - title: Language
             description: The vocabulary and language used to help articulate the value this service delivers.
           - title: Bounded Context
-            description:  Describing the boundaries of where this service operates and delivers value.                     
+            description:  Describing the boundaries of where this service operates and delivers value.
 
       - name: Tags
         description: Defining what the tagging taxonomy will be for applying across resources, for use in tagging across definitions, documentation, and infrastructure operations.
@@ -186,20 +186,20 @@ stops:
         status: Active
 
       - name: Assertions
-        description: Human and machine readable assertions of what service does.
+        description: Human and machine readable assertions of what service does, leveraging the existing JSON schema, and translating that into business objectives, asserting that a service does what it is supposed to.
         instruction: Craft a set of assertions for the service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-assertions.png
-        status: None
+        status: Active
         fields:
           - assertions:
             - title: The title of the assertion
               path: /path/of/the/assertion
 
       - name: Team
-        description: A list of team members for the service.
+        description: A list of team members for the service, providing a nice list of who is responsible for making a service operate.
         instruction: Define the team behind the service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-team-working.png
-        status: None
+        status: Active
         fields:
           - team:
             - name: Kin Lane
