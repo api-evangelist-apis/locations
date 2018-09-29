@@ -587,6 +587,7 @@ stops:
       - name: Development
         description: The host used for the development API, providing access to the version of API currently being developed.
         instruction: Provide host for development version of service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-developer-tools.png
         status: Active
         fields:
           - host: api.dev.locations.apievangelist.com
@@ -594,6 +595,7 @@ stops:
       - name: Production
         description: The host used for the production API, which is the address that should actually be used in applications.
         instruction: Provide host for production version of service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-gears-working-api-economy.png
         status: Active
         fields:
           - host: api.locations.apievangelist.com
@@ -601,6 +603,7 @@ stops:
       - name: Portal
         description: The host used for the developer portal, providing a single location that everyone can find what is happening around a service.
         instruction: Provide host for the portal for this service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-portal-developers.jpg
         status: Active
         fields:
           - host: locations.apievangelist.com
@@ -608,6 +611,7 @@ stops:
       - name: Encryption
         description: Ensuring encryption is used as part of API transport, and SSL is default for all services.
         instruction: Define the encryption layer for service in transport.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-encryption.png
         status: Active
         fields:
           - enabled: true
@@ -624,22 +628,26 @@ stops:
     items:
 
       - name: Paths
-        description: Considering offering mock API paths for use by integrators.
+        description: Considering offering mock API paths for use by integrators, providing production-like instances of the API to use, and play with to provide feedback on API services.
         instruction: Providing virtualized paths for the API driving service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-path-2.png
         status: None
 
       - name: Data
-        description: Considering offering synethic data for use by integrators.
+        description: Considering offering synethic data for use by integrators, helping ensure virtualized APIs provide as production like experience in a virtualized way.
         instruction: Providing synthesized data behind each API response for service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-relational-data.png
         status: None
 
   #------------
   # Deployment
   #------------
   - name: Deployment
-    header: The definitions for this service.
-    footer:
+    description: Managing the actual deployment of an API into product, providing a common way in which APIs are deployed. Defining one, or many ways in which APIs can be put into production as part of any service.
+    header: The deployment of any service, and defining how it can be delivered into a production environment.
+    footer: Providing a strong framework for consistently delivering services across an organization.
     instructions: Define the deployment scaffolding for this service.
+    image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-deployment.png
     status: None
     items:
 
