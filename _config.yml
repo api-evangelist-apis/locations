@@ -344,7 +344,7 @@ stops:
         links:
           - title: OpenStack Pagination, Filtering, and Sorting
             url: https://specs.openstack.org/openstack/api-wg/guidelines/pagination_filter_sort.html
-          - title: REST API Design: Filtering, Sorting, and Pagination
+          - title: REST API Design, Filtering, Sorting, and Pagination
             url: https://www.moesif.com/blog/technical/api-design/REST-API-Design-Filtering-Sorting-and-Pagination/
 
       - name: Pagination
@@ -357,7 +357,7 @@ stops:
         links:
           - title: OpenStack Pagination, Filtering, and Sorting
             url: https://specs.openstack.org/openstack/api-wg/guidelines/pagination_filter_sort.html
-          - title: REST API Design: Filtering, Sorting, and Pagination
+          - title: REST API Design, Filtering, Sorting, and Pagination
             url: https://www.moesif.com/blog/technical/api-design/REST-API-Design-Filtering-Sorting-and-Pagination/
 
       - name: Sorting
@@ -370,7 +370,7 @@ stops:
         links:
           - title: OpenStack Pagination, Filtering, and Sorting
             url: https://specs.openstack.org/openstack/api-wg/guidelines/pagination_filter_sort.html
-          - title: REST API Design: Filtering, Sorting, and Pagination
+          - title: REST API Design, Filtering, Sorting, and Pagination
             url: https://www.moesif.com/blog/technical/api-design/REST-API-Design-Filtering-Sorting-and-Pagination/
 
       - name: Response(s)
