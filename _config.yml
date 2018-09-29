@@ -101,6 +101,9 @@ stops:
           - name: Bitbucket
             description: Bitbucket is a web-based version control repository hosting service for source code and development projects that use either Mercurial or Git revision control systems.
             url: https://bitbucket.org/
+        links:
+          - title: Locations README
+            url: https://github.com/api-evangelist-apis/locations/blob/master/README.md
 
       - name: Service Name
         description: A simple title for this service, describing what it does in concise terms, providing a simple way for any internal or external part to learn about the value it offers.
@@ -111,15 +114,15 @@ stops:
           - service_name: API Evangelist Location API
 
       - name: Service Description
-        description: A simple, descriptive paragraph for this service.
+        description: A simple, descriptive paragraph for this service. Providing less that 250 words about what value this service delivers. Avoid just writing the obvious, and describing what an APIs, and focusing in on describing the value being delivered by this service.
         instruction: Provide concise description for the service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-dependencies-services.png
         status: Active
         fields:
-          - service_description: This is a location API, providing many of the common building blocks of location. Providing the essential location ingredients needed through a varietiy of applications, without having to reivent the wheel each times it is needed. This API is still being working on, and not quite ready for prime time, but if you have any questions, visit the road map and support sections below the documentation
+          - service_description: This is a location API, providing many of the common building blocks of location for use in any application. Providing the essential location ingredients needed through a variety of applications, without having to reivent the wheel each times it is needed. This API is still being working on, and not quite ready for prime time, but if you have any questions, visit the road map and support sections below the documentation
 
       - name: Service Goals
-        description: Providing some basic goals for this service.
+        description: Providing some basic goals for this service, helping clearly articulate why this service is being delivered, providing insight beyond the obvious about why this service is worthy of being developed, and operated in production.
         instruction: Establish goals that will guide this service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-gear-life-cycle.png
         status: Active
@@ -130,7 +133,7 @@ stops:
                 descripton: Provide a set of cities, states, countries, and other location specific data for use across other applications.
 
       - name: Schema
-        description: JSON schema for the data behind service.
+        description: JSON schema for the data behind service, providing a stanalone JSON schema for use in other systems, applications, and services. Doing the heavy lifting of describing the objects, fields, types, and other technical details of the data behind this service.
         instruction: Organize loose, and JSON schema for the service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-schema.png
         status: Active
@@ -147,7 +150,7 @@ stops:
             url: https://json-schema.org/
 
       - name: OpenAPI
-        description: An OpenAPI definition for the surface area of the API.
+        description: An OpenAPI definition for the surface area of the API, providing a machine readable contract for what this service delivers, that can be used across the API lifecycle, guiding everying aspect of delivering this service.
         instruction: Establish an OpenAPI for the service.
         image: https://s3.amazonaws.com/kinlane-productions/openapi/openapi-icon.png
         status: None
