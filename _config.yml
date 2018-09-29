@@ -221,7 +221,7 @@ stops:
     items:
 
       - name: Versioning
-        description: Managing the version for the various layers of this service.
+        description: Managing the version for the various layers of this service, providing a plan for how data, code, API, and other artifacts will be versioning--having a plan for managing change across a service.
         instruction: Determine how the code, schema, and the API be versioned.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-conversion.png
         status: None
@@ -242,7 +242,7 @@ stops:
           - url: /v1
 
       - name: Path(s)
-        description: The paths that are used to define each individual API resource.
+        description: The paths that are used to define each individual API resource, providing a plain language descrption of a resource, with a meaningful, logical, structured path for accessing each individual resource.
         instruction: Define a set of resource paths for the service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-path-resource.png
         status: Active
@@ -260,10 +260,11 @@ stops:
           - put: 1
           - delete: 1
         links:
-          - name:
+          - title: HTTP Request Methods
+            url: http://journey.apievangelist.com/journey/design/http-request-methods/
 
       - name: Parameters
-        description: The query parameters that are used by this service, as described by the OpenAPI.
+        description: The query parameters that are used by this service, as described by the OpenAPI. Providing a list of parameters that can be used to define your API request dimensions.
         instruction: Define a list of query parameters in use to work with service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-parameters.png
         status: Active
@@ -282,7 +283,7 @@ stops:
             url: http://journey.apievangelist.com/journey/design/headers
 
       - name: Body
-        description: Usage of the body as part of API requests as opposed to parameters, or in parallel to.
+        description: Usage of the body as part of API requests as opposed to parameters, or in parallel to. Is the body used for POST, PUT, and other variations to help manage the payload.
         instruction: Define the details of the body that will be used as part of making request to this service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-body.png
         status: Active
@@ -296,7 +297,7 @@ stops:
         status: Active
 
       - name: Media Types
-        description: The media types that are used by this service, as described by the OpenAPI.
+        description: The media types that are used by this service, as described by the OpenAPI. Providing multiple representations of a resource, allowing consumer to negotiate the type of content.
         instruction: Define whether service will return CSV, JSON, and / or XML responses.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-media-type.png
         status: Active
@@ -310,7 +311,7 @@ stops:
             url: https://www.iana.org/assignments/media-types/media-types.xhtml
 
       - name: Status Codes
-        description: The HTTP status codes that are used by this service, as described by the OpenAPI.
+        description: The HTTP status codes that are used by this service, as described by the OpenAPI. Leveraging the web to help understand what a service is doing at scale, as part of automated integration and consumption of a service.
         instruction: Define the available HTTP status code for each responses.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-status-codes.png
         status: Active
@@ -325,7 +326,7 @@ stops:
             url: https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
 
       - name: Filtering
-        description: Allowing for the filtering of data returned as part of responses.
+        description: Allowing for the filtering of data returned as part of responses, leveraging paths, parameters, and other API building blocks to filter the responses a consumer will actually see.
         instruction: Define how filtering will be handled for requests and responses.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-parameters.png
         status: Active
@@ -333,7 +334,7 @@ stops:
           - used: 1
 
       - name: Pagination
-        description: The pagination used by this service, as described by the OpenAPI.
+        description: The pagination used by this service, providing the ability to break large responses down into smaller more manageable chunks.
         instruction: Define how pagination will be handled for requests and responses.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-pagination.png
         status: Active
@@ -341,7 +342,7 @@ stops:
           - used: 1
 
       - name: Sorting
-        description: The sorting used by this service, as described by the OpenAPI.
+        description: The sorting used by this service, allowing consumers to sort the responses they see and define what the order of data will be when consuming API resources.
         instruction: Define how sorting will be handled for requests and responses.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-sorting.png
         status: Active
