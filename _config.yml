@@ -838,7 +838,7 @@ stops:
       - name: People
         description: Information about people this service depends on.
         instruction: Details of other people this service depends upon.
-        image:
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-dependencies-people.png
         status: None
         fields:
           - name: Name of Person
@@ -849,7 +849,7 @@ stops:
       - name: Organization
         description: Information about organization this service depends on.
         instruction: Details of other organizations this service depends upon.
-        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-dependencies-people.png
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-organization.jpg
         status: None
         fields:
           - name: Name of Organization
@@ -866,7 +866,7 @@ stops:
     header:
     footer:
     instructions: Details regarding authentication in use for this service.
-    image: https://s3.amazonaws.com/kinlane-productions/bw-icons/oauth-logo.png
+    image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-padlock.png
     status: Active
     items:
 
@@ -878,6 +878,7 @@ stops:
           - name: Basic Authentication
             description: Basic auth leverages web standards for passing a username and password for authentication.
             url: https://en.wikipedia.org/wiki/Basic_access_authentication
+            image: https://s3.amazonaws.com/kinlane-productions/bw-icons/oauth-logo.png
             status: None
           - name: API Key
             description: Using an API key pass as query string, or as header for authentication.
@@ -893,8 +894,9 @@ stops:
             status: None
 
       - name: Overview
-        description: An overview for the authentication of this service.
+        description: An overview for the authentication of this service, helping users understand how they will access a service.
         instruction: Provide a location of the page that delivers an overview of this services authentication.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-authentication-test.png
         status: Active
         fields:
           - title: Authentication For The APIs
@@ -905,6 +907,7 @@ stops:
       - name: Signup / Login
         description: An overview for the authentication of this service.
         instruction: Provide a location of the page that delivers an overview of this services authentication.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-signup.png
         status: Active
         fields:
           - title: Signing Up / Logging In For The API
