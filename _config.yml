@@ -419,6 +419,7 @@ stops:
   #----------
   - name: Database
     title: Database
+    description: Defining the database layer behind this service, providing an isolated database for the access and storage of all data used as part of this service.
     header: The database behind this service, acting as the data source for these resources.
     footer: Providing a dedicated database resource for just this single service to use.
     instructions: Establish the base for how data will be managed behind the service.
@@ -427,7 +428,7 @@ stops:
     items:
 
       - name: Platform
-        description: The database platform used to drive this service.
+        description: The database platform used to drive this service, providing a dedicated database to just drive this service.
         instruction: Define which platform is in use to manage the database.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-platform-layers.png
         status: Active
@@ -435,7 +436,7 @@ stops:
           - platform: Amazon RDS (Aurora)
 
       - name: Schema
-        description: Making sure there is a database version of the schema.
+        description: Making sure there is a database version of the schema, providing a raw dump and backup of the database behind this service.
         instruction: Establish the schema used for database based upon definition provided.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-schema.png
         status: Active
@@ -443,7 +444,7 @@ stops:
           - schema: /sql/schema.sql
 
       - name: Region
-        description: Where the database for this service is located.
+        description: Where the database for this service is located, helping articulate if there is replication, or regional specific implementations or considerations for this service.
         instruction: Define where the database is located that supports services.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-region.png
         status: Active
@@ -451,7 +452,7 @@ stops:
           - location: laneworks-large
 
       - name: Access
-        description: How the database is connected with by the service.
+        description: How the database is connected with by the service, defining what connectivity is required, and what dependencies are involved with access.
         instruction: Quantify how database access is provided behind the service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-connector.png
         status: Active
@@ -459,7 +460,7 @@ stops:
           - access: ODBC
 
       - name: Logs
-        description: Understanding how logging occurs for the database.
+        description: Understanding how logging occurs for the database, what is turned on, and where logs are stored, and or shipped to as part of regular operations.
         instruction: Define where the database logs are located that support services.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-logging-2.png
         status: Active
@@ -467,7 +468,7 @@ stops:
           - logs: /rds
 
       - name: Backup
-        description: Ensuring that the database has a backup strategy.
+        description: Ensuring that the database has a backup strategy, and the details of what is backed up and how long it is being backed up.
         instruction: Define the database backup process and location for service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-backup.png
         status: Active
@@ -475,7 +476,7 @@ stops:
           - backup: /rds
 
       - name: Encryption
-        description: Ensuring the encryption is part of the database operations.
+        description: Ensuring the encryption is part of the database operations, making sure data is being stored as part of the database behind this service.
         instruction: Define the encryption layer for the service database.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-encryption.png
         status: Active
@@ -487,6 +488,7 @@ stops:
   #---------
   - name: Storage
     title: Storage
+    description: Defining the storage layer that is used as part of a services operation, providing a single strategy for managing the storage of objects used by this service.
     header: The storage used for this service, where all objects are stored.
     footer: Providing a single location this service to manage it's storage.
     instructions: Establish how all objects will be stored for the service.
