@@ -808,6 +808,7 @@ stops:
       - name: Service
         description: Information about services this service depends on.
         instruction: Details of other services this service depends upon.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-service-request.png
         status: None
         fields:
           - name: Name of Service
@@ -817,6 +818,7 @@ stops:
       - name: Software
         description: Information about software this service depends on.
         instruction: Details of other software this service depends upon.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-dependencies-software.png
         status: None
         fields:
           - name: Name of Software
@@ -826,6 +828,7 @@ stops:
       - name: Data
         description: Information about data this service depends on.
         instruction: Details of other data this service depends upon.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-big-data-2.png
         status: Active
         fields:
           - name: prograhammer/countries-regions-cities
@@ -835,6 +838,7 @@ stops:
       - name: People
         description: Information about people this service depends on.
         instruction: Details of other people this service depends upon.
+        image:
         status: None
         fields:
           - name: Name of Person
@@ -845,6 +849,7 @@ stops:
       - name: Organization
         description: Information about organization this service depends on.
         instruction: Details of other organizations this service depends upon.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-dependencies-people.png
         status: None
         fields:
           - name: Name of Organization
@@ -857,9 +862,11 @@ stops:
   #--------------
   - name: Authentication
     title: Authentication
-    header: The definitions for this service.
+    description: Providing a standardized approach to authenticating with the service, allowing consumers to successfuly, and securely access a service.
+    header:
     footer:
     instructions: Details regarding authentication in use for this service.
+    image: https://s3.amazonaws.com/kinlane-productions/bw-icons/oauth-logo.png
     status: Active
     items:
 
