@@ -797,9 +797,11 @@ stops:
   #--------------
   - name: Dependencies
     title: Dependencies
-    header: The definitions for this service.
+    description: Defining the dependencies associated with this service, helping quantifying what this service needs to do what it does successfully.
+    header:
     footer:
     instructions: Providing details of the dependencies that exist for this service.
+    image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-depend.png
     status: None
     items:
 
