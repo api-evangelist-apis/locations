@@ -621,9 +621,11 @@ stops:
   #----------------
   - name: Virtualization
     title: Virtualization
-    header: The definitions for this service.
-    footer:
+    description: Providing mocked, sandbox, and virtualized instances of APIs and other data for understanding what an API does.
+    header: Mocked, sandbox, and virtualized instances of APIs and other data for understanding what an API does.
+    footer: Helping consumers understand what is possible when it comes to integrating and learning about an API.
     instructions: Provide a mock representation of this service.
+    image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-virtualization.png
     status: Not Used
     items:
 
@@ -654,6 +656,7 @@ stops:
       - name: Compute
         description: The compute that is delivering this service.
         instruction: Define the compute layer driving this service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-servers.png
         status: None
         fields:
           - platform: Amazon EC2
@@ -665,6 +668,7 @@ stops:
       - name: Framework
         description: Which programming framework is used to deploy this service.
         instruction: Define the code framework used to deploy service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-framework.png
         status: None
         fields:
           - framework: none
@@ -676,6 +680,7 @@ stops:
       - name: Function
         description: Which function is used to deploy this service.
         instruction: Define the function(s) used to deploy service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-code.png
         status: None
         fields:
           - function: aws_lambda_function_name
@@ -690,6 +695,7 @@ stops:
       - name: Containers
         description: Which container is used to deploy this service.
         instruction: Define the container used to deploy service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-shipping-container.png
         status: None
         fields:
           - container: none
@@ -697,6 +703,7 @@ stops:
       - name: Gateway
         description: Which gateway is used to deploy this service.
         instruction: Define the gateway used to deploy service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-gateway.png
         status: None
         fields:
           - platform: none
@@ -708,6 +715,7 @@ stops:
       - name: Pipeline
         description: Information regarding the pipeline in use for service.
         instruction: Define the pipeline in place to build and deploys service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-pipeline.png
         status: None
         fields:
           - pipeline: none
@@ -715,6 +723,7 @@ stops:
       - name: Region
         description: Information regarding which region this service is deployed.
         instruction: Define where which region the service is deployed to.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-region.png
         status: None
         fields:
           - region: us-east
@@ -724,15 +733,16 @@ stops:
   #---------------
   - name: Orchestration
     title: Orchestration
-    header: The definitions for this service.
-    footer:
+    description: The orchestration of the build and deliver of a service, defining how the technical building blocks are orchestrated to deliver the resulting service.
     instructions: Define how the service will be orchestrated.
+    image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-conductor.png
     status: None
     items:
 
       - name: Build
         description: Information regarding the build of this service.
         instruction: Define the build process for this service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-build.png
         status: None
         fields:
           - build: manual
@@ -740,6 +750,7 @@ stops:
       - name: Hooks
         description: Information regarding pre or post commit hooks for this service.
         instruction: Detail the pre and post commit hooks in use for this service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-hook.png
         status: None
         fields:
           - hooks:
@@ -751,6 +762,7 @@ stops:
       - name: Jobs
         description: Information regarding the jobs used as part of this service.
         instruction: Define the jobs being executed as part of this service operations.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-job-2.png
         status: None
         fields:
           - jobs:
@@ -762,6 +774,7 @@ stops:
       - name: Events
         description: Information about events used for managing jobs for this service.
         instruction: Define the events that are in play to help operate this service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-events.png
         status: None
         fields:
           - jobs:
@@ -771,6 +784,7 @@ stops:
       - name: Schedule
         description: Information about the schedule sin use to manage this service.
         instruction: Details of the schedules used to orchestrate this service.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-scheduling.jpeg
         status: None
         fields:
           - jobs:
