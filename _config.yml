@@ -148,6 +148,9 @@ stops:
           - name: JSON Schema
             description: JSON Schema is a vocabulary that allows you to annotate and validate JSON documents.
             url: https://json-schema.org/
+          - name: JSON Schema Tools
+            description: A tool for managing JSON schema documents, and working with them to make sure they are complete.
+            url: https://www.jsonschema.net/
 
       - name: OpenAPI
         description: An OpenAPI definition for the surface area of the API, providing a machine readable contract for what this service delivers, that can be used across the API lifecycle, guiding everying aspect of delivering this service.
@@ -162,10 +165,19 @@ stops:
             url: https://github.com/OAI/OpenAPI-Specification
 
       - name: Domain
-        description: Considering the domain that this service fits into.
+        description: Considering the domain that this service fits into and exploring the sphere of knowledge and activity around the domain this service is delivering value within.
         instruction: Provide insight into the domain in which this service is operating.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-dependencies-services.png
         status: Active
+        elements:
+          - title: Context
+            description: Describing the setting and meaning the defines the value of this service.
+          - title: Model
+            description: The system of models used to define the elements of the domain this service.
+          - title: Language
+            description: The vocabulary and language used to help articulate the value this service delivers.
+          - title: Bounded Context
+            description:  Describing the boundaries of where this service operates and delivers value.                     
 
       - name: Tags
         description: Defining what the tagging taxonomy will be for applying across resources, for use in tagging across definitions, documentation, and infrastructure operations.

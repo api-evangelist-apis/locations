@@ -77,6 +77,14 @@ title: Location API - Presentation
               {% endfor %}
             </ul>
           {% endif %}
+          {% if item.elements != Empty %}
+            <br /><p style="font-size: 22px;"><strong>Elements:</strong></p>
+            <ul style="padding: 5px;">
+              {% for element in item.elements %}
+                <li style="list-style: none; padding: 5px 0px 5px 15px;">&#8594; <strong>{{ element.title }}</strong> - {{ element.description }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
         </div>
       </center>
     </section>
