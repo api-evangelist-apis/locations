@@ -218,6 +218,9 @@ stops:
     instructions: Establish a base set of design practices for the service.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-design.png
     status: Active
+    links:
+      - title: API Stylebook
+        url: http://apistylebook.com/
     items:
 
       - name: Versioning
@@ -290,11 +293,16 @@ stops:
         fields:
           - number_of_bodies: 2
 
-      - name: Beyond Verbs
+      - name: Beyond Verbs With Actions
         description: Consistently defining how actions will be designed beyond the usage of the common HTTP verbs.
         instruction: Define how actions are being defined as part of this service beyond the usage of common HTTP verbs.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-resource-action.png
         status: Active
+        links:
+          - title: Use RESTful URLs and actions
+            url: https://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api#restful
+          - title: RESTful URLs: Actions Need Not Apply
+            url: https://philsturgeon.uk/rest/2014/05/11/restful-urls-actions-need-not-apply/
 
       - name: Media Types
         description: The media types that are used by this service, as described by the OpenAPI. Providing multiple representations of a resource, allowing consumer to negotiate the type of content.
@@ -332,6 +340,11 @@ stops:
         status: Active
         fields:
           - used: 1
+        links:
+          - title: OpenStack Pagination, Filtering, and Sorting
+            url: https://specs.openstack.org/openstack/api-wg/guidelines/pagination_filter_sort.html
+          - title: REST API Design: Filtering, Sorting, and Pagination
+            url: https://www.moesif.com/blog/technical/api-design/REST-API-Design-Filtering-Sorting-and-Pagination/
 
       - name: Pagination
         description: The pagination used by this service, providing the ability to break large responses down into smaller more manageable chunks.
@@ -340,6 +353,11 @@ stops:
         status: Active
         fields:
           - used: 1
+        links:
+          - title: OpenStack Pagination, Filtering, and Sorting
+            url: https://specs.openstack.org/openstack/api-wg/guidelines/pagination_filter_sort.html
+          - title: REST API Design: Filtering, Sorting, and Pagination
+            url: https://www.moesif.com/blog/technical/api-design/REST-API-Design-Filtering-Sorting-and-Pagination/
 
       - name: Sorting
         description: The sorting used by this service, allowing consumers to sort the responses they see and define what the order of data will be when consuming API resources.
@@ -348,6 +366,11 @@ stops:
         status: Active
         fields:
           - used: 1
+        links:
+          - title: OpenStack Pagination, Filtering, and Sorting
+            url: https://specs.openstack.org/openstack/api-wg/guidelines/pagination_filter_sort.html
+          - title: REST API Design: Filtering, Sorting, and Pagination
+            url: https://www.moesif.com/blog/technical/api-design/REST-API-Design-Filtering-Sorting-and-Pagination/
 
       - name: Response(s)
         description: The responses that are used by this service, as described by the OpenAPI.
@@ -356,12 +379,23 @@ stops:
         status: Active
         fields:
           - number_of_headers: 5
+        tools:
+          - name: OpenAPI Response Object
+            description: Describes a single response from an API Operation, including design-time, static links to operations based on the response.
+            url: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md#responseObject
 
       - name: Errors
         description: Defining a structure for error handling that leverages HTTP status codes, but goes further with a common schema definition.
         instruction: Provide a schema definition, and apply error handling as part of the wider HTTP status code usage.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-error.png
         status: Active
+        tools:
+          - name: Problem Details for HTTP APIs
+            description: This document defines a "problem detail" as a way to carry machine-readable details of errors in a HTTP response to avoid the need to define new error response formats for HTTP APIs.
+            url: https://tools.ietf.org/html/rfc7807
+        links:
+          - title: Best Practices for API Error Handling
+            url: https://nordicapis.com/best-practices-api-error-handling/
 
   #----------
   # Database

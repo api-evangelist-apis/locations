@@ -42,6 +42,15 @@ title: Location API - Presentation
       </div>
     </center>
 
+    {% if stop.links != Empty %}
+      <br /><p style="font-size: 22px;"><strong>Links:</strong></p>
+      <ul style="padding: 5px;">
+        {% for link in stop.links %}
+          <li style="list-style: none; padding: 5px 0px 5px 15px;">&#8594; <a href="{{ link.url }}" class="none" target="_blank" style="font-size: 18px; padding: 1px; margin:1x;"><strong>{{ link.title }}</strong></a></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
   </section>
 
   {% for item in stop.items %}
