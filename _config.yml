@@ -873,6 +873,7 @@ stops:
       - name: Type
         description: Information how you authenticate with this service.
         instruction: Define whether this service uses Basic Auth, API Keys, JWT, or OAuth for authentication.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/oauth-logo.png
         status: None
         fields:
           - name: Basic Authentication
