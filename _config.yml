@@ -245,13 +245,17 @@ stops:
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-design.png
     status: Active
     tools:
-      - title: API Stylebook
+      - name: API Stylebook
+        description: An aggregate of API design style guides from different companies.
         url: http://apistylebook.com/
-      - title: Swagger Editor
+      - name: Swagger Editor
+        description: An editor for OpenAPI from SmartBear Swagger.
         url: http://editor.swagger.io/
-      - title: OpenAPI GUI
+      - name: OpenAPI GUI
+        description: A GUI API design editor for working with OpenAPI.
         url: https://mermade.github.io/openapi-gui/
-      - title: Apicurio
+      - name: Apicurio
+        description: A GUI API design editor for working with OpenAPI.
         url: https://www.apicur.io/
     links:
       - title: Design (API Evangelist)
