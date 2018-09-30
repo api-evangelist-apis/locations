@@ -1630,7 +1630,7 @@ stops:
         title: Internal
         description: Internal communication channel for this service.
         instruction: Provide a location where internal communication is available.
-        image: http://locations.apievangelist.com/assets/images/internal.png
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-internal.png
         status: None
         fields:
           - url: http://example.com/private-comm/
@@ -1639,7 +1639,7 @@ stops:
         title: External
         description: External communication channels for this service.
         instruction: Provide a location where public communication is available.
-        image: http://locations.apievangelist.com/assets/images/external.png
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-external.png
         status: None
         fields:
           - url: http://example.com/communication/
@@ -2102,16 +2102,20 @@ stops:
     header: The definitions for this service.
     footer:
     instructions: Define the stages that are applied to this lifecycle outline.
+    image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-stages.png
     items:
 
       - name: Prototype
         description: When a prototype of this service is being developed.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-prototype.png
 
       - name: Development
         description: When a production instance of service is being developed.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-developer-tools.png
 
       - name: Production
         description: When a production instance of service is being operated.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-definitions-gears.png
 
   #----------
   # Maintenance
@@ -2122,19 +2126,24 @@ stops:
     header: The definitions for this service.
     footer:
     instructions: Define the maintenance cycles applied to this lifecycle outline.
+    image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-tool-right.png
     items:
 
       - name: Weekly
         description: Provide a version of this outline that should be considered weekly.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-calendar-change.png
 
       - name: Monthly
         description: Provide a version of this outline that should be considered monthly.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-calendar-change.png
 
       - name: Releases
         description: Provide a version of this outline that should be considered for each release.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-calendar-change.png
 
       - name: Governance
         description: Provide an outline of how this outline is measured, reported, and evolved.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-calendar-change.png
 
 #------------------
 # General Settings
