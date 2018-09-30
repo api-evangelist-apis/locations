@@ -645,6 +645,7 @@ stops:
   # Deployment
   #------------
   - name: Deployment
+    title: Deployment
     description: Managing the actual deployment of an API into product, providing a common way in which APIs are deployed. Defining one, or many ways in which APIs can be put into production as part of any service.
     header: The deployment of any service, and defining how it can be delivered into a production environment.
     footer: Providing a strong framework for consistently delivering services across an organization.
@@ -1026,7 +1027,7 @@ stops:
       - name: Shipping
         description: Information about shipping logs centrally to service's storage.
         instruction: Define how logs are shipped or centralized for auditing.
-        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-shpping
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-shpping.png
         status: Active
         fields:
           - enabled: true
