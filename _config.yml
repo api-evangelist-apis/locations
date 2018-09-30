@@ -178,6 +178,31 @@ stops:
             description: The vocabulary and language used to help articulate the value this service delivers.
           - title: Bounded Context
             description:  Describing the boundaries of where this service operates and delivers value.
+        links:
+          - title: Domain-driven design
+            url: https://en.wikipedia.org/wiki/Domain-driven_design
+          - title: Restful Objects
+            url: https://en.wikipedia.org/wiki/Restful_Objects
+
+      - name: Event Storming
+        description: Event storming is a rapid, lightweight, and underappreciated group modeling technique that is intense, fun, and useful for accelerating development teams.
+        instruction: Engage in an event storming exercise to help model the domain.
+        image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-sticky-notes.png
+        status: Active
+        elements:
+          - title: Domain Event
+            description: The event that occurs within the domain as part of a service execution.
+          - title: Command
+            description: The trigger for the domain event occurring, setting it into motion.
+          - title: Actor
+            description: Defining who executes command to trigger event, and is making things happen.
+          - title: Aggregates
+            description:  Aggregates logically group various commands, events, and reactions together.
+        links:
+          - title: Event Storming (Wikipedia)
+            url: https://en.wikipedia.org/wiki/Event_storming
+          - title: Event Storming
+            url: https://www.eventstorming.com/
 
       - name: Tags
         description: Defining what the tagging taxonomy will be for applying across resources, for use in tagging across definitions, documentation, and infrastructure operations.
