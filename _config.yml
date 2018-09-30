@@ -720,6 +720,11 @@ stops:
     instructions: Define the deployment scaffolding for this service.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-deployment.png
     status: None
+    services:
+      - name: Axway
+        description: API management platform offering a suite of services.
+        url: https://www.axway.com/en
+        status: None
     links:
       - title: Deployment (API Evangelist)
         url: http://deployment.apievangelist.com/
@@ -1033,6 +1038,10 @@ stops:
         fields:
           - platform: AWS API Gateway
         services:
+          - name: Axway
+            description: API management platform offering a suite of services.
+            url: https://www.axway.com/en
+            status: None
           - name: AWS API Gateway
             description: Amazon's API gateway solution for deploying and managing APIs.
             url: https://aws.amazon.com/api-gateway/
@@ -1474,7 +1483,7 @@ stops:
     tools:
       - name: Swagger Codegen
         description: Swagger Codegen can simplify your build process by generating server stubs and client SDKs for any API.
-        url: https://swagger.io/tools/swagger-codegen/      
+        url: https://swagger.io/tools/swagger-codegen/
     items:
 
       - name: PHP
@@ -1552,6 +1561,9 @@ stops:
     instructions: Provide a set of licensing in place for this service.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-license.png
     status: Active
+    links:
+      - title: Licensing (API Evangelist)
+        url: http://licensing.apievangelist.com/
     items:
 
       - name: Server
@@ -1609,6 +1621,9 @@ stops:
     instructions: Establish the support apparatus in place for this service.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-support.png
     status: Active
+    links:
+      - title: Support (API Evangelist)
+        url: http://support.apievangelist.com/
     items:
 
       - name: Email
@@ -1729,6 +1744,9 @@ stops:
     instructions: Establish a communication strategy for this service.
     image: http://locations.apievangelist.com/assets/images/communication.png
     status: Active
+    links:
+      - title: Communication (API Evangelist)
+        url: http://communication.apievangelist.com/
     items:
 
       - name: Blog
@@ -1788,6 +1806,9 @@ stops:
     footer: We try to share as much information as possible about what changes will be occurring, helping you plan for your integration--make sure and share your thoughts about what you'd like to see.
     image: http://locations.apievangelist.com/assets/images/road-map.png
     status: Active
+    links:
+      - title: Road Map (API Evangelist)
+        url: http://road-map.apievangelist.com/
     items:
 
       - name: Private
@@ -1843,6 +1864,9 @@ stops:
     instructions: Provide a list of currently known issues for this service.
     image: http://locations.apievangelist.com/assets/images/issues.png
     status: Active
+    links:
+      - title: Issues (API Evangelist)
+        url: http://issues.apievangelist.com/
     items:
 
       - name: Entries
@@ -1881,6 +1905,9 @@ stops:
     instructions: Providing a historical list of what has changed for this service.
     image: http://locations.apievangelist.com/assets/images/change-log.png
     status: Active
+    links:
+      - title: Change Log (API Evangelist)
+        url: http://change-log.apievangelist.com/
     items:
 
       - name: Entries
@@ -1953,6 +1980,16 @@ stops:
     instructions: Defining the uptime monitoring for this service.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-heart-monitor.png
     status: None
+    services:
+      - name: API Fortress
+        description: A complete API testing solution for companies that care about their APIs. Test during development, deployments, and live monitoring.
+        url: https://apifortress.com/
+      - name: APIMetrics
+        description: Enterprise and Banking ready, API testing, performance monitoring, SLA management, compliance monitoring and analysis.
+        url: https://apimetrics.io/
+    links:
+      - title: Monitoring (API Evangelist)
+        url: http://monitoring.apievangelist.com/
     items:
 
       - name: Monitors
@@ -1997,6 +2034,16 @@ stops:
     instructions: Defining the testing for this service.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-testing.png
     status: None
+    services:
+      - name: API Fortress
+        description: A complete API testing solution for companies that care about their APIs. Test during development, deployments, and live monitoring.
+        url: https://apifortress.com/
+      - name: APIMetrics
+        description: Enterprise and Banking ready, API testing, performance monitoring, SLA management, compliance monitoring and analysis.
+        url: https://apimetrics.io/
+    links:
+      - title: Testing (API Evangelist)
+        url: http://testing.apievangelist.com/
     items:
 
       - name: Assertions
@@ -2050,6 +2097,16 @@ stops:
     instructions: Defining the performance monitoring for this service.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-performance.png
     status: None
+    links:
+      - title: Performance (API Evangelist)
+        url: http://performance.apievangelist.com/
+    services:
+      - name: API Fortress
+        description: A complete API testing solution for companies that care about their APIs. Test during development, deployments, and live monitoring.
+        url: https://apifortress.com/
+      - name: APIMetrics
+        description: Enterprise and Banking ready, API testing, performance monitoring, SLA management, compliance monitoring and analysis.
+        url: https://apimetrics.io/
     items:
 
       - name: Tests
@@ -2103,6 +2160,17 @@ stops:
     instructions: Defining the security practices in place for this service.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/api-security.png
     status: None
+    tools:
+      - name: OWASP Zap
+        description: OWASP ZAP is an open-source web application security scanner.
+        url: https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project
+    services:
+      - name: 42Crunch
+        description: https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project
+        url: https://www.42crunch.com/
+    links:
+      - title: Security (API Evangelist)
+        url: http://security.apievangelist.com/
     items:
 
       - name: Overview
@@ -2200,6 +2268,11 @@ stops:
     instructions: Define the analysis in play for this service.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-analysis.png
     status: None
+    services:
+      - name: Axway
+        description: API management platform offering a suite of services.
+        url: https://www.axway.com/en
+        status: None
     items:
 
       - name: Traffic
