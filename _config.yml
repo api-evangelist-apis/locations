@@ -255,7 +255,7 @@ stops:
         url: https://www.apicur.io/
     links:
       - title: Design (API Evangelist)
-        url: http://design.apievangelist.com/        
+        url: http://design.apievangelist.com/
     items:
 
       - name: Versioning
@@ -351,6 +351,15 @@ stops:
           - json: 5
           - xml: 0
           - html: 0
+        links:
+          - title: HTML
+            url: https://www.iana.org/assignments/media-types/text/html
+          - title: CSV
+            url: https://www.iana.org/assignments/media-types/text/csv
+          - title: XML
+            url: https://www.iana.org/assignments/media-types/application/xml
+          - title: JSON
+            url: https://www.iana.org/assignments/media-types/application/json
         tools:
           - name: IANA Media Types
             description: Media types that are defined by IANA.
@@ -664,6 +673,9 @@ stops:
     instructions: Provide a mock representation of this service.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-virtualization.png
     status: Not Used
+    links:
+      - title: Virtualization (API Evangelist)
+        url: http://virtualization.apievangelist.com/
     items:
 
       - name: Paths
@@ -671,12 +683,31 @@ stops:
         instruction: Providing virtualized paths for the API driving service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-path-2.png
         status: None
+        services:
+          - name: Mockable
+            description: Mockable is a simple configurable service to mock out RESTful API or SOAP web-services. Reply with static or dynamic JSON or XML Payload.
+            url: https://www.mockable.io/
+          - name: Mocklab
+            description: Rapidly simulate APIs for faster parallel development and more comprehensive testing
+            url: https://get.mocklab.io/
+        tools:
+          - name: Prism
+            description: Supercharge any OAS file with mocking, transformations, validations, and more.
+            url: https://stoplight.io/platform/prism/
+          - name: API Sprout
+            description: A simple, quick, cross-platform API mock server that returns examples specified in an API description document.
+            url: https://github.com/danielgtaylor/apisprout
 
       - name: Data
         description: Considering offering synethic data for use by integrators, helping ensure virtualized APIs provide as production like experience in a virtualized way.
         instruction: Providing synthesized data behind each API response for service.
         image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-relational-data.png
         status: None
+        tools:
+          - name: Synthea
+            description: Synthea is an open-source, synthetic patient generator that models the medical history of synthetic patients.
+            url: https://synthetichealth.github.io/synthea/
+
 
   #------------
   # Deployment
@@ -689,6 +720,9 @@ stops:
     instructions: Define the deployment scaffolding for this service.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-deployment.png
     status: None
+    links:
+      - title: Deployment (API Evangelist)
+        url: http://deployment.apievangelist.com/
     items:
 
       - name: Compute
@@ -714,6 +748,9 @@ stops:
           - name: Slim
             description: A PHP framework for delivering RESTful API frameworks.
             url: https://www.slimframework.com/
+          - name: express-openapi
+            description: An unopinionated OpenAPI framework for express
+            url: https://www.npmjs.com/package/express-openapi
 
       - name: Function
         description: Which function is used to deploy this service.
@@ -722,6 +759,10 @@ stops:
         status: None
         fields:
           - function: aws_lambda_function_name
+        services:
+          - name: AWS Lambda
+            description: AWS Lambda lets you run code without provisioning or managing servers. You pay only for the compute time you consume - there is no charge when your code is not running.
+            url: https://aws.amazon.com/lambda/
         tools:
           - name: Node.js
             description: The server side JavaScript Framework.
@@ -737,6 +778,10 @@ stops:
         status: None
         fields:
           - container: none
+        services:
+          - name: Docker
+            description: Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
+            url: https://www.docker.com/
 
       - name: Gateway
         description: Which gateway is used to deploy this service.
@@ -745,7 +790,7 @@ stops:
         status: None
         fields:
           - platform: none
-        tools:
+        services:
           - name: AWS API Gateway
             description: Amazon's API gateway solution for deploying and managing APIs.
             url: https://aws.amazon.com/api-gateway/
@@ -757,6 +802,10 @@ stops:
         status: None
         fields:
           - pipeline: none
+        services:
+          - name: Jekins
+            description: Jenkins is a self-contained Java-based program, ready to run out-of-the-box, with packages for Windows, Mac OS X and other Unix-like operating systems.
+            url: https://jenkins.io/
 
       - name: Region
         description: Information regarding which region this service is deployed.
@@ -841,6 +890,9 @@ stops:
     instructions: Providing details of the dependencies that exist for this service.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-depend.png
     status: None
+    links:
+      - title: Dependencies (API Evangelist)
+        url: http://dependencies.apievangelist.com/
     items:
 
       - name: Service
@@ -906,6 +958,9 @@ stops:
     instructions: Details regarding authentication in use for this service.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-padlock.png
     status: Active
+    links:
+      - title: Authentication (API Evangelist)
+        url: http://authentication.apievangelist.com/
     items:
 
       - name: Type
@@ -965,6 +1020,9 @@ stops:
     instructions: Define the management layer for this service's API.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-tools.png
     status: Active
+    links:
+      - title: Management (API Evangelist)
+        url: http://management.apievangelist.com/
     items:
 
       - name: Platform
@@ -974,11 +1032,12 @@ stops:
         status: Active
         fields:
           - platform: AWS API Gateway
-        tools:
+        services:
           - name: AWS API Gateway
             description: Amazon's API gateway solution for deploying and managing APIs.
             url: https://aws.amazon.com/api-gateway/
             status: Active
+        tools:
           - name: Kong
             description: An open source API management solution, with enterprise options.
             url: https://konghq.com/
@@ -1035,6 +1094,9 @@ stops:
     instructions: Define the logging layer for supporting this service.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-logging-2.png
     status: Active
+    links:
+      - title: Logging (API Evangelist)
+        url: http://logging.apievangelist.com/
     items:
 
       - name: Database
@@ -1081,6 +1143,9 @@ stops:
     instructions: Define the costs associated with the delivery of this service.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-monetization-strategy.png
     status: Active
+    links:
+      - title: Monetization (API Evangelist)
+        url: http://monetization.apievangelist.com/
     items:
 
       - name: Acquisition
@@ -1135,6 +1200,9 @@ stops:
     instructions: Define the operational plan for the business of this service.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-plan.png
     status: Active
+    links:
+      - title: Plans (API Evangelist)
+        url: http://plans.apievangelist.com/
     items:
 
       - name: Tiers
@@ -1194,6 +1262,17 @@ stops:
     instructions: Define the public or private portal in use to present this service.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-portal-developers.jpg
     status: Active
+    links:
+      - title: Portal (API Evangelist)
+        url: http://portal.apievangelist.com/
+    services:
+      - name: APIMATIC
+        description: Instantly build an API Portal with SDKs, Live Code Samples, Test Cases, API.
+        url: https://apimatic.io/
+    tools:
+      - name: Minimum Viable API Portal Template
+        description: A minimum API documentation template developed by James Higginbotham and Hillary Fraley.
+        url: https://launchany.github.io/mvd-template/
     items:
 
       - name: Hosting
@@ -1249,6 +1328,9 @@ stops:
     instructions: Provide a getting started page for this service within portal.
     image: http://locations.apievangelist.com/assets/images/getting-started.png
     status: Active
+    links:
+      - title: Getting Started (API Evangelist)
+        url: http://getting-started.apievangelist.com/
     items:
 
       - name: Signup
@@ -1316,6 +1398,9 @@ stops:
     instructions: Provide documentation for this service within portal.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-documentation-interactive.png
     status: Active
+    links:
+      - title: Documentation (API Evangelist)
+        url: http://documentation.apievangelist.com/
     items:
 
       - name: Paths
@@ -1379,6 +1464,17 @@ stops:
     instructions: Providing code samples, libraries, or complete software development kits (SDKs).
     image: http://locations.apievangelist.com/assets/images/code.png
     status: Active
+    services:
+      - name: APIMATIC
+        description: Instantly build an API Portal with SDKs, Live Code Samples, Test Cases, API.
+        url: https://apimatic.io/
+      - name: REST United
+        description: Just 5 simple steps to generate SDKs (REST API libraries) in 9 programming languages
+        url: https://restunited.com/
+    tools:
+      - name: Swagger Codegen
+        description: Swagger Codegen can simplify your build process by generating server stubs and client SDKs for any API.
+        url: https://swagger.io/tools/swagger-codegen/      
     items:
 
       - name: PHP
