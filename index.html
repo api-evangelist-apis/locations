@@ -3,6 +3,52 @@ layout: default
 title: Location APIs
 ---
 
+<script src="/js/ui/swagger-ui-bundle.js"> </script>
+<script src="/js/ui/swagger-ui-standalone-preset.js"> </script>
+<style>
+.topbar
+  {
+  display:none;
+  }
+.info
+  {
+  display:none;
+  }
+</style>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute;width:0;height:0">
+  <defs>
+    <symbol viewBox="0 0 20 20" id="unlocked">
+          <path d="M15.8 8H14V5.6C14 2.703 12.665 1 10 1 7.334 1 6 2.703 6 5.6V6h2v-.801C8 3.754 8.797 3 10 3c1.203 0 2 .754 2 2.199V8H4c-.553 0-1 .646-1 1.199V17c0 .549.428 1.139.951 1.307l1.197.387C5.672 18.861 6.55 19 7.1 19h5.8c.549 0 1.428-.139 1.951-.307l1.196-.387c.524-.167.953-.757.953-1.306V9.199C17 8.646 16.352 8 15.8 8z"></path>
+    </symbol>
+
+    <symbol viewBox="0 0 20 20" id="locked">
+      <path d="M15.8 8H14V5.6C14 2.703 12.665 1 10 1 7.334 1 6 2.703 6 5.6V8H4c-.553 0-1 .646-1 1.199V17c0 .549.428 1.139.951 1.307l1.197.387C5.672 18.861 6.55 19 7.1 19h5.8c.549 0 1.428-.139 1.951-.307l1.196-.387c.524-.167.953-.757.953-1.306V9.199C17 8.646 16.352 8 15.8 8zM12 8H8V5.199C8 3.754 8.797 3 10 3c1.203 0 2 .754 2 2.199V8z"/>
+    </symbol>
+
+    <symbol viewBox="0 0 20 20" id="close">
+      <path d="M14.348 14.849c-.469.469-1.229.469-1.697 0L10 11.819l-2.651 3.029c-.469.469-1.229.469-1.697 0-.469-.469-.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-.469-.469-.469-1.228 0-1.697.469-.469 1.228-.469 1.697 0L10 8.183l2.651-3.031c.469-.469 1.228-.469 1.697 0 .469.469.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c.469.469.469 1.229 0 1.698z"/>
+    </symbol>
+
+    <symbol viewBox="0 0 20 20" id="large-arrow">
+      <path d="M13.25 10L6.109 2.58c-.268-.27-.268-.707 0-.979.268-.27.701-.27.969 0l7.83 7.908c.268.271.268.709 0 .979l-7.83 7.908c-.268.271-.701.27-.969 0-.268-.269-.268-.707 0-.979L13.25 10z"/>
+    </symbol>
+
+    <symbol viewBox="0 0 20 20" id="large-arrow-down">
+      <path d="M17.418 6.109c.272-.268.709-.268.979 0s.271.701 0 .969l-7.908 7.83c-.27.268-.707.268-.979 0l-7.908-7.83c-.27-.268-.27-.701 0-.969.271-.268.709-.268.979 0L10 13.25l7.418-7.141z"/>
+    </symbol>
+
+
+    <symbol viewBox="0 0 24 24" id="jump-to">
+      <path d="M19 7v4H5.83l3.58-3.59L8 6l-6 6 6 6 1.41-1.41L5.83 13H21V7z"/>
+    </symbol>
+
+    <symbol viewBox="0 0 24 24" id="expand">
+      <path d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"/>
+    </symbol>
+
+  </defs>
+</svg>
+
 <!--Definitions-->
 {% assign service_name = "" %}
 {% assign service_description = "" %}
@@ -419,125 +465,28 @@ title: Location APIs
 		</header>
 		<p>{{ documentation_overview_header }}</p>
 
-    {% assign taglist = '' %}
-    {% for path in openapi.paths %}
+    <div id="openapi-ui"></div>
 
-      {% assign this_path = path[0] %}
-      {% assign method_json = path[1] %}
+    <script>
+    window.onload = function() {
 
-      {% for method in method_json %}
-        {% assign tagarray = method[1].tags %}
-        {% assign tag = tagarray[0] %}
-        {% if taglist contains tag %}
-        {% else %}
-          {% assign taglist = taglist | append:',' %}
-          {% assign taglist = taglist | append:tag %}
-        {% endif %}
-      {% endfor %}
+      // HSDS
+      const openapi_docs = SwaggerUIBundle({
+        url: "https://raw.githubusercontent.com/api-evangelist-apis/locations/master/_data/openapi.yaml",
+        dom_id: '#openapi-ui',
+        presets: [
+          SwaggerUIBundle.presets.apis,
+          SwaggerUIStandalonePreset
+        ],
+        plugins: [
+          SwaggerUIBundle.plugins.DownloadUrl
+        ],
+        layout: "StandaloneLayout"
+      })
+      window.ui = openapi_docs;
 
-    {% endfor %}
+    </script>
 
-    {% assign tagArray = taglist | split: "," %}
-    {% for grouptag in tagArray %}
-
-      {% assign api_title = openapi.info.title %}
-      {% assign api_description = openapi.info.description %}
-
-      {% assign api_host = openapi.host %}
-      {% assign api_base = openapi.basePath %}
-
-      {% assign api_url = api_host | prepend:'https://' %}
-      {% assign api_url = api_url | append:api_base %}
-
-      {% for path in openapi.paths %}
-
-        {% assign this_path = path[0] %}
-        {% assign method_json = path[1] %}
-
-        {% for method in method_json %}
-
-          {% assign parameters = method[1].parameters %}
-          {% assign tagarray = method[1].tags %}
-          {% assign tag = tagarray[0] %}
-          {% assign verb = method[0] | upcase %}
-          {% assign summary = method[1].summary %}
-          {% assign description = method[1].description %}
-
-          {% if tag == grouptag %}
-
-            {% assign slug = path[0] | replace: '/','' %}
-
-            <div class="alert alert-dark" role="alert" style="border-color:#CCC; background-color:#000; color:#FFF;">{{ summary }} - {{ description }}</div>
-
-            <div class="container">
-              <div class="row">
-                <div class="col-10">
-
-                  <p><strong>URL:</strong> <a href="{{ api_url }}{{ path[0] }}" target="_blank">{{ api_url }}{{ path[0] }}</a></p>
-
-                  <strong>Authentication:</strong>
-                  <table cellpadding"3" width="100%">
-                      <tr>
-                        <td align="right" style="padding:5px; width: 15%;"><strong>x-api-key:</strong></td>
-                        <td style="padding:5px;" width="35%"><input type="text" name='x-api-key' id='x-api-key' value="" class="form-control" width="450"></td>
-                        <td style="padding:5px;"></td>
-                      </tr>
-                  </table>
-
-                  <form id="{{ slug }}-path" style="width: 100%;">
-                    {% assign any_path_parameters = 0 %}
-                    {% for parameter in parameters %}{% if parameter.in == 'path' %}{% assign any_path_parameters = 1 %}{% endif %}{% endfor %}
-                    {% if any_path_parameters == 1 %}
-                      <strong>Path Parameters:</strong>
-                    {% endif %}
-                    <table cellpadding"3" width="100%">
-                    {% for parameter in parameters %}
-                      {% if parameter.in == 'path' %}
-                        <tr>
-                          <td align="right" style="padding:5px; width: 15%;"><strong>{{ parameter.name }}:</strong></td>
-                          <td style="padding:5px;" width="35%"><input type="text" name='{{ parameter.name | downcase }}' value="{{ parameter.default }}" class="form-control" style="width: 100%;"></td>
-                          <td style="padding:5px;"><i>{{ parameter.description }}</i></td>
-                        </tr>
-                      {% endif %}
-                    {% endfor %}
-                    </table>
-                  </form>
-
-                  <form id="{{ slug }}-param" style="width: 100%;">
-                    {% assign any_path_parameters = 0 %}
-                    {% for parameter in parameters %}{% if parameter.in == 'query' %}{% assign any_path_parameters = 1 %}{% endif %}{% endfor %}
-                    {% if any_path_parameters == 1 %}
-                      <strong>Query Parameters:</strong>
-                    {% endif %}
-                    <table cellpadding"3" width="100%">
-                    {% for parameter in parameters %}
-                      {% if parameter.in == 'query' %}
-                        <tr>
-                          <td align="right" style="padding:5px; width: 15%;"><strong>{{ parameter.name }}:</strong></td>
-                          <td style="padding:5px;" width="25%"><input type="text" name='{{ parameter.name | downcase }}' value="{{ parameter.default }}" class="form-control" style="width: 100%;"></td>
-                          <td style="padding:5px;"><i>{{ parameter.description }}</i></td>
-                        </tr>
-                      {% endif %}
-                    {% endfor %}
-                    </table>
-                  </form>
-
-
-                </div>
-                <div class="col-1 align-middle" style="padding-top: 15px;">
-                  <a href="getRequest('{{ slug }}','{{ path[0] }}','{{ api_url }}'); return false;"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-arrow-left-round.png" style="width: 50px; align:center; vertical-align: middle;" /></a>
-                  <!--<button type="button" class="btn btn-success align-middle" data-toggle="modal" data-target="#exampleModal" onclick="getRequest('{{ slug }}','{{ path[0] }}','{{ api_url }}');">GO</button>-->
-                </div>
-              </div>
-            </div>
-
-          {% endif %}
-
-        {% endfor %}
-
-      {% endfor %}
-
-    {% endfor %}
 
     <p>{{ documentation_overview_footer }}</p>
 
