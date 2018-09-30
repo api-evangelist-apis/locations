@@ -1195,13 +1195,10 @@ stops:
           - name: Google Analytics
             description: Using embedded Google Analytics for managing traffic.
             url: https://analytics.google.com/analytics/web/
-            image:
-        status: Active
           - name: Github Analytics
             description: Using embedded Google Analytics for managing traffic.
             url: https://blog.github.com/2014-01-07-introducing-github-traffic-analytics/
-            image:
-        status: Active
+
 
   #-----------------
   # Getting Started
