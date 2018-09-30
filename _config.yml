@@ -244,9 +244,18 @@ stops:
     instructions: Establish a base set of design practices for the service.
     image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-design.png
     status: Active
-    links:
+    tools:
       - title: API Stylebook
         url: http://apistylebook.com/
+      - title: Swagger Editor
+        url: http://editor.swagger.io/
+      - title: OpenAPI GUI
+        url: https://mermade.github.io/openapi-gui/
+      - title: Apicurio
+        url: https://www.apicur.io/
+    links:
+      - title: Design (API Evangelist)
+        url: http://design.apievangelist.com/        
     items:
 
       - name: Versioning
@@ -261,6 +270,9 @@ stops:
             server: 1.0.0
             api: 1.0.0
             sdk: 1.0.0
+        links:
+          - title: Versioning (API Evangelist)
+            url: http://versioning.apievangelist.com/
 
       - name: Base Path
         description: The part of the path that goes after the host, and before each path, and is constant across all endpoints for this service.
